@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M3BFP5');</script>
+    <!-- End Google Tag Manager -->
+
+    <link href="../templates/static/css/files%3Fdefault.less&amp;other.less&amp;ezHTML.less&amp;%3Fv=20180416-2.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js?v=20180416-2"></script>
+    <script src="../templates/static/js/files%3FlightHttp-simple-min.js&amp;default.js&amp;facebookAPI.js&amp;form_check.js&amp;util.js&amp;listAutoLoadMore.js&amp;%3Fv=20180416-2"></script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en" />
+    <meta name="author" content="lingihuang" />
+    <title>Object-Oriented Javascript: Pass By Value or Reference</title>
+    <meta name="keywords" content="JavaScript, Web Development" />
+    <meta name="description" content="DefinitionsPass by ValueIf the function is able to assign values to its parameters, only its local copy is assigned &mdash; that is, anything passed into a function call is unchanged in the caller" />
+    <meta property="fb:app_id" content="160015347378316" />
+    <meta property="fb:admins" content="1140660203"/>
+    
+
+    <link rel="shortcut icon" href="../templates/static/images/favicon_vivian.ico" /> 
+    
+
+    <link rel="canonical" href="https://www.lingihuang.com/docs-blog/article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html"/>
+    
+
+
+    <link rel="amphtml" href="https://www.lingihuang.com/docs-blog-amp/article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html"/>
+    
+
+    <link rel="dns-prefetch" href="apis.google.com.html">
+        <link rel="dns-prefetch" href="ajax.googleapis.com.html">
+        <link rel="dns-prefetch" href="connect.facebook.net.html">
+        <link rel="dns-prefetch" href="www.google-analytics.com.html">
+        <link rel="dns-prefetch" href="www.lingihuang.com.html">
+        
+
+<!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "https://www.lingihuang.com",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "https://www.lingihuang.com/search?searchText={search_term_string}",
+     "query-input": "required name=search_term_string"
+   }
+}
+    </script>
+
+
+
+
+
+
+
+</head>
+<body>
+
+            
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3BFP5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+            
+<div class="settings">
+    
+        <script>var WRT="https://www.lingihuang.com/";</script>
+    
+</div>
+
+
+            
+<div class="header">
+    <div class="top-header">
+        <div class="main">
+        <a class="logo" href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html"><img src="../templates/static/images/logo_vivian.png" alt="Vivian Crap" title="Vivian Crap"></a>
+        <a class="navbar-btn" href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html#"><span class="icon"></span></a>
+        </div>
+        <ul class="navbar">
+             
+            <li >
+                <a href="../AboutMe.html" data-ga='{"action":"menu_click","label":"About Me"}'>About Me</a>
+            </li>
+             
+            <li >
+                <a href="../Recipes.html" data-ga='{"action":"menu_click","label":"Recipes"}'>Recipes</a>
+            </li>
+             
+            <li class="active">
+                <a href="../docs-cate.html" data-ga='{"action":"menu_click","label":"Web"}'>Web</a>
+            </li>
+            
+        </ul>
+        <form action="http://www.lingihuang.com/search" class="navbar-form">
+            <input type="text" name="searchText" placeholder="Input your keyword" value="">
+            <i class="glyphicon glyphicon-search"></i>
+        </form>
+    </div>
+</div>
+
+
+        
+
+        
+<div class="body-content">
+    
+            
+    <div class="main">
+        
+                
+<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> 
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a href="https://www.lingihuang.com" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+            <em><span itemprop="name">Home</span></em>
+        </a>
+        <meta itemprop="position" content="1" />
+    </li>
+    
+        
+            <li  itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem">
+                <a href="../docs-cate/JavaScript.html" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+                    <em><span itemprop="name">JavaScript</span></em>
+                </a>
+                <meta itemprop="position" content="2" />
+            </li>
+        
+    
+        
+            <li class="active">
+                <a href="https://www.lingihuang.com/docs-blog/article-29">
+                    <em><span>Object-Oriented Java...</span></em>
+                </a>
+            </li>
+        
+    
+</ul>
+
+        
+                
+
+
+<script type="application/ld+json">
+    {"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lingihuang.com\/docs-blog\/article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html"},"headline":"Object-Oriented Javascript: Pass By Value or Reference","image":"","datePublished":"2014-03-05T16:39:19+08:00","dateModified":"2015-07-14T09:49:34+08:00","author":{"@type":"Person","name":"Lingi Huang"},"publisher":{"@type":"Organization","name":"www.lingihuang.com","logo":{"@type":"ImageObject","url":"https:\/\/www.lingihuang.com\/templates\/static\/images\/favicon_vivian.ico"}},"description":"Definitions\rPass by Value\rIf the function is able to assign values to its parameters, only its local"}
+</script>
+
+
+<div class="entry">
+   <div class="entry-header">
+        
+        <div class="date">
+            <div class="year">2014</div>
+            <div class="month">Mar</div>
+            <div class="day">05</div>
+        </div>
+
+        
+        <div class="title">
+            <h1><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html"><span>Object-Oriented Javascript: Pass By Value or Reference</span></a></h1>
+            <div class="sub">
+                <div class="caption">Tags:</div>
+                <ul class="labels">
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=JavaScript.html">JavaScript</a>
+                    </li>
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=Web%20Development.html">Web Development</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="entry-body">
+        <div class="ezHTML-content"><h2>Definitions</h2><h3>Pass by Value</h3><p>If the function is able to assign values to its parameters, only its local copy is assigned — that is, anything passed into a function call is unchanged in the caller’s scope when the function returns.</p><h3>Pass by Reference</h3><p>Pass-by-reference typically means that the function can modify (i.e. assign to) the variable used as argument — something that will be seen by its caller.</p><h3>String</h3><div class="codeBlock"><span class="title"> Pass String By Value</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> str </span><span class="pun">=</span><span class="pln"> </span><span class="str">"A"</span><span class="pun">;</span></li><li class="L1"><span class="pln">&nbsp;</span></li><li class="L2"><span class="kwd">function</span><span class="pln"> passStringByValue</span><span class="pun">(</span><span class="pln">str</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** passStringByValue ****"</span><span class="pun">);</span></li><li class="L4"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">str</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output A</span></li><li class="L5"><span class="pln">    str </span><span class="pun">=</span><span class="pln"> </span><span class="str">"X"</span><span class="pun">;</span></li><li class="L6"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">str</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output X</span></li><li class="L7"><span class="pun">}</span></li><li class="L8"><span class="pln">&nbsp;</span></li><li class="L9"><span class="pln">passStringByValue</span><span class="pun">(</span><span class="pln">str</span><span class="pun">);</span></li><li class="L0"><span class="pln">console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">str</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output A</span></li></ol></pre></div><h3>Array</h3><div class="codeBlock"><span class="title"> Pass Array By Value or By Reference</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> arr </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="str">"A"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"B"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"C"</span><span class="pun">];</span></li><li class="L1"><span class="pln">        </span></li><li class="L2"><span class="kwd">function</span><span class="pln"> passArrayByValue</span><span class="pun">(</span><span class="pln">arr</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** passArrayByValue ****"</span><span class="pun">);</span></li><li class="L4"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">arr</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output ["A", "B", "C"]</span></li><li class="L5"><span class="pln">    </span><span class="com">// Create a new array.</span></li><li class="L6"><span class="pln">    arr </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="str">"X"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Y"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Z"</span><span class="pun">];</span></li><li class="L7"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">arr</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output ["X", "Y", "Z"]</span></li><li class="L8"><span class="pun">}</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="kwd">function</span><span class="pln"> passArrayByReference</span><span class="pun">(</span><span class="pln">arr</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** passArrayByReference ****"</span><span class="pun">);</span></li><li class="L2"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">arr</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output ["A", "B", "C"]</span></li><li class="L3"><span class="pln">    arr</span><span class="pun">.</span><span class="pln">push</span><span class="pun">(</span><span class="str">"D"</span><span class="pun">);</span></li><li class="L4"><span class="pln">    arr</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"W"</span><span class="pun">;</span></li><li class="L5"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">arr</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output ["W", "B", "C", "D"]</span></li><li class="L6"><span class="pun">}</span></li><li class="L7"><span class="pln">&nbsp;</span></li><li class="L8"><span class="com">// Pass by value.</span></li><li class="L9"><span class="pln">passArrayByValue</span><span class="pun">(</span><span class="pln">arr</span><span class="pun">);</span></li><li class="L0"><span class="pln">console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">arr</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output ["A", "B", "C"]</span></li><li class="L1"><span class="pln">&nbsp;</span></li><li class="L2"><span class="com">// Pass by reference.</span></li><li class="L3"><span class="pln">passArrayByReference</span><span class="pun">(</span><span class="pln">arr</span><span class="pun">);</span></li><li class="L4"><span class="pln">console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">arr</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output ["W", "B", "C", "D"]</span></li></ol></pre></div><h3>Object</h3><div class="codeBlock"><span class="title"> Pass Object By Value or By Reference</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> obj </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    attr</span><span class="pun">:</span><span class="pln"> </span><span class="str">"A"</span></li><li class="L2"><span class="pun">};</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="kwd">function</span><span class="pln"> passObjectByValue</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** passObjectByValue ****"</span><span class="pun">);</span></li><li class="L6"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output {attr: "A"}</span></li><li class="L7"><span class="pln">    </span><span class="com">// Create a new object.</span></li><li class="L8"><span class="pln">    obj </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">        attr</span><span class="pun">:</span><span class="pln"> </span><span class="str">"X"</span></li><li class="L0"><span class="pln">    </span><span class="pun">};</span></li><li class="L1"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output {attr: "X"}</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="kwd">function</span><span class="pln"> passObjectByReference</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** passObjectByReference ****"</span><span class="pun">);</span></li><li class="L6"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output {attr: "A"}</span></li><li class="L7"><span class="pln">    obj</span><span class="pun">.</span><span class="pln">attr </span><span class="pun">=</span><span class="pln"> </span><span class="str">"X"</span><span class="pun">;</span></li><li class="L8"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output {attr: "X"}</span></li><li class="L9"><span class="pun">}</span></li><li class="L0"><span class="pln">&nbsp;</span></li><li class="L1"><span class="com">// Pass by value.</span></li><li class="L2"><span class="pln">passObjectByValue</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">);</span></li><li class="L3"><span class="pln">console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output {attr: "A"}</span></li><li class="L4"><span class="pln">&nbsp;</span></li><li class="L5"><span class="com">// Pass by reference.</span></li><li class="L6"><span class="pln">passObjectByReference</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">);</span></li><li class="L7"><span class="pln">console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output {attr: "X"}</span></li></ol></pre></div><h3>Function</h3><div class="codeBlock"><span class="title"> Pass Function By Reference</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">function</span><span class="pln"> myFunction</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">value </span><span class="pun">=</span><span class="pln"> </span><span class="str">"A"</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="kwd">function</span><span class="pln"> passFunctionByReference</span><span class="pun">(</span><span class="pln">fn</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** passFunctionByReference ****"</span><span class="pun">);</span></li><li class="L6"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">fn</span><span class="pun">.</span><span class="pln">value</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output A</span></li><li class="L7"><span class="pln">    fn</span><span class="pun">.</span><span class="pln">value </span><span class="pun">=</span><span class="pln"> </span><span class="str">"X"</span><span class="pun">;</span></li><li class="L8"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">fn</span><span class="pun">.</span><span class="pln">value</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output X</span></li><li class="L9"><span class="pun">}</span></li><li class="L0"><span class="pln">&nbsp;</span></li><li class="L1"><span class="kwd">var</span><span class="pln"> myFn </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> myFunction</span><span class="pun">();</span></li><li class="L2"><span class="com">// Pass by reference.</span></li><li class="L3"><span class="pln">passFunctionByReference</span><span class="pun">(</span><span class="pln">myFn</span><span class="pun">);</span></li><li class="L4"><span class="pln">console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">myFn</span><span class="pun">.</span><span class="pln">value</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output X</span></li></ol></pre></div><div class="codeBlock"><span class="title"> Pass Function By Value With Keyword "this"</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">function</span><span class="pln"> myFunction</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">value </span><span class="pun">=</span><span class="pln"> </span><span class="str">"A"</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pln">myFunction</span><span class="pun">.</span><span class="pln">prototype</span><span class="pun">.</span><span class="pln">update </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** myFunction.prototype.update ****"</span><span class="pun">);</span></li><li class="L6"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">);</span></li><li class="L7"><span class="pln">    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">value </span><span class="pun">=</span><span class="pln"> </span><span class="str">"W"</span><span class="pun">;</span></li><li class="L8"><span class="pun">};</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="kwd">function</span><span class="pln"> passFunctionByValue</span><span class="pun">(</span><span class="pln">fn</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** passFunctionByValue ****"</span><span class="pun">);</span></li><li class="L2"><span class="pln">    </span><span class="com">// It will lose keyword "this" in function update. "this" will refer to Window object.</span></li><li class="L3"><span class="pln">    fn</span><span class="pun">();</span></li><li class="L4"><span class="pun">}</span></li><li class="L5"><span class="pln">&nbsp;</span></li><li class="L6"><span class="kwd">var</span><span class="pln"> myFn </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> myFunction</span><span class="pun">();</span></li><li class="L7"><span class="com">// Pass by value.</span></li><li class="L8"><span class="pln">passFunctionByValue</span><span class="pun">(</span><span class="pln">myFn</span><span class="pun">.</span><span class="pln">update</span><span class="pun">);</span></li><li class="L9"><span class="pln">console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">myFn</span><span class="pun">.</span><span class="pln">value</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output A</span></li></ol></pre></div><p>The problem here is the use of <strong>the "this" keyword</strong>. It’s a handy short-hand for referring to the current object context. When passing a function as a parameter, though, the context is lost. More accurately, <strong>this now refers to the context of the object making the call</strong> instead of the object’s function we just passed in. For standalone functions, this would be the window object and for functions called from an event, this would be the event object.</p><p>To solve this problem, you can use the solution below:</p><div class="codeBlock"><span class="title"> Solution:  Pass Function By Reference With Keyword "this"</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">function</span><span class="pln"> myFunction</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">value </span><span class="pun">=</span><span class="pln"> </span><span class="str">"A"</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pln">myFunction</span><span class="pun">.</span><span class="pln">prototype</span><span class="pun">.</span><span class="pln">update </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** myFunction.prototype.update ****"</span><span class="pun">);</span></li><li class="L6"><span class="pln">    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">);</span></li><li class="L7"><span class="pln">    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">value </span><span class="pun">=</span><span class="pln"> </span><span class="str">"W"</span><span class="pun">;</span></li><li class="L8"><span class="pun">};</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="kwd">function</span><span class="pln"> updateFunctionByReference</span><span class="pun">(</span><span class="pln">fn</span><span class="pun">,</span><span class="pln"> obj</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="com">// "this" will refer to myFunction in function update.</span></li><li class="L2"><span class="pln">    fn</span><span class="pun">.</span><span class="pln">call</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">);</span></li><li class="L3"><span class="pun">}</span></li><li class="L4"><span class="pln">&nbsp;</span></li><li class="L5"><span class="kwd">var</span><span class="pln"> myFn </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> myFunction</span><span class="pun">();</span></li><li class="L6"><span class="pln">updateFunctionByReference</span><span class="pun">(</span><span class="pln">myFn</span><span class="pun">.</span><span class="pln">update</span><span class="pun">,</span><span class="pln"> myFn</span><span class="pun">);</span></li><li class="L7"><span class="pln">console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">myFn</span><span class="pun">.</span><span class="pln">value</span><span class="pun">);</span><span class="pln">  </span><span class="com">// Output W</span></li></ol></pre></div><p><a class="demo-link" href="http://www.lingihuang.com/filemanage/examples/oop/pass_by_value_or_reference.html" target="_blank"><i class="glyphicon glyphicon-file"></i>View Demo</a></p><h2>Related Posts</h2><ul class="list">    <li><a href="http://snook.ca/archives/javascript/javascript_pass" target="_blank">JavaScript: Passing By Value or By Reference</a></li>    <li><a href="http://www.jon-carlos.com/2013/is-javascript-call-by-value-or-call-by-reference/" target="_blank">Is JavaScript call-by-value or call-by-reference?</a></li>    <li><a href="http://pulipuli.blogspot.tw/2010/09/javascript.html" target="_blank">JavaScript中參數的傳值與傳址心得</a></li></ul></div>
+    </div>
+    <div class="entry-footer">
+        <p class="article-modify-author">This post was last modified by
+            <span>Lingi Huang</span>
+            <time datetime="2015-07-14T09:49:34+08:00" class="article-modify-time">2015/07/14</time>
+        </p>
+
+        
+    <ul class="share-btn-wrap">
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.lingihuang.com/docs-blog/article-29" class="shareBtn" title="share" rel="nofollow"></a></li>
+        <li>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https://www.lingihuang.com/docs-blog/article-29" scrolling="no" frameborder="0"
+                style="border:none; width:450px; height:80px"></iframe>
+        </li>
+    </ul>
+
+
+
+        
+    </div>
+    
+    
+        <br />
+        <ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1449650742587459"
+     data-ad-slot="2197220184"></ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1449650742587459",
+          enable_page_level_ads: true
+     });
+</script>
+    
+
+</div>
+
+        
+            
+    </div>
+    
+
+            
+    <div class="sidebar">
+        
+                
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">JavaScript 相關</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">Web Development 相關</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-37-CSS-Selectors.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_37&quot;}'>CSS Selectors </a></li>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-5-Stack-Order.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_5&quot;}'>Stack Order </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">類別 JavaScript</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+    </ul>
+</div>
+
+
+        
+                
+
+
+        
+            
+    </div>
+    
+        
+</div>
+
+
+
+    
+
+            
+<div class="bottom-footer">
+    <ul class="nav">
+        
+        <li >
+            <a href="../AboutMe.html">About Me</a>
+        </li>
+        
+        <li >
+            <a href="../Recipes.html">Recipes</a>
+        </li>
+        
+        <li class="active">
+            <a href="../docs-cate.html">Web</a>
+        </li>
+        
+
+        <li>
+            <a href="http://www.puritys.me/">puritys.me</a>
+        </li>
+        <li>
+            <a href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html">VIVIAN CRAP</a>
+        </li>
+        
+    </ul>
+    <p>Copyright &amp;copy; 2014 LINGIHUANG.COM. All rights reserved.</p>
+</div>
+
+
+            
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+
+
+        
+</body>
+    <script src="../templates/static/js/files%3Fsidebar.js&amp;ezHTML_main.js&amp;%3Fv=20180416-2"></script>
+</html>

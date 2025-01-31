@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M3BFP5');</script>
+    <!-- End Google Tag Manager -->
+
+    <link href="../templates/static/css/files%3Fdefault.less&amp;other.less&amp;ezHTML.less&amp;%3Fv=20180416-2.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js?v=20180416-2"></script>
+    <script src="../templates/static/js/files%3FlightHttp-simple-min.js&amp;default.js&amp;facebookAPI.js&amp;form_check.js&amp;util.js&amp;listAutoLoadMore.js&amp;%3Fv=20180416-2"></script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en" />
+    <meta name="author" content="lingihuang" />
+    <title>Stack Order</title>
+    <meta name="keywords" content="CSS, Web Development" />
+    <meta name="description" content="What is z-index?The z-index property determines the stack level of an HTML element. The stack level refers to the element#39;s position on the Z axis (as opposed to the X axis or Y axis). A " />
+    <meta property="fb:app_id" content="160015347378316" />
+    <meta property="fb:admins" content="1140660203"/>
+    
+
+    <link rel="shortcut icon" href="../templates/static/images/favicon_vivian.ico" /> 
+    
+
+    <link rel="canonical" href="https://www.lingihuang.com/docs-blog/article-5-Stack-Order.html"/>
+    
+
+
+    <link rel="amphtml" href="https://www.lingihuang.com/docs-blog-amp/article-5-Stack-Order.html"/>
+    
+
+    <link rel="dns-prefetch" href="apis.google.com.html">
+        <link rel="dns-prefetch" href="ajax.googleapis.com.html">
+        <link rel="dns-prefetch" href="connect.facebook.net.html">
+        <link rel="dns-prefetch" href="www.google-analytics.com.html">
+        <link rel="dns-prefetch" href="www.lingihuang.com.html">
+        
+
+<!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "https://www.lingihuang.com",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "https://www.lingihuang.com/search?searchText={search_term_string}",
+     "query-input": "required name=search_term_string"
+   }
+}
+    </script>
+
+
+
+
+
+
+
+</head>
+<body>
+
+            
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3BFP5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+            
+<div class="settings">
+    
+        <script>var WRT="https://www.lingihuang.com/";</script>
+    
+</div>
+
+
+            
+<div class="header">
+    <div class="top-header">
+        <div class="main">
+        <a class="logo" href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html"><img src="../templates/static/images/logo_vivian.png" alt="Vivian Crap" title="Vivian Crap"></a>
+        <a class="navbar-btn" href="article-5-Stack-Order.html#"><span class="icon"></span></a>
+        </div>
+        <ul class="navbar">
+             
+            <li >
+                <a href="../AboutMe.html" data-ga='{"action":"menu_click","label":"About Me"}'>About Me</a>
+            </li>
+             
+            <li >
+                <a href="../Recipes.html" data-ga='{"action":"menu_click","label":"Recipes"}'>Recipes</a>
+            </li>
+             
+            <li class="active">
+                <a href="../docs-cate.html" data-ga='{"action":"menu_click","label":"Web"}'>Web</a>
+            </li>
+            
+        </ul>
+        <form action="http://www.lingihuang.com/search" class="navbar-form">
+            <input type="text" name="searchText" placeholder="Input your keyword" value="">
+            <i class="glyphicon glyphicon-search"></i>
+        </form>
+    </div>
+</div>
+
+
+        
+
+        
+<div class="body-content">
+    
+            
+    <div class="main">
+        
+                
+<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> 
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a href="https://www.lingihuang.com" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+            <em><span itemprop="name">Home</span></em>
+        </a>
+        <meta itemprop="position" content="1" />
+    </li>
+    
+        
+            <li  itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem">
+                <a href="../docs-cate/CSS.html" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+                    <em><span itemprop="name">CSS</span></em>
+                </a>
+                <meta itemprop="position" content="2" />
+            </li>
+        
+    
+        
+            <li class="active">
+                <a href="https://www.lingihuang.com/docs-blog/article-5">
+                    <em><span>Stack Order</span></em>
+                </a>
+            </li>
+        
+    
+</ul>
+
+        
+                
+
+
+<script type="application/ld+json">
+    {"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lingihuang.com\/docs-blog\/article-5-Stack-Order.html"},"headline":"Stack Order","image":"https:\/\/www.lingihuang.com\/filemanage\/images\/2009\/09\/graphical-z-index.gif","datePublished":"2009-09-21T07:15:43+08:00","dateModified":"2015-06-01T23:36:29+08:00","author":{"@type":"Person","name":"Lingi Huang"},"publisher":{"@type":"Organization","name":"www.lingihuang.com","logo":{"@type":"ImageObject","url":"https:\/\/www.lingihuang.com\/templates\/static\/images\/favicon_vivian.ico"}},"description":"What is z-index?\r\r\r\r\r\rThe z-index property determines the stack level of an HTML element. The stack "}
+</script>
+
+
+<div class="entry">
+   <div class="entry-header">
+        
+        <div class="date">
+            <div class="year">2009</div>
+            <div class="month">Sep</div>
+            <div class="day">21</div>
+        </div>
+
+        
+        <div class="title">
+            <h1><a href="article-5-Stack-Order.html"><span>Stack Order</span></a></h1>
+            <div class="sub">
+                <div class="caption">Tags:</div>
+                <ul class="labels">
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=CSS.html">CSS</a>
+                    </li>
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=Web%20Development.html">Web Development</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="entry-body">
+        <div class="ezHTML-content"><h2>What is z-index?</h2><div class="media media-image"><div class="pull-left"><img src="../filemanage/images/2009/09/graphical-z-index.gif"   class="Z" alt="Graphical Z Index" left="true"  style="width: 450px;height: 399px;"/></div><div class="media-body"><p>The <strong>z-index</strong> property determines <strong>the stack level of an HTML element</strong>. The stack level refers to the element&#39;s position on the <strong>Z axis</strong> (as opposed to the X axis or Y axis). A higher z-index value means the element will be closer to the top of the stacking order. This stacking order runs perpendicular ot the display, or viewport.</p></div></div><h2>The Natural Stacking Order</h2><p>In an HTML page, the natural <strong>stacking order</strong> (i.e. the order of elements on the Z axis) is determined by <strong>a number of factors</strong>. Below is a list showing the order that iterms fit into <strong>a stacking context</strong>, starting with the bottom of the stack. This list assumes none of the items has z-index applied:</p><ul class="list">  <li>Background and borders of the element that establish stacking context.</li>  <li>Elements with negative stacking contexts, in order of appearance.</li>  <li>Non-positioned, non-floated, block-level elements, in order of appearance.</li>  <li>Non-positioned, floated elements, in order of appearances.</li>  <li>Inline elements, in order of appearance.</li>  <li>Positioned elements, in order of appearance.</li></ul><div class="demo">  <h4 class="demo-heading">Demo</h4>  <div class="demo-body clearfix">    <div style="width:150px;height:150px;font-size:12px;color:#bf250a;text-align:center;line-height:250%;background-color:#facdc5;border:1px solid #bf250a;margin:0;">Red Box</div>    <div style="width:150px;height:150px;font-size:12px;color:#4cbf0a;text-align:center;line-height:250%;background-color:#d7fac3;border:1px solid #4cbf0a;margin:-120px 0 0 50px;">Green Box</div>    <div style="width:150px;height:150px;font-size:12px;color:#1e7bcc;text-align:center;line-height:250%;background-color:#c3e0fa;border:1px solid #1e7bcc;margin:-120px 0 0 100px;">Blue Box</div>  </div></div><p><strong>The elements above do not have z-index values set</strong>; their stacking order is the natural, or default, order. The overlaps that occur are due to the negative margins.</p><h2>Why Does It Cause Confusion?</h2><p>Although z-index is not a difficult proerpty to understand, due to false assumptions it can cause confusion for beginning developers. This confusion occurs because <strong>z-index will only work on an element whose position property has been explicitly set to absolute, fixed, or relative</strong>.</p><div class="demo">  <h4 class="demo-heading">Demo</h4>  <div class="demo-body clearfix">    <div style="width:150px;height:150px;font-size:12px;color:#bf250a;text-align:center;line-height:200%;background-color:#facdc5;border:1px solid #bf250a;margin:0;z-index:1000;">z-index:1000;</div>    <div style="width:150px;height:150px;font-size:12px;color:#4cbf0a;text-align:center;line-height:200%;background-color:#d7fac3;border:1px solid #4cbf0a;margin:-120px 0 0 50px;z-index:500;">z-index:500;</div>    <div style="width:150px;height:150px;font-size:12px;color:#1e7bcc;text-align:center;line-height:200%;background-color:#c3e0fa;border:1px solid #1e7bcc;margin:-120px 0 0 100px;z-index:1;">z-index:1;</div>  </div></div><div class="demo">  <h4 class="demo-heading">Demo</h4>  <div class="demo-body clearfix">    <div style="width:150px;height:150px;font-size:12px;color:#bf250a;text-align:center;line-height:200%;background-color:#facdc5;border:1px solid #bf250a;margin:0;z-index:500;position:relative;">z-index:500;<br>position:relative;</div>    <div style="width:150px;height:150px;font-size:12px;color:#4cbf0a;text-align:center;line-height:200%;background-color:#d7fac3;border:1px solid #4cbf0a;margin:-110px 0 0 130px;z-index:1000;position:absolute;">z-index:1000;<br>position:absolute;</div>    <div style="width:150px;height:150px;font-size:12px;color:#1e7bcc;text-align:center;line-height:200%;background-color:#c3e0fa;border:1px solid #1e7bcc;margin:-50px 0 0 70px;z-index:1;position:relative;"><br><br><br><br>z-index:1;<br>position:relative;</div>  </div></div><p>The z-index property can affect the stack order of both block-level and inline elements, and is declared by <strong>a positive or negative integer value</strong>, or a vluae of <strong>auto</strong>. <strong>A value of auto gives the element the same stack order as its parent.</strong></p><div class="demo">  <h4 class="demo-heading">Demo</h4>  <div class="demo-body clearfix">    <div style="width:150px;height:150px;font-size:12px;color:#bf250a;text-align:center;line-height:200%;background-color:#facdc5;border:1px solid #bf250a;margin:0;z-index:500;position:relative;">z-index:500;<br>position:relative;</div>    <div style="width:150px;height:150px;font-size:12px;color:#4cbf0a;text-align:center;line-height:200%;background-color:#d7fac3;border:1px solid #4cbf0a;margin:-110px 0 0 130px;z-index:1000;position:absolute;">z-index:1000;<br>position:absolute;</div>    <div style="width:100px;height:100px;font-size:12px;color:#1e7bcc;text-align:center;line-height:200%;background-color:#c3e0fa;border:1px solid #1e7bcc;margin:0 0 0 -20px;z-index:auto;position:relative;">z-index:auto;<br>position:relative;</div>  </div></div><div class="demo">  <h4 class="demo-heading">Demo</h4>  <div class="demo-body clearfix">    <div style="width:150px;height:150px;font-size:12px;color:#bf250a;text-align:center;line-height:200%;background-color:#facdc5;border:1px solid #bf250a;margin:0;z-index:500;position:relative;">z-index:500;<br>position:relative;</div>    <div style="width:150px;height:150px;font-size:12px;color:#4cbf0a;text-align:center;line-height:200%;background-color:#d7fac3;border:1px solid #4cbf0a;margin:-110px 0 0 130px;z-index:0;position:relative;">z-index:0;<br>position:relative;</div>    <div style="width:150px;height:150px;font-size:12px;color:#1e7bcc;text-align:center;line-height:200%;background-color:#c3e0fa;border:1px solid #1e7bcc;margin:-100px 0 0 70px;z-index:100;"><br><br><br><br><br>z-index:100;</div>  </div></div><div class="demo">  <h4 class="demo-heading">Demo</h4>  <div class="demo-body clearfix">    <div class="red-box" style="background-color:#facdc5;border:1px solid #bf250a;color:#bf250a;font-size:12px;height: 150px;line-height:250%;margin:0;position:relative;text-align:center;width:150px;z-index: 2;">position:relative;<br>z-index:2;</div>    <div class="green-box" style="background-color:#d7fac3;border:1px solid #4cbf0a;color:#4cbf0a;font-size:12px;height:150px;line-height:250%;margin:-50px 0 0 50px;position:relative;text-align:center;width:150px;">      <br><br><br><br>position:relative;      <div class="blue-box" style="background-color:#c3e0fa;border:1px solid #1e7bcc;color:#1e7bcc;font-size:12px;height:150px;line-height:250%;margin:-200px 0 0 50px;position:relative;text-align:center;width:150px;z-index: 3;">position:relative;<br>z-index:3;</div>    </div>  </div></div><h2>Related Posts</h2><ul class="list">  <li><a href="http://www.smashingmagazine.com/2009/09/15/the-z-index-css-property-a-comprehensive-look/" target="_blank">The Z-Index CSS Property: A Comprehensive Look</a></li></ul></div>
+    </div>
+    <div class="entry-footer">
+        <p class="article-modify-author">This post was last modified by
+            <span>Lingi Huang</span>
+            <time datetime="2015-06-01T23:36:29+08:00" class="article-modify-time">2015/06/01</time>
+        </p>
+
+        
+    <ul class="share-btn-wrap">
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.lingihuang.com/docs-blog/article-5" class="shareBtn" title="share" rel="nofollow"></a></li>
+        <li>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https://www.lingihuang.com/docs-blog/article-5" scrolling="no" frameborder="0"
+                style="border:none; width:450px; height:80px"></iframe>
+        </li>
+    </ul>
+
+
+
+        
+    </div>
+    
+    
+        <br />
+        <ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1449650742587459"
+     data-ad-slot="2197220184"></ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1449650742587459",
+          enable_page_level_ads: true
+     });
+</script>
+    
+
+</div>
+
+        
+            
+    </div>
+    
+
+            
+    <div class="sidebar">
+        
+                
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">CSS 相關</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-37-CSS-Selectors.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_37&quot;}'>CSS Selectors </a></li>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-2-Christmas,-Bon-Appetit.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_2&quot;}'>Christmas, Bon Appetit </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-4-Luncheon-with-Monet.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_4&quot;}'>Luncheon with Monet </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-12-Spanish-Tapas.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_12&quot;}'>Spanish Tapas </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">Web Development 相關</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-37-CSS-Selectors.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_37&quot;}'>CSS Selectors </a></li>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">類別 CSS</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-37-CSS-Selectors.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_37&quot;}'>CSS Selectors </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-5-Stack-Order.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_5&quot;}'>Stack Order </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+
+        
+                
+
+
+        
+            
+    </div>
+    
+        
+</div>
+
+
+
+    
+
+            
+<div class="bottom-footer">
+    <ul class="nav">
+        
+        <li >
+            <a href="../AboutMe.html">About Me</a>
+        </li>
+        
+        <li >
+            <a href="../Recipes.html">Recipes</a>
+        </li>
+        
+        <li class="active">
+            <a href="../docs-cate.html">Web</a>
+        </li>
+        
+
+        <li>
+            <a href="http://www.puritys.me/">puritys.me</a>
+        </li>
+        <li>
+            <a href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html">VIVIAN CRAP</a>
+        </li>
+        
+    </ul>
+    <p>Copyright &amp;copy; 2014 LINGIHUANG.COM. All rights reserved.</p>
+</div>
+
+
+            
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+
+
+        
+</body>
+    <script src="../templates/static/js/files%3Fsidebar.js&amp;ezHTML_main.js&amp;%3Fv=20180416-2"></script>
+</html>

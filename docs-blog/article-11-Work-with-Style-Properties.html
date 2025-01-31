@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M3BFP5');</script>
+    <!-- End Google Tag Manager -->
+
+    <link href="../templates/static/css/files%3Fdefault.less&amp;other.less&amp;ezHTML.less&amp;%3Fv=20180416-2.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js?v=20180416-2"></script>
+    <script src="../templates/static/js/files%3FlightHttp-simple-min.js&amp;default.js&amp;facebookAPI.js&amp;form_check.js&amp;util.js&amp;listAutoLoadMore.js&amp;%3Fv=20180416-2"></script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en" />
+    <meta name="author" content="lingihuang" />
+    <title>Work with Style Properties</title>
+    <meta name="keywords" content="JavaScript, Web Development" />
+    <meta name="description" content="Scripting Computed StylesThe W3C standard API for determining the computed style of an element is the getComputedStyle() method of the Window object. The first argument to this method is the" />
+    <meta property="fb:app_id" content="160015347378316" />
+    <meta property="fb:admins" content="1140660203"/>
+    
+
+    <link rel="shortcut icon" href="../templates/static/images/favicon_vivian.ico" /> 
+    
+
+    <link rel="canonical" href="https://www.lingihuang.com/docs-blog/article-11-Work-with-Style-Properties.html"/>
+    
+
+
+    <link rel="amphtml" href="https://www.lingihuang.com/docs-blog-amp/article-11-Work-with-Style-Properties.html"/>
+    
+
+    <link rel="dns-prefetch" href="apis.google.com.html">
+        <link rel="dns-prefetch" href="ajax.googleapis.com.html">
+        <link rel="dns-prefetch" href="connect.facebook.net.html">
+        <link rel="dns-prefetch" href="www.google-analytics.com.html">
+        <link rel="dns-prefetch" href="www.lingihuang.com.html">
+        
+
+<!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "https://www.lingihuang.com",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "https://www.lingihuang.com/search?searchText={search_term_string}",
+     "query-input": "required name=search_term_string"
+   }
+}
+    </script>
+
+
+
+
+
+
+
+</head>
+<body>
+
+            
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3BFP5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+            
+<div class="settings">
+    
+        <script>var WRT="https://www.lingihuang.com/";</script>
+    
+</div>
+
+
+            
+<div class="header">
+    <div class="top-header">
+        <div class="main">
+        <a class="logo" href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html"><img src="../templates/static/images/logo_vivian.png" alt="Vivian Crap" title="Vivian Crap"></a>
+        <a class="navbar-btn" href="article-11-Work-with-Style-Properties.html#"><span class="icon"></span></a>
+        </div>
+        <ul class="navbar">
+             
+            <li >
+                <a href="../AboutMe.html" data-ga='{"action":"menu_click","label":"About Me"}'>About Me</a>
+            </li>
+             
+            <li >
+                <a href="../Recipes.html" data-ga='{"action":"menu_click","label":"Recipes"}'>Recipes</a>
+            </li>
+             
+            <li class="active">
+                <a href="../docs-cate.html" data-ga='{"action":"menu_click","label":"Web"}'>Web</a>
+            </li>
+            
+        </ul>
+        <form action="http://www.lingihuang.com/search" class="navbar-form">
+            <input type="text" name="searchText" placeholder="Input your keyword" value="">
+            <i class="glyphicon glyphicon-search"></i>
+        </form>
+    </div>
+</div>
+
+
+        
+
+        
+<div class="body-content">
+    
+            
+    <div class="main">
+        
+                
+<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> 
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a href="https://www.lingihuang.com" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+            <em><span itemprop="name">Home</span></em>
+        </a>
+        <meta itemprop="position" content="1" />
+    </li>
+    
+        
+            <li  itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem">
+                <a href="../docs-cate/JavaScript.html" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+                    <em><span itemprop="name">JavaScript</span></em>
+                </a>
+                <meta itemprop="position" content="2" />
+            </li>
+        
+    
+        
+            <li class="active">
+                <a href="https://www.lingihuang.com/docs-blog/article-11">
+                    <em><span>Work with Style Prop...</span></em>
+                </a>
+            </li>
+        
+    
+</ul>
+
+        
+                
+
+
+<script type="application/ld+json">
+    {"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lingihuang.com\/docs-blog\/article-11-Work-with-Style-Properties.html"},"headline":"Work with Style Properties","image":"","datePublished":"2009-07-05T08:48:44+08:00","dateModified":"2015-07-14T09:29:25+08:00","author":{"@type":"Person","name":"Lingi Huang"},"publisher":{"@type":"Organization","name":"www.lingihuang.com","logo":{"@type":"ImageObject","url":"https:\/\/www.lingihuang.com\/templates\/static\/images\/favicon_vivian.ico"}},"description":"Scripting Computed Styles\rThe W3C standard API for determining the computed style of an element is t"}
+</script>
+
+
+<div class="entry">
+   <div class="entry-header">
+        
+        <div class="date">
+            <div class="year">2009</div>
+            <div class="month">Jul</div>
+            <div class="day">05</div>
+        </div>
+
+        
+        <div class="title">
+            <h1><a href="article-11-Work-with-Style-Properties.html"><span>Work with Style Properties</span></a></h1>
+            <div class="sub">
+                <div class="caption">Tags:</div>
+                <ul class="labels">
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=JavaScript.html">JavaScript</a>
+                    </li>
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=Web%20Development.html">Web Development</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="entry-body">
+        <div class="ezHTML-content"><h2>Scripting Computed Styles</h2><p>The W3C standard API for determining the computed style of an element is the <code>getComputedStyle()</code> method of the <strong>Window object</strong>. The first argument to this method is the element whose computed style is desired. The second argument is any <strong>CSS pseudoelement</strong>, such as <strong>":before"</strong> or <strong>":after"</strong> whose style is desired. In the Mozilla and Firefox implementation of this method, the second argument is required and may not be omitted. As a result, you&#39;ll usually see getComputedStyle() invoked with <strong>null</strong> as its second argument.</p><p>IE provides a simpler alternative: every HTML element has a <code>currentStyle</code> property that holds its computed style.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> CSS </span><span class="pun">=</span><span class="pln">  </span><span class="pun">{</span></li><li class="L1"><span class="pln">    getStyle</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">element</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">element</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">        </span><span class="kwd">return</span><span class="pun">;</span></li><li class="L4"><span class="pln">      </span><span class="pun">}</span></li><li class="L5"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">typeof</span><span class="pln"> element </span><span class="pun">===</span><span class="pln"> </span><span class="str">"string"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">        element </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="pln">element</span><span class="pun">);</span></li><li class="L7"><span class="pln">      </span><span class="pun">}</span></li><li class="L8"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">element</span><span class="pun">.</span><span class="pln">currentStyle</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For IE</span></li><li class="L9"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> element</span><span class="pun">.</span><span class="pln">currentStyle</span><span class="pun">;</span></li><li class="L0"><span class="pln">      </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">defaultView </span><span class="pun">&amp;&amp;</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">defaultView</span><span class="pun">.</span><span class="pln">getComputedStyle</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For Modern Browsers</span></li><li class="L1"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">defaultView</span><span class="pun">.</span><span class="pln">getComputedStyle</span><span class="pun">(</span><span class="pln">element</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">);</span></li><li class="L2"><span class="pln">      </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> element</span><span class="pun">.</span><span class="pln">style</span><span class="pun">;</span></li><li class="L4"><span class="pln">      </span><span class="pun">}</span></li><li class="L5"><span class="pln">    </span><span class="pun">}</span></li><li class="L6"><span class="pun">};</span></li></ol></pre></div><h2>Retrive Global/External CSS Properties</h2><p>These two approaches frequently require different ways of referring to the style properties. In the case of the IE <code>currentStyle</code> object, references are made via the same object model syntax as is used for getting and setting style values. Therefore, hyphenated CSS property names must be referenced via the <strong>intercapitalization system</strong> (e.g., <strong>margin-left</strong> becomes <strong>marginLeft</strong>). But the property name for the W3C DOM <code>getPropertyValue()</code> method must be in the CSS property format (e.g., <strong>margin-left</strong> is <strong>margin-left</strong>).</p><p>Also be aware that for some CSS properties, different browser versions may return different value types-especially in colors that are specified by CSS syntax other than rgb(r, g, b). For example, if you set the color with a plain-language color name (e.g., orange), the value returned from the browsers may be in a different format. For the most part, if you specify colors in rgb(r, g, b) format, you&#39;ll get that back.</p><p>CSS values consisting of length measurements typically contain units (pixels, points, ems, and so on). If you tend to utilize the value of a style property for any math, such as adding five pixels to the left edge of a positioned element, be sure to extract the numeric portion of sorting values that include units. Use the <code>parseInt()</code> function for integers and the <code>parseFloat()</code> function for numeric values that may have digits to the right of the decimal (e.g., 0.5em).</p><p>Once you assign a value to a property of an element&#39;s <strong>style object</strong>, the value can be read subsequently through the <strong>style property</strong>. But for consistency&#39;s sake, you can continue to read a value the getPropertyValue() method and currentStyle object because it returns the effective value applied to the element at any instant.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> CSS </span><span class="pun">=</span><span class="pln">  </span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="kwd">get</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">element</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">element</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">        </span><span class="kwd">return</span><span class="pun">;</span></li><li class="L4"><span class="pln">      </span><span class="pun">}</span></li><li class="L5"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">typeof</span><span class="pln"> element </span><span class="pun">===</span><span class="pln"> </span><span class="str">"string"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">        element </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="pln">element</span><span class="pun">);</span></li><li class="L7"><span class="pln">      </span><span class="pun">}</span></li><li class="L8"><span class="pln">      </span><span class="com">// Convert "background-color" to "backgroundColor"</span></li><li class="L9"><span class="pln">      </span><span class="kwd">var</span><span class="pln"> camelCase </span><span class="pun">=</span><span class="pln"> name</span><span class="pun">.</span><span class="pln">replace</span><span class="pun">(</span><span class="str">/&#92;-(&#92;w)/</span><span class="pln">g</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">all</span><span class="pun">,</span><span class="pln"> letter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L0"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> letter</span><span class="pun">.</span><span class="pln">toUpperCase</span><span class="pun">();</span></li><li class="L1"><span class="pln">      </span><span class="pun">});</span></li><li class="L2"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">element</span><span class="pun">.</span><span class="pln">currentStyle</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For IE</span></li><li class="L3"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> element</span><span class="pun">.</span><span class="pln">currentStyle</span><span class="pun">[</span><span class="pln">name</span><span class="pun">]</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> element</span><span class="pun">.</span><span class="pln">currentStyle</span><span class="pun">[</span><span class="pln">camelCase</span><span class="pun">];</span></li><li class="L4"><span class="pln">      </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">defaultView </span><span class="pun">&amp;&amp;</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">defaultView</span><span class="pun">.</span><span class="pln">getComputedStyle</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For Modern Browsers</span></li><li class="L5"><span class="pln">        name </span><span class="pun">=</span><span class="pln"> name</span><span class="pun">.</span><span class="pln">replace</span><span class="pun">(</span><span class="str">/([A-Z])/</span><span class="pln">g</span><span class="pun">,</span><span class="pln"> </span><span class="str">"-$1"</span><span class="pun">).</span><span class="pln">toLowerCase</span><span class="pun">();</span></li><li class="L6"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">defaultView</span><span class="pun">.</span><span class="pln">getComputedStyle</span><span class="pun">(</span><span class="pln">element</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">).</span><span class="pln">getPropertyValue</span><span class="pun">(</span><span class="pln">name</span><span class="pun">);</span></li><li class="L7"><span class="pln">      </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> element</span><span class="pun">.</span><span class="pln">style</span><span class="pun">[</span><span class="pln">name</span><span class="pun">]</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> element</span><span class="pun">.</span><span class="pln">style</span><span class="pun">[</span><span class="pln">camelCase</span><span class="pun">];</span></li><li class="L9"><span class="pln">      </span><span class="pun">}</span></li><li class="L0"><span class="pln">    </span><span class="pun">},</span></li><li class="L1"><span class="pln">    </span><span class="kwd">set</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">element</span><span class="pun">,</span><span class="pln"> properties</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">element</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">        </span><span class="kwd">return</span><span class="pun">;</span></li><li class="L4"><span class="pln">      </span><span class="pun">}</span></li><li class="L5"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">typeof</span><span class="pln"> element </span><span class="pun">===</span><span class="pln"> </span><span class="str">"string"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">        element </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="pln">element</span><span class="pun">);</span></li><li class="L7"><span class="pln">      </span><span class="pun">}</span></li><li class="L8"><span class="pln">      </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> name in properties</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">        </span><span class="com">// Convert "background-color" to "backgroundColor"</span></li><li class="L0"><span class="pln">        </span><span class="kwd">var</span><span class="pln"> camelCase </span><span class="pun">=</span><span class="pln"> name</span><span class="pun">.</span><span class="pln">replace</span><span class="pun">(</span><span class="str">/&#92;-(&#92;w)/</span><span class="pln">g</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">all</span><span class="pun">,</span><span class="pln"> letter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">          </span><span class="kwd">return</span><span class="pln"> letter</span><span class="pun">.</span><span class="pln">toUpperCase</span><span class="pun">();</span></li><li class="L2"><span class="pln">        </span><span class="pun">});</span></li><li class="L3"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">typeof</span><span class="pln"> properties</span><span class="pun">[</span><span class="pln">name</span><span class="pun">]</span><span class="pln"> </span><span class="pun">===</span><span class="pln"> </span><span class="str">"number"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">          element</span><span class="pun">.</span><span class="pln">style</span><span class="pun">[</span><span class="pln">camelCase</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">parseInt</span><span class="pun">(</span><span class="pln">properties</span><span class="pun">[</span><span class="pln">name</span><span class="pun">],</span><span class="pln"> </span><span class="lit">10</span><span class="pun">)</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="str">"px"</span><span class="pun">;</span></li><li class="L5"><span class="pln">        </span><span class="pun">}</span></li><li class="L6"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">typeof</span><span class="pln"> properties</span><span class="pun">[</span><span class="pln">name</span><span class="pun">]</span><span class="pln"> </span><span class="pun">===</span><span class="pln"> </span><span class="str">"string"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">          element</span><span class="pun">.</span><span class="pln">style</span><span class="pun">[</span><span class="pln">camelCase</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> properties</span><span class="pun">[</span><span class="pln">name</span><span class="pun">];</span></li><li class="L8"><span class="pln">        </span><span class="pun">}</span></li><li class="L9"><span class="pln">      </span><span class="pun">}</span></li><li class="L0"><span class="pln">    </span><span class="pun">}</span></li><li class="L1"><span class="pun">};</span></li></ol></pre></div><p><a class="demo-link" href="http://www.lingihuang.com/filemanage/examples/getComputedStyle_vs_currentStyle/index.html" target="_blank"><i class="glyphicon glyphicon-file"></i>View Demo</a></p><h2>Related Posts</h2><ul class="list">    <li><a href="http://javascript.info/tutorial/styles-and-classes-getcomputedstyle" target="_blank">Styles and classes, getComputedStyle</a></li>    <li><a href="http://www.quirksmode.org/dom/getstyles.html" target="_blank">Javascript Get Styles</a></li></ul></div>
+    </div>
+    <div class="entry-footer">
+        <p class="article-modify-author">This post was last modified by
+            <span>Lingi Huang</span>
+            <time datetime="2015-07-14T09:29:25+08:00" class="article-modify-time">2015/07/14</time>
+        </p>
+
+        
+    <ul class="share-btn-wrap">
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.lingihuang.com/docs-blog/article-11" class="shareBtn" title="share" rel="nofollow"></a></li>
+        <li>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https://www.lingihuang.com/docs-blog/article-11" scrolling="no" frameborder="0"
+                style="border:none; width:450px; height:80px"></iframe>
+        </li>
+    </ul>
+
+
+
+        
+    </div>
+    
+    
+        <br />
+        <ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1449650742587459"
+     data-ad-slot="2197220184"></ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1449650742587459",
+          enable_page_level_ads: true
+     });
+</script>
+    
+
+</div>
+
+        
+            
+    </div>
+    
+
+            
+    <div class="sidebar">
+        
+                
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">JavaScript 相關</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">Web Development 相關</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-37-CSS-Selectors.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_37&quot;}'>CSS Selectors </a></li>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-5-Stack-Order.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_5&quot;}'>Stack Order </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">類別 JavaScript</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+    </ul>
+</div>
+
+
+        
+                
+
+
+        
+            
+    </div>
+    
+        
+</div>
+
+
+
+    
+
+            
+<div class="bottom-footer">
+    <ul class="nav">
+        
+        <li >
+            <a href="../AboutMe.html">About Me</a>
+        </li>
+        
+        <li >
+            <a href="../Recipes.html">Recipes</a>
+        </li>
+        
+        <li class="active">
+            <a href="../docs-cate.html">Web</a>
+        </li>
+        
+
+        <li>
+            <a href="http://www.puritys.me/">puritys.me</a>
+        </li>
+        <li>
+            <a href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html">VIVIAN CRAP</a>
+        </li>
+        
+    </ul>
+    <p>Copyright &amp;copy; 2014 LINGIHUANG.COM. All rights reserved.</p>
+</div>
+
+
+            
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+
+
+        
+</body>
+    <script src="../templates/static/js/files%3Fsidebar.js&amp;ezHTML_main.js&amp;%3Fv=20180416-2"></script>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M3BFP5');</script>
+    <!-- End Google Tag Manager -->
+
+    <link href="../templates/static/css/files%3Fdefault.less&amp;other.less&amp;ezHTML.less&amp;%3Fv=20180416-2.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js?v=20180416-2"></script>
+    <script src="../templates/static/js/files%3FlightHttp-simple-min.js&amp;default.js&amp;facebookAPI.js&amp;form_check.js&amp;util.js&amp;listAutoLoadMore.js&amp;%3Fv=20180416-2"></script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en" />
+    <meta name="author" content="lingihuang" />
+    <title>The XMLHttpRequest Object</title>
+    <meta name="keywords" content="JavaScript, Web Development" />
+    <meta name="description" content="What is the XMLHttpRequest object? Creating an XMLHttpRequest object. Specifying and submitting your HTTP request to a web server. Synchronously or asynchronously retrieving the server#39;s " />
+    <meta property="fb:app_id" content="160015347378316" />
+    <meta property="fb:admins" content="1140660203"/>
+    
+
+    <link rel="shortcut icon" href="../templates/static/images/favicon_vivian.ico" /> 
+    
+
+    <link rel="canonical" href="https://www.lingihuang.com/docs-blog/article-9-The-XMLHttpRequest-Object.html"/>
+    
+
+
+    <link rel="amphtml" href="https://www.lingihuang.com/docs-blog-amp/article-9-The-XMLHttpRequest-Object.html"/>
+    
+
+    <link rel="dns-prefetch" href="apis.google.com.html">
+        <link rel="dns-prefetch" href="ajax.googleapis.com.html">
+        <link rel="dns-prefetch" href="connect.facebook.net.html">
+        <link rel="dns-prefetch" href="www.google-analytics.com.html">
+        <link rel="dns-prefetch" href="www.lingihuang.com.html">
+        
+
+<!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "https://www.lingihuang.com",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "https://www.lingihuang.com/search?searchText={search_term_string}",
+     "query-input": "required name=search_term_string"
+   }
+}
+    </script>
+
+
+
+
+
+
+
+</head>
+<body>
+
+            
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3BFP5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+            
+<div class="settings">
+    
+        <script>var WRT="https://www.lingihuang.com/";</script>
+    
+</div>
+
+
+            
+<div class="header">
+    <div class="top-header">
+        <div class="main">
+        <a class="logo" href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html"><img src="../templates/static/images/logo_vivian.png" alt="Vivian Crap" title="Vivian Crap"></a>
+        <a class="navbar-btn" href="article-9-The-XMLHttpRequest-Object.html#"><span class="icon"></span></a>
+        </div>
+        <ul class="navbar">
+             
+            <li >
+                <a href="../AboutMe.html" data-ga='{"action":"menu_click","label":"About Me"}'>About Me</a>
+            </li>
+             
+            <li >
+                <a href="../Recipes.html" data-ga='{"action":"menu_click","label":"Recipes"}'>Recipes</a>
+            </li>
+             
+            <li class="active">
+                <a href="../docs-cate.html" data-ga='{"action":"menu_click","label":"Web"}'>Web</a>
+            </li>
+            
+        </ul>
+        <form action="http://www.lingihuang.com/search" class="navbar-form">
+            <input type="text" name="searchText" placeholder="Input your keyword" value="">
+            <i class="glyphicon glyphicon-search"></i>
+        </form>
+    </div>
+</div>
+
+
+        
+
+        
+<div class="body-content">
+    
+            
+    <div class="main">
+        
+                
+<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> 
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a href="https://www.lingihuang.com" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+            <em><span itemprop="name">Home</span></em>
+        </a>
+        <meta itemprop="position" content="1" />
+    </li>
+    
+        
+            <li  itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem">
+                <a href="../docs-cate/JavaScript.html" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+                    <em><span itemprop="name">JavaScript</span></em>
+                </a>
+                <meta itemprop="position" content="2" />
+            </li>
+        
+    
+        
+            <li class="active">
+                <a href="https://www.lingihuang.com/docs-blog/article-9">
+                    <em><span>The XMLHttpRequest Object</span></em>
+                </a>
+            </li>
+        
+    
+</ul>
+
+        
+                
+
+
+<script type="application/ld+json">
+    {"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lingihuang.com\/docs-blog\/article-9-The-XMLHttpRequest-Object.html"},"headline":"The XMLHttpRequest Object","image":"","datePublished":"2009-08-07T21:54:19+08:00","dateModified":"2015-07-14T09:26:55+08:00","author":{"@type":"Person","name":"Lingi Huang"},"publisher":{"@type":"Organization","name":"www.lingihuang.com","logo":{"@type":"ImageObject","url":"https:\/\/www.lingihuang.com\/templates\/static\/images\/favicon_vivian.ico"}},"description":"What is the XMLHttpRequest object?\r\r    Creating an XMLHttpRequest object.\r    Specifying and submit"}
+</script>
+
+
+<div class="entry">
+   <div class="entry-header">
+        
+        <div class="date">
+            <div class="year">2009</div>
+            <div class="month">Aug</div>
+            <div class="day">07</div>
+        </div>
+
+        
+        <div class="title">
+            <h1><a href="article-9-The-XMLHttpRequest-Object.html"><span>The XMLHttpRequest Object</span></a></h1>
+            <div class="sub">
+                <div class="caption">Tags:</div>
+                <ul class="labels">
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=JavaScript.html">JavaScript</a>
+                    </li>
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=Web%20Development.html">Web Development</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="entry-body">
+        <div class="ezHTML-content"><h2>What is the XMLHttpRequest object?</h2><ul class="list">    <li>Creating an XMLHttpRequest object.</li>    <li>Specifying and submitting your HTTP request to a web server.</li>    <li>Synchronously or asynchronously retrieving the server&#39;s response.</li></ul><table class="table">    <thead>        <tr>            <th>Propertie Name</th>            <th>Description</th>        </tr>    </thead>    <tbody>        <tr>            <td>onreadystatechange</td>            <td>An event handler for an event that fires at every state change.</td>        </tr>        <tr>            <td>readyState</td>            <td>                The readyState property defines the current state of the XMLHttpRequest object.<br />                <p>                    <strong>State Description</strong><br>                    0: The request is not initialized.<br>                    1: The request has been set up.<br>                    2: The request has been sent.<br>                    3: The request is in process.<br>                    4: The request is completed.<br />                </p>                <p>                    <strong>readyState = 0</strong> after you have created the XMLHttpRequest object, but before you have called the open() method.<br>                    <strong>readyState = 1</strong> after you have called the open() method, but before you have called send().<br>                    <strong>readyState = 2</strong> after you have called the send() method.<br>                    <strong>readyState = 3</strong> after browser has established a communication with the server, but before the server has completed the response.<br>                    <strong>readyState = 4</strong> after the request has been completed, and the response data have been completely received from the server.<br>                </p>            </td>        </tr>        <tr>            <td>responseText</td>            <td>Returns the response as a string.</td>        </tr>        <tr>            <td>responseXML</td>            <td>Returns the response as XML, which can be examined and parsed using W3C DOM node tree methods and properties. This property returns an XML document object, when the Content-Type header specifies the MIME(media) type as text/xml, application/xml, or ends in +xml. If the Content-Type header does not contain one of these media types, the responseXML value is null.</td>        </tr>        <tr>            <td>status</td>            <td>Returns the status as a number (e.g. 404 for "Not Found" and 200 for "OK").</td>        </tr>        <tr>            <td>statusText</td>            <td>Returns the status as a string (e.g. "Not Found" or "OK").</td>        </tr>    </tbody></table><table class="table">    <thead>        <tr>            <th>Method Name</th>            <th>Description</th>        </tr>    </thead>    <tbody>        <tr>            <td>abort()</td>            <td>Cancel the current request.</td>        </tr>        <tr>            <td>getAllResponseHeaders()</td>            <td>The getAllResponseHeaders() method returns all the response headers as a single string with each header on a separate line. The method returns null if readyState value is not 3 or 4.</td>        </tr>        <tr>            <td>getResponseHeader(DOMString header)</td>            <td>Returns the value of the specified HTTP header. Call getResponseHeader() only when the readyState value is 3 or 4 (in other words, after the response headers are available); otherwise, the method returns an empty string.</td>        </tr>        <tr>            <td>open(DOMString method, DOMString url, boolean async, DOMString username, DOMString password)</td>            <td>                Specify the method, url, and other optional attributes of a request.<br>                The method parameter can have a value of "GET", "POST", or "HEAD". Other HTTP methods, such as "PUT" and "DELETE" (primarily used in REST applications), may be possible.<br>                The <strong>async</strong> parameter specifies whether the request should be handled asynchronously or not. "true" means that script processing carries on after the send() method, without waiting for a response, and "false" means that the script waits for a response before continuing script processing.            </td>        </tr>        <tr>            <td>send()</td>            <td>                After preparing a request by calling the open() method, you send the request to the server. You may call send() only when the readyState value is 1, otherwise the XMLHttpRequest object raises an exception. The request gets sent to the server using the parameters supplied to the open() method. The send() method returns immediately when the async parameter is true, letting other client script processing continue. The XMLHttpRequest object sets the readyState value to 2 (Sent) after the send() method has been called. When the server responds, before receiving the message body, if any, the XMLHttpRequest object sets readState to 3 (Receiving). When the request has completed loading it sets readyState to 4 (Loaded). For a request of type HEAD, it sets the readyState value to 4 immediately after setting it to 3.<br>                The send() method takes an optional parameter that may contain data of varying types. Typically, you use this to send data to the server using the POST method. You can explicitly invoke the send() method with null, which is the same as invoking it with no argument. For most other data types, set the Content-Type header using the setReuqestHeader() method before invoking the send() method. If the data parameter in the send(data) method is of type DOMString, encode the data as UTF-8. If data is of type Document, serialize the data using the encoding specified by data.xmlEncoding, if supported or UTF-8 otherwise.<br />            </td>        </tr>        <tr>            <td>setRequestHeader(DOMString header, DOMString value)</td>            <td>The setRequestHeader() method sets request headers. You may call this method after calling the open() method when the readyState value is 1; otherwise you will get an exception.</td>        </tr>    </tbody></table><h2>Create an XMLHttpRequest Object</h2><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">function</span><span class="pln"> createHttpRequest</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">  </span><span class="kwd">var</span><span class="pln"> httpRequest </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span></li><li class="L2"><span class="pln">  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="typ">ActiveXObject</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For IE6 and below</span></li><li class="L3"><span class="pln">    httpRequest </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActiveXObject</span><span class="pun">(</span><span class="str">"Microsoft.XMLHTTP"</span><span class="pun">);</span></li><li class="L4"><span class="pln">  </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For IE7 and Modern Browsers</span></li><li class="L5"><span class="pln">    httpRequest </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">XMLHttpRequest</span><span class="pun">();</span></li><li class="L6"><span class="pln">  </span><span class="pun">}</span></li><li class="L7"><span class="pln">  </span><span class="kwd">return</span><span class="pln"> httpRequest</span><span class="pun">;</span></li><li class="L8"><span class="pun">}</span></li></ol></pre></div><h2>Submit a Request</h2><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="typ">XMLHttpRequest</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="str">"GET"</span><span class="pun">,</span><span class="pln"> url</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">);</span></li></ol></pre></div><p>If you pass <strong>false</strong> as the third argument to open(), the send() method is <strong>synchronous</strong>: it blocks and does not return until the server&#39;s response has arrived. Asynchronous responses are generally preferred.</p><h3>HTTP GET</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> xmlHttpRequest </span><span class="pun">=</span><span class="pln"> window</span><span class="pun">.</span><span class="typ">ActiveXObject</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActiveXObject</span><span class="pun">(</span><span class="str">"Microsoft.XMLHTTP"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">XMLHttpRequest</span><span class="pun">();</span></li><li class="L1"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">onreadystatechange </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">    </span></li><li class="L3"><span class="pun">}</span></li><li class="L4"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="str">"GET"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"query.php?username=vivian"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></li><li class="L5"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">send</span><span class="pun">(</span><span class="kwd">null</span><span class="pun">);</span></li></ol></pre></div><h3>HTTP POST</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> xmlHttpRequest </span><span class="pun">=</span><span class="pln"> window</span><span class="pun">.</span><span class="typ">ActiveXObject</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActiveXObject</span><span class="pun">(</span><span class="str">"Microsoft.XMLHTTP"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">XMLHttpRequest</span><span class="pun">();</span></li><li class="L1"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">onreadystatechange </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">    </span></li><li class="L3"><span class="pun">}</span></li><li class="L4"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="str">"POST"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"query.php"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></li><li class="L5"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">setRequestHeader</span><span class="pun">(</span><span class="str">"Content-Type"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"application/x-www-form-urlencoded"</span><span class="pun">);</span></li><li class="L6"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">send</span><span class="pun">(</span><span class="str">"username=vivian"</span><span class="pun">);</span></li></ol></pre></div><p>With POST requests, data is passed to the server in the body of the request, rather than encoding it into the URL itself. Since request parameters are encoded into the URL of a GET request, the GET method is suitable only when the request has no side effects on the server -- that is, when repeated GET requests for the same URL with the same parameters can be expected to return the same result. When there are side effects to a request (such as when the server stores some of the parameters in a database), a POST request should be used instead.</p><h3>Escape the Data</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> HTTPUTILITY </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    encodeFormData</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">        </span><span class="kwd">return</span><span class="pun">;</span></li><li class="L4"><span class="pln">      </span><span class="pun">}</span></li><li class="L5"><span class="pln">      </span><span class="kwd">var</span><span class="pln"> pairs </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[];</span></li><li class="L6"><span class="pln">      </span><span class="kwd">var</span><span class="pln"> regexp </span><span class="pun">=</span><span class="pln"> </span><span class="str">/%20/</span><span class="pln">g</span><span class="pun">;</span><span class="pln"> </span><span class="com">// A regular expression to match an encoded space.</span></li><li class="L7"><span class="pln">      </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> name in data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">        </span><span class="com">// Create a name/value pair, but encode name and value first. The global function encodeURIComponent does almost what we want,</span></li><li class="L9"><span class="pln">        </span><span class="com">// but it encodes spaces as %20 instead of as "+". We have to fix that with String.replace().</span></li><li class="L0"><span class="pln">        </span><span class="kwd">var</span><span class="pln"> value </span><span class="pun">=</span><span class="pln"> data</span><span class="pun">[</span><span class="pln">name</span><span class="pun">].</span><span class="pln">toString</span><span class="pun">();</span></li><li class="L1"><span class="pln">        </span><span class="kwd">var</span><span class="pln"> pair </span><span class="pun">=</span><span class="pln"> encodeURIComponent</span><span class="pun">(</span><span class="pln">name</span><span class="pun">).</span><span class="pln">replace</span><span class="pun">(</span><span class="pln">regexp</span><span class="pun">,</span><span class="pln"> </span><span class="str">"+"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="str">"="</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> encodeURIComponent</span><span class="pun">(</span><span class="pln">value</span><span class="pun">).</span><span class="pln">replace</span><span class="pun">(</span><span class="pln">regexp</span><span class="pun">,</span><span class="pln"> </span><span class="str">"+"</span><span class="pun">);</span></li><li class="L2"><span class="pln">        pairs</span><span class="pun">.</span><span class="pln">push</span><span class="pun">(</span><span class="pln">pair</span><span class="pun">);</span></li><li class="L3"><span class="pln">      </span><span class="pun">}</span></li><li class="L4"><span class="pln">      </span><span class="kwd">return</span><span class="pln"> pairs</span><span class="pun">.</span><span class="pln">join</span><span class="pun">(</span><span class="str">"&amp;"</span><span class="pun">);</span><span class="pln"> </span><span class="com">// Concatenate all the name/value pairs, separating them with &amp;.</span></li><li class="L5"><span class="pln">    </span><span class="pun">}</span></li><li class="L6"><span class="pun">};</span></li></ol></pre></div><p>The POST method uses the AJAX.encodeFormData() function to convert the properties of an object to a string form that can be used as the body of a POST request. This string is then passed to the XMLHttpRequest.send() method and becomes the body of the request. (The string returned by AJAX.encodeFormData() can also be appended to a GET URL; just use a quest-mark character to separate the URL from the data.)</p><h2>Retrieve the Response</h2><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> xmlHttpRequest </span><span class="pun">=</span><span class="pln"> window</span><span class="pun">.</span><span class="typ">ActiveXObject</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActiveXObject</span><span class="pun">(</span><span class="str">"Microsoft.XMLHTTP"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">XMLHttpRequest</span><span class="pun">();</span></li><li class="L1"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">onreadystatechange </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">readyState </span><span class="pun">!=</span><span class="pln"> </span><span class="lit">4</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">    </span><span class="com">// Start to progress</span></li><li class="L4"><span class="pln">  </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// The server&#39;s response is complete.</span></li><li class="L5"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">status </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> xmlHttpRequest</span><span class="pun">.</span><span class="pln">status </span><span class="pun">==</span><span class="pln"> </span><span class="lit">200</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">      callback</span><span class="pun">(</span><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">responseText</span><span class="pun">);</span></li><li class="L7"><span class="pln">    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">      </span><span class="com">// Error</span></li><li class="L9"><span class="pln">    </span><span class="pun">}</span></li><li class="L0"><span class="pln">  </span><span class="pun">}</span></li><li class="L1"><span class="pun">}</span></li><li class="L2"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="str">"POST"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"query.php"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></li><li class="L3"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">setRequestHeader</span><span class="pun">(</span><span class="str">"Content-Type"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"application/x-www-form-urlencoded"</span><span class="pun">);</span></li><li class="L4"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">send</span><span class="pun">(</span><span class="str">"username=vivian"</span><span class="pun">);</span></li></ol></pre></div><h3>Notes on readyState 3</h3><p>Data is being received from the server.<strong>readyState 3</strong> differs somewhat in Firefox and Internet Explorer. Firefox invokes the <code>onreadystatechange</code> handler multiple times in <strong>readyState 3</strong>, to provide download progress feedback. A script might use these multiple invocations to display a progress indicator to the user. Internet Explorer, on the other hand, interprets the event handler name strictly, and invokes it only when the readyState value actualy changes. This means that it is invoked only once for readyState 3, no matter how large downloaded document is.</p><h2>Time Out a Request</h2><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> timer </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span></li><li class="L1"><span class="kwd">var</span><span class="pln"> timeout </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1000</span><span class="pun">;</span></li><li class="L2"><span class="kwd">var</span><span class="pln"> xmlHttpRequest </span><span class="pun">=</span><span class="pln"> window</span><span class="pun">.</span><span class="typ">ActiveXObject</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActiveXObject</span><span class="pun">(</span><span class="str">"Microsoft.XMLHTTP"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">XMLHttpRequest</span><span class="pun">();</span></li><li class="L3"><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">timeout</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">timer</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">    clearTimeout</span><span class="pun">(</span><span class="pln">timer</span><span class="pun">);</span></li><li class="L6"><span class="pln">  </span><span class="pun">}</span></li><li class="L7"><span class="pln">  timer </span><span class="pun">=</span><span class="pln"> setTimeout</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(){</span></li><li class="L8"><span class="pln">    xmlHttpRequest</span><span class="pun">.</span><span class="pln">abort</span><span class="pun">();</span></li><li class="L9"><span class="pln">  </span><span class="pun">},</span><span class="pln"> timeout</span><span class="pun">);</span></li><li class="L0"><span class="pun">}</span></li><li class="L1"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">onreadystatechange </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">readyState </span><span class="pun">!=</span><span class="pln"> </span><span class="lit">4</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">    </span><span class="com">// Start to progress</span></li><li class="L4"><span class="pln">  </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// The server&#39;s response is complete.</span></li><li class="L5"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">timer</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">      clearTimeout</span><span class="pun">(</span><span class="pln">timer</span><span class="pun">);</span></li><li class="L7"><span class="pln">    </span><span class="pun">}</span></li><li class="L8"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">status </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> xmlHttpRequest</span><span class="pun">.</span><span class="pln">status </span><span class="pun">==</span><span class="pln"> </span><span class="lit">200</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">        callback</span><span class="pun">(</span><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">responseText</span><span class="pun">);</span></li><li class="L0"><span class="pln">    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">      </span><span class="com">// Error</span></li><li class="L2"><span class="pln">    </span><span class="pun">}</span></li><li class="L3"><span class="pln">  </span><span class="pun">}</span></li><li class="L4"><span class="pun">}</span></li><li class="L5"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="str">"POST"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"query.php"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></li><li class="L6"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">setRequestHeader</span><span class="pun">(</span><span class="str">"Content-Type"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"application/x-www-form-urlencoded"</span><span class="pun">);</span></li><li class="L7"><span class="pln">xmlHttpRequest</span><span class="pun">.</span><span class="pln">send</span><span class="pun">(</span><span class="str">"username=vivian"</span><span class="pun">);</span></li></ol></pre></div><h2>Prevent Caching for Internet Explorer</h2><p>By appending the julian day number to the end of the URL(?timestamp=123412341234), we effectively make each call unique and that means Internet Explorer will not cache the Ajax call as it is wont to do.</p><p><a class="demo-link" href="http://www.lingihuang.com/filemanage/examples/xmlhttprequest/index.html" target="_blank"><i class="glyphicon glyphicon-file"></i>View Demo</a></p><h2>Related Posts</h2><ul class="list">    <li><a href="http://www.w3.org/TR/XMLHttpRequest/" target="_blank">The XMLHttpRequest Object</a></li>    <li><a href="http://www.w3.org/TR/XMLHttpRequest2/" target="_blank">XMLHttpRequest Level 2</a></li>    <li><a href="http://www.w3.org/TR/access-control/" target="_blank">Access Control</a></li>    <li><a href="http://www.hunlock.com/blogs/The_Ultimate_Ajax_Object" target="_blank">The Ultimate AJAX Object</a></li></ul></div>
+    </div>
+    <div class="entry-footer">
+        <p class="article-modify-author">This post was last modified by
+            <span>Lingi Huang</span>
+            <time datetime="2015-07-14T09:26:55+08:00" class="article-modify-time">2015/07/14</time>
+        </p>
+
+        
+    <ul class="share-btn-wrap">
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.lingihuang.com/docs-blog/article-9" class="shareBtn" title="share" rel="nofollow"></a></li>
+        <li>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https://www.lingihuang.com/docs-blog/article-9" scrolling="no" frameborder="0"
+                style="border:none; width:450px; height:80px"></iframe>
+        </li>
+    </ul>
+
+
+
+        
+    </div>
+    
+    
+        <br />
+        <ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1449650742587459"
+     data-ad-slot="2197220184"></ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1449650742587459",
+          enable_page_level_ads: true
+     });
+</script>
+    
+
+</div>
+
+        
+            
+    </div>
+    
+
+            
+    <div class="sidebar">
+        
+                
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">JavaScript 相關</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">Web Development 相關</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-37-CSS-Selectors.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_37&quot;}'>CSS Selectors </a></li>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-5-Stack-Order.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_5&quot;}'>Stack Order </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">類別 JavaScript</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+    </ul>
+</div>
+
+
+        
+                
+
+
+        
+            
+    </div>
+    
+        
+</div>
+
+
+
+    
+
+            
+<div class="bottom-footer">
+    <ul class="nav">
+        
+        <li >
+            <a href="../AboutMe.html">About Me</a>
+        </li>
+        
+        <li >
+            <a href="../Recipes.html">Recipes</a>
+        </li>
+        
+        <li class="active">
+            <a href="../docs-cate.html">Web</a>
+        </li>
+        
+
+        <li>
+            <a href="http://www.puritys.me/">puritys.me</a>
+        </li>
+        <li>
+            <a href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html">VIVIAN CRAP</a>
+        </li>
+        
+    </ul>
+    <p>Copyright &amp;copy; 2014 LINGIHUANG.COM. All rights reserved.</p>
+</div>
+
+
+            
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+
+
+        
+</body>
+    <script src="../templates/static/js/files%3Fsidebar.js&amp;ezHTML_main.js&amp;%3Fv=20180416-2"></script>
+</html>

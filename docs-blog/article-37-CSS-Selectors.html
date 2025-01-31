@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M3BFP5');</script>
+    <!-- End Google Tag Manager -->
+
+    <link href="../templates/static/css/files%3Fdefault.less&amp;other.less&amp;ezHTML.less&amp;%3Fv=20180416-2.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js?v=20180416-2"></script>
+    <script src="../templates/static/js/files%3FlightHttp-simple-min.js&amp;default.js&amp;facebookAPI.js&amp;form_check.js&amp;util.js&amp;listAutoLoadMore.js&amp;%3Fv=20180416-2"></script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en" />
+    <meta name="author" content="lingihuang" />
+    <title>CSS Selectors</title>
+    <meta name="keywords" content="CSS, Web Design, Web Development" />
+    <meta name="description" content="CSS SpecificityStart at 0, add 1000 for style attribute, add 100 for each ID, add 10 for each attribute, class or pseudo-class, add 1 for each element name or pseudo-element. So in the speci" />
+    <meta property="fb:app_id" content="160015347378316" />
+    <meta property="fb:admins" content="1140660203"/>
+    
+
+    <link rel="shortcut icon" href="../templates/static/images/favicon_vivian.ico" /> 
+    
+
+    <link rel="canonical" href="https://www.lingihuang.com/docs-blog/article-37-CSS-Selectors.html"/>
+    
+
+
+    <link rel="amphtml" href="https://www.lingihuang.com/docs-blog-amp/article-37-CSS-Selectors.html"/>
+    
+
+    <link rel="dns-prefetch" href="apis.google.com.html">
+        <link rel="dns-prefetch" href="ajax.googleapis.com.html">
+        <link rel="dns-prefetch" href="connect.facebook.net.html">
+        <link rel="dns-prefetch" href="www.google-analytics.com.html">
+        <link rel="dns-prefetch" href="www.lingihuang.com.html">
+        
+
+<!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "https://www.lingihuang.com",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "https://www.lingihuang.com/search?searchText={search_term_string}",
+     "query-input": "required name=search_term_string"
+   }
+}
+    </script>
+
+
+
+
+
+
+
+</head>
+<body>
+
+            
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3BFP5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+            
+<div class="settings">
+    
+        <script>var WRT="https://www.lingihuang.com/";</script>
+    
+</div>
+
+
+            
+<div class="header">
+    <div class="top-header">
+        <div class="main">
+        <a class="logo" href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html"><img src="../templates/static/images/logo_vivian.png" alt="Vivian Crap" title="Vivian Crap"></a>
+        <a class="navbar-btn" href="article-37-CSS-Selectors.html#"><span class="icon"></span></a>
+        </div>
+        <ul class="navbar">
+             
+            <li >
+                <a href="../AboutMe.html" data-ga='{"action":"menu_click","label":"About Me"}'>About Me</a>
+            </li>
+             
+            <li >
+                <a href="../Recipes.html" data-ga='{"action":"menu_click","label":"Recipes"}'>Recipes</a>
+            </li>
+             
+            <li class="active">
+                <a href="../docs-cate.html" data-ga='{"action":"menu_click","label":"Web"}'>Web</a>
+            </li>
+            
+        </ul>
+        <form action="http://www.lingihuang.com/search" class="navbar-form">
+            <input type="text" name="searchText" placeholder="Input your keyword" value="">
+            <i class="glyphicon glyphicon-search"></i>
+        </form>
+    </div>
+</div>
+
+
+        
+
+        
+<div class="body-content">
+    
+            
+    <div class="main">
+        
+                
+<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> 
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a href="https://www.lingihuang.com" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+            <em><span itemprop="name">Home</span></em>
+        </a>
+        <meta itemprop="position" content="1" />
+    </li>
+    
+        
+            <li  itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem">
+                <a href="../docs-cate/CSS.html" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+                    <em><span itemprop="name">CSS</span></em>
+                </a>
+                <meta itemprop="position" content="2" />
+            </li>
+        
+    
+        
+            <li class="active">
+                <a href="https://www.lingihuang.com/docs-blog/article-37">
+                    <em><span>CSS Selectors</span></em>
+                </a>
+            </li>
+        
+    
+</ul>
+
+        
+                
+
+
+<script type="application/ld+json">
+    {"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lingihuang.com\/docs-blog\/article-37-CSS-Selectors.html"},"headline":"CSS Selectors","image":"","datePublished":"2014-03-27T14:53:22+08:00","dateModified":"2015-06-01T23:35:33+08:00","author":{"@type":"Person","name":"Lingi Huang"},"publisher":{"@type":"Organization","name":"www.lingihuang.com","logo":{"@type":"ImageObject","url":"https:\/\/www.lingihuang.com\/templates\/static\/images\/favicon_vivian.ico"}},"description":"CSS Specificity\rStart at 0, add 1000 for style attribute, add 100 for each ID, add 10 for each attri"}
+</script>
+
+
+<div class="entry">
+   <div class="entry-header">
+        
+        <div class="date">
+            <div class="year">2014</div>
+            <div class="month">Mar</div>
+            <div class="day">27</div>
+        </div>
+
+        
+        <div class="title">
+            <h1><a href="article-37-CSS-Selectors.html"><span>CSS Selectors</span></a></h1>
+            <div class="sub">
+                <div class="caption">Tags:</div>
+                <ul class="labels">
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=CSS.html">CSS</a>
+                    </li>
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=Web%20Design.html">Web Design</a>
+                    </li>
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=Web%20Development.html">Web Development</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="entry-body">
+        <div class="ezHTML-content"><h2>CSS Specificity</h2><p>Start at 0, add 1000 for style attribute, add 100 for each ID, add 10 for each attribute, class or pseudo-class, add 1 for each element name or pseudo-element. So in the specificity value below would be 122 (0,1,2,2 or 0122): 100 for #content, 10 for .data, 10 for :hover, 1 for body and 1 for img.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pln">body </span><span class="pun">#</span><span class="pln">content </span><span class="pun">.</span><span class="pln">data </span><span class="kwd">img</span><span class="pun">:</span><span class="pln">hover</span></li></ol></pre></div><ul class="list">	<li>The first digit (a) is always zero, unless there is a <strong>inline style</strong> attribute applied to that element.</li>	<li>The second digit (b) is the sum of the number of <strong>IDs</strong> in that selector.</li>	<li>The third digit (c) is the sum of the number of <strong>classes</strong>, <strong>attributes</strong> (like input[type="text"]), and <strong>pseudo-classes</strong> (like :hover) in that selector.</li>	<li>The fourth digit (d) counts the <strong>elements</strong> (like table, p, div, etc.) and <strong>pseudo-elements</strong> (like :before, :after, etc.).</li>	<li>The universal selector (*) has a specificity of zero.</li>	<li>If two selectors have the same specificity, the one that comes last on the stylesheet will be applied.</li></ul><h2>CSS Selectors</h2><h3>Universal Selectors</h3><h4>*</h4><p>The star symbol will target every single element on the page.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">*</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">margin</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span></li><li class="L2"><span class="pln">   </span><span class="kwd">padding</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span></li><li class="L3"><span class="pun">}</span></li></ol></pre></div><p>The * can also be used with child selectors.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">#</span><span class="pln">container </span><span class="pun">*</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> gray</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE6+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h3>ID Selectors</h3><h4>#selector</h4><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">#</span><span class="pln">container </span><span class="pun">*</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">margin</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> auto</span><span class="pun">;</span></li><li class="L2"><span class="pln">   </span><span class="kwd">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">960px</span><span class="pun">;</span></li><li class="L3"><span class="pun">}</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE6+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h3>Class Selectors</h3><h4>.selector</h4><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">.</span><span class="pln">error </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> red</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE6+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h3>Attribute Selectors</h3><h4>[att=value]</h4><p>The attribute has to have the exact value specified.</p><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE7+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>[att~=value]</h4><p>The attribute&#39;s value needs to be a whitespace separated list of words.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pln">div</span><span class="pun">[</span><span class="pln">class</span><span class="pun">=</span><span class="str">"container bordered"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">border</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1px</span><span class="pln"> solid </span><span class="lit">#333</span><span class="pun">;</span><span class="pln">   </span></li><li class="L2"><span class="pun">}</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE7+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>[att|=value]</h4><p>The attribute&#39;s value is exactly value or starts with the word value and is immediately followed by <strong>-</strong>, so it would be "value-".</p><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE7+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>[att^=value]</h4><p>The attribute&#39;s value starts with the specified value.</p><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE7+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>[att$=value]</h4><p>The attribute&#39;s value ends with the specified value.</p><div class="codeBlock"><span class="title"> File Type Icon</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="com">/*******************</span></li><li class="L1"><span class="com">Add a different icon next to each different type of file.</span></li><li class="L2"><span class="com">*******************/</span></li><li class="L3"><span class="pln">a</span><span class="pun">[</span><span class="pln">href</span><span class="pun">$=</span><span class="str">".jpg"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">   </span><span class="kwd">background</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">url</span><span class="pun">(</span><span class="str">jpeg.gif</span><span class="pun">)</span><span class="pln"> no-repeat left </span><span class="lit">50%</span><span class="pun">;</span></li><li class="L5"><span class="pln">   </span><span class="kwd">padding</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2px</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="lit">2px</span><span class="pln"> </span><span class="lit">20px</span><span class="pun">;</span></li><li class="L6"><span class="pun">}</span></li><li class="L7"><span class="pln">   </span></li><li class="L8"><span class="pln">a</span><span class="pun">[</span><span class="pln">href</span><span class="pun">$=</span><span class="str">".pdf"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">   </span><span class="kwd">background</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">url</span><span class="pun">(</span><span class="str">pdf.gif</span><span class="pun">)</span><span class="pln"> no-repeat left </span><span class="lit">50%</span><span class="pun">;</span></li><li class="L0"><span class="pln">   </span><span class="kwd">padding</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2px</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="lit">2px</span><span class="pln"> </span><span class="lit">20px</span><span class="pun">;</span></li><li class="L1"><span class="pun">}</span></li><li class="L2"><span class="pln">   </span></li><li class="L3"><span class="pln">a</span><span class="pun">[</span><span class="pln">href</span><span class="pun">$=</span><span class="str">".doc"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">   </span><span class="kwd">background</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">url</span><span class="pun">(</span><span class="str">word.gif</span><span class="pun">)</span><span class="pln"> no-repeat left </span><span class="lit">50%</span><span class="pun">;</span></li><li class="L5"><span class="pln">   </span><span class="kwd">padding</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2px</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="lit">2px</span><span class="pln"> </span><span class="lit">20px</span><span class="pun">;</span></li><li class="L6"><span class="pun">}</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE7+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>[att*=value]</h4><p>The attribute&#39;s value contains the specified value.</p><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE7+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>input[type="text"]</h4><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE7+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h3>Child Selectors</h3><h4>.parent-selector > .child-selector</h4><p>It allows you to target elements that are direct children of a particular element.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">.</span><span class="pln">container </span><span class="pun">&gt;</span><span class="pln"> p </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> </span><span class="lit">#333</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE7+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h3>Sibling Combinators</h3><h4>Adjacent Sibling Combinator: selector + selector</h4><p>The elements in the selector have <strong>the same parent</strong>, and <strong>the second one must come immediately after the first</strong>.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">.</span><span class="pln">container p </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> black</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pun">.</span><span class="pln">container h4 </span><span class="pun">+</span><span class="pln"> p </span><span class="pun">{</span></li><li class="L4"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> red</span><span class="pun">;</span></li><li class="L5"><span class="pun">}</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"container"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L3"><span class="pln">   </span><span class="tag">&lt;h4&gt;</span><span class="pln">Heading</span><span class="tag">&lt;/h4&gt;</span></li><li class="L4"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L5"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L6"><span class="tag">&lt;/div&gt;</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE7+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>General Sibling Combinator: selector ~ selector</h4><p>The elements in the selector have <strong>the same parent</strong>, and <strong> the second selector doesn&#39;t have to immediately follow the first one</strong>.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">.</span><span class="pln">container p </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> black</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pun">.</span><span class="pln">container h4 </span><span class="pun">~</span><span class="pln"> p </span><span class="pun">{</span></li><li class="L4"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> red</span><span class="pun">;</span></li><li class="L5"><span class="pun">}</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"container"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L3"><span class="pln">   </span><span class="tag">&lt;h4&gt;</span><span class="pln">Heading</span><span class="tag">&lt;/h4&gt;</span></li><li class="L4"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L5"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L6"><span class="tag">&lt;/div&gt;</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE7+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h3>Pseudo-classes</h3><h4>Dynamic Pseudo-classes</h4><p>There are two types of dynamic pseudo-classes: <strong>link</strong> and <strong>user action</strong> ones. The link are <code>:link</code> and <code>:visited</code>, while the user action ones are <code>:hover</code>, <code>:active</code> and <code>:focus</code>.</p><p><strong>IE6 only allows the :hover pseudo-class to be applied to link elements (a)</strong> and <strong>only IE8 accepts the :active state on elements other than links</strong>.</p><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE6+ (IE6 only allows the :hover pseudo-class)</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>selector:first-child</h4><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE7+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>The Language Pseudo-class :lang()</h4><p>It allows you to match an element based on its language.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">:</span><span class="pln">lang</span><span class="pun">(</span><span class="pln">en</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> a</span><span class="pun">#</span><span class="pln">flag </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">background-image</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">url</span><span class="pun">(</span><span class="str">english.gif</span><span class="pun">);</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pun">:</span><span class="pln">lang</span><span class="pun">(</span><span class="pln">fr</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> a</span><span class="pun">#</span><span class="pln">flag </span><span class="pun">{</span></li><li class="L5"><span class="pln">   </span><span class="kwd">background-image</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">url</span><span class="pun">(</span><span class="str">french.gif</span><span class="pun">);</span></li><li class="L6"><span class="pun">}</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE8+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h3>CSS 3 Pseudo-classes</h3><h4>:target</h4><h4>The UI Element States Pseudo-classes</h4><p>Some HTML elements have an enable or disabled state (for example, input fields) and checked or unchecked states (radio buttons and checkboxes). These states can be targeted by the <code>:enabled</code>, <code>:disabled</code> or <code>:checked</code> pseudo-classes, respectively.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="kwd">input</span><span class="pun">:</span><span class="pln">disabled </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">background</span><span class="pun">:</span><span class="pln"> </span><span class="lit">#eee</span><span class="pun">;</span></li><li class="L2"><span class="pln">   </span><span class="kwd">border</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1px</span><span class="pln"> solid </span><span class="lit">#ccc</span><span class="pun">;</span></li><li class="L3"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> </span><span class="lit">#666</span><span class="pun">;</span></li><li class="L4"><span class="pun">}</span></li><li class="L5"><span class="pln">&nbsp;</span></li><li class="L6"><span class="pln">input</span><span class="pun">[</span><span class="pln">type</span><span class="pun">=</span><span class="str">"checkbox"</span><span class="pun">]:</span><span class="pln">checked </span><span class="pun">{</span></li><li class="L7"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> red</span><span class="pun">;</span></li><li class="L8"><span class="pun">}</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE9+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h3>CSS 3 Structural Pseudo-classes</h3><h4>selector:nth-child(n)</h4><p>The <code>:nth-child(n)</code> pseudo-class allows you to <strong>target one or more specific children of a parent element</strong>.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">.</span><span class="pln">container p </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> black</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pun">.</span><span class="pln">container </span><span class="kwd">p</span><span class="pun">:</span><span class="pln">nth-child</span><span class="pun">(</span><span class="lit">2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> red</span><span class="pun">;</span></li><li class="L6"><span class="pun">}</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"container"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L3"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L4"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L5"><span class="tag">&lt;div&gt;</span></li></ol></pre></div><p>In this case, the third and sixth p elements will be red color.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">.</span><span class="pln">container p </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> black</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="com">/*******************</span></li><li class="L5"><span class="com">The following expression will match every third p element starting from the first p element.</span></li><li class="L6"><span class="com">*******************/</span></li><li class="L7"><span class="pun">.</span><span class="pln">container </span><span class="kwd">p</span><span class="pun">:</span><span class="pln">nth-child</span><span class="pun">(</span><span class="lit">3n</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> red</span><span class="pun">;</span></li><li class="L9"><span class="pun">}</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"container"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L3"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L4"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L5"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L6"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L7"><span class="tag">&lt;div&gt;</span></li></ol></pre></div><p>In this case, every third p elements will be red color starting from the second p element.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">.</span><span class="pln">container p </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> black</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="com">/*******************</span></li><li class="L5"><span class="com">The following expression will match every third p element starting from the second.</span></li><li class="L6"><span class="com">*******************/</span></li><li class="L7"><span class="pun">.</span><span class="pln">container </span><span class="kwd">p</span><span class="pun">:</span><span class="pln">nth-child</span><span class="pun">(</span><span class="lit">3n</span><span class="pun">+</span><span class="lit">2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> red</span><span class="pun">;</span></li><li class="L9"><span class="pun">}</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"container"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L3"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L4"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L5"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L6"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L7"><span class="tag">&lt;div&gt;</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">.</span><span class="pln">container p </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> black</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pun">.</span><span class="pln">container </span><span class="kwd">p</span><span class="pun">:</span><span class="pln">nth-child</span><span class="pun">(-</span><span class="pln">n</span><span class="pun">+</span><span class="lit">4</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> red</span><span class="pun">;</span></li><li class="L6"><span class="pun">}</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"container"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L3"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L4"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L5"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L6"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L7"><span class="tag">&lt;div&gt;</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">.</span><span class="pln">container p </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> black</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pun">.</span><span class="pln">container </span><span class="kwd">p</span><span class="pun">:</span><span class="pln">nth-child</span><span class="pun">(</span><span class="pln">even</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> red</span><span class="pun">;</span></li><li class="L6"><span class="pun">}</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"container"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L3"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L4"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L5"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L6"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L7"><span class="tag">&lt;div&gt;</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Firefox 3.5+</td>			<td>IE9+</td>			<td>No</td>			<td>Yes</td>		</tr>	</tbody></table><h4>selector:nth-last-child(n)</h4><p>The <code>:nth-last-child(n)</code> pseudo-class works basically as the <code>:nth-child(n)</code> pseudo-class, but it <strong>starts counting the elements from the last one</strong>.</p><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Firefox 3.5+</td>			<td>IE9+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>selector:nth-of-type(n)</h4><p>The <code>:nth-of-type(n)</code> pseudo-class works just like the <code>:nth-child(n)</code>, with the difference that <strong>it only counts children that match the element in the selector</strong>.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">.</span><span class="pln">container p </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> black</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pun">.</span><span class="pln">container </span><span class="kwd">p</span><span class="pun">:</span><span class="pln">nth-child</span><span class="pun">(</span><span class="lit">2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> red</span><span class="pun">;</span><span class="pln"> </span><span class="com">/* It doesn&#39;t work. */</span></li><li class="L6"><span class="pun">}</span></li><li class="L7"><span class="pln">&nbsp;</span></li><li class="L8"><span class="pun">.</span><span class="pln">container </span><span class="kwd">p</span><span class="pun">:</span><span class="pln">nth-of-type</span><span class="pun">(</span><span class="lit">2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> red</span><span class="pun">;</span></li><li class="L0"><span class="pun">}</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"container"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;h4&gt;</span><span class="pln">I am title.</span><span class="tag">&lt;/h4&gt;</span></li><li class="L3"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L4"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L5"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L6"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L7"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am black color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L8"><span class="tag">&lt;div&gt;</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Firefox 3.5+</td>			<td>IE9+</td>			<td>No</td>			<td>Yes</td>		</tr>	</tbody></table><h4>selector:nth-last-of-type(n)</h4><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Firefox 3.5+</td>			<td>IE9+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>selector:last-child</h4><p>The <code>:last-child</code> pseudo-class targets the last child of a parent element.</p><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE9+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>selector:only-child</h4><p>The <code>:only-child</code> pseudo-class represents an element that is the only child of its parent.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">.</span><span class="pln">container </span><span class="kwd">p</span><span class="pun">:</span><span class="pln">only-child </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> red</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"container"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;p&gt;</span><span class="pln">I am red color.</span><span class="tag">&lt;/p&gt;</span></li><li class="L2"><span class="tag">&lt;/div&gt;</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE9+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>selector:first-of-type, :last-of-type</h4><p>The <code>:first-of-type</code> pseudo-class is used to target an element that is the first of its type within its parent.</p><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Firefox 3.5+</td>			<td>IE9+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>selector:only-of-type</h4><p>The <code>:only-of-type</code> pseudo-class represents an element that is the only child of its parent with the same element.</p><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Firefox 3.5+</td>			<td>IE9+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>:empty</h4><p>The <code>:empty</code> pseudo-class represents an element that has no content within it.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">.</span><span class="pln">container </span><span class="pun">.</span><span class="kwd">content</span><span class="pun">:</span><span class="pln">empty </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">display</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li></ol></pre></div><h3>The Negation Pseudo-class</h3><h4>selector:not(selector)</h4><p>The negation pseudo-class, :not(), lets you target elements that do not match the selector that is represented by its argument.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="kwd">div</span><span class="pun">:</span><span class="pln">not</span><span class="pun">(#</span><span class="pln">container</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> red</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE9+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h3>Pseudo-elements</h3><h4>selector:before, selector:after</h4><p>The <code>:before</code> and <code>:after</code> pseudo-elements are used to insert content before or after an element&#39;s content, purely via CSS.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">#</span><span class="pln">container ol </span><span class="pun">&gt;</span><span class="pln"> </span><span class="kwd">li</span><span class="pun">:</span><span class="pln">before </span><span class="pun">{</span></li><li class="L1"><span class="pln">   </span><span class="kwd">background</span><span class="pun">:</span><span class="pln"> </span><span class="lit">#333</span><span class="pun">;</span></li><li class="L2"><span class="pln">   </span><span class="kwd">border-radius</span><span class="pun">:</span><span class="pln"> </span><span class="lit">20px</span><span class="pun">;</span></li><li class="L3"><span class="pln">   </span><span class="kwd">color</span><span class="pun">:</span><span class="pln"> </span><span class="lit">#fff</span><span class="pun">;</span></li><li class="L4"><span class="pln">   </span><span class="kwd">content</span><span class="pun">:</span><span class="pln"> counter</span><span class="pun">(</span><span class="pln">li</span><span class="pun">);</span></li><li class="L5"><span class="pln">   </span><span class="kwd">counter-increment</span><span class="pun">:</span><span class="pln"> li</span><span class="pun">;</span></li><li class="L6"><span class="pln">   </span><span class="kwd">height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">20px</span><span class="pun">;</span></li><li class="L7"><span class="pln">   </span><span class="kwd">left</span><span class="pun">:</span><span class="pln"> </span><span class="pun">-</span><span class="lit">25px</span><span class="pun">;</span></li><li class="L8"><span class="pln">   </span><span class="kwd">position</span><span class="pun">:</span><span class="pln"> absolute</span><span class="pun">;</span></li><li class="L9"><span class="pln">   </span><span class="kwd">top</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1px</span><span class="pun">;</span></li><li class="L0"><span class="pln">   </span><span class="kwd">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">20px</span><span class="pun">;</span></li><li class="L1"><span class="pun">}</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">.</span><span class="kwd">clearfix</span><span class="pun">:</span><span class="pln">before</span><span class="pun">,</span></li><li class="L1"><span class="pun">.</span><span class="kwd">clearfix</span><span class="pun">:</span><span class="pln">after </span><span class="pun">{</span></li><li class="L2"><span class="pln">   </span><span class="kwd">content</span><span class="pun">:</span><span class="pln"> </span><span class="str">" "</span><span class="pun">;</span></li><li class="L3"><span class="pln">   </span><span class="kwd">display</span><span class="pun">:</span><span class="pln"> table</span><span class="pun">;</span></li><li class="L4"><span class="pun">}</span></li><li class="L5"><span class="pun">.</span><span class="kwd">clearfix</span><span class="pun">:</span><span class="pln">after </span><span class="pun">{</span></li><li class="L6"><span class="pln">   </span><span class="kwd">clear</span><span class="pun">:</span><span class="pln"> both</span><span class="pun">;</span></li><li class="L7"><span class="pun">}</span></li></ol></pre></div><p>Browser Compatibility</p><table class="table">	<thead>		<tr>			<th>Chrome</th>			<th>Firefox</th>			<th>IE</th>			<th>Opera</th>			<th>Safari</th>		</tr>	</thead>	<tbody>		<tr>			<td>Yes</td>			<td>Yes</td>			<td>IE6+</td>			<td>Yes</td>			<td>Yes</td>		</tr>	</tbody></table><h4>selector::first-letter</h4><p>The <code>::first-letter</code> pseudo-element will match <strong>the first letter of a block</strong>, unless it&#39;s preceded by some other content, like an image, on the same line.</p><h4>selector::first-line</h4><p>The <code>::first-line</code> pseudo-element will match <strong>the first line of a block, inline-block, table-caption or table-cell level element</strong>.</p><h2>Related Posts</h2><ul class="list">	<li><a href="http://coding.smashingmagazine.com/2009/08/17/taming-advanced-css-selectors/" target="_blank">Taming Advanced CSS Selectors</a></li>	<li><a href="http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048" target="_blank">The 30 CSS Selectors You Must Memorize</a></li></ul></div>
+    </div>
+    <div class="entry-footer">
+        <p class="article-modify-author">This post was last modified by
+            <span>Lingi Huang</span>
+            <time datetime="2015-06-01T23:35:33+08:00" class="article-modify-time">2015/06/01</time>
+        </p>
+
+        
+    <ul class="share-btn-wrap">
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.lingihuang.com/docs-blog/article-37" class="shareBtn" title="share" rel="nofollow"></a></li>
+        <li>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https://www.lingihuang.com/docs-blog/article-37" scrolling="no" frameborder="0"
+                style="border:none; width:450px; height:80px"></iframe>
+        </li>
+    </ul>
+
+
+
+        
+    </div>
+    
+    
+        <br />
+        <ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1449650742587459"
+     data-ad-slot="2197220184"></ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1449650742587459",
+          enable_page_level_ads: true
+     });
+</script>
+    
+
+</div>
+
+        
+            
+    </div>
+    
+
+            
+    <div class="sidebar">
+        
+                
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">CSS 相關</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-2-Christmas,-Bon-Appetit.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_2&quot;}'>Christmas, Bon Appetit </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-4-Luncheon-with-Monet.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_4&quot;}'>Luncheon with Monet </a></li>
+    
+        <li><a href="article-5-Stack-Order.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_5&quot;}'>Stack Order </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-12-Spanish-Tapas.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_12&quot;}'>Spanish Tapas </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">Web Design 相關</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-6-Breadcrumb-Showcase.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_6&quot;}'>Breadcrumb Showcase </a></li>
+    
+        <li><a href="article-7-Pagination-Showcase.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_7&quot;}'>Pagination Showcase </a></li>
+    
+        <li><a href="article-8-2008-Design-Trends.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_8&quot;}'>2008 Design Trends </a></li>
+    
+        <li><a href="article-20-Choose-Color-Combinations.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_20&quot;}'>Choose Color Combinations </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">Web Development 相關</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-5-Stack-Order.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_5&quot;}'>Stack Order </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">類別 CSS</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-37-CSS-Selectors.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_37&quot;}'>CSS Selectors </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-5-Stack-Order.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_5&quot;}'>Stack Order </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+
+        
+                
+
+
+        
+            
+    </div>
+    
+        
+</div>
+
+
+
+    
+
+            
+<div class="bottom-footer">
+    <ul class="nav">
+        
+        <li >
+            <a href="../AboutMe.html">About Me</a>
+        </li>
+        
+        <li >
+            <a href="../Recipes.html">Recipes</a>
+        </li>
+        
+        <li class="active">
+            <a href="../docs-cate.html">Web</a>
+        </li>
+        
+
+        <li>
+            <a href="http://www.puritys.me/">puritys.me</a>
+        </li>
+        <li>
+            <a href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html">VIVIAN CRAP</a>
+        </li>
+        
+    </ul>
+    <p>Copyright &amp;copy; 2014 LINGIHUANG.COM. All rights reserved.</p>
+</div>
+
+
+            
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+
+
+        
+</body>
+    <script src="../templates/static/js/files%3Fsidebar.js&amp;ezHTML_main.js&amp;%3Fv=20180416-2"></script>
+</html>

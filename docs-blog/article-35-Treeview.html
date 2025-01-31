@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M3BFP5');</script>
+    <!-- End Google Tag Manager -->
+
+    <link href="../templates/static/css/files%3Fdefault.less&amp;other.less&amp;ezHTML.less&amp;%3Fv=20180416-2.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js?v=20180416-2"></script>
+    <script src="../templates/static/js/files%3FlightHttp-simple-min.js&amp;default.js&amp;facebookAPI.js&amp;form_check.js&amp;util.js&amp;listAutoLoadMore.js&amp;%3Fv=20180416-2"></script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en" />
+    <meta name="author" content="lingihuang" />
+    <title>Treeview</title>
+    <meta name="keywords" content="JavaScript, jQuery, Web Development" />
+    <meta name="description" content=" OverviewBased on the library bootstrap model and jstree, I built the library Treeview to select a file from the file cabinet and do copy or move.Getting StartedStep 1: Include CSS and JavaS" />
+    <meta property="fb:app_id" content="160015347378316" />
+    <meta property="fb:admins" content="1140660203"/>
+    
+
+    <link rel="shortcut icon" href="../templates/static/images/favicon_vivian.ico" /> 
+    
+
+    <link rel="canonical" href="https://www.lingihuang.com/docs-blog/article-35-Treeview.html"/>
+    
+
+
+    <link rel="amphtml" href="https://www.lingihuang.com/docs-blog-amp/article-35-Treeview.html"/>
+    
+
+    <link rel="dns-prefetch" href="apis.google.com.html">
+        <link rel="dns-prefetch" href="ajax.googleapis.com.html">
+        <link rel="dns-prefetch" href="connect.facebook.net.html">
+        <link rel="dns-prefetch" href="www.google-analytics.com.html">
+        <link rel="dns-prefetch" href="www.lingihuang.com.html">
+        
+
+<!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "https://www.lingihuang.com",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "https://www.lingihuang.com/search?searchText={search_term_string}",
+     "query-input": "required name=search_term_string"
+   }
+}
+    </script>
+
+
+
+
+
+
+
+</head>
+<body>
+
+            
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3BFP5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+            
+<div class="settings">
+    
+        <script>var WRT="https://www.lingihuang.com/";</script>
+    
+</div>
+
+
+            
+<div class="header">
+    <div class="top-header">
+        <div class="main">
+        <a class="logo" href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html"><img src="../templates/static/images/logo_vivian.png" alt="Vivian Crap" title="Vivian Crap"></a>
+        <a class="navbar-btn" href="article-35-Treeview.html#"><span class="icon"></span></a>
+        </div>
+        <ul class="navbar">
+             
+            <li >
+                <a href="../AboutMe.html" data-ga='{"action":"menu_click","label":"About Me"}'>About Me</a>
+            </li>
+             
+            <li >
+                <a href="../Recipes.html" data-ga='{"action":"menu_click","label":"Recipes"}'>Recipes</a>
+            </li>
+             
+            <li class="active">
+                <a href="../docs-cate.html" data-ga='{"action":"menu_click","label":"Web"}'>Web</a>
+            </li>
+            
+        </ul>
+        <form action="http://www.lingihuang.com/search" class="navbar-form">
+            <input type="text" name="searchText" placeholder="Input your keyword" value="">
+            <i class="glyphicon glyphicon-search"></i>
+        </form>
+    </div>
+</div>
+
+
+        
+
+        
+<div class="body-content">
+    
+            
+    <div class="main">
+        
+                
+<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> 
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a href="https://www.lingihuang.com" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+            <em><span itemprop="name">Home</span></em>
+        </a>
+        <meta itemprop="position" content="1" />
+    </li>
+    
+        
+            <li  itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem">
+                <a href="../docs-cate/JavaScript.html" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+                    <em><span itemprop="name">JavaScript</span></em>
+                </a>
+                <meta itemprop="position" content="2" />
+            </li>
+        
+    
+        
+            <li class="active">
+                <a href="https://www.lingihuang.com/docs-blog/article-35">
+                    <em><span>Treeview</span></em>
+                </a>
+            </li>
+        
+    
+</ul>
+
+        
+                
+
+
+<script type="application/ld+json">
+    {"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lingihuang.com\/docs-blog\/article-35-Treeview.html"},"headline":"Treeview","image":"https:\/\/www.lingihuang.com\/filemanage\/images\/2014\/03\/treeview_single.jpg","datePublished":"2014-03-14T12:11:36+08:00","dateModified":"2015-07-14T09:40:48+08:00","author":{"@type":"Person","name":"Lingi Huang"},"publisher":{"@type":"Organization","name":"www.lingihuang.com","logo":{"@type":"ImageObject","url":"https:\/\/www.lingihuang.com\/templates\/static\/images\/favicon_vivian.ico"}},"description":" Overview\rBased on the library bootstrap model and jstree, I built the library Treeview to select a "}
+</script>
+
+
+<div class="entry">
+   <div class="entry-header">
+        
+        <div class="date">
+            <div class="year">2014</div>
+            <div class="month">Mar</div>
+            <div class="day">14</div>
+        </div>
+
+        
+        <div class="title">
+            <h1><a href="article-35-Treeview.html"><span>Treeview</span></a></h1>
+            <div class="sub">
+                <div class="caption">Tags:</div>
+                <ul class="labels">
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=JavaScript.html">JavaScript</a>
+                    </li>
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=jQuery.html">jQuery</a>
+                    </li>
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=Web%20Development.html">Web Development</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="entry-body">
+        <div class="ezHTML-content"> <h2>Overview</h2><p>Based on the library <a href="http://getbootstrap.com/javascript/#modals" target="_blank">bootstrap model</a> and <a href="http://www.jstree.com/" target="_blank">jstree</a>, I built the library Treeview to select a file from the file cabinet and do copy or move.</p><h2>Getting Started</h2><h3>Step 1: Include CSS and JavaScript of Libraries</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"../libraries/bootstrap-3.1.1/dist/css/bootstrap.css"</span><span class="tag">&gt;</span></li><li class="L1"><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"/static/css/common/miii-modals.css"</span><span class="tag">&gt;</span></li><li class="L2"><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"../libraries/jquery/jquery-1.10.1.js"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L3"><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"../libraries/bootstrap-3.1.1/dist/js/bootstrap.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L4"><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"../libraries/jstree-v.pre1.0/jquery.jstree.js"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L5"><span class="com">&lt;!-- jquery.nicescroll.js is optional. It&#39;s included for customzied scroll bar. --&gt;</span></li><li class="L6"><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"../libraries/jquery.nicescroll.340/jquery.nicescroll.js"</span><span class="tag">&gt;&lt;/script&gt;</span></li></ol></pre></div><h3>Step 2: Include CSS and JavaScript of Treeview</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"css/treeview.css"</span><span class="tag">&gt;</span></li><li class="L1"><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"js/treeview_lang.js"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L2"><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"js/treeview.js"</span><span class="tag">&gt;&lt;/script&gt;</span></li></ol></pre></div><h2>Samples</h2><h3>Select Single Directory</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> treeview </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Treeview</span><span class="pun">({</span></li><li class="L1"><span class="pln">    isDirOnly   </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span></li><li class="L2"><span class="pln">    isCreateDir </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span></li><li class="L3"><span class="pln">    isShow      </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span></li><li class="L4"><span class="pln">    title       </span><span class="pun">:</span><span class="pln"> </span><span class="str">"從檔案櫃選擇"</span><span class="pun">,</span></li><li class="L5"><span class="pln">    subtitle    </span><span class="pun">:</span><span class="pln"> </span><span class="str">"所有檔案櫃"</span><span class="pun">,</span></li><li class="L6"><span class="pln">    desc        </span><span class="pun">:</span><span class="pln"> </span><span class="str">"把資料搬移到："</span><span class="pun">,</span></li><li class="L7"><span class="pln">    buttonLabel </span><span class="pun">:</span><span class="pln"> </span><span class="str">"搬移"</span><span class="pun">,</span></li><li class="L8"><span class="pln">    langs       </span><span class="pun">:</span><span class="pln"> MIIICLOUD</span><span class="pun">.</span><span class="pln">lang</span><span class="pun">,</span></li><li class="L9"><span class="pln">    callback    </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">result</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L0"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">result</span><span class="pun">.</span><span class="pln">action </span><span class="pun">===</span><span class="pln"> </span><span class="str">"ok"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">            console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">result</span><span class="pun">.</span><span class="pln">selectedData</span><span class="pun">);</span></li><li class="L2"><span class="pln">            console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">result</span><span class="pun">.</span><span class="pln">createdData</span><span class="pun">);</span></li><li class="L3"><span class="pln">        </span><span class="pun">}</span></li><li class="L4"><span class="pln">    </span><span class="pun">}</span></li><li class="L5"><span class="pun">});</span></li></ol></pre></div><img src="../filemanage/images/2014/03/treeview_single.jpg"><h3>Select Multiple Files</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> treeview </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Treeview</span><span class="pun">({</span></li><li class="L1"><span class="pln">    gid         </span><span class="pun">:</span><span class="pln"> </span><span class="lit">14</span><span class="pun">,</span></li><li class="L2"><span class="pln">    isFileMulti </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span></li><li class="L3"><span class="pln">    title       </span><span class="pun">:</span><span class="pln"> </span><span class="str">"從檔案櫃選擇"</span><span class="pun">,</span></li><li class="L4"><span class="pln">    desc        </span><span class="pun">:</span><span class="pln"> </span><span class="str">"可勾選單一或多個檔案，然後再發佈於訊息牆中"</span><span class="pun">,</span></li><li class="L5"><span class="pln">    buttonLabel </span><span class="pun">:</span><span class="pln"> </span><span class="str">"確定"</span><span class="pun">,</span></li><li class="L6"><span class="pln">    isShow      </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span></li><li class="L7"><span class="pln">    langs       </span><span class="pun">:</span><span class="pln"> MIIICLOUD</span><span class="pun">.</span><span class="pln">lang</span><span class="pun">,</span></li><li class="L8"><span class="pln">    callback    </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">result</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">result</span><span class="pun">.</span><span class="pln">action </span><span class="pun">===</span><span class="pln"> </span><span class="str">"ok"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L0"><span class="pln">            console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">result</span><span class="pun">.</span><span class="pln">selectedData</span><span class="pun">);</span></li><li class="L1"><span class="pln">            console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">result</span><span class="pun">.</span><span class="pln">createdData</span><span class="pun">);</span></li><li class="L2"><span class="pln">        </span><span class="pun">}</span></li><li class="L3"><span class="pln">    </span><span class="pun">}</span></li><li class="L4"><span class="pun">});</span></li></ol></pre></div><img src="../filemanage/images/2014/03/treeview_multiple.jpg"><h3>Select Single File</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> treeview </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Treeview</span><span class="pun">({</span></li><li class="L1"><span class="pln">    isShow      </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span></li><li class="L2"><span class="pln">    title       </span><span class="pun">:</span><span class="pln"> </span><span class="str">"從檔案櫃選擇"</span><span class="pun">,</span></li><li class="L3"><span class="pln">    desc        </span><span class="pun">:</span><span class="pln"> </span><span class="str">"勾選一個檔案，然後開始編輯"</span><span class="pun">,</span></li><li class="L4"><span class="pln">    buttonLabel </span><span class="pun">:</span><span class="pln"> </span><span class="str">"確定"</span><span class="pun">,</span></li><li class="L5"><span class="pln">    langs       </span><span class="pun">:</span><span class="pln"> MIIICLOUD</span><span class="pun">.</span><span class="pln">lang</span><span class="pun">,</span></li><li class="L6"><span class="pln">    callback    </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">result</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">result</span><span class="pun">.</span><span class="pln">selectedData</span><span class="pun">);</span></li><li class="L8"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">result</span><span class="pun">.</span><span class="pln">createdData</span><span class="pun">);</span></li><li class="L9"><span class="pln">    </span><span class="pun">}</span></li><li class="L0"><span class="pun">});</span></li></ol></pre></div><p><a class="demo-link" href="http://www.lingihuang.com/filemanage/examples/treeview/index.html" target="_blank"><i class="glyphicon glyphicon-file"></i>View Demo</a></p><h2>Libraries</h2><h3>Bootstrap Modal HTML Markup</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"treeview-modal-1374552592089"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"modal fade"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"modal-dialog"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">        </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"modal-content"</span><span class="tag">&gt;</span></li><li class="L3"><span class="pln">            </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"modal-header"</span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">                </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"close"</span><span class="pln"> </span><span class="atn">data-dismiss</span><span class="pun">=</span><span class="atv">"modal"</span><span class="tag">&gt;&lt;i</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"icon-remove"</span><span class="tag">&gt;&lt;/i&gt;&lt;/a&gt;</span></li><li class="L5"><span class="pln">                </span><span class="tag">&lt;h3&gt;</span><span class="pln">Treeview</span><span class="tag">&lt;/h3&gt;</span></li><li class="L6"><span class="pln">            </span><span class="tag">&lt;/div&gt;</span></li><li class="L7"><span class="pln">            </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"modal-body"</span><span class="tag">&gt;</span></li><li class="L8"><span class="pln">                </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"miii-treeview"</span><span class="tag">&gt;</span></li><li class="L9"><span class="pln">                    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"empty hide"</span><span class="tag">&gt;</span></li><li class="L0"><span class="pln">                        </span><span class="tag">&lt;p</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"main"</span><span class="tag">&gt;&lt;/p&gt;</span></li><li class="L1"><span class="pln">                        </span><span class="tag">&lt;p&gt;&lt;/p&gt;</span></li><li class="L2"><span class="pln">                    </span><span class="tag">&lt;/div&gt;</span></li><li class="L3"><span class="pln">                    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"outer-content hide"</span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">                        </span><span class="tag">&lt;div&gt;</span></li><li class="L5"><span class="pln">                            </span><span class="tag">&lt;p</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"desc"</span><span class="tag">&gt;&lt;/p&gt;</span></li><li class="L6"><span class="pln">                            </span><span class="tag">&lt;p</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"msg hide"</span><span class="tag">&gt;&lt;/p&gt;</span></li><li class="L7"><span class="pln">                            </span><span class="tag">&lt;h4</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"pull-left"</span><span class="tag">&gt;&lt;/h4&gt;</span></li><li class="L8"><span class="pln">                            </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn pull-right hide"</span><span class="tag">&gt;</span><span class="pln">Create Folder</span><span class="tag">&lt;/button&gt;</span></li><li class="L9"><span class="pln">                        </span><span class="tag">&lt;/div&gt;</span></li><li class="L0"><span class="pln">                        </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"inner-content"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">                            </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"treeview-1374552592089"</span><span class="tag">&gt;&lt;/div&gt;</span></li><li class="L2"><span class="pln">                        </span><span class="tag">&lt;/div&gt;</span></li><li class="L3"><span class="pln">                    </span><span class="tag">&lt;/div&gt;</span></li><li class="L4"><span class="pln">                </span><span class="tag">&lt;/div&gt;</span></li><li class="L5"><span class="pln">            </span><span class="tag">&lt;/div&gt;</span></li><li class="L6"><span class="pln">            </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"modal-footer"</span><span class="tag">&gt;</span></li><li class="L7"><span class="pln">                </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-primary"</span><span class="tag">&gt;</span><span class="pln">Ok</span><span class="tag">&lt;/button&gt;</span></li><li class="L8"><span class="pln">            </span><span class="tag">&lt;/div&gt;</span></li><li class="L9"><span class="pln">        </span><span class="tag">&lt;/div&gt;</span></li><li class="L0"><span class="pln">    </span><span class="tag">&lt;/div&gt;</span></li><li class="L1"><span class="tag">&lt;/div&gt;</span></li></ol></pre></div><h3>jstree Config</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="pln">$</span><span class="pun">(</span><span class="str">&#39;#treeview-1374552592089&#39;</span><span class="pun">).</span><span class="pln">jstree</span><span class="pun">({</span></li><li class="L1"><span class="pln">    </span><span class="str">&#39;plugins&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span></li><li class="L2"><span class="pln">        </span><span class="str">&#39;themes&#39;</span><span class="pun">,</span><span class="pln"> </span><span class="str">&#39;json_data&#39;</span><span class="pun">,</span><span class="pln"> </span><span class="str">&#39;ui&#39;</span><span class="pun">,</span><span class="pln"> </span><span class="str">&#39;types&#39;</span><span class="pun">,</span><span class="pln"> </span><span class="str">&#39;crrm&#39;</span></li><li class="L3"><span class="pln">    </span><span class="pun">],</span></li><li class="L4"><span class="pln">    </span><span class="str">&#39;themes&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">        </span><span class="str">&#39;theme&#39;</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">&#39;miii&#39;</span><span class="pun">,</span></li><li class="L6"><span class="pln">        </span><span class="str">&#39;dots&#39;</span><span class="pln">  </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span></li><li class="L7"><span class="pln">        </span><span class="str">&#39;icons&#39;</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span></li><li class="L8"><span class="pln">    </span><span class="pun">},</span></li><li class="L9"><span class="pln">    </span><span class="str">&#39;ui&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L0"><span class="pln">        </span><span class="str">&#39;selected_parent_close&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="str">&#39;select_parent&#39;</span></li><li class="L1"><span class="pln">    </span><span class="pun">},</span></li><li class="L2"><span class="pln">    </span><span class="com">// This will prevent moving or creating any other type as a root node</span></li><li class="L3"><span class="pln">    </span><span class="str">&#39;valid_children&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">&#39;group&#39;</span><span class="pun">],</span></li><li class="L4"><span class="pln">    </span><span class="str">&#39;types&#39;</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">        </span><span class="com">// can have files and other folders inside of it</span></li><li class="L6"><span class="pln">        </span><span class="str">&#39;valid_children&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">&#39;group&#39;</span><span class="pun">],</span></li><li class="L7"><span class="pln">        </span><span class="str">&#39;types&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">            </span><span class="str">&#39;folder&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">                </span><span class="str">&#39;icon&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L0"><span class="pln">                    </span><span class="str">&#39;image&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="str">&#39;/static/lib/jstree-v.pre1.0/themes/miii/ico_folder.png&#39;</span></li><li class="L1"><span class="pln">                </span><span class="pun">}</span></li><li class="L2"><span class="pln">            </span><span class="pun">},</span></li><li class="L3"><span class="pln">            </span><span class="str">&#39;user-folder&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">                </span><span class="str">&#39;icon&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">                    </span><span class="str">&#39;image&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="str">&#39;/static/lib/jstree-v.pre1.0/themes/miii/ico_folder_user.png&#39;</span></li><li class="L6"><span class="pln">                </span><span class="pun">}</span></li><li class="L7"><span class="pln">            </span><span class="pun">}</span></li><li class="L8"><span class="pln">        </span><span class="pun">}</span></li><li class="L9"><span class="pln">    </span><span class="pun">},</span></li><li class="L0"><span class="pln">    </span><span class="str">&#39;json_data&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">        </span><span class="str">&#39;ajax&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">            </span><span class="str">&#39;url&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="str">&#39;/api/files/getFileList&#39;</span><span class="pun">,</span></li><li class="L3"><span class="pln">            </span><span class="str">&#39;correct_state&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span></li><li class="L4"><span class="pln">            </span><span class="com">// the `data` function is executed in the instance&#39;s scope</span></li><li class="L5"><span class="pln">            </span><span class="com">// the parameter is the node being loaded</span></li><li class="L6"><span class="pln">            </span><span class="com">// (may be -1, 0, or undefined when loading the root nodes)</span></li><li class="L7"><span class="pln">            </span><span class="str">&#39;data&#39;</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">n</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">                </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">n </span><span class="pun">===</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">                    </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span></li><li class="L0"><span class="pln">                        </span><span class="str">&#39;gid&#39;</span><span class="pln">        </span><span class="pun">:</span><span class="pln"> </span><span class="lit">14</span><span class="pun">,</span></li><li class="L1"><span class="pln">                        </span><span class="str">&#39;dironly&#39;</span><span class="pln">    </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span></li><li class="L2"><span class="pln">                        </span><span class="str">&#39;permission&#39;</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="com">// permission 1: viewable, permission 2: uploadable.</span></li><li class="L3"><span class="pln">                        </span><span class="str">&#39;format&#39;</span><span class="pln">     </span><span class="pun">:</span><span class="pln"> </span><span class="str">&#39;jstree&#39;</span><span class="pun">,</span></li><li class="L4"><span class="pln">                    </span><span class="pun">};</span></li><li class="L5"><span class="pln">                </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">                    </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">                        </span><span class="str">&#39;gid&#39;</span><span class="pln">        </span><span class="pun">:</span><span class="pln"> n</span><span class="pun">.</span><span class="pln">data</span><span class="pun">(</span><span class="str">&#39;gid&#39;</span><span class="pun">),</span></li><li class="L8"><span class="pln">                        </span><span class="str">&#39;path&#39;</span><span class="pln">       </span><span class="pun">:</span><span class="pln"> n</span><span class="pun">.</span><span class="pln">data</span><span class="pun">(</span><span class="str">&#39;path&#39;</span><span class="pun">),</span></li><li class="L9"><span class="pln">                        </span><span class="str">&#39;dironly&#39;</span><span class="pln">    </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span></li><li class="L0"><span class="pln">                        </span><span class="str">&#39;permission&#39;</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span></li><li class="L1"><span class="pln">                        </span><span class="str">&#39;format&#39;</span><span class="pln">     </span><span class="pun">:</span><span class="pln"> </span><span class="str">&#39;jstree&#39;</span></li><li class="L2"><span class="pln">                    </span><span class="pun">};</span></li><li class="L3"><span class="pln">                </span><span class="pun">}</span></li><li class="L4"><span class="pln">            </span><span class="pun">}</span></li><li class="L5"><span class="pln">        </span><span class="pun">}</span></li><li class="L6"><span class="pln">    </span><span class="pun">}</span></li><li class="L7"><span class="pun">});</span></li></ol></pre></div><h3>jstree Render HTML Markup</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"treeview-1374552592089"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"jstree jstree-0 jstree-focused jstree-miii"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">    </span><span class="tag">&lt;ul&gt;</span></li><li class="L2"><span class="pln">        </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">data-name</span><span class="pun">=</span><span class="atv">"@km"</span><span class="pln"> </span><span class="atn">data-gid</span><span class="pun">=</span><span class="atv">"14"</span><span class="pln"> </span><span class="atn">data-path</span><span class="pun">=</span><span class="atv">"/@km"</span><span class="pln"> </span><span class="atn">data-size</span><span class="pun">=</span><span class="atv">"4096"</span><span class="pln"> </span><span class="atn">data-crumb</span><span class="pun">=</span><span class="atv">"805802324b3a95c4e810450c586cdcac"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"folder jstree-closed jstree-unchecked"</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"user-folder"</span><span class="tag">&gt;</span></li><li class="L3"><span class="pln">            </span><span class="tag">&lt;ins</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"jstree-icon"</span><span class="tag">&gt;</span><span class="pln"> </span><span class="tag">&lt;/ins&gt;</span></li><li class="L4"><span class="pln">            </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#"</span><span class="tag">&gt;</span></li><li class="L5"><span class="pln">                </span><span class="tag">&lt;ins</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"jstree-checkbox"</span><span class="tag">&gt;</span><span class="pln"> </span><span class="tag">&lt;/ins&gt;</span></li><li class="L6"><span class="pln">                </span><span class="tag">&lt;ins</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"jstree-icon"</span><span class="tag">&gt;</span><span class="pln"> </span><span class="tag">&lt;/ins&gt;</span><span class="pln">知識庫的檔案</span></li><li class="L7"><span class="pln">            </span><span class="tag">&lt;/a&gt;</span></li><li class="L8"><span class="pln">        </span><span class="tag">&lt;/li&gt;</span></li><li class="L9"><span class="pln">        </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">data-name</span><span class="pun">=</span><span class="atv">"castro.jpg"</span><span class="pln"> </span><span class="atn">data-gid</span><span class="pun">=</span><span class="atv">"14"</span><span class="pln"> </span><span class="atn">data-path</span><span class="pun">=</span><span class="atv">"/USA Trip"</span><span class="pln"> </span><span class="atn">data-size</span><span class="pun">=</span><span class="atv">"130452"</span><span class="pln"> </span><span class="atn">data-crumb</span><span class="pun">=</span><span class="atv">""</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"file jstree-leaf jstree-unchecked"</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"user-folder"</span><span class="tag">&gt;</span></li><li class="L0"><span class="pln">            </span><span class="tag">&lt;ins</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"jstree-icon"</span><span class="tag">&gt;</span><span class="pln"> </span><span class="tag">&lt;/ins&gt;</span></li><li class="L1"><span class="pln">            </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">""</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">                </span><span class="tag">&lt;ins</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"jstree-checkbox"</span><span class="tag">&gt;</span><span class="pln"> </span><span class="tag">&lt;/ins&gt;</span></li><li class="L3"><span class="pln">                </span><span class="tag">&lt;ins</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"jstree-icon"</span><span class="tag">&gt;</span><span class="pln"> </span><span class="tag">&lt;/ins&gt;</span><span class="pln">castro.jpg</span></li><li class="L4"><span class="pln">            </span><span class="tag">&lt;/a&gt;</span></li><li class="L5"><span class="pln">        </span><span class="tag">&lt;/li&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;/ul&gt;</span></li><li class="L7"><span class="tag">&lt;/div&gt;</span></li></ol></pre></div><h2>API</h2><h3>Treeview Config</h3><table class="table">	<thead>		<tr>			<th>Parameter</th>			<th>Required</th>			<th>Type</th>			<th>Default</th>			<th>Description</th>		</tr>	</thead>	<tbody>		<tr>			<td>buttonLabel</td>			<td>No</td>			<td>String</td>			<td>Ok</td>			<td>Treeview button value.</td>		</tr>		<tr>			<td>callback</td>			<td>No</td>			<td>Function</td>			<td>function () {}</td>			<td>Function will be triggered when clicking on the ok button or hiding the treeview model.</td>		</tr>		<tr>			<td>desc</td>			<td>No</td>			<td>String</td>			<td>""</td>			<td>Treeview descriptions.</td>		</tr>		<tr>			<td>gid</td>			<td>No</td>			<td>Number</td>			<td>0</td>			<td>What directory to start getting data from?</td>		</tr>		<tr>			<td>isCreateDir</td>			<td>No</td>			<td>Boolean</td>			<td>false</td>			<td>To provide the feature to create a new directory.</td>		</tr>		<tr>			<td>isDirMulti</td>			<td>No</td>			<td>Boolean</td>			<td>false</td>			<td>To provide the feature to allow multi-selection of directories.</td>		</tr>		<tr>			<td>isDirOnly</td>			<td>No</td>			<td>Boolean</td>			<td>false</td>			<td>To get data of directories only.</td>		</tr>		<tr>			<td>isFileMulti</td>			<td>No</td>			<td>Boolean</td>			<td>false</td>			<td>To provide the feature to allow mulit-selection of files.</td>		</tr>		<tr>			<td>isShow</td>			<td>No</td>			<td>Boolean</td>			<td>false</td>			<td>Show treeview in the beginning.</td>		</tr>		<tr>			<td>langs</td>			<td>No</td>			<td>Object</td>			<td>{}</td>			<td>Treeview international lang kyes.</td>		</tr>		<tr>			<td>subtitle</td>			<td>No</td>			<td>String</td>			<td>""</td>			<td>Treeview subtitle.</td>		</tr>		<tr>			<td>title</td>			<td>No</td>			<td>String</td>			<td>Treeview</td>			<td>Treeview model title.</td>		</tr>	</tbody></table><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> treeview </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Treeview</span><span class="pun">({</span></li><li class="L1"><span class="pln">    gid         </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln">                      </span><span class="com">// List tree from this group id. if 0, list from root node.</span></li><li class="L2"><span class="pln">    isDirMulti  </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">,</span><span class="pln">                  </span><span class="com">// Allow directories to be multiple selected.</span></li><li class="L3"><span class="pln">    isFileMulti </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">                   </span><span class="com">// Allow files to be multiple selected.</span></li><li class="L4"><span class="pln">    isDirOnly   </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">,</span><span class="pln">                  </span><span class="com">// List directories only, no files.</span></li><li class="L5"><span class="pln">    isCreateDir </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">,</span><span class="pln">                  </span><span class="com">// Show the button of create folder.</span></li><li class="L6"><span class="pln">    isShow      </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">,</span><span class="pln">                  </span><span class="com">// Show the modal on the initial.</span></li><li class="L7"><span class="pln">    title       </span><span class="pun">:</span><span class="pln"> </span><span class="str">&#39;從檔案櫃選擇&#39;</span><span class="pun">,</span><span class="pln">         </span><span class="com">// The title of treeview.</span></li><li class="L8"><span class="pln">    subtitle    </span><span class="pun">:</span><span class="pln"> </span><span class="str">&#39;&#39;</span><span class="pun">,</span><span class="pln">                     </span><span class="com">// The subtitle of treeview.</span></li><li class="L9"><span class="pln">    desc        </span><span class="pun">:</span><span class="pln"> </span><span class="str">&#39;&#39;</span><span class="pun">,</span><span class="pln">                     </span><span class="com">// The description of treeview.</span></li><li class="L0"><span class="pln">    buttonLabel </span><span class="pun">:</span><span class="pln"> </span><span class="str">&#39;確定&#39;</span><span class="pun">,</span><span class="pln">                 </span><span class="com">// The button label of treeview.</span></li><li class="L1"><span class="pln">    langs       </span><span class="pun">:</span><span class="pln"> </span><span class="pun">{},</span><span class="pln">                     </span><span class="com">// The lang object of treeview.</span></li><li class="L2"><span class="pln">    callback    </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">result</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">     </span><span class="com">// The callback function is triggered when closing the treeview modal.</span></li><li class="L3"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">result</span><span class="pun">.</span><span class="pln">action</span><span class="pun">);</span><span class="pln">       </span><span class="com">// action === &#39;ok&#39; or action === &#39;close&#39;</span></li><li class="L4"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">result</span><span class="pun">.</span><span class="pln">selectedData</span><span class="pun">);</span><span class="pln"> </span><span class="com">// The selected items.</span></li><li class="L5"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">result</span><span class="pun">.</span><span class="pln">createdData</span><span class="pun">);</span><span class="pln">  </span><span class="com">// The directories created.</span></li><li class="L6"><span class="pln">    </span><span class="pun">}</span></li><li class="L7"><span class="pun">});</span></li></ol></pre></div><h3>Callback</h3><h4>result.action</h4><p>Click on the ok button or hide the treeview model.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">result</span><span class="pun">.</span><span class="pln">action </span><span class="pun">===</span><span class="pln"> </span><span class="str">"ok"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="com">// after clicking on the ok button</span></li><li class="L2"><span class="pln">    </span><span class="com">// continue your code here</span></li><li class="L3"><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">result</span><span class="pun">.</span><span class="pln">action </span><span class="pun">===</span><span class="pln"> </span><span class="str">"close"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">    </span><span class="com">// click on the modal close button</span></li><li class="L5"><span class="pun">}</span></li></ol></pre></div><h4>result.selectedData</h4><p>The selected directories or files.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="pln">result</span><span class="pun">.</span><span class="pln">selectedData </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span></li><li class="L1"><span class="pln">    </span><span class="pun">{</span></li><li class="L2"><span class="pln">        </span><span class="str">"filename"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"新增資料夾"</span><span class="pun">,</span></li><li class="L3"><span class="pln">        </span><span class="str">"filesize"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span></li><li class="L4"><span class="pln">        </span><span class="str">"gid"</span><span class="pln">      </span><span class="pun">:</span><span class="pln"> </span><span class="lit">14</span><span class="pun">,</span></li><li class="L5"><span class="pln">        </span><span class="str">"path"</span><span class="pln">     </span><span class="pun">:</span><span class="pln"> </span><span class="str">"/新增資料夾"</span></li><li class="L6"><span class="pln">    </span><span class="pun">}</span></li><li class="L7"><span class="pun">];</span></li></ol></pre></div><h4>result.createdData</h4><p>The directories users created.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="pln">result</span><span class="pun">.</span><span class="pln">createdData </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span></li><li class="L1"><span class="pln">    </span><span class="pun">{</span></li><li class="L2"><span class="pln">        </span><span class="str">"filename"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"新增資料夾"</span><span class="pun">,</span></li><li class="L3"><span class="pln">        </span><span class="str">"filesize"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span></li><li class="L4"><span class="pln">        </span><span class="str">"gid"</span><span class="pln">      </span><span class="pun">:</span><span class="pln"> </span><span class="lit">14</span><span class="pun">,</span></li><li class="L5"><span class="pln">        </span><span class="str">"path"</span><span class="pln">     </span><span class="pun">:</span><span class="pln"> </span><span class="str">""</span></li><li class="L6"><span class="pln">    </span><span class="pun">},</span></li><li class="L7"><span class="pln">    </span><span class="pun">{</span></li><li class="L8"><span class="pln">        </span><span class="str">"filename"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"新增資料夾 (2)"</span><span class="pun">,</span></li><li class="L9"><span class="pln">        </span><span class="str">"filesize"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span></li><li class="L0"><span class="pln">        </span><span class="str">"gid"</span><span class="pln">      </span><span class="pun">:</span><span class="pln"> </span><span class="lit">14</span><span class="pun">,</span></li><li class="L1"><span class="pln">        </span><span class="str">"path"</span><span class="pln">     </span><span class="pun">:</span><span class="pln"> </span><span class="str">""</span></li><li class="L2"><span class="pln">    </span><span class="pun">}</span></li><li class="L3"><span class="pun">];</span></li></ol></pre></div><h3>Treeview Methods</h3><h4>reset()</h4><p>Uncheck all directories and files, and close all directories.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="pln">treeview</span><span class="pun">.</span><span class="pln">reset</span><span class="pun">();</span></li></ol></pre></div><h4>show()</h4><p>Show the treeview model, and uncheck all directories or files and close all directories.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="pln">treeview</span><span class="pun">.</span><span class="pln">show</span><span class="pun">();</span></li></ol></pre></div><h4>hide()</h4><p>Hide treeview model.</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="pln">treeview</span><span class="pun">.</span><span class="pln">hide</span><span class="pun">();</span></li></ol></pre></div><h4>showErrors()</h4><p>Show error messages</p><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="pln">treeview</span><span class="pun">.</span><span class="pln">showErrors</span><span class="pun">(</span><span class="str">&#39;Error Message&#39;</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="com">// after showing the error message</span></li><li class="L2"><span class="pln">    </span><span class="com">// continue your code here</span></li><li class="L3"><span class="pun">});</span></li></ol></pre></div><h2>Mockup Data</h2><h3>JSON Data</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-json linenums" ><ol class="linenums"><li class="L0"><span class="pun">[</span></li><li class="L1"><span class="pln">    </span><span class="pun">{</span></li><li class="L2"><span class="pln">        </span><span class="str">"data"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">            </span><span class="str">"title"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"知識庫的檔案"</span><span class="pun">,</span><span class="pln">  </span><span class="pun">//</span><span class="pln"> </span><span class="pun">顯示在</span><span class="pln"> </span><span class="typ">Treeview</span><span class="pln"> </span><span class="pun">上的目錄或檔案名稱</span></li><li class="L4"><span class="pln">            </span><span class="str">"attr"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">                </span><span class="str">"href"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"#"</span><span class="pln"> </span></li><li class="L6"><span class="pln">            </span><span class="pun">}</span></li><li class="L7"><span class="pln">        </span><span class="pun">},</span></li><li class="L8"><span class="pln">        </span><span class="str">"attr"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">            </span><span class="str">"data-name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"@km"</span><span class="pun">,</span><span class="pln">  </span><span class="pun">//</span><span class="pln"> </span><span class="pun">實際目錄或檔案名稱</span></li><li class="L0"><span class="pln">            </span><span class="str">"data-gid"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"14"</span><span class="pun">,</span></li><li class="L1"><span class="pln">            </span><span class="str">"data-path"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"&#92;/@km"</span><span class="pun">,</span></li><li class="L2"><span class="pln">            </span><span class="str">"data-size"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">4096</span><span class="pun">,</span></li><li class="L3"><span class="pln">            </span><span class="str">"data-crumb"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"f519fc5b76163d4c05bc1d1bc48f2c16"</span><span class="pun">,</span></li><li class="L4"><span class="pln">            </span><span class="str">"class"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"folder"</span><span class="pun">,</span><span class="pln">  </span><span class="pun">//</span><span class="pln"> </span><span class="str">"folder"</span><span class="pln"> or </span><span class="str">"file"</span><span class="pln"> </span><span class="pun">用來區別</span><span class="pln"> item </span><span class="pun">為目錄或檔案。</span></li><li class="L5"><span class="pln">            </span><span class="str">"rel"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"user-folder"</span><span class="pln">  </span><span class="pun">//</span><span class="pln"> </span><span class="str">"user-folder"</span><span class="pln"> </span><span class="pun">自己工作區的資料夾</span><span class="pln"> icon</span><span class="pun">，</span><span class="str">"folder"</span><span class="pln"> </span><span class="pun">其他群組的資料夾</span><span class="pln"> icon</span><span class="pun">。</span></li><li class="L6"><span class="pln">        </span><span class="pun">},</span></li><li class="L7"><span class="pln">        </span><span class="str">"state"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"closed"</span><span class="pln"> </span></li><li class="L8"><span class="pln">    </span><span class="pun">},</span></li><li class="L9"><span class="pln">    </span><span class="pun">{</span></li><li class="L0"><span class="pln">        </span><span class="str">"data"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">            </span><span class="str">"title"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"USA Trip"</span><span class="pun">,</span></li><li class="L2"><span class="pln">            </span><span class="str">"attr"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">                </span><span class="str">"href"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"#"</span><span class="pln"> </span></li><li class="L4"><span class="pln">            </span><span class="pun">}</span></li><li class="L5"><span class="pln">        </span><span class="pun">},</span></li><li class="L6"><span class="pln">        </span><span class="str">"attr"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">            </span><span class="str">"data-name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"USA Trip"</span><span class="pun">,</span></li><li class="L8"><span class="pln">            </span><span class="str">"data-gid"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"14"</span><span class="pun">,</span></li><li class="L9"><span class="pln">            </span><span class="str">"data-path"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"&#92;/USA Trip"</span><span class="pun">,</span></li><li class="L0"><span class="pln">            </span><span class="str">"data-size"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">4096</span><span class="pun">,</span></li><li class="L1"><span class="pln">            </span><span class="str">"data-crumb"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"f519fc5b76163d4c05bc1d1bc48f2c16"</span><span class="pun">,</span></li><li class="L2"><span class="pln">            </span><span class="str">"class"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"folder"</span><span class="pun">,</span></li><li class="L3"><span class="pln">            </span><span class="str">"rel"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"user-folder"</span><span class="pln"> </span></li><li class="L4"><span class="pln">        </span><span class="pun">},</span></li><li class="L5"><span class="pln">        </span><span class="str">"state"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"closed"</span><span class="pln"> </span></li><li class="L6"><span class="pln">    </span><span class="pun">},</span></li><li class="L7"><span class="pln">    </span><span class="pun">{</span></li><li class="L8"><span class="pln">        </span><span class="str">"data"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">            </span><span class="str">"title"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"miiiCloud"</span><span class="pun">,</span></li><li class="L0"><span class="pln">            </span><span class="str">"attr"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">                </span><span class="str">"href"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"#"</span><span class="pln"> </span></li><li class="L2"><span class="pln">            </span><span class="pun">}</span></li><li class="L3"><span class="pln">        </span><span class="pun">},</span></li><li class="L4"><span class="pln">        </span><span class="str">"attr"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">            </span><span class="str">"data-name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"miiiCloud"</span><span class="pun">,</span></li><li class="L6"><span class="pln">            </span><span class="str">"data-gid"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span></li><li class="L7"><span class="pln">            </span><span class="str">"data-path"</span><span class="pun">:</span><span class="pln"> </span><span class="str">""</span><span class="pun">,</span></li><li class="L8"><span class="pln">            </span><span class="str">"data-size"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span></li><li class="L9"><span class="pln">            </span><span class="str">"data-crumb"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"d3678e423493725a80167833290eea40"</span><span class="pun">,</span></li><li class="L0"><span class="pln">            </span><span class="str">"class"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"folder"</span><span class="pun">,</span></li><li class="L1"><span class="pln">            </span><span class="str">"rel"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"folder"</span><span class="pln"> </span></li><li class="L2"><span class="pln">        </span><span class="pun">},</span></li><li class="L3"><span class="pln">        </span><span class="str">"state"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"closed"</span><span class="pln"> </span></li><li class="L4"><span class="pln">    </span><span class="pun">},</span></li><li class="L5"><span class="pln">    </span><span class="pun">{</span></li><li class="L6"><span class="pln">        </span><span class="str">"data"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">            </span><span class="str">"title"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Dinner_At_Grand_Hotel_Palazzo_della_Fonte_In_Fiuggi_004.JPG"</span><span class="pun">,</span></li><li class="L8"><span class="pln">            </span><span class="str">"attr"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">                </span><span class="str">"href"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"#"</span><span class="pln"> </span></li><li class="L0"><span class="pln">            </span><span class="pun">}</span></li><li class="L1"><span class="pln">        </span><span class="pun">},</span></li><li class="L2"><span class="pln">        </span><span class="str">"attr"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">            </span><span class="str">"data-name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Dinner_At_Grand_Hotel_Palazzo_della_Fonte_In_Fiuggi_004.JPG"</span><span class="pun">,</span></li><li class="L4"><span class="pln">            </span><span class="str">"data-gid"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"14"</span><span class="pun">,</span></li><li class="L5"><span class="pln">            </span><span class="str">"data-path"</span><span class="pun">:</span><span class="pln"> </span><span class="str">""</span><span class="pun">,</span></li><li class="L6"><span class="pln">            </span><span class="str">"data-size"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">498513</span><span class="pun">,</span></li><li class="L7"><span class="pln">            </span><span class="str">"data-crumb"</span><span class="pun">:</span><span class="pln"> </span><span class="str">""</span><span class="pun">,</span></li><li class="L8"><span class="pln">            </span><span class="str">"class"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"file"</span><span class="pun">,</span></li><li class="L9"><span class="pln">            </span><span class="str">"rel"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"user-folder"</span><span class="pln"> </span></li><li class="L0"><span class="pln">        </span><span class="pun">},</span></li><li class="L1"><span class="pln">        </span><span class="str">"state"</span><span class="pun">:</span><span class="pln"> </span><span class="str">""</span><span class="pln"> </span></li><li class="L2"><span class="pln">    </span><span class="pun">}</span></li><li class="L3"><span class="pun">]</span></li></ol></pre></div></div>
+    </div>
+    <div class="entry-footer">
+        <p class="article-modify-author">This post was last modified by
+            <span>Lingi Huang</span>
+            <time datetime="2015-07-14T09:40:48+08:00" class="article-modify-time">2015/07/14</time>
+        </p>
+
+        
+    <ul class="share-btn-wrap">
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.lingihuang.com/docs-blog/article-35" class="shareBtn" title="share" rel="nofollow"></a></li>
+        <li>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https://www.lingihuang.com/docs-blog/article-35" scrolling="no" frameborder="0"
+                style="border:none; width:450px; height:80px"></iframe>
+        </li>
+    </ul>
+
+
+
+        
+    </div>
+    
+    
+        <br />
+        <ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1449650742587459"
+     data-ad-slot="2197220184"></ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1449650742587459",
+          enable_page_level_ads: true
+     });
+</script>
+    
+
+</div>
+
+        
+            
+    </div>
+    
+
+            
+    <div class="sidebar">
+        
+                
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">JavaScript 相關</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">Web Development 相關</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-37-CSS-Selectors.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_37&quot;}'>CSS Selectors </a></li>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-5-Stack-Order.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_5&quot;}'>Stack Order </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">類別 JavaScript</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+    </ul>
+</div>
+
+
+        
+                
+
+
+        
+            
+    </div>
+    
+        
+</div>
+
+
+
+    
+
+            
+<div class="bottom-footer">
+    <ul class="nav">
+        
+        <li >
+            <a href="../AboutMe.html">About Me</a>
+        </li>
+        
+        <li >
+            <a href="../Recipes.html">Recipes</a>
+        </li>
+        
+        <li class="active">
+            <a href="../docs-cate.html">Web</a>
+        </li>
+        
+
+        <li>
+            <a href="http://www.puritys.me/">puritys.me</a>
+        </li>
+        <li>
+            <a href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html">VIVIAN CRAP</a>
+        </li>
+        
+    </ul>
+    <p>Copyright &amp;copy; 2014 LINGIHUANG.COM. All rights reserved.</p>
+</div>
+
+
+            
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+
+
+        
+</body>
+    <script src="../templates/static/js/files%3Fsidebar.js&amp;ezHTML_main.js&amp;%3Fv=20180416-2"></script>
+</html>

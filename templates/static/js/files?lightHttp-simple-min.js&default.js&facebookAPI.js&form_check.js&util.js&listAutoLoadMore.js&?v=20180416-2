@@ -1,0 +1,758 @@
+(function e(b,g,d){function c(m,j){if(!g[m]){if(!b[m]){var i=typeof require=="function"&&require;if(!j&&i){return i(m,!0)}if(a){return a(m,!0)}var k=new Error("Cannot find module '"+m+"'");throw k.code="MODULE_NOT_FOUND",k}var h=g[m]={exports:{}};b[m][0].call(h.exports,function(l){var o=b[m][1][l];return c(o?o:l)},h,h.exports,e,b,g,d)}return g[m].exports}var a=typeof require=="function"&&require;for(var f=0;f<d.length;f++){c(d[f])}return c})({1:[function(b,c,a){(function(){var d={parseUrl:function(g){var i,h,f,j={};i=/(https?):\/\/([a-z0-9][a-z0-9\-\.]+[a-z0-9])(:[0-9]+)?(\/[^\?]*)?\??(.*)/i;f={port:80,protocol:"",host:"",path:"",param:""};h=g.match(i);if(h&&h[2]){f.protocol=h[1].toLowerCase();f.host=h[2]}if(h&&h[3]&&h[3]!="undefined"){f.port=parseInt(h[3].substr(1),10)}else{if("https"===f.protocol){f.port=443}}if(h&&!h[4]){f.path="/"}else{f.path=h[4]}if(h&&h[5]){f.param=this.stringToParam(h[5])}return f},stringifyParam:function(h){var f=[];for(var g in h){this.paramToString(f,g,h[g])}return f.join("&")},paramToString:function(g,j,l){var h,m,f;if(l instanceof Array){m=l.length;for(h=0;h<m;h++){this.paramToString(g,j+"["+h+"]",l[h])}}else{if(l instanceof Object){for(f in l){this.paramToString(g,j+"["+f+"]",l[f])}}else{g.push(j+"="+encodeURIComponent(l))}}},stringToParam:function(f){var j,h,o,k,m,g,l={};j=f.split(/&/);o=j.length;for(h=0;h<o;h++){m=j[h].indexOf("=");g=j[h].substr(0,m);k=j[h].substr(m+1,j[h].length-m-1);k=decodeURIComponent(k);if(l[g]){if(Object.prototype.toString.call(l[g])==="[object Array]"){l[g].push(k)}else{l[g]=[l[g],k]}}else{l[g]=k}}return l},addParams:function(g,j){var h,i,f;if(!g){return""}if(!j){j={}}if(g.indexOf("#")!=-1){g=g.replace(/\#.*/,"")}i=g.match(/\?(.+)/);if(i&&i[1]){f=this.stringToParam(i[1]);if(f){j=this.mergeTwoParamters(f,j);g=g.replace(/\?.+/,"")}}h=this.stringifyParam(j);if(!h){return g}if(g.match(/\?/)){g+="&"}else{g+="?"}g+=h;return g},cookieToString:function(g){var h=[],f;if(g instanceof Array){return g.join("; ")}else{for(f in g){h.push(f+"="+g[f])}}return h.join("; ")},mergeTwoParamters:function(i,h){var g={},f;for(f in i){g[f]=i[f]}for(f in h){g[f]=h[f]}return g}};c=c.exports=d}())},{}],2:[function(b,c,a){Function.prototype.bind=Function.prototype.bind||function(g){if(typeof this!=="function"){throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable")}var h=Array.prototype.slice,i=h.call(arguments,1),j=this,l=function(){},k=function(){return j.apply(this instanceof l?this:g||window,i.concat(h.call(arguments)))};l.prototype=this.prototype;k.prototype=new l();return k};(function(){var g=b("./lib.js");function d(){if(!g){console.log("Missing library named lightHttpLib")}this.jsonpIndex=1;this.lightHttpLib=g;this.timeout=15000;this.jsonpCallbackList={};this.uploadFiles=[]}var f=d.prototype;f.uploadFiles=[];f.addFile=function(i,h){if(!h){return false}this.uploadFiles.push({field:i,input:h})};f.clear=function(){this.uploadFiles=[]};f.composeFormData=function(h,o){var m,k,p,l,j;m=new FormData();p=h.length;for(k=0;k<p;k++){l=h[k];m.append(l.field,l.input.files[0])}for(j in o){this.paramToFormData(m,j,o[j])}return m};f.paramToFormData=function(q,m,p,o){var l,r,j;if(p instanceof Array){r=p.length;for(l=0;l<r;l++){this.paramToFormData(q,m+"["+l+"]",p[l],o)}}else{if(p instanceof Object){for(j in p){this.paramToFormData(q,m+"["+j+"]",p[j],o)}}else{if(o){var h=document.createElement("input");h.name=m;h.value=p;q.appendChild(h)}else{q.append(m,p)}}}};f.get=function(h,i){h=this.lightHttpLib.addParams(h,i);window.location.href=h};f.post=function(i,m){var l,j,h,k;k=true;l=document.createElement("form");l.action=i;l.method="POST";for(j in m){if(!m.hasOwnProperty(j)){continue}this.paramToFormData(l,j,m[j],k)}document.body.appendChild(l);l.submit();return l};f.ajax=function(){var j=["ajax","GET"];for(var k=0,h=arguments.length;k<h;k++){j.push(arguments[k])}return this.request.apply(this,j)};f.ajaxpost=f.ajaxPost=function(){var j=["ajaxPost","POST"];for(var k=0,h=arguments.length;k<h;k++){j.push(arguments[k])}return this.request.apply(this,j)};f.pajax=function(){var j=["pjax","GET"];for(var k=0,h=arguments.length;k<h;k++){j.push(arguments[k])}return this.request.apply(this,j)};f.jsonp=function(j,l,n,m){var i,k,h;h=this;if(!l){l={}}if(typeof(n)=="function"){m=n}this.cleanJsonpCallback();k="lightHttp_jsonp_"+this.jsonpIndex+"_"+(new Date()).getTime();l.callback=k;this.jsonpCallbackList[k]=0;window[k]=function(o){m(o,{});h.jsonpCallbackList[k]=1};j=this.lightHttpLib.addParams(j,l);i=document.createElement("script");i.src=j;document.body.appendChild(i);this.jsonpIndex++};f.request=function(){var r="GET",u,i,m,p,j,t,k="",n=true,h,o=false,l,w={},q={};var s,v;if(!arguments){return""}if(typeof(arguments[0])!="undefined"){j=arguments[0]}if(typeof(arguments[1])!="undefined"){r=arguments[1]}if(typeof(arguments[2])!="undefined"){i=arguments[2]}if(typeof(arguments[3])!="undefined"){m=arguments[3]}if(typeof(arguments[4])!="undefined"){if(typeof(arguments[4])=="function"){t=arguments[4]}else{p=arguments[4]}}if(typeof(arguments[5])!="undefined"){if(typeof(arguments[5])=="function"){t=arguments[5]}else{w=arguments[5]}}if(typeof(arguments[6])!="undefined"){t=arguments[6]}if(t){q.callback=t}else{o=true;h=Q.defer();q.defer=h}q.isPromise=o;if(m){q.param=m}u=this.instantiateRequest();q.xhr=u;s=this.responseHandler.bind(this,q);v=this.timeoutHandler.bind(this,q);if(u.timeout){if(w.timeout){u.timeout=w.timeout}else{u.timeout=this.timeout}u.ontimeout=v}u.onreadystatechange=s;if(this.uploadFiles.length>0){l=this.composeFormData(this.uploadFiles,m)}else{k=this.lightHttpLib.stringifyParam(m)}if(r==="POST"){u.open(r,i,n);this.setHeaders(u,p);if(l){u.send(l)}else{u.setRequestHeader("Content-type","application/x-www-form-urlencoded");u.send(k)}}else{if(k){if(i.match(/\?/)){i+="&"+k}else{i+="?"+k}}u.open(r,i,n);this.setHeaders(u,p);u.send()}this.clear();if(true===o){return h.promise}};f.instantiateRequest=function(){var j;if(window.XMLHttpRequest){j=new XMLHttpRequest();if(j.overrideMimeType){j.overrideMimeType("text/xml")}}else{if(window.ActiveXObject){try{j=new ActiveXObject("Msxml2.XMLHTTP")}catch(i){try{j=new ActiveXObject("Microsoft.XMLHTTP")}catch(h){}}}}return j};f.responseHandler=function(i){var k="",h={},j;j=i.xhr;if(j.readyState==4){h=j;k=j.responseText;if(true===i.isPromise){i.defer.resolve(k,h)}else{if(i.callback){i.callback(k,h)}}}};f.setHeaders=function(j,i){for(var h in i){j.setRequestHeader(h,i[h])}};f.timeoutHandler=function(h){};f.jsonpHandler=function(){};f.cleanJsonpCallback=function(){var h;for(h in this.jsonpCallbackList){if(this.jsonpCallbackList[h]===1){try{delete window[h]}catch(i){}}}};window.lightHttp=d;if(c){c=c.exports=new d();c.constructor=d}}())},{"./lib.js":1}]},{},[2]);function facebook_Login( FACEBOOK_APP_ID){
+	$("#facebook_lg").html('<img src="'+WRT_TMP+'images/loading2.gif" />');
+	$.getScript("http://connect.facebook.net/en_US/all.js",function(){
+		FB.init({appId: FACEBOOK_APP_ID, status: true,
+               cookie: true, xfbml: true});
+      FB.Event.subscribe('auth.login', function(response) {
+        window.location.reload();
+      });
+	  FB.login();
+	});
+}
+
+//搜尋按鈕事件
+function searchFocus(){
+	var v=$(this).val();
+	if(v.search(/!/)==0){
+		$(this).val('');
+	}
+}
+function searchBlur(){
+	var v=$(this).val();
+	if(v==''){
+		$(this).val('!請輸入搜尋文字');
+	}
+}
+/**換驗證****/
+function checkCode(id,url){
+	$(id).attr({"src":url+"?&r="+Math.round(Math.random()*10000) });
+}
+
+//form 表單的
+//移除input textarea 的預設值
+var formTMPHint="";
+function formIPFocus(ob){
+	formTMPHint=$(ob).val();
+	if($(ob).val().substr(0,2)=='!~'){
+		$(ob).val('');
+	}
+}
+function formIPBlur(ob){
+	if($(ob).val()==''){
+		$(ob).val(formTMPHint);
+	}
+	formTMPHint="";
+}
+
+
+function addFlash(id,swf,ob,pm){
+	var w=500;
+	var h=300;
+	if(ob.width){w=ob.width}
+	if(ob.height){h=ob.height}
+	var flashID='fID';
+	if(ob.flashID){
+		flashID=ob.flashID;
+	}
+	var pm1='',pm2='';
+	for(pro in pm){
+		//pm1+='<PARAM NAME="'+pro+'" VALUE="'+pm[pro]+'" />'
+		pm2+='&'+pro+'='+pm[pro];
+	}
+	var attr='';
+	var c='<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" WIDTH="'+w+'" HEIGHT="'+h+'" id="'+flashID+'"  >';
+	for(pro in ob){
+		c+='<PARAM NAME="'+pro+'" VALUE="'+ob[pro]+'">';
+		attr+=pro+'="'+ob[pro]+'"';
+	}
+	c+='<PARAM NAME=movie VALUE="'+swf+'">';
+	c+='<PARAM NAME=quality VALUE=high>';
+	c+='<PARAM NAME="wmode" VALUE="null">';
+	c+='<PARAM NAME=bgcolor VALUE=#FFFFFF>';
+	c+='<param name="allowScriptAccess" value="always" />';
+	c+='<param name="flashvars" value="'+pm2+'" />';
+ 
+	c+='<EMBED src="'+swf+'" quality=high bgcolor=#FFFFFF WIDTH="'+w+'" HEIGHT="'+h+'"    NAME="'+flashID+'" ALIGN="" TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer" allowScriptAccess="always" flashvars="'+pm2+'" '+attr+'> </EMBED>';
+	c+='</OBJECT> ';
+	$('#'+id).html(c);
+	if(document.forms["form_"])
+		window[flashID]=document.forms["form_"][flashID];
+}
+
+function popup(pageURL,e,w,h) {
+	if(!w)  w=300;
+	if(!h) h=550;
+	var left = (screen.width/2);
+	var top = (screen.height/2);
+	if(top<0){top=50;}
+	if(screen && screen.availLeft){
+		left+=screen.availLeft;
+		top+=screen.availTop;
+	}
+	if(window.screenLeft){
+		left=window.screenLeft+250;
+		top=window.screenTop+350;
+	}
+	left-=w/2;
+	top-=250;
+	var targetWin = window.open(pageURL, '_pop', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+	targetWin.focus();
+}
+
+var D_width=200;
+function imageBig(ob){
+	D_width=$(ob).attr('width');
+	$(ob).removeAttr('width');
+	return false;
+}
+function imageSmall(ob){
+	$(ob).attr('width',D_width);
+	return false;
+}
+
+var isError=0;
+window.onerror=function(e){
+	if(isError){return "";}
+	if(typeof(WRT)=="undefined") {
+        return "";
+    }
+	arglen=arguments.length;
+	var errorMsg="";
+	if(arguments[0]){
+		errorMsg+=arguments[0]+' ';
+	}
+	if(arguments[1]){
+		errorMsg+='<br />file:'+arguments[1]+' ';
+	}
+	if(arguments[2]){
+		errorMsg+='<br />line:'+arguments[2]+' ';
+	}
+	
+	isError=1;
+	var content=errorMsg+"  <br /> url="+window.location.href;
+	content=encodeURIComponent(content);
+	$.ajax({
+		url:WRT+"api.php",
+		type:"get",
+		data:"act=error&e="+content,
+		beforeSend:function(){},
+		success:function(tx){
+
+		}
+	});
+}
+
+
+/****** docs-detail *********/
+$(document).ready(function (){
+    var langWrap = $('.lang-wrap');
+    if (langWrap) {
+        $('h1.vj-title').after(langWrap);
+    }
+    new window.gaObj();
+});
+
+
+
+function facebookPost(type, name, link, des){
+    var picture;
+    if(!picture) {
+        picture = "http://www.puritys.me/templates/vi_tp/images/logo.jpg";
+    }
+    FB.ui(
+      {
+       method: 'feed',
+       name: name,
+       caption: des,
+       description: (
+          '.'
+       ),
+       link: link
+       //picture: picture
+      },
+      function(response) {
+        if (response && response.post_id) {
+            console.log("Post was published.")
+        } else {
+            console.log('Post Fail');
+        }
+      }
+    );
+}
+/********
+ns have data no empty
+n number
+w word
+a: num +word
+min:10  least length
+max:200 max length
+tw,.限中文
+********/
+var firstFormErrorTag='0';
+var form_check_config={
+	type:2,// 2是浮動
+	num:1,//錯誤數
+	top_start:10,//起始點
+	left_start:10,//起始點
+	color:"white",
+	backgroundColor:"red",
+	padding:"10px",
+	border:"1px solid #9D9595",
+	border2:"1px solid #F2F1F1",
+	errorStyle:'border:1px solid red;background:#FFFFBB none repeat scroll 0 0;',
+	width:220,
+	fontSize:"12px",
+	opacity:0.85,
+	lang:{
+		mustwrite:"必填欄位，請填寫此欄位。",
+		mustint:'此欄位必須是數字',
+		email:'信箱不合法',
+		twonly:'(只限打中文)'
+	}
+}
+$(document).ready(function(){
+	setFormErrorStyle(form_check_config.errorStyle);
+});
+function setFormErrorStyle(s){
+	var style = document.createElement('style');
+	style.id="form_error_style";	
+	$(document.body).prepend(style);
+	if(style.styleSheet){
+		style.styleSheet.addRule('.form_error',s);
+	}
+	else{
+		$("#form_error_style").html('.form_error{'+s+'}');
+	}
+}
+function form_clearIP(){
+	$('#hiddenFormError').remove();
+}
+function form_clearFocus(){
+	$('#hiddenFormError').focus();
+}
+var form_check_obj='';
+function form_submit_iframe_check(ob,fm,iframe,obj){
+	$('#'+fm).attr({'target':iframe});
+	form_check_obj=obj;
+	form_check_obj.fm=fm;
+	document.forms[fm]['is_form_check'].value=1;
+	document.forms[fm].submit();
+	if(obj.loadID){
+		$(obj.hideID).hide();
+		$(obj.loadID).show();
+		
+	}
+}
+function form_iframe_error(error,alertError){
+	if(alertError){
+		alert(alertError);
+	}
+	var ok=0;
+	if(error)
+	for(pro in error){
+		formShowError(error[pro],document.forms[form_check_obj.fm][pro]);
+		if(ok==0){
+			ok=1;
+			$(document.forms[form_check_obj.fm][pro]).focus();
+			var t=$(window).scrollTop();
+			if(t>30){
+				$(window).scrollTop(t-30);
+			}
+			else{
+				$(window).scrollTop(0);
+			}
+		}
+	}
+	if(form_check_obj.hideID){
+		$(form_check_obj.hideID).show();
+		$(form_check_obj.loadID).hide();
+	}
+	
+}
+
+function form_submit(fm){
+	firstFormErrorTag='0';
+	if(before_submit(fm)){
+		return true;
+		var f=document.getElementById(fm);
+		if(f.tagName=='FORM'){
+			document.forms[fm].submit();
+		}
+		else{
+			_ajaxCallBack(fm,getFormParam(fm));
+		}
+	}
+	if(firstFormErrorTag!='0'){
+		if( $(firstFormErrorTag).attr('type')=='hidden'){
+			var s=$(firstFormErrorTag);
+			$(firstFormErrorTag).before('<input type="text" id="hiddenFormError" style="border:0px;">');
+			$('#hiddenFormError').focus();
+			
+			setTimeout("form_clearFocus()",100);
+			setTimeout("form_clearIP()",500);
+			return false;
+			try{
+				/*s[0].type='text';
+				$(firstFormErrorTag).focus();
+				s[0].type='hidden';*/
+			}
+			catch(e){
+				
+			}
+		}
+		else{
+			$(firstFormErrorTag).focus();
+			var t=$(window).scrollTop();
+			if(t>30){
+				$(window).scrollTop(t-30);
+			}
+			else{
+				$(window).scrollTop(0);
+			}
+		}
+	}
+	return false;
+}
+
+function getFormParam(fm){
+	f=document.getElementById(fm);
+	var ip=f.getElementsByTagName('input');
+	var pam="";
+	var n=ip.length;
+	for(var i=0; i<n ;i++){
+		var p=ip[i];
+		if(p.type=='radio'){
+			if(p.checked!=true){continue;}
+		}
+		pam+=p.name+"="+p.value+"&";
+	}
+	var t=f.getElementsByTagName('textarea');
+	n=t.length;
+	for(i=0;i<t;i++){
+		nm=t[i].name;
+		tp=t[i].type;
+		pam+=nm+"="+t[i].value+"&";
+	}
+	return pam;
+}
+
+function before_submit(fm){
+	var ip,v,ck;
+	//document.getElementById('error').innerHTML="";
+	var fm=document.getElementById(fm);
+	//清空上一次的錯誤
+	/*var div=fm.getElementsByTagName('div');
+	for(i=div.length-1 ; i>=0 ; i--){
+		if(div[i].className=='errorClass')
+			div[i].parentNode.removeChild(div[i]);
+	}*/
+	$('.form_error').removeClass('form_error');
+	$('.errorClass').remove();
+	ip=fm.getElementsByTagName('input');
+	var tx=fm.getElementsByTagName('textarea');
+	var ok=1,allok=1;
+	var n2=ip.length,errmsg='',mg='';
+	/***input 檢查***/
+	for(i=0 ; i<n2 ; i++){
+		errmsg='';ok=1;
+		it=ip[i];
+		ck=it.getAttribute('ck');
+		v=it.value;
+		if(!ck || ck==''){
+			continue;
+		}
+		var ck_a=ck.split(",");
+		for(j=0; j<ck_a.length ; j++){
+			//開始檢查
+			var n=ck_a[j];
+			mg=form_check(v,n,it);
+			if(mg){
+				allok=0;
+				if(errmsg){
+					errmsg+='<br />';
+				}
+				errmsg+='*'+mg;
+				ok=0;
+			}
+		}
+		if(ok==0){
+			formShowError(errmsg,it);
+		}
+	}
+	//textarea
+	for(i=0 ; i<tx.length ; i++){
+		errmsg='';ok=1;
+		it=tx[i];
+		ck=it.getAttribute('ck');
+		v=it.value;
+		if(!ck || ck==''){
+			continue;
+		}
+		var ck_a=ck.split(",");
+		for(j=0; j<ck_a.length ; j++){
+			//開始檢查
+			var n=ck_a[j];
+			mg=form_check(v,n,it);
+			if(mg){
+				allok=0;
+				if(errmsg){
+					errmsg+='<br />';
+				}
+				errmsg+='*'+mg;
+				ok=0;
+			}
+		}
+		if(ok==0){
+			formShowError(errmsg,it);
+		}
+	}
+	//select
+	errmsg='';
+	mg='';
+	var sl=fm.getElementsByTagName('select');
+	var n2=sl.length;
+	for(i=0 ; i<n2 ; i++){
+		errmsg='';ok=1;
+		it=sl[i];
+		ck=it.getAttribute('ck');
+		v=it.value;
+		if(!ck || ck==''){
+			continue;
+		}
+		ck=ck.replace(/ns/,"ns_no0");
+		var ck_a=ck.split(",");
+		for(j=0; j<ck_a.length ; j++){
+			//開始檢查
+			var n=ck_a[j];
+			mg=form_check(v,n,it);
+			if(mg){
+				allok=0;
+				if(errmsg){
+					errmsg+='<br />';
+				}
+				errmsg+='*'+mg;
+				ok=0;
+			}
+		}
+		if(ok==0){
+			formShowError(errmsg,it);
+		}
+	}
+	if(!allok){
+		return false
+		}
+	return true;
+}
+
+function form_check(v,n,it){
+	var n=n.split(":");
+	var ok=1;
+	v=v.replace(/<[^>]+>/g,'');
+	switch(n[0]){
+		case 'ns':
+			if(v==''){
+				return form_check_config.lang.mustwrite;
+			}
+			return '';
+			break;
+		case 'ns_no0':
+			if(v=='' || v<=0){
+				return form_check_config.lang.mustwrite;
+			}
+			return '';
+			break;
+		case 'n':
+			var re=/[^0-9\-]/;
+			var t=v.search(re);
+			if(t!=-1 || v==''){
+				return form_check_config.lang.mustint;
+				ok=0;
+			}
+			return '';
+			break;
+		case 'w':
+			var re=/[^a-zA-Z]/;
+			var t=v.search(re);
+			if(t!=-1){
+				return '(此欄位必須是英文字)';
+				ok=0;
+			}
+			return '';
+			break;
+		case 'a':
+			var re=/[^0-9a-zA-Z]/;
+			var t=v.search(re);
+			if(t!=-1){
+				return '(此欄位必須是數字或英文)';
+			}
+			return '';
+			break;
+		case 'min':
+			var l=n[1];
+			if(v.length<l){
+				return '(此欄位必須大於'+l+'個字)';
+			}
+			return '';
+			break;
+		
+		case 'max':
+			var l=n[1];
+			if(v.length>l){
+				return  '(此欄位必須不能大於'+l+'個字)';
+			}
+			return '';
+			break;
+		case 'nmin':
+			var l=n[1];
+			if(parseInt(v)<parseInt(l)){
+				return '(此欄位必須數字必須大於'+l+')';
+			}
+			return '';
+			break;
+		case 'nmax':
+			var l=n[1];
+			if(parseInt(v)>parseInt(l)){
+				return '(此欄位必須數字必須小於'+l+')';
+			}
+			return '';
+			break;
+		case 'mail':case 'email':
+			var re=/^[a-zA-Z0-9\._\s-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+			if(v && !v.match(re)){
+				return form_check_config.lang.email;
+			}
+			return '';
+			break;
+		case 'tw':
+			var re=/[0-9a-zA-Z~!@#$%^&\*()_\-\?\+=\.,\'\";\:\[\]\{\}`\/]/;
+			if(v.match(re)){
+				return form_check_config.lang.twonly;
+			}
+			return '';
+			break;
+	}
+	return '';
+}
+
+function formShowError(n,it,es){
+	var es=document.createElement("div");
+	es.num=form_check_config.num;
+	es.style.width=form_check_config.width;
+	es.style.fontSize=form_check_config.fontSize;
+	es.id="errorform"+es.num;
+	es.className="errorClass";
+	form_check_config.num++;
+	if(form_check_config.type==1){
+		es.style.color='red';
+		es.innerHTML=n;
+	}
+	else{
+		var es2=document.createElement("div");
+		es2.style.border=form_check_config.border;
+		es.appendChild(es2);
+		var da=document.createElement("div");
+		da.style.color=form_check_config.color;
+		da.style.backgroundColor=form_check_config.backgroundColor;
+		da.style.padding=form_check_config.padding;
+		da.style.border= form_check_config.border2;
+		es.style.opacity=form_check_config.opacity;
+		es.style.filter="alpha(opacity="+(form_check_config.opacity*100)+")";
+		
+		da.innerHTML=''+n;
+		es2.appendChild(da);
+		
+		var arw=document.createElement("div");
+		arw.className="formArrow";
+		arw.style.marginTop=-1+"px";
+		for(var i=9;i>0;i--){
+			arw.innerHTML+='<div style="background:'+form_check_config.backgroundColor+';height:1px;width:'+i+'px;margin:0px 0 0 '+i+'px;overflow:hidden;"> </div>';
+		}
+		
+		es.appendChild(arw);
+		$(es).click(function(){
+			$(this).remove();
+		});
+	}
+
+
+	if($(it).attr('class') && $(it).attr('class').search(/form_error/)!=-1){
+		var ernum=$(it).attr('ernum');
+		var s=$('#errorform'+ernum);
+		if(s.length>0){
+			$(s).remove();
+		}
+		addFormError(it,es);
+		return false;
+	}
+	if(firstFormErrorTag=='0'){
+		firstFormErrorTag=it;
+	}
+	addFormError(it,es);
+	if($(it).attr('nodeName')=="SELECT"){
+		$(it).unbind('change');
+		$(it).change(FormEventCh);
+	}
+	else{
+		$(it).unbind('blur');
+		$(it).blur(FormEventCh);
+	}
+	
+	
+}
+
+function formAlert(n){
+	//document.getElementById('error').innerHTML="請檢查下列的錯誤欄位";
+}
+
+function FormEventCh(){
+	var ck_a=$(this).attr('ck').split(",");
+	var n=ck_a.length;
+	var ok=1;
+	var errmsg='',mg='';
+	var v=$(this).val();
+	errmsg='';ok=1;
+	for(var i=0; i<n; i++){
+		mg=form_check(v,ck_a[i],this);
+		if(mg){
+			if(errmsg){
+				errmsg+='<br />';
+			}
+			errmsg+='*'+mg;
+			ok=0;
+		}
+	}
+	if(ok==0){
+		formShowError(errmsg,this);
+		return '';
+	}
+	if(ok==1){
+		var ernum=$(this).attr('ernum');
+		var s=$('#errorform'+ernum);
+		if(s.length>0){
+			$(s).remove();
+		}
+		$(this).removeClass('form_error');
+		$(this).unbind('blur');
+	}
+}
+
+function addFormError(ob,es){
+	$(ob).addClass('form_error');
+	if(form_check_config.type==1){
+		$(ob).after(es);
+		return '';
+	}
+	var it=ob;
+	var t=$(it).offset();
+	var width=$(it).width();
+	var height=$(it).height();
+	var top=t.top;
+	var left=t.left;
+	var w=width*3/4;
+	$(document.body).append(es);
+	$(ob).attr({"ernum":es.num});
+	var h2=$(es).height();
+	$(es).css({position:"absolute",top:top-h2+5+form_check_config.top_start,left:left+w+form_check_config.left_start});
+}
+$(function () {
+	$('.navbar-btn').click(function (e) {
+        console.log("aaa");
+		var navbarSel = $('.navbar');
+		if (navbarSel.hasClass('is-show')) {
+			navbarSel.removeClass('is-show');
+		} else {
+			navbarSel.addClass('is-show');
+		}
+		e.preventDefault();
+	});
+});
+/*
+ * load more
+ */
+function listAutoLoadMore() {
+
+}
+
+var o = listAutoLoadMore.prototype;
+
+o.classes = {
+    main: ".body-content .main",
+    list: ".entry-list" ,
+    loading: ".body-content .main .loading"
+};
+
+o.url = "";
+// JQuery Node of Document 
+o.doc = null;
+o.page = 1;
+o.limit = 3;
+o.isLoading = false
+o.isEnded = false;
+o.nodeMain = null;
+o.init = function() {
+    var data;
+    this.nodeMain = $(this.classes.main);
+    if (!this.nodeMain) return;
+    try {
+        data = this.nodeMain.find(this.classes.list).attr('data');
+        data = JSON.parse(data);
+    } catch (e) {
+        return;
+    }
+    if (!data || !data.url) return;
+    this.url = data.url;
+    if (data.limit) {
+        this.limit = data.limit;
+    }
+    this.isLoading = false;
+    this.doc = $(window.document);
+    if (this.url) {
+        $(document).bind('scroll', this.scrollHandler.bind(this));
+    }
+}
+
+o.loadNextPage = function () {
+    var self = this;
+    var url = this.url;
+    var http = new window.lightHttp();
+    this.addLoading();
+    http.ajax(url, {page: this.page+1, limit: this.limit}, function (content) {
+        self.removeLoading();
+        if (!content) {
+            self.isEnded = true;
+            return;
+        }
+        self.nodeMain.append(content);
+        self.page++;
+    });
+}
+
+o.scrollHandler = function (E) {
+    E.preventDefault();
+    E.stopPropagation();
+    if (true === this.isLoading || true == this.isEnded) return;
+    var scrollTop, height;
+    height = document.body.scrollHeight - $(window).height();
+    scrollTop = this.doc.scrollTop();
+    if ((scrollTop+200) > height) {
+        this.loadNextPage();
+    }
+}
+
+o.addLoading = function () {
+    var html = '<div class="loading big"></div>';
+    this.isLoading = true;
+    this.nodeMain.append(html);
+}
+
+o.removeLoading = function () {
+    $(this.classes.loading).remove();
+    this.isLoading = false;
+}
+
+$(document).ready(function (){
+    window.listAutoLoadMoreObj = new listAutoLoadMore();
+    window.listAutoLoadMoreObj.init();
+});
+
+

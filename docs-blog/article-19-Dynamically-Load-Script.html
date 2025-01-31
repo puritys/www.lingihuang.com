@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M3BFP5');</script>
+    <!-- End Google Tag Manager -->
+
+    <link href="../templates/static/css/files%3Fdefault.less&amp;other.less&amp;ezHTML.less&amp;%3Fv=20180416-2.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js?v=20180416-2"></script>
+    <script src="../templates/static/js/files%3FlightHttp-simple-min.js&amp;default.js&amp;facebookAPI.js&amp;form_check.js&amp;util.js&amp;listAutoLoadMore.js&amp;%3Fv=20180416-2"></script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en" />
+    <meta name="author" content="lingihuang" />
+    <title>Dynamically Load Script</title>
+    <meta name="keywords" content="JavaScript, Web Development" />
+    <meta name="description" content="Comparison with XMLHttpRequest()Advantages Can request a file from anywhere on the net, not just the server your page was loaded from. Works in IE even when ActiveX is turned off (though not" />
+    <meta property="fb:app_id" content="160015347378316" />
+    <meta property="fb:admins" content="1140660203"/>
+    
+
+    <link rel="shortcut icon" href="../templates/static/images/favicon_vivian.ico" /> 
+    
+
+    <link rel="canonical" href="https://www.lingihuang.com/docs-blog/article-19-Dynamically-Load-Script.html"/>
+    
+
+
+    <link rel="amphtml" href="https://www.lingihuang.com/docs-blog-amp/article-19-Dynamically-Load-Script.html"/>
+    
+
+    <link rel="dns-prefetch" href="apis.google.com.html">
+        <link rel="dns-prefetch" href="ajax.googleapis.com.html">
+        <link rel="dns-prefetch" href="connect.facebook.net.html">
+        <link rel="dns-prefetch" href="www.google-analytics.com.html">
+        <link rel="dns-prefetch" href="www.lingihuang.com.html">
+        
+
+<!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "https://www.lingihuang.com",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "https://www.lingihuang.com/search?searchText={search_term_string}",
+     "query-input": "required name=search_term_string"
+   }
+}
+    </script>
+
+
+
+
+
+
+
+</head>
+<body>
+
+            
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3BFP5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+            
+<div class="settings">
+    
+        <script>var WRT="https://www.lingihuang.com/";</script>
+    
+</div>
+
+
+            
+<div class="header">
+    <div class="top-header">
+        <div class="main">
+        <a class="logo" href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html"><img src="../templates/static/images/logo_vivian.png" alt="Vivian Crap" title="Vivian Crap"></a>
+        <a class="navbar-btn" href="article-19-Dynamically-Load-Script.html#"><span class="icon"></span></a>
+        </div>
+        <ul class="navbar">
+             
+            <li >
+                <a href="../AboutMe.html" data-ga='{"action":"menu_click","label":"About Me"}'>About Me</a>
+            </li>
+             
+            <li >
+                <a href="../Recipes.html" data-ga='{"action":"menu_click","label":"Recipes"}'>Recipes</a>
+            </li>
+             
+            <li class="active">
+                <a href="../docs-cate.html" data-ga='{"action":"menu_click","label":"Web"}'>Web</a>
+            </li>
+            
+        </ul>
+        <form action="http://www.lingihuang.com/search" class="navbar-form">
+            <input type="text" name="searchText" placeholder="Input your keyword" value="">
+            <i class="glyphicon glyphicon-search"></i>
+        </form>
+    </div>
+</div>
+
+
+        
+
+        
+<div class="body-content">
+    
+            
+    <div class="main">
+        
+                
+<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> 
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a href="https://www.lingihuang.com" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+            <em><span itemprop="name">Home</span></em>
+        </a>
+        <meta itemprop="position" content="1" />
+    </li>
+    
+        
+            <li  itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem">
+                <a href="../docs-cate/JavaScript.html" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+                    <em><span itemprop="name">JavaScript</span></em>
+                </a>
+                <meta itemprop="position" content="2" />
+            </li>
+        
+    
+        
+            <li class="active">
+                <a href="https://www.lingihuang.com/docs-blog/article-19">
+                    <em><span>Dynamically Load Script</span></em>
+                </a>
+            </li>
+        
+    
+</ul>
+
+        
+                
+
+
+<script type="application/ld+json">
+    {"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lingihuang.com\/docs-blog\/article-19-Dynamically-Load-Script.html"},"headline":"Dynamically Load Script","image":"","datePublished":"2009-04-20T07:21:22+08:00","dateModified":"2015-06-11T11:30:27+08:00","author":{"@type":"Person","name":"Lingi Huang"},"publisher":{"@type":"Organization","name":"www.lingihuang.com","logo":{"@type":"ImageObject","url":"https:\/\/www.lingihuang.com\/templates\/static\/images\/favicon_vivian.ico"}},"description":"Comparison with XMLHttpRequest()\rAdvantages\r\r  Can request a file from anywhere on the net, not just"}
+</script>
+
+
+<div class="entry">
+   <div class="entry-header">
+        
+        <div class="date">
+            <div class="year">2009</div>
+            <div class="month">Apr</div>
+            <div class="day">20</div>
+        </div>
+
+        
+        <div class="title">
+            <h1><a href="article-19-Dynamically-Load-Script.html"><span>Dynamically Load Script</span></a></h1>
+            <div class="sub">
+                <div class="caption">Tags:</div>
+                <ul class="labels">
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=JavaScript.html">JavaScript</a>
+                    </li>
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=Web%20Development.html">Web Development</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="entry-body">
+        <div class="ezHTML-content"><h2>Comparison with XMLHttpRequest()</h2><h3>Advantages</h3><ul class="list">  <li>Can request a file from anywhere on the net, not just the server your page was loaded from.</li>  <li>Works in IE even when ActiveX is turned off (though not when Javascript is turned off).</li>  <li>Works with a few older browsers that don&#39;t support XMLHttpRequest, like Opera 7 (though not Macintosh versions of IE).</li></ul><h3>Disadvantages</h3><ul class="list">  <li>Returned data has to be formatted as <strong>Javascript code</strong>. XMLHttpRequest() can be used to fetch data in any format, XML, JSON, plain text, or whatever.</li>  <li>Can only do <strong>GET</strong> requests, not POST requests.</li>  <li>Whether the request is synchronous or asynchronous is pot luck, depending on the browser. With XMLHttpRequest() you can control this.</li>  <li>When fetching JSON data from an untrusted source, there is no possiblity of checking the data before feeding it to the Javascript parser. With XMLHttpRequest() you can parse the data with something like json2.js instead of eval() for secure parsing.</li></ul><h2>Load Only Once</h2><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> script </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">createElement</span><span class="pun">(</span><span class="str">"script"</span><span class="pun">);</span></li><li class="L1"><span class="pln">script</span><span class="pun">.</span><span class="pln">setAttribute</span><span class="pun">(</span><span class="str">"language"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"javascript"</span><span class="pun">);</span></li><li class="L2"><span class="pln">script</span><span class="pun">.</span><span class="pln">setAttribute</span><span class="pun">(</span><span class="str">"type"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"text/javascript"</span><span class="pun">);</span></li><li class="L3"><span class="pln">script</span><span class="pun">.</span><span class="pln">setAttribute</span><span class="pun">(</span><span class="str">"src"</span><span class="pun">,</span><span class="pln"> url</span><span class="pun">);</span></li><li class="L4"><span class="kwd">var</span><span class="pln"> head </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementsByTagName</span><span class="pun">(</span><span class="str">"head"</span><span class="pun">)[</span><span class="lit">0</span><span class="pun">];</span></li><li class="L5"><span class="pln">head</span><span class="pun">.</span><span class="pln">appendChild</span><span class="pun">(</span><span class="pln">script</span><span class="pun">);</span></li></ol></pre></div><h2>Multiple Loads</h2><h3>Cache</h3><p>First, you need to worry about <strong>caching</strong>. Typically, the url you&#39;re going to be loading is going to be some kind of CGI program. After all, if the output doesn&#39;t vary, why bother loading it more than once? Usually browsers are fairly smart about not caching those, but you might want to take some steps to ensure that the second call doesn&#39;t just get you the cached copy of the result of the first call. So the CGI should probably be outputting headers to suppress caching. You might also put extra arguments on the URL, perhaps by keeping a count of the number of times you&#39;ve called it, and adding a "?count=7" argument onto the end of the URL (where 7 is the current count). This makes the URL different on each call, and further ensures that you won&#39;t get a cached copy.</p><h3>Delete Script</h3><p>Second, you&#39;ll tend to accumulate a lot of script tags in your header. This doesn&#39;t necessarily do a whole lot of harm, but it seems sloppy. So you could probably delete them by doing <code>head.removeChild(script)</code>. I think you can actually have the callback function do this immediately after loading. Removing the script tag does not undefine functions or variables that were defined by it, so you are done with it the moment it is done loading.</p><h3>Detect Load Completion</h3><p>After we have loaded the helper code, we obviously want to call it to start it running. However, we can&#39;t just put a call to complete() after the commands above, because the browser may be loading the "myScript.js" file asynchronously, which means that our call may occur before the function has finished (or even started) loading.</p><p>Here we set up two different event handlers on the newly created script tag. Depending on the browser, one or the other of these two handlers is supposed to be called when the script has finished loading. The <code>onreadystatechange</code> handler works on <strong>IE</strong> only. The <code>onload</code> handler works on <strong>Gecko browsers</strong> and <strong>Opera</strong>.</p><p>The readyState theoretically goes through a series of states:</p><ul class="list">  <li>0 uninitialized</li>  <li>1 loading</li>  <li>2 loaded</li>  <li>3 interactive</li>  <li>4 complete</li></ul><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> HTTPUTILITY </span><span class="pun">=</span><span class="pln">  </span><span class="pun">{</span></li><li class="L1"><span class="pln">  getScript</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">url</span><span class="pun">,</span><span class="pln"> callback</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">    </span><span class="kwd">var</span><span class="pln"> isLoaded </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">  </span></li><li class="L3"><span class="pln">    </span><span class="kwd">var</span><span class="pln"> script </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">createElement</span><span class="pun">(</span><span class="str">"script"</span><span class="pun">);</span><span class="pln">  </span></li><li class="L4"><span class="pln">    script</span><span class="pun">.</span><span class="pln">setAttribute</span><span class="pun">(</span><span class="str">"language"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"javascript"</span><span class="pun">);</span><span class="pln">  </span></li><li class="L5"><span class="pln">    script</span><span class="pun">.</span><span class="pln">setAttribute</span><span class="pun">(</span><span class="str">"type"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"text/javascript"</span><span class="pun">);</span><span class="pln">  </span></li><li class="L6"><span class="pln">    script</span><span class="pun">.</span><span class="pln">setAttribute</span><span class="pun">(</span><span class="str">"src"</span><span class="pun">,</span><span class="pln"> url</span><span class="pun">);</span></li><li class="L7"><span class="pln">    script</span><span class="pun">.</span><span class="pln">onload </span><span class="pun">=</span><span class="pln"> script</span><span class="pun">.</span><span class="pln">onreadystatechange </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">  </span></li><li class="L8"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">isLoaded </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="pun">(!</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">readyState </span><span class="pun">||</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">readyState </span><span class="pun">===</span><span class="pln"> </span><span class="str">"loaded"</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">readyState </span><span class="pun">===</span><span class="pln"> </span><span class="str">"complete"</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">  </span></li><li class="L9"><span class="pln">        isLoaded </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">  </span></li><li class="L0"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">typeof</span><span class="pln"> callback </span><span class="pun">===</span><span class="pln"> </span><span class="str">"function"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">          callback</span><span class="pun">();</span></li><li class="L2"><span class="pln">        </span><span class="pun">}</span></li><li class="L3"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">tagName</span><span class="pun">.</span><span class="pln">toLowerCase</span><span class="pun">()</span><span class="pln"> </span><span class="pun">===</span><span class="pln"> </span><span class="str">"script"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">          document</span><span class="pun">.</span><span class="pln">getElementsByTagName</span><span class="pun">(</span><span class="str">"head"</span><span class="pun">)[</span><span class="lit">0</span><span class="pun">].</span><span class="pln">removeChild</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">);</span></li><li class="L5"><span class="pln">        </span><span class="pun">}</span></li><li class="L6"><span class="pln">      </span><span class="pun">}</span></li><li class="L7"><span class="pln">    </span><span class="pun">};</span></li><li class="L8"><span class="pln">    </span><span class="kwd">var</span><span class="pln"> head </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementsByTagName</span><span class="pun">(</span><span class="str">"head"</span><span class="pun">)[</span><span class="lit">0</span><span class="pun">];</span><span class="pln">  </span></li><li class="L9"><span class="pln">    head</span><span class="pun">.</span><span class="pln">appendChild</span><span class="pun">(</span><span class="pln">script</span><span class="pun">);</span><span class="pln">  </span></li><li class="L0"><span class="pln">  </span><span class="pun">}</span></li><li class="L1"><span class="pun">};</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">function</span><span class="pln"> complete</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">  alert</span><span class="pun">(</span><span class="str">"complete"</span><span class="pun">);</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pln">HTTPUTILITY</span><span class="pun">.</span><span class="pln">getScript</span><span class="pun">(</span><span class="str">"myScript.js"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(){</span><span class="pln">complete</span><span class="pun">();});</span></li></ol></pre></div><p><a class="demo-link" href="http://www.lingihuang.com/filemanage/examples/dynamically_load_script/index.html" target="_blank"><i class="glyphicon glyphicon-file"></i>View Demo</a></p><h2>document.write</h2><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="pln">document</span><span class="pun">.</span><span class="pln">write</span><span class="pun">(</span><span class="str">&#39;&lt;&#39;</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="str">&#39;script type="text/javascript" src="http://www.lingihuang.com/libraries/library.js"&#39;</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="str">&#39;&gt;&lt;&#39;</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="str">&#39;/script&gt;&#39;</span><span class="pun">);</span></li></ol></pre></div><p><a class="demo-link" href="http://www.lingihuang.com/filemanage/examples/dynamically_load_script/document.write.html" target="_blank"><i class="glyphicon glyphicon-file"></i>View Demo</a></p><h2>Related Posts</h2><ul class="list">  <li><a href="http://unixpapa.com/js/dyna.html" target="_blank">Dynamic Script Loading</a></li>  <li><a href="http://www.nczonline.net/blog/2009/07/28/the-best-way-to-load-external-javascript/" target="_blank">The Best Way to Load External Javascript</a></li>  <li><a href="http://www.phpied.com/javascript-include-ready-onload/" target="_blank">Javascript Inclusion</a></li>  <li><a href="http://ntt.cc/2008/02/10/4-ways-to-dynamically-load-external-javascriptwith-source.html" target="_blank">4 Ways To Dynamically Load External Javascript</a></li></ul></div>
+    </div>
+    <div class="entry-footer">
+        <p class="article-modify-author">This post was last modified by
+            <span>Lingi Huang</span>
+            <time datetime="2015-06-11T11:30:27+08:00" class="article-modify-time">2015/06/11</time>
+        </p>
+
+        
+    <ul class="share-btn-wrap">
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.lingihuang.com/docs-blog/article-19" class="shareBtn" title="share" rel="nofollow"></a></li>
+        <li>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https://www.lingihuang.com/docs-blog/article-19" scrolling="no" frameborder="0"
+                style="border:none; width:450px; height:80px"></iframe>
+        </li>
+    </ul>
+
+
+
+        
+    </div>
+    
+    
+        <br />
+        <ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1449650742587459"
+     data-ad-slot="2197220184"></ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1449650742587459",
+          enable_page_level_ads: true
+     });
+</script>
+    
+
+</div>
+
+        
+            
+    </div>
+    
+
+            
+    <div class="sidebar">
+        
+                
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">JavaScript 相關</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">Web Development 相關</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-37-CSS-Selectors.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_37&quot;}'>CSS Selectors </a></li>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-5-Stack-Order.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_5&quot;}'>Stack Order </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">類別 JavaScript</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+    </ul>
+</div>
+
+
+        
+                
+
+
+        
+            
+    </div>
+    
+        
+</div>
+
+
+
+    
+
+            
+<div class="bottom-footer">
+    <ul class="nav">
+        
+        <li >
+            <a href="../AboutMe.html">About Me</a>
+        </li>
+        
+        <li >
+            <a href="../Recipes.html">Recipes</a>
+        </li>
+        
+        <li class="active">
+            <a href="../docs-cate.html">Web</a>
+        </li>
+        
+
+        <li>
+            <a href="http://www.puritys.me/">puritys.me</a>
+        </li>
+        <li>
+            <a href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html">VIVIAN CRAP</a>
+        </li>
+        
+    </ul>
+    <p>Copyright &amp;copy; 2014 LINGIHUANG.COM. All rights reserved.</p>
+</div>
+
+
+            
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+
+
+        
+</body>
+    <script src="../templates/static/js/files%3Fsidebar.js&amp;ezHTML_main.js&amp;%3Fv=20180416-2"></script>
+</html>

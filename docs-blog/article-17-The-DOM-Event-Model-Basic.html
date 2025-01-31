@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M3BFP5');</script>
+    <!-- End Google Tag Manager -->
+
+    <link href="../templates/static/css/files%3Fdefault.less&amp;other.less&amp;ezHTML.less&amp;%3Fv=20180416-2.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js?v=20180416-2"></script>
+    <script src="../templates/static/js/files%3FlightHttp-simple-min.js&amp;default.js&amp;facebookAPI.js&amp;form_check.js&amp;util.js&amp;listAutoLoadMore.js&amp;%3Fv=20180416-2"></script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en" />
+    <meta name="author" content="lingihuang" />
+    <title>The DOM Event Model Basic</title>
+    <meta name="keywords" content="JavaScript, Web Development" />
+    <meta name="description" content="Event Flow Event Capturing Netscape maintained that the event on element1 takes place first. This is called event capturing. The event handler of element1 fires first, the event handler of e" />
+    <meta property="fb:app_id" content="160015347378316" />
+    <meta property="fb:admins" content="1140660203"/>
+    
+
+    <link rel="shortcut icon" href="../templates/static/images/favicon_vivian.ico" /> 
+    
+
+    <link rel="canonical" href="https://www.lingihuang.com/docs-blog/article-17-The-DOM-Event-Model-Basic.html"/>
+    
+
+
+    <link rel="amphtml" href="https://www.lingihuang.com/docs-blog-amp/article-17-The-DOM-Event-Model-Basic.html"/>
+    
+
+    <link rel="dns-prefetch" href="apis.google.com.html">
+        <link rel="dns-prefetch" href="ajax.googleapis.com.html">
+        <link rel="dns-prefetch" href="connect.facebook.net.html">
+        <link rel="dns-prefetch" href="www.google-analytics.com.html">
+        <link rel="dns-prefetch" href="www.lingihuang.com.html">
+        
+
+<!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "https://www.lingihuang.com",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "https://www.lingihuang.com/search?searchText={search_term_string}",
+     "query-input": "required name=search_term_string"
+   }
+}
+    </script>
+
+
+
+
+
+
+
+</head>
+<body>
+
+            
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3BFP5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+            
+<div class="settings">
+    
+        <script>var WRT="https://www.lingihuang.com/";</script>
+    
+</div>
+
+
+            
+<div class="header">
+    <div class="top-header">
+        <div class="main">
+        <a class="logo" href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html"><img src="../templates/static/images/logo_vivian.png" alt="Vivian Crap" title="Vivian Crap"></a>
+        <a class="navbar-btn" href="article-17-The-DOM-Event-Model-Basic.html#"><span class="icon"></span></a>
+        </div>
+        <ul class="navbar">
+             
+            <li >
+                <a href="../AboutMe.html" data-ga='{"action":"menu_click","label":"About Me"}'>About Me</a>
+            </li>
+             
+            <li >
+                <a href="../Recipes.html" data-ga='{"action":"menu_click","label":"Recipes"}'>Recipes</a>
+            </li>
+             
+            <li class="active">
+                <a href="../docs-cate.html" data-ga='{"action":"menu_click","label":"Web"}'>Web</a>
+            </li>
+            
+        </ul>
+        <form action="http://www.lingihuang.com/search" class="navbar-form">
+            <input type="text" name="searchText" placeholder="Input your keyword" value="">
+            <i class="glyphicon glyphicon-search"></i>
+        </form>
+    </div>
+</div>
+
+
+        
+
+        
+<div class="body-content">
+    
+            
+    <div class="main">
+        
+                
+<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> 
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a href="https://www.lingihuang.com" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+            <em><span itemprop="name">Home</span></em>
+        </a>
+        <meta itemprop="position" content="1" />
+    </li>
+    
+        
+            <li  itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem">
+                <a href="../docs-cate/JavaScript.html" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+                    <em><span itemprop="name">JavaScript</span></em>
+                </a>
+                <meta itemprop="position" content="2" />
+            </li>
+        
+    
+        
+            <li class="active">
+                <a href="https://www.lingihuang.com/docs-blog/article-17">
+                    <em><span>The DOM Event Model Basic</span></em>
+                </a>
+            </li>
+        
+    
+</ul>
+
+        
+                
+
+
+<script type="application/ld+json">
+    {"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lingihuang.com\/docs-blog\/article-17-The-DOM-Event-Model-Basic.html"},"headline":"The DOM Event Model Basic","image":"","datePublished":"2009-04-26T02:00:49+08:00","dateModified":"2015-06-11T11:17:16+08:00","author":{"@type":"Person","name":"Lingi Huang"},"publisher":{"@type":"Organization","name":"www.lingihuang.com","logo":{"@type":"ImageObject","url":"https:\/\/www.lingihuang.com\/templates\/static\/images\/favicon_vivian.ico"}},"description":"Event Flow\r\r  \r    \r    \r      Event Capturing\r      Netscape maintained that the event on element1 "}
+</script>
+
+
+<div class="entry">
+   <div class="entry-header">
+        
+        <div class="date">
+            <div class="year">2009</div>
+            <div class="month">Apr</div>
+            <div class="day">26</div>
+        </div>
+
+        
+        <div class="title">
+            <h1><a href="article-17-The-DOM-Event-Model-Basic.html"><span>The DOM Event Model Basic</span></a></h1>
+            <div class="sub">
+                <div class="caption">Tags:</div>
+                <ul class="labels">
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=JavaScript.html">JavaScript</a>
+                    </li>
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=Web%20Development.html">Web Development</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="entry-body">
+        <div class="ezHTML-content"><h2>Event Flow</h2><ul class="media-list">  <li class="media clearfix">    <img class="media-thumb media-object pull-left" src="../filemanage/images/2009/04/javascript-event-handler-1.gif" alt="Javascript Event Handler" title="Javascript Event Handler" width="220" height="133">    <div class="media-body">      <h4 class="media-heading">Event Capturing</h4>      <p>Netscape maintained that the event on element1 takes place first. This is called <strong>event capturing</strong>. The event handler of element1 fires first, the event handler of element2 fires last.</p>    </div>  </li>  <li class="media clearfix">    <img class="media-thumb media-object pull-left" src="../filemanage/images/2009/04/javascript-event-handler-2.gif" alt="Javascript Event Handler" title="Javascript Event Handler" width="220" height="133">    <div class="media-body">      <h4 class="media-heading">Event Bubbling</h4>      <p>Microsoft maintained that the event on element2 takes precedence. This is called <strong>event bubbling</strong>. The event handler of element2 fires first, the event handler of element1 fires last.</p>    </div>  </li>  <li class="media clearfix">    <img class="media-thumb media-object pull-left" src="../filemanage/images/2009/04/javascript-event-handler-3.gif" alt="Javascript Eevent Handler" title="Javascript Eevent Handler" width="220" height="133">    <div class="media-body">      <h4 class="media-heading">W3C Event Model</h4>      <p>W3C has very sensibly decided to take a middle position in this struggle. Any event taking place in the W3C event model is first captured until it reaches the target element and then bubbles up again.</p>    </div>  </li></ul><h2>The Event Object</h2><table class="table"><tr><th>Property Name</th><th>Description</th></tr><tr><td>type</td><td>The type of event that occurred. The value of this property is the name of the event type and is the same string value that was used when registering the event handler (e.g., "click" or "mouseover").</td></tr><tr><td>target</td><td>The node on which the event occurred, which may not be the same as currentTarget.</td></tr><tr><td>currentTarget</td><td>The node on which the event is currently being processed. If the event is being processed during the capturing or bubbling phase of propagation, the value of this property is different from the value of the target property.</td></tr><tr><td>eventPhase</td><td>A number that specifies what phase of event propagation is currently in process. The value of one of the constants Event.CAPTURING_PHASE, EVENT.AT_TARGET, or EVENT_BUBBLING_PHASE.</td></tr><tr><td>timeStamp</td><td>A Date object that specifies when the event occurred.</td></tr><tr><td>bubbles</td><td>A boolean that specifies whether this event (and events of this type) bubbles up the document tree.</td></tr><tr><td>cancelable</td><td>A boolean that specifies whether the event has a default action associated with it that can be canceled with the preventDefault() method.</td></tr></table><table class="table"><tr><th>Method Name</th><th>Description</th></tr><tr><td>stopPropagation()</td><td>Any event handler can call stopPropagation() to prevent the event from being propagated beyond the node at which it is currently being handled.</td></tr><tr><td>preventDefault()</td><td>Any event handler can call preventDefault() to prevent the browser from performing a default action associated with the event.</td></tr></table><table class="table"><tr><th>W3C Standard</th><th>Internet Explorer</th><th>Description</th></tr><tr><td>type</td><td>type</td><td>A string that specifies the type of event that occurred.</td></tr><tr><td>target</td><td>srcElement</td><td>The document element on which the event occurred.</td></tr><tr><td>currentTarget</td><td>none</td><td>Not applicable in IE.</td></tr><tr><td>eventPhase</td><td>none</td><td>Not applicable in IE.</td></tr><tr><td>timeStamp</td><td>none</td><td>Not applicable in IE.</td></tr><tr><td>stopPropagation()</td><td>cancelBubble</td><td>A boolean property that, when set to true, prevents the current event from bubbling any further up the element containment hierarchy.</td></tr><tr><td>preventDefault()</td><td>returnValue</td><td>A boolean property that can be set to false to prevent the browser from performing the default action associated with the event.</td></tr></table><h3>The IE Event Object as a Global Variable</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">function</span><span class="pln"> onMouseDownHandler</span><span class="pun">(</span><span class="pln">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">  </span><span class="kwd">var</span><span class="pln"> event </span><span class="pun">=</span><span class="pln"> event </span><span class="pun">||</span><span class="pln"> window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">;</span><span class="pln"> </span><span class="com">// IE stores events in window object.</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pln">element</span><span class="pun">.</span><span class="pln">onmousedown </span><span class="pun">=</span><span class="pln"> onMouseDownHandler</span><span class="pun">;</span></li></ol></pre></div><h3>currentTarget and relatedTarget/fromElement and toElement</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> GENERIC </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">  findCurrentTarget</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">event</span><span class="pun">,</span><span class="pln"> node</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">    </span><span class="kwd">var</span><span class="pln"> currentTarget</span><span class="pun">;</span></li><li class="L3"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For IE</span></li><li class="L4"><span class="pln">      currentTarget </span><span class="pun">=</span><span class="pln"> node</span><span class="pun">;</span></li><li class="L5"><span class="pln">    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">event </span><span class="pun">&amp;&amp;</span><span class="pln"> event</span><span class="pun">.</span><span class="pln">currentTarget</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For Firefox, Opera</span></li><li class="L6"><span class="pln">      currentTarget </span><span class="pun">=</span><span class="pln"> event</span><span class="pun">.</span><span class="pln">currentTarget</span><span class="pun">;</span></li><li class="L7"><span class="pln">    </span><span class="pun">}</span></li><li class="L8"><span class="pln">    </span><span class="kwd">return</span><span class="pln"> currentTarget</span><span class="pun">;</span></li><li class="L9"><span class="pln">  </span><span class="pun">},</span></li><li class="L0"><span class="pln">  findRelatedTarget</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="kwd">var</span><span class="pln"> relatedTarget</span><span class="pun">;</span></li><li class="L2"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For IE</span></li><li class="L3"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">type </span><span class="pun">===</span><span class="pln"> </span><span class="str">"mouseover"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">        relatedTarget </span><span class="pun">=</span><span class="pln"> window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">fromElement</span><span class="pun">;</span></li><li class="L5"><span class="pln">      </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">type </span><span class="pun">===</span><span class="pln"> </span><span class="str">"mouseout"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">        relatedTarget </span><span class="pun">=</span><span class="pln"> window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">toElement</span><span class="pun">;</span></li><li class="L7"><span class="pln">      </span><span class="pun">}</span></li><li class="L8"><span class="pln">    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">event </span><span class="pun">&amp;&amp;</span><span class="pln"> event</span><span class="pun">.</span><span class="pln">relatedTarget</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For Firefox</span></li><li class="L9"><span class="pln">      relatedTarget </span><span class="pun">=</span><span class="pln"> event</span><span class="pun">.</span><span class="pln">relatedTarget</span><span class="pun">;</span></li><li class="L0"><span class="pln">    </span><span class="pun">}</span></li><li class="L1"><span class="pln">    </span><span class="kwd">return</span><span class="pln"> relatedTarget</span><span class="pun">;</span></li><li class="L2"><span class="pln">  </span><span class="pun">}</span></li><li class="L3"><span class="pun">};</span></li></ol></pre></div><p><a class="demo-link" href="http://www.lingihuang.com/filemanage/examples/dom_event_model_advanced/currentTarget_relatedTarget.html" target="_blank"><i class="glyphicon glyphicon-file"></i>View Demo</a></p><h3>Turn all capturing and bubbling off</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> GENERIC </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">  stopPropagation</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For IE</span></li><li class="L3"><span class="pln">      window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">cancelBubble </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span></li><li class="L4"><span class="pln">    </span><span class="pun">}</span></li><li class="L5"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">event </span><span class="pun">&amp;&amp;</span><span class="pln"> event</span><span class="pun">.</span><span class="pln">stopPropagation</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For Firefox, Opera, Safari</span></li><li class="L6"><span class="pln">      event</span><span class="pun">.</span><span class="pln">stopPropagation</span><span class="pun">();</span></li><li class="L7"><span class="pln">    </span><span class="pun">}</span></li><li class="L8"><span class="pln">  </span><span class="pun">}</span></li><li class="L9"><span class="pun">};</span></li></ol></pre></div><h3>Prevent Default Action</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> GENERIC </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">  cancelDefault</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For IE</span></li><li class="L3"><span class="pln">      window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">returnValue </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span></li><li class="L4"><span class="pln">    </span><span class="pun">}</span></li><li class="L5"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">event </span><span class="pun">&amp;&amp;</span><span class="pln"> event</span><span class="pun">.</span><span class="pln">preventDefault</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For Firefox, Opera, Safari</span></li><li class="L6"><span class="pln">      event</span><span class="pun">.</span><span class="pln">preventDefault</span><span class="pun">();</span></li><li class="L7"><span class="pln">    </span><span class="pun">}</span></li><li class="L8"><span class="pln">  </span><span class="pun">}</span></li><li class="L9"><span class="pun">};</span></li></ol></pre></div><p><a class="demo-link" href="http://www.lingihuang.com/filemanage/examples/dom_event_model_basic/contextMenu.html" target="_blank"><i class="glyphicon glyphicon-file"></i>View Demo</a></p><h2>Event Handler Registration</h2><h3>Example One</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="com">// Add Event Handlers to The Element</span></li><li class="L1"><span class="pln">element</span><span class="pun">.</span><span class="pln">onclick </span><span class="pun">=</span><span class="pln"> doSomething</span><span class="pun">;</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="com">// Remove Event Handlers</span></li><li class="L1"><span class="pln">element</span><span class="pun">.</span><span class="pln">onclick </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span></li></ol></pre></div><h3>Example Two: attachEvent() and addEventListener()</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="com">// Add Event Handlers to The Element</span></li><li class="L1"><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">element</span><span class="pun">.</span><span class="pln">attachEvent</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For IE</span></li><li class="L2"><span class="pln">  element</span><span class="pun">.</span><span class="pln">attachEvent</span><span class="pun">(</span><span class="str">"onclick"</span><span class="pun">,</span><span class="pln"> doSomething</span><span class="pun">);</span></li><li class="L3"><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">element</span><span class="pun">.</span><span class="pln">addListener</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For Modern Browsers</span></li><li class="L4"><span class="pln">  element</span><span class="pun">.</span><span class="pln">addEventListener</span><span class="pun">(</span><span class="str">"click"</span><span class="pun">,</span><span class="pln"> doSomething</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></li><li class="L5"><span class="pun">}</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="com">// Remove Event Handlers</span></li><li class="L1"><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">element</span><span class="pun">.</span><span class="pln">detachEvent</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For IE</span></li><li class="L2"><span class="pln">  element</span><span class="pun">.</span><span class="pln">detachEvent</span><span class="pun">(</span><span class="str">"onclick"</span><span class="pun">,</span><span class="pln"> doSomething</span><span class="pun">);</span></li><li class="L3"><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">element</span><span class="pun">.</span><span class="pln">removeListener</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For Modern Browsers</span></li><li class="L4"><span class="pln">  element</span><span class="pun">.</span><span class="pln">removeEventListener</span><span class="pun">(</span><span class="str">"click"</span><span class="pun">,</span><span class="pln"> doSomething</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></li><li class="L5"><span class="pun">}</span></li></ol></pre></div><h4>attachEvent() and the this keyword</h4><p>Event handlers registered with attachEvent() are invoked as global functions instead of as methods of the element on which they are registered. This means that the <code>this</code> keyword refers to <strong>the global window object</strong>. It is compounded, however, by the fact that the IE event object has no equivalent to the DOM <code>currentTarget</code> property. <code>srcElement</code> specifies the element that generated the event, but if the event has bubbled, this may be different from the element that is handling the event.</p><h4>Arguments to addEventListener()</h4><p>The final argument to addEventListener() is a boolean value. If <strong>true</strong>, the specified event handler captures events during the capturing phase of event propagation. If the argument is <strong>false</strong>, the event handler is a normal event handler and is triggered when the event directly on the object or on a descendant of the element and subsequently bubbles up to the element.</p><h4>addEventListener() and the this keyword</h4><p>When a function is registered as an event handler for a document element, it becomes a method of that document element. When the event handler is invoked, it is invoked as a method of the element, and, within the function, the <code>this</code> keyword refers to the element on which the event occurred.</p><h3>Example Three: Register Objects as Event Handlers</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> GENERIC </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">  </span><span class="com">// Fix the bug the "this" keyword refers to the global window object when event handlers registered with attachEvent() are invoked as global functions instead of as methods of the element on which they are registered.</span></li><li class="L2"><span class="pln">  addEvent</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">,</span><span class="pln"> type</span><span class="pun">,</span><span class="pln"> fn</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">obj</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">      </span><span class="kwd">return</span><span class="pun">;</span></li><li class="L5"><span class="pln">    </span><span class="pun">}</span></li><li class="L6"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">type </span><span class="pun">===</span><span class="pln"> </span><span class="str">"mousewheel"</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> navigator</span><span class="pun">.</span><span class="pln">userAgent</span><span class="pun">.</span><span class="pln">match</span><span class="pun">(</span><span class="str">"Gecko/"</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">      type </span><span class="pun">=</span><span class="pln"> </span><span class="str">"DOMMouseScroll"</span><span class="pun">;</span></li><li class="L8"><span class="pln">    </span><span class="pun">}</span></li><li class="L9"><span class="pln">    </span><span class="com">// Fix the bug the "this" keyword refers to the global window object when event handlers registered with attachEvent() are invoked as global functions instead of as methods of the element on which they are registered.</span></li><li class="L0"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">obj</span><span class="pun">.</span><span class="pln">attachEvent</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For IE.</span></li><li class="L1"><span class="pln">      obj</span><span class="pun">[</span><span class="str">"e"</span><span class="pun">+</span><span class="pln">type</span><span class="pun">+</span><span class="pln">fn</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> fn</span><span class="pun">;</span></li><li class="L2"><span class="pln">      obj</span><span class="pun">[</span><span class="pln">type</span><span class="pun">+</span><span class="pln">fn</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">          obj</span><span class="pun">[</span><span class="str">"e"</span><span class="pun">+</span><span class="pln">type</span><span class="pun">+</span><span class="pln">fn</span><span class="pun">](</span><span class="pln"> window</span><span class="pun">.</span><span class="pln">event </span><span class="pun">);</span></li><li class="L4"><span class="pln">      </span><span class="pun">}</span></li><li class="L5"><span class="pln">      obj</span><span class="pun">.</span><span class="pln">attachEvent</span><span class="pun">(</span><span class="str">"on"</span><span class="pun">+</span><span class="pln">type</span><span class="pun">,</span><span class="pln"> obj</span><span class="pun">[</span><span class="pln">type</span><span class="pun">+</span><span class="pln">fn</span><span class="pun">]);</span></li><li class="L6"><span class="pln">    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">obj</span><span class="pun">.</span><span class="pln">addEventListener</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For Firefox, Opera, Safari</span></li><li class="L7"><span class="pln">      obj</span><span class="pun">.</span><span class="pln">addEventListener</span><span class="pun">(</span><span class="pln">type</span><span class="pun">,</span><span class="pln"> fn</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></li><li class="L8"><span class="pln">    </span><span class="pun">}</span></li><li class="L9"><span class="pln">  </span><span class="pun">},</span></li><li class="L0"><span class="pln">  removeEvent</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">,</span><span class="pln"> type</span><span class="pun">,</span><span class="pln"> fn</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">obj</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">      </span><span class="kwd">return</span><span class="pun">;</span></li><li class="L3"><span class="pln">    </span><span class="pun">}</span></li><li class="L4"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">obj</span><span class="pun">.</span><span class="pln">detachEvent</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For IE</span></li><li class="L5"><span class="pln">      obj</span><span class="pun">.</span><span class="pln">detachEvent</span><span class="pun">(</span><span class="str">"on"</span><span class="pun">+</span><span class="pln">type</span><span class="pun">,</span><span class="pln"> obj</span><span class="pun">[</span><span class="pln">type</span><span class="pun">+</span><span class="pln">fn</span><span class="pun">]);</span></li><li class="L6"><span class="pln">      obj</span><span class="pun">[</span><span class="pln">type</span><span class="pun">+</span><span class="pln">fn</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span></li><li class="L7"><span class="pln">    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">obj</span><span class="pun">.</span><span class="pln">addEventListener</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For Firefox, Opera, Safari</span></li><li class="L8"><span class="pln">      obj</span><span class="pun">.</span><span class="pln">removeEventListener</span><span class="pun">(</span><span class="pln">type</span><span class="pun">,</span><span class="pln"> fn</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></li><li class="L9"><span class="pln">    </span><span class="pun">}</span></li><li class="L0"><span class="pln">  </span><span class="pun">}</span></li><li class="L1"><span class="pun">};</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">function</span><span class="pln"> changeBackground</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">style</span><span class="pun">.</span><span class="pln">backgroundColor </span><span class="pun">=</span><span class="pln"> </span><span class="str">"#000"</span><span class="pun">;</span><span class="pln"> </span><span class="com">// "this" refers to the element</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pln">GENERIC</span><span class="pun">.</span><span class="pln">addEvent</span><span class="pun">(</span><span class="pln">element</span><span class="pun">,</span><span class="pln"> </span><span class="str">"click"</span><span class="pun">,</span><span class="pln"> changeBackground</span><span class="pun">);</span></li><li class="L4"><span class="pln">GENERIC</span><span class="pun">.</span><span class="pln">removeEvent</span><span class="pun">(</span><span class="pln">element</span><span class="pun">,</span><span class="pln"> </span><span class="str">"click"</span><span class="pun">,</span><span class="pln"> changeBackground</span><span class="pun">);</span></li></ol></pre></div><h2>Related Posts</h2><ul class="list">  <li><a href="http://www.w3.org/TR/2000/REC-DOM-Level-2-Events-20001113/events.html" target="_blank">W3C Document Object Model Events</a></li>  <li><a href="http://www.brainjar.com/dhtml/events/default.asp" target="_blank">The DOM Event Model</a></li>  <li><a href="http://www.quirksmode.org/js/events_tradmod.html" target="_blank">Traditional Event Registration Model</a></li>  <li><a href="http://www.quirksmode.org/js/events_advanced.html" target="_blank">Advanced Event Registration Model</a></li>  <li><a href="http://www.quirksmode.org/js/events_order.html" target="_blank">Event Order</a></li></ul></div>
+    </div>
+    <div class="entry-footer">
+        <p class="article-modify-author">This post was last modified by
+            <span>Lingi Huang</span>
+            <time datetime="2015-06-11T11:17:16+08:00" class="article-modify-time">2015/06/11</time>
+        </p>
+
+        
+    <ul class="share-btn-wrap">
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.lingihuang.com/docs-blog/article-17" class="shareBtn" title="share" rel="nofollow"></a></li>
+        <li>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https://www.lingihuang.com/docs-blog/article-17" scrolling="no" frameborder="0"
+                style="border:none; width:450px; height:80px"></iframe>
+        </li>
+    </ul>
+
+
+
+        
+    </div>
+    
+    
+        <br />
+        <ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1449650742587459"
+     data-ad-slot="2197220184"></ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1449650742587459",
+          enable_page_level_ads: true
+     });
+</script>
+    
+
+</div>
+
+        
+            
+    </div>
+    
+
+            
+    <div class="sidebar">
+        
+                
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">JavaScript 相關</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">Web Development 相關</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-37-CSS-Selectors.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_37&quot;}'>CSS Selectors </a></li>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-5-Stack-Order.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_5&quot;}'>Stack Order </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">類別 JavaScript</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+    </ul>
+</div>
+
+
+        
+                
+
+
+        
+            
+    </div>
+    
+        
+</div>
+
+
+
+    
+
+            
+<div class="bottom-footer">
+    <ul class="nav">
+        
+        <li >
+            <a href="../AboutMe.html">About Me</a>
+        </li>
+        
+        <li >
+            <a href="../Recipes.html">Recipes</a>
+        </li>
+        
+        <li class="active">
+            <a href="../docs-cate.html">Web</a>
+        </li>
+        
+
+        <li>
+            <a href="http://www.puritys.me/">puritys.me</a>
+        </li>
+        <li>
+            <a href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html">VIVIAN CRAP</a>
+        </li>
+        
+    </ul>
+    <p>Copyright &amp;copy; 2014 LINGIHUANG.COM. All rights reserved.</p>
+</div>
+
+
+            
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+
+
+        
+</body>
+    <script src="../templates/static/js/files%3Fsidebar.js&amp;ezHTML_main.js&amp;%3Fv=20180416-2"></script>
+</html>

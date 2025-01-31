@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M3BFP5');</script>
+    <!-- End Google Tag Manager -->
+
+    <link href="../templates/static/css/files%3Fdefault.less&amp;other.less&amp;ezHTML.less&amp;%3Fv=20180416-2.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js?v=20180416-2"></script>
+    <script src="../templates/static/js/files%3FlightHttp-simple-min.js&amp;default.js&amp;facebookAPI.js&amp;form_check.js&amp;util.js&amp;listAutoLoadMore.js&amp;%3Fv=20180416-2"></script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en" />
+    <meta name="author" content="lingihuang" />
+    <title>Image Preloader</title>
+    <meta name="keywords" content="CSS, JavaScript, Web Development" />
+    <meta name="description" content="Why may we want to preload images?Preloading images is a great way to improve the user experience. When images are preloaded in the browser, the visitor can surf around your site and enjoy e" />
+    <meta property="fb:app_id" content="160015347378316" />
+    <meta property="fb:admins" content="1140660203"/>
+    
+
+    <link rel="shortcut icon" href="../templates/static/images/favicon_vivian.ico" /> 
+    
+
+    <link rel="canonical" href="https://www.lingihuang.com/docs-blog/article-32-Image-Preloader.html"/>
+    
+
+
+    <link rel="amphtml" href="https://www.lingihuang.com/docs-blog-amp/article-32-Image-Preloader.html"/>
+    
+
+    <link rel="dns-prefetch" href="apis.google.com.html">
+        <link rel="dns-prefetch" href="ajax.googleapis.com.html">
+        <link rel="dns-prefetch" href="connect.facebook.net.html">
+        <link rel="dns-prefetch" href="www.google-analytics.com.html">
+        <link rel="dns-prefetch" href="www.lingihuang.com.html">
+        
+
+<!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "https://www.lingihuang.com",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "https://www.lingihuang.com/search?searchText={search_term_string}",
+     "query-input": "required name=search_term_string"
+   }
+}
+    </script>
+
+
+
+
+
+
+
+</head>
+<body>
+
+            
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3BFP5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+            
+<div class="settings">
+    
+        <script>var WRT="https://www.lingihuang.com/";</script>
+    
+</div>
+
+
+            
+<div class="header">
+    <div class="top-header">
+        <div class="main">
+        <a class="logo" href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html"><img src="../templates/static/images/logo_vivian.png" alt="Vivian Crap" title="Vivian Crap"></a>
+        <a class="navbar-btn" href="article-32-Image-Preloader.html#"><span class="icon"></span></a>
+        </div>
+        <ul class="navbar">
+             
+            <li >
+                <a href="../AboutMe.html" data-ga='{"action":"menu_click","label":"About Me"}'>About Me</a>
+            </li>
+             
+            <li >
+                <a href="../Recipes.html" data-ga='{"action":"menu_click","label":"Recipes"}'>Recipes</a>
+            </li>
+             
+            <li class="active">
+                <a href="../docs-cate.html" data-ga='{"action":"menu_click","label":"Web"}'>Web</a>
+            </li>
+            
+        </ul>
+        <form action="http://www.lingihuang.com/search" class="navbar-form">
+            <input type="text" name="searchText" placeholder="Input your keyword" value="">
+            <i class="glyphicon glyphicon-search"></i>
+        </form>
+    </div>
+</div>
+
+
+        
+
+        
+<div class="body-content">
+    
+            
+    <div class="main">
+        
+                
+<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> 
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a href="https://www.lingihuang.com" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+            <em><span itemprop="name">Home</span></em>
+        </a>
+        <meta itemprop="position" content="1" />
+    </li>
+    
+        
+            <li  itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem">
+                <a href="../docs-cate/JavaScript.html" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+                    <em><span itemprop="name">JavaScript</span></em>
+                </a>
+                <meta itemprop="position" content="2" />
+            </li>
+        
+    
+        
+            <li class="active">
+                <a href="https://www.lingihuang.com/docs-blog/article-32">
+                    <em><span>Image Preloader</span></em>
+                </a>
+            </li>
+        
+    
+</ul>
+
+        
+                
+
+
+<script type="application/ld+json">
+    {"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lingihuang.com\/docs-blog\/article-32-Image-Preloader.html"},"headline":"Image Preloader","image":"","datePublished":"2014-03-10T16:21:52+08:00","dateModified":"2015-06-01T23:35:33+08:00","author":{"@type":"Person","name":"Lingi Huang"},"publisher":{"@type":"Organization","name":"www.lingihuang.com","logo":{"@type":"ImageObject","url":"https:\/\/www.lingihuang.com\/templates\/static\/images\/favicon_vivian.ico"}},"description":"Why may we want to preload images?\rPreloading images is a great way to improve the user experience. "}
+</script>
+
+
+<div class="entry">
+   <div class="entry-header">
+        
+        <div class="date">
+            <div class="year">2014</div>
+            <div class="month">Mar</div>
+            <div class="day">10</div>
+        </div>
+
+        
+        <div class="title">
+            <h1><a href="article-32-Image-Preloader.html"><span>Image Preloader</span></a></h1>
+            <div class="sub">
+                <div class="caption">Tags:</div>
+                <ul class="labels">
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=CSS.html">CSS</a>
+                    </li>
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=JavaScript.html">JavaScript</a>
+                    </li>
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=Web%20Development.html">Web Development</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="entry-body">
+        <div class="ezHTML-content"><h2>Why may we want to preload images?</h2>Preloading images is a great way to improve the user experience. When images are preloaded in the browser, the visitor can surf around your site and enjoy extremely faster loading times. This is especially beneficial for photo galleries and other image-heavy sites where you want to deliver the goods as quickly and seamlessly as possible. Preloading images definitely helps users without broadband enjoy a better experience when viewing your content. In this article, we’ll explore three different preloading techniques to enhance the performance and usability of your site.<br /><h2>Soultions To Preload Images</h2><h3>Method 1: With CSS And JavaScript</h3><p>as Nanda suggests, it is better to preload images using only CSS. Using <strong>the CSS background property</strong>, we can preload images via existing div, span, or other elements in the (X)HTML markup.</p><div class="codeBlock"><span class="title">HTML Markup</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;ul</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"thumbnails"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"thumbnails"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">    </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"thumbnail"</span><span class="tag">&gt;&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"thumbnail-001 preload"</span><span class="tag">&gt;&lt;/div&gt;&lt;/li&gt;</span></li><li class="L2"><span class="pln">    </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"thumbnail"</span><span class="tag">&gt;&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"thumbnail-002 preload"</span><span class="tag">&gt;&lt;/div&gt;&lt;/li&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"thumbnail"</span><span class="tag">&gt;&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"thumbnail-003 preload"</span><span class="tag">&gt;&lt;/div&gt;&lt;/li&gt;</span></li><li class="L4"><span class="pln">    </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"thumbnail"</span><span class="tag">&gt;&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"thumbnail-004 preload"</span><span class="tag">&gt;&lt;/div&gt;&lt;/li&gt;</span></li><li class="L5"><span class="pln">    </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"thumbnail"</span><span class="tag">&gt;&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"thumbnail-005 preload"</span><span class="tag">&gt;&lt;/div&gt;&lt;/li&gt;</span></li><li class="L6"><span class="tag">&lt;/ul&gt;</span></li></ol></pre></div><div class="codeBlock"><span class="title">CSS</span><pre class="prettyprint lang-css linenums" ><ol class="linenums"><li class="L0"><span class="pun">.</span><span class="pln">preload </span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="kwd">display</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></li><li class="L2"><span class="pun">}</span></li><li class="L3"><span class="pun">.</span><span class="pln">thumbnails </span><span class="pun">{</span></li><li class="L4"><span class="pln">    </span><span class="kwd">list-style</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></li><li class="L5"><span class="pln">    </span><span class="kwd">margin</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span></li><li class="L6"><span class="pln">    </span><span class="kwd">padding</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span></li><li class="L7"><span class="pun">}</span></li><li class="L8"><span class="pun">.</span><span class="pln">thumbnail </span><span class="pun">{</span></li><li class="L9"><span class="pln">    </span><span class="kwd">background</span><span class="pun">:</span><span class="pln"> </span><span class="lit">#fafafa</span><span class="pun">;</span></li><li class="L0"><span class="pln">    </span><span class="kwd">border</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1px</span><span class="pln"> solid </span><span class="lit">#ccc</span><span class="pun">;</span></li><li class="L1"><span class="pln">    </span><span class="kwd">float</span><span class="pun">:</span><span class="pln"> left</span><span class="pun">;</span></li><li class="L2"><span class="pln">    </span><span class="kwd">height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">200px</span><span class="pun">;</span></li><li class="L3"><span class="pln">    </span><span class="kwd">margin</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="lit">5px</span><span class="pln"> </span><span class="lit">10px</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span></li><li class="L4"><span class="pln">    </span><span class="kwd">padding</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2px</span><span class="pun">;</span></li><li class="L5"><span class="pln">    </span><span class="kwd">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">300px</span><span class="pun">;</span></li><li class="L6"><span class="pun">}</span></li><li class="L7"><span class="pun">.</span><span class="pln">thumbnail-001 </span><span class="pun">{</span></li><li class="L8"><span class="pln">    </span><span class="kwd">background</span><span class="pun">:</span><span class="pln"> transparent </span><span class="kwd">url</span><span class="pun">(</span><span class="str">images/golden_gate_bridge.jpg</span><span class="pun">)</span><span class="pln"> no-repeat </span><span class="pun">-</span><span class="lit">500px</span><span class="pln"> </span><span class="pun">-</span><span class="lit">200px</span><span class="pun">;</span></li><li class="L9"><span class="pln">    </span><span class="kwd">height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">200px</span><span class="pun">;</span></li><li class="L0"><span class="pln">    </span><span class="kwd">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">300px</span><span class="pun">;</span></li><li class="L1"><span class="pun">}</span></li><li class="L2"><span class="pun">.</span><span class="pln">thumbnail-002 </span><span class="pun">{</span></li><li class="L3"><span class="pln">    </span><span class="kwd">background</span><span class="pun">:</span><span class="pln"> transparent </span><span class="kwd">url</span><span class="pun">(</span><span class="str">images/harley_davidson_cafe_001.jpg</span><span class="pun">)</span><span class="pln"> no-repeat </span><span class="pun">-</span><span class="lit">300px</span><span class="pln"> </span><span class="pun">-</span><span class="lit">250px</span><span class="pun">;</span></li><li class="L4"><span class="pln">    </span><span class="kwd">height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">200px</span><span class="pun">;</span></li><li class="L5"><span class="pln">    </span><span class="kwd">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">300px</span><span class="pun">;</span></li><li class="L6"><span class="pun">}</span></li><li class="L7"><span class="pun">.</span><span class="pln">thumbnail-003 </span><span class="pun">{</span></li><li class="L8"><span class="pln">    </span><span class="kwd">background</span><span class="pun">:</span><span class="pln"> transparent </span><span class="kwd">url</span><span class="pun">(</span><span class="str">images/palace_of_fine_arts.jpg</span><span class="pun">)</span><span class="pln"> no-repeat </span><span class="pun">-</span><span class="lit">500px</span><span class="pln"> </span><span class="pun">-</span><span class="lit">150px</span><span class="pun">;</span></li><li class="L9"><span class="pln">    </span><span class="kwd">height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">200px</span><span class="pun">;</span></li><li class="L0"><span class="pln">    </span><span class="kwd">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">300px</span><span class="pun">;</span></li><li class="L1"><span class="pun">}</span></li><li class="L2"><span class="pun">.</span><span class="pln">thumbnail-004 </span><span class="pun">{</span></li><li class="L3"><span class="pln">    </span><span class="kwd">background</span><span class="pun">:</span><span class="pln"> transparent </span><span class="kwd">url</span><span class="pun">(</span><span class="str">images/castro.jpg</span><span class="pun">)</span><span class="pln"> no-repeat </span><span class="pun">-</span><span class="lit">500px</span><span class="pln"> </span><span class="pun">-</span><span class="lit">350px</span><span class="pun">;</span></li><li class="L4"><span class="pln">    </span><span class="kwd">height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">200px</span><span class="pun">;</span></li><li class="L5"><span class="pln">    </span><span class="kwd">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">300px</span><span class="pun">;</span></li><li class="L6"><span class="pun">}</span></li><li class="L7"><span class="pun">.</span><span class="pln">thumbnail-005 </span><span class="pun">{</span></li><li class="L8"><span class="pln">    </span><span class="kwd">background</span><span class="pun">:</span><span class="pln"> transparent </span><span class="kwd">url</span><span class="pun">(</span><span class="str">images/pier_39.jpg</span><span class="pun">)</span><span class="pln"> no-repeat </span><span class="pun">-</span><span class="lit">500px</span><span class="pln"> </span><span class="pun">-</span><span class="lit">150px</span><span class="pun">;</span></li><li class="L9"><span class="pln">    </span><span class="kwd">height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">200px</span><span class="pun">;</span></li><li class="L0"><span class="pln">    </span><span class="kwd">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">300px</span><span class="pun">;</span></li><li class="L1"><span class="pun">}</span></li></ol></pre></div><div class="codeBlock"><span class="title">JavaScript</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> divElements </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementsByTagName</span><span class="pun">(</span><span class="str">"div"</span><span class="pun">);</span></li><li class="L1"><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> divElements</span><span class="pun">.</span><span class="pln">length</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">    </span><span class="kwd">var</span><span class="pln"> element </span><span class="pun">=</span><span class="pln"> divElements</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span></li><li class="L3"><span class="pln">    element</span><span class="pun">.</span><span class="pln">className </span><span class="pun">=</span><span class="pln"> element</span><span class="pun">.</span><span class="pln">className</span><span class="pun">.</span><span class="pln">replace</span><span class="pun">(</span><span class="str">" preload"</span><span class="pun">,</span><span class="pln"> </span><span class="str">""</span><span class="pun">);</span></li><li class="L4"><span class="pun">}</span></li></ol></pre></div><p><a class="demo-link" href="http://www.lingihuang.com/filemanage/examples/image_preloader/preload_with_css.html" target="_blank"><i class="glyphicon glyphicon-file"></i>View Demo</a></p><h3>Method 2: With JavaScript Only</h3><p>There are some considerations we need to be aware of here:</p><ul class="list">    <li>It needs to be threaded in parallel (to use the browser’s maximum threads, normally 6 per domain).</li>    <li>It needs to also be sequential (pipelined) for when you want to use a single thread.</li>    <li>It needs to handle individual image events – <code>onload</code>, <code>onabort</code>, <code>onerror</code>.</li>    <li>We need to clean up resources and memory, not leak memory and <strong>prevent IE GIF onload from firing multiple times</strong>. In Internet Explorer 5/6/7, the onload event fires ALL THE TIME for animated GIFs. That&#39;s right, on each animation loop it fires an onload for you. Which is why you need to make sure you release your image objects for GC by not saving a reference – or should you need to store them as objects into a new array – remove all onload and other events attached to them.</li></ul><div class="codeBlock"><span class="title">HTML Markup</span><pre class="prettyprint lang-html linenums" ><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"progress"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"progress-bar"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"progress-bar"</span><span class="tag">&gt;&lt;/div&gt;</span></li><li class="L2"><span class="pln">    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"progress-percent"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"progress-percent"</span><span class="tag">&gt;&lt;/div&gt;</span></li><li class="L3"><span class="tag">&lt;/div&gt;</span></li><li class="L4"><span class="pln">&nbsp;</span></li><li class="L5"><span class="tag">&lt;ul</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"thumbnails"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"thumbnails"</span><span class="tag">&gt;</span></li><li class="L6"><span class="tag">&lt;/ul&gt;</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="com">/********************</span></li><li class="L1"><span class="com">Author: Vivian Huang</span></li><li class="L2"><span class="com">Date: March 10, 2014</span></li><li class="L3"><span class="com">&nbsp;</span></li><li class="L4"><span class="com">Related Posts</span></li><li class="L5"><span class="com">http://fragged.org/preloading-images-using-javascript-the-right-way-and-without-frameworks_744.html</span></li><li class="L6"><span class="com">http://perishablepress.com/3-ways-preload-images-css-javascript-ajax/</span></li><li class="L7"><span class="com">********************/</span></li><li class="L8"><span class="pln">&nbsp;</span></li><li class="L9"><span class="kwd">var</span><span class="pln"> IMGPRELOADER </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">images</span><span class="pun">,</span><span class="pln"> options</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L0"><span class="pln">    </span><span class="kwd">var</span><span class="pln"> defaults</span><span class="pun">,</span></li><li class="L1"><span class="pln">        isNative  </span><span class="pun">=</span><span class="pln"> </span><span class="str">"addEventListner"</span><span class="pln"> in </span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Image</span><span class="pun">()),</span></li><li class="L2"><span class="pln">        index     </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span></li><li class="L3"><span class="pln">        queues    </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[],</span></li><li class="L4"><span class="pln">        completed </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[],</span></li><li class="L5"><span class="pln">        errors    </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[],</span></li><li class="L6"><span class="pln">        handleLoad</span><span class="pun">,</span></li><li class="L7"><span class="pln">        handleError</span><span class="pun">,</span></li><li class="L8"><span class="pln">        handleAbort</span><span class="pun">,</span></li><li class="L9"><span class="pln">        reset</span><span class="pun">,</span></li><li class="L0"><span class="pln">        setOptions</span><span class="pun">,</span></li><li class="L1"><span class="pln">        removeEvents</span><span class="pun">,</span></li><li class="L2"><span class="pln">        load</span><span class="pun">,</span></li><li class="L3"><span class="pln">        checkProgress</span><span class="pun">;</span></li><li class="L4"><span class="pln">&nbsp;</span></li><li class="L5"><span class="pln">    defaults </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">        </span><span class="kwd">auto</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span></li><li class="L7"><span class="pln">        onStart</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{},</span></li><li class="L8"><span class="pln">        onProgress</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{},</span></li><li class="L9"><span class="pln">        onError</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{},</span></li><li class="L0"><span class="pln">        onComplete</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{}</span></li><li class="L1"><span class="pln">    </span><span class="pun">};</span></li><li class="L2"><span class="pln">&nbsp;</span></li><li class="L3"><span class="pln">    handleLoad </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** handleLoad ****"</span><span class="pun">);</span></li><li class="L5"><span class="pln">&nbsp;</span></li><li class="L6"><span class="pln">        removeEvents</span><span class="pun">.</span><span class="pln">call</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">);</span></li><li class="L7"><span class="pln">        completed</span><span class="pun">.</span><span class="pln">push</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">src</span><span class="pun">);</span></li><li class="L8"><span class="pln">        checkProgress</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">src</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">);</span></li><li class="L9"><span class="pln">    </span><span class="pun">};</span></li><li class="L0"><span class="pln">&nbsp;</span></li><li class="L1"><span class="pln">    handleError </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** handleLoad ****"</span><span class="pun">);</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pln">        removeEvents</span><span class="pun">.</span><span class="pln">call</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">);</span></li><li class="L5"><span class="pln">        errors</span><span class="pun">.</span><span class="pln">push</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">src</span><span class="pun">);</span></li><li class="L6"><span class="pln">        checkProgress</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">src</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">);</span></li><li class="L7"><span class="pln">        options</span><span class="pun">.</span><span class="pln">onError</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">src</span><span class="pun">);</span></li><li class="L8"><span class="pln">    </span><span class="pun">};</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="pln">    handleAbort </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** handleAbort ****"</span><span class="pun">);</span></li><li class="L2"><span class="pln">&nbsp;</span></li><li class="L3"><span class="pln">        removeEvents</span><span class="pun">.</span><span class="pln">call</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">);</span></li><li class="L4"><span class="pln">        errors</span><span class="pun">.</span><span class="pln">push</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">src</span><span class="pun">);</span></li><li class="L5"><span class="pln">        checkProgress</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">src</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">);</span></li><li class="L6"><span class="pln">        options</span><span class="pun">.</span><span class="pln">onError</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">src</span><span class="pun">);</span></li><li class="L7"><span class="pln">    </span><span class="pun">};</span></li><li class="L8"><span class="pln">    </span></li><li class="L9"><span class="pln">    reset </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L0"><span class="pln">        index </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span></li><li class="L1"><span class="pln">        queues </span><span class="pun">=</span><span class="pln"> completed </span><span class="pun">=</span><span class="pln"> errors </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[];</span></li><li class="L2"><span class="pln">    </span><span class="pun">};</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pln">    setOptions </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">options</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">        </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> key in defaults</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">options</span><span class="pun">.</span><span class="pln">hasOwnProperty</span><span class="pun">(</span><span class="pln">key</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">                options</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> defaults</span><span class="pun">[</span><span class="pln">key</span><span class="pun">];</span></li><li class="L8"><span class="pln">            </span><span class="pun">}</span></li><li class="L9"><span class="pln">        </span><span class="pun">}</span></li><li class="L0"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> options</span><span class="pun">;</span></li><li class="L1"><span class="pln">    </span><span class="pun">};</span></li><li class="L2"><span class="pln">&nbsp;</span></li><li class="L3"><span class="pln">    removeEvents </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">isNative</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">            </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">removeEventListner</span><span class="pun">(</span><span class="str">"load"</span><span class="pun">,</span><span class="pln"> handleLoad</span><span class="pun">);</span></li><li class="L6"><span class="pln">            </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">removeEventListner</span><span class="pun">(</span><span class="str">"error"</span><span class="pun">,</span><span class="pln"> handleError</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></li><li class="L7"><span class="pln">            </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">removeEventListner</span><span class="pun">(</span><span class="str">"abort"</span><span class="pun">,</span><span class="pln"> handleError</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></li><li class="L8"><span class="pln">        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">            </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">onload  </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">onerror </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">onabort </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span></li><li class="L0"><span class="pln">        </span><span class="pun">}</span></li><li class="L1"><span class="pln">    </span><span class="pun">};</span></li><li class="L2"><span class="pln">&nbsp;</span></li><li class="L3"><span class="pln">    load </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">index </span><span class="pun">&gt;=</span><span class="pln"> queues</span><span class="pun">.</span><span class="pln">length</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">            </span><span class="kwd">return</span><span class="pun">;</span></li><li class="L6"><span class="pln">        </span><span class="pun">}</span></li><li class="L7"><span class="pln">&nbsp;</span></li><li class="L8"><span class="pln">        </span><span class="kwd">var</span><span class="pln"> image </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Image</span><span class="pun">(),</span></li><li class="L9"><span class="pln">            src   </span><span class="pun">=</span><span class="pln"> queues</span><span class="pun">[</span><span class="pln">index</span><span class="pun">];</span></li><li class="L0"><span class="pln">&nbsp;</span></li><li class="L1"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">isNative</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">            image</span><span class="pun">.</span><span class="pln">addEventListner</span><span class="pun">(</span><span class="str">"load"</span><span class="pun">,</span><span class="pln"> handleLoad</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></li><li class="L3"><span class="pln">            image</span><span class="pun">.</span><span class="pln">addEventListner</span><span class="pun">(</span><span class="str">"error"</span><span class="pun">,</span><span class="pln"> handleError</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></li><li class="L4"><span class="pln">            image</span><span class="pun">.</span><span class="pln">addEventListner</span><span class="pun">(</span><span class="str">"abort"</span><span class="pun">,</span><span class="pln"> handleError</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></li><li class="L5"><span class="pln">        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">            image</span><span class="pun">.</span><span class="pln">onload  </span><span class="pun">=</span><span class="pln"> handleLoad</span><span class="pun">;</span></li><li class="L7"><span class="pln">            image</span><span class="pun">.</span><span class="pln">onerror </span><span class="pun">=</span><span class="pln"> handleError</span><span class="pun">;</span></li><li class="L8"><span class="pln">            image</span><span class="pun">.</span><span class="pln">onabort </span><span class="pun">=</span><span class="pln"> handleError</span><span class="pun">;</span></li><li class="L9"><span class="pln">        </span><span class="pun">}</span></li><li class="L0"><span class="pln">&nbsp;</span></li><li class="L1"><span class="pln">        image</span><span class="pun">.</span><span class="pln">src </span><span class="pun">=</span><span class="pln"> src</span><span class="pun">;</span></li><li class="L2"><span class="pln">    </span><span class="pun">};</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pln">    checkProgress </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">imgSrc</span><span class="pun">,</span><span class="pln"> imgElement</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">        options</span><span class="pun">.</span><span class="pln">onProgress</span><span class="pun">(</span><span class="pln">imgSrc</span><span class="pun">,</span><span class="pln"> imgElement</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="pln">completed</span><span class="pun">.</span><span class="pln">length </span><span class="pun">+</span><span class="pln"> errors</span><span class="pun">.</span><span class="pln">length</span><span class="pun">),</span><span class="pln"> queues</span><span class="pun">.</span><span class="pln">length</span><span class="pun">);</span></li><li class="L6"><span class="pln">        index</span><span class="pun">++;</span></li><li class="L7"><span class="pln">        load</span><span class="pun">();</span></li><li class="L8"><span class="pln">&nbsp;</span></li><li class="L9"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">index </span><span class="pun">===</span><span class="pln"> queues</span><span class="pun">.</span><span class="pln">length </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L0"><span class="pln">            options</span><span class="pun">.</span><span class="pln">onComplete</span><span class="pun">(</span><span class="pln">completed</span><span class="pun">,</span><span class="pln"> errors</span><span class="pun">);</span></li><li class="L1"><span class="pln">        </span><span class="pun">}</span></li><li class="L2"><span class="pln">    </span><span class="pun">};</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pln">    </span><span class="pun">(</span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">        options </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">options </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="kwd">typeof</span><span class="pln"> options </span><span class="pun">===</span><span class="pln"> </span><span class="str">"object"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> setOptions</span><span class="pun">(</span><span class="pln">options</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> defaults</span><span class="pun">;</span></li><li class="L6"><span class="pln">        queues  </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">images </span><span class="pun">&amp;&amp;</span><span class="pln"> images instanceof </span><span class="typ">Array</span><span class="pun">)</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> images</span><span class="pun">.</span><span class="pln">slice</span><span class="pun">()</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">[];</span></li><li class="L7"><span class="pln">        options</span><span class="pun">.</span><span class="pln">onStart</span><span class="pun">(</span><span class="pln">queues</span><span class="pun">);</span></li><li class="L8"><span class="pln">&nbsp;</span></li><li class="L9"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">queues</span><span class="pun">.</span><span class="pln">length </span><span class="pun">&amp;&amp;</span><span class="pln"> options</span><span class="pun">.</span><span class="kwd">auto</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L0"><span class="pln">            load</span><span class="pun">();</span></li><li class="L1"><span class="pln">        </span><span class="pun">}</span></li><li class="L2"><span class="pln">    </span><span class="pun">})();</span></li><li class="L3"><span class="pun">};</span></li></ol></pre></div><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="com">// For IE &lt; 8</span></li><li class="L1"><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="typ">Array</span><span class="pun">.</span><span class="pln">prototype</span><span class="pun">.</span><span class="pln">map</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">    </span><span class="typ">Array</span><span class="pun">.</span><span class="pln">prototype</span><span class="pun">.</span><span class="pln">map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">fun </span><span class="com">/*, thisp*/</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">        </span><span class="kwd">var</span><span class="pln"> len </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">length</span><span class="pun">;</span></li><li class="L4"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">typeof</span><span class="pln"> fun </span><span class="pun">!=</span><span class="pln"> </span><span class="str">"function"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">            </span><span class="kwd">throw</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">TypeError</span><span class="pun">();</span></li><li class="L6"><span class="pln">        </span><span class="pun">}</span></li><li class="L7"><span class="pln">        </span><span class="kwd">var</span><span class="pln"> res </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Array</span><span class="pun">(</span><span class="pln">len</span><span class="pun">);</span></li><li class="L8"><span class="pln">        </span><span class="kwd">var</span><span class="pln"> thisp </span><span class="pun">=</span><span class="pln"> arguments</span><span class="pun">[</span><span class="lit">1</span><span class="pun">];</span></li><li class="L9"><span class="pln">        </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> len</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L0"><span class="pln">            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">i in </span><span class="kwd">this</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">                res</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> fun</span><span class="pun">.</span><span class="pln">call</span><span class="pun">(</span><span class="pln">thisp</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">[</span><span class="pln">i</span><span class="pun">],</span><span class="pln"> i</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">);</span></li><li class="L2"><span class="pln">            </span><span class="pun">}</span></li><li class="L3"><span class="pln">        </span><span class="pun">}</span></li><li class="L4"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> res</span><span class="pun">;</span></li><li class="L5"><span class="pln">    </span><span class="pun">};</span></li><li class="L6"><span class="pun">}</span></li><li class="L7"><span class="pln">&nbsp;</span></li><li class="L8"><span class="kwd">var</span><span class="pln"> imagesArray </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Array</span><span class="pun">(</span><span class="lit">20</span><span class="pun">).</span><span class="pln">join</span><span class="pun">(</span><span class="str">","</span><span class="pun">).</span><span class="pln">split</span><span class="pun">(</span><span class="str">","</span><span class="pun">),</span></li><li class="L9"><span class="pln">    progressBarElement     </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"progress-bar"</span><span class="pun">),</span></li><li class="L0"><span class="pln">    progressPercentElement </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"progress-percent"</span><span class="pun">),</span></li><li class="L1"><span class="pln">    thumbnailsElement      </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"thumbnails"</span><span class="pun">);</span></li><li class="L2"><span class="pln">imagesArray </span><span class="pun">=</span><span class="pln"> imagesArray</span><span class="pun">.</span><span class="pln">map</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">el</span><span class="pun">,</span><span class="pln"> i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">    </span><span class="kwd">return</span><span class="pln"> </span><span class="str">"images/golden_gate_bridge.jpg?"</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="pun">+</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Date</span><span class="pun">()</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> i</span><span class="pun">;</span></li><li class="L4"><span class="pun">});</span></li><li class="L5"><span class="pln">imagesArray</span><span class="pun">.</span><span class="pln">push</span><span class="pun">(</span><span class="str">"images/golden_gate_bri.jpg"</span><span class="pun">);</span></li><li class="L6"><span class="pln">&nbsp;</span></li><li class="L7"><span class="kwd">var</span><span class="pln"> preloader </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> IMGPRELOADER</span><span class="pun">(</span><span class="pln">imagesArray</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">    onStart</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">images</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** onStart ****"</span><span class="pun">);</span></li><li class="L0"><span class="pln">&nbsp;</span></li><li class="L1"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">images</span><span class="pun">);</span></li><li class="L2"><span class="pln">    </span><span class="pun">},</span></li><li class="L3"><span class="pln">    onProgress</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">imgSrc</span><span class="pun">,</span><span class="pln"> imgElement</span><span class="pun">,</span><span class="pln"> progressed</span><span class="pun">,</span><span class="pln"> total</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** onProgress ****"</span><span class="pun">);</span></li><li class="L5"><span class="pln">&nbsp;</span></li><li class="L6"><span class="pln">        </span><span class="kwd">var</span><span class="pln"> defaultWidth </span><span class="pun">=</span><span class="pln"> </span><span class="lit">200</span><span class="pun">,</span></li><li class="L7"><span class="pln">            ratio        </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span></li><li class="L8"><span class="pln">            width        </span><span class="pun">=</span><span class="pln"> imgElement</span><span class="pun">.</span><span class="pln">width</span><span class="pun">,</span></li><li class="L9"><span class="pln">            height       </span><span class="pun">=</span><span class="pln"> imgElement</span><span class="pun">.</span><span class="pln">height</span><span class="pun">,</span></li><li class="L0"><span class="pln">            percent      </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span></li><li class="L1"><span class="pln">&nbsp;</span></li><li class="L2"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">width </span><span class="pun">&gt;</span><span class="pln"> defaultWidth</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">            ratio  </span><span class="pun">=</span><span class="pln"> defaultWidth </span><span class="pun">/</span><span class="pln"> width</span><span class="pun">;</span></li><li class="L4"><span class="pln">            height </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Math</span><span class="pun">.</span><span class="pln">round</span><span class="pun">(</span><span class="pln">height </span><span class="pun">*</span><span class="pln"> ratio</span><span class="pun">);</span></li><li class="L5"><span class="pln">            width  </span><span class="pun">=</span><span class="pln"> defaultWidth</span><span class="pun">;</span></li><li class="L6"><span class="pln">        </span><span class="pun">}</span></li><li class="L7"><span class="pln">&nbsp;</span></li><li class="L8"><span class="pln">        </span><span class="kwd">var</span><span class="pln"> liElement </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">createElement</span><span class="pun">(</span><span class="str">"li"</span><span class="pun">);</span></li><li class="L9"><span class="pln">        liElement</span><span class="pun">.</span><span class="pln">className </span><span class="pun">=</span><span class="pln"> </span><span class="str">"thumbnail"</span><span class="pun">;</span></li><li class="L0"><span class="pln">        liElement</span><span class="pun">.</span><span class="pln">innerHTML </span><span class="pun">=</span><span class="pln"> </span><span class="str">&#39;&lt;img src="&#39;</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> imgSrc </span><span class="pun">+</span><span class="pln"> </span><span class="str">&#39;" width="&#39;</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> width </span><span class="pun">+</span><span class="pln"> </span><span class="str">&#39;" height="&#39;</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> height </span><span class="pun">+</span><span class="pln"> </span><span class="str">&#39;"&gt;&#39;</span><span class="pun">;</span></li><li class="L1"><span class="pln">        thumbnailsElement</span><span class="pun">.</span><span class="pln">appendChild</span><span class="pun">(</span><span class="pln">liElement</span><span class="pun">);</span></li><li class="L2"><span class="pln">&nbsp;</span></li><li class="L3"><span class="pln">        percent </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Math</span><span class="pun">.</span><span class="pln">floor</span><span class="pun">(</span><span class="pln">progressed </span><span class="pun">/</span><span class="pln"> total </span><span class="pun">*</span><span class="pln"> </span><span class="lit">100</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="str">"%"</span><span class="pun">;</span></li><li class="L4"><span class="pln">        progressBarElement</span><span class="pun">.</span><span class="pln">style</span><span class="pun">.</span><span class="pln">width   </span><span class="pun">=</span><span class="pln"> percent</span><span class="pun">;</span></li><li class="L5"><span class="pln">        progressPercentElement</span><span class="pun">.</span><span class="pln">innerHTML </span><span class="pun">=</span><span class="pln"> percent</span><span class="pun">;</span></li><li class="L6"><span class="pln">    </span><span class="pun">},</span></li><li class="L7"><span class="pln">    onError</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">imgSrc</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** onError ****"</span><span class="pun">);</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">imgSrc</span><span class="pun">);</span></li><li class="L1"><span class="pln">    </span><span class="pun">},</span></li><li class="L2"><span class="pln">    onComplete</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">loaded</span><span class="pun">,</span><span class="pln"> errors</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"**** onComplete ****"</span><span class="pun">);</span></li><li class="L4"><span class="pln">&nbsp;</span></li><li class="L5"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">loaded</span><span class="pun">);</span></li><li class="L6"><span class="pln">        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">errors</span><span class="pun">);</span></li><li class="L7"><span class="pln">    </span><span class="pun">}</span></li><li class="L8"><span class="pun">});</span></li></ol></pre></div><p><a class="demo-link" href="http://www.lingihuang.com/filemanage/examlpes/image_preloader/preload_with_javascript.html" target="_blank"><i class="glyphicon glyphicon-file"></i>View Demo</a></p><h2>Related Posts</h2><ul class="list">    <li><a href="http://fragged.org/preloading-images-using-javascript-the-right-way-and-without-frameworks_744.html" target="_blank">Preloading images using javascript, the right way and without frameworks</a></li>    <li><a href="http://perishablepress.com/3-ways-preload-images-css-javascript-ajax/" target="_blank">3 Ways to Preload Images with CSS, JavaScript, or Ajax</a></li>    <li><a href="http://perishablepress.com/pure-css-better-image-preloading-without-javascript/" target="_blank">Pure CSS: Better Image Preloading without JavaScript</a></li></ul></div>
+    </div>
+    <div class="entry-footer">
+        <p class="article-modify-author">This post was last modified by
+            <span>Lingi Huang</span>
+            <time datetime="2015-06-01T23:35:33+08:00" class="article-modify-time">2015/06/01</time>
+        </p>
+
+        
+    <ul class="share-btn-wrap">
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.lingihuang.com/docs-blog/article-32" class="shareBtn" title="share" rel="nofollow"></a></li>
+        <li>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https://www.lingihuang.com/docs-blog/article-32" scrolling="no" frameborder="0"
+                style="border:none; width:450px; height:80px"></iframe>
+        </li>
+    </ul>
+
+
+
+        
+    </div>
+    
+    
+        <br />
+        <ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1449650742587459"
+     data-ad-slot="2197220184"></ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1449650742587459",
+          enable_page_level_ads: true
+     });
+</script>
+    
+
+</div>
+
+        
+            
+    </div>
+    
+
+            
+    <div class="sidebar">
+        
+                
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">CSS 相關</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-37-CSS-Selectors.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_37&quot;}'>CSS Selectors </a></li>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-2-Christmas,-Bon-Appetit.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_2&quot;}'>Christmas, Bon Appetit </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-4-Luncheon-with-Monet.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_4&quot;}'>Luncheon with Monet </a></li>
+    
+        <li><a href="article-5-Stack-Order.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_5&quot;}'>Stack Order </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-12-Spanish-Tapas.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_12&quot;}'>Spanish Tapas </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">JavaScript 相關</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">Web Development 相關</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-37-CSS-Selectors.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_37&quot;}'>CSS Selectors </a></li>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-5-Stack-Order.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_5&quot;}'>Stack Order </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-14-The-DOM-Event-Model-Advanced.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_14&quot;}'>The DOM Event Model Advanced </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">類別 JavaScript</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+    </ul>
+</div>
+
+
+        
+                
+
+
+        
+            
+    </div>
+    
+        
+</div>
+
+
+
+    
+
+            
+<div class="bottom-footer">
+    <ul class="nav">
+        
+        <li >
+            <a href="../AboutMe.html">About Me</a>
+        </li>
+        
+        <li >
+            <a href="../Recipes.html">Recipes</a>
+        </li>
+        
+        <li class="active">
+            <a href="../docs-cate.html">Web</a>
+        </li>
+        
+
+        <li>
+            <a href="http://www.puritys.me/">puritys.me</a>
+        </li>
+        <li>
+            <a href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html">VIVIAN CRAP</a>
+        </li>
+        
+    </ul>
+    <p>Copyright &amp;copy; 2014 LINGIHUANG.COM. All rights reserved.</p>
+</div>
+
+
+            
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+
+
+        
+</body>
+    <script src="../templates/static/js/files%3Fsidebar.js&amp;ezHTML_main.js&amp;%3Fv=20180416-2"></script>
+</html>

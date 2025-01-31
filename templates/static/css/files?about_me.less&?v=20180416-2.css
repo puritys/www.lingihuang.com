@@ -1,0 +1,219 @@
+/********************
+Mixins
+********************/
+/********************
+About Me
+********************/
+.profile {
+  margin: 10px 0;
+  position: relative;
+}
+.profile .profile-heading {
+  background: #eee;
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  /* Firefox 1-3.6 */
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  color: #666;
+  font-size: 1.38em;
+  position: relative;
+  margin: 0;
+  padding: 10px;
+  text-transform: uppercase;
+  z-index: 1;
+}
+.profile:before {
+  border-right: 10px solid #ccc;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 35px;
+}
+.profile:after {
+  border-left: 10px solid #ccc;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 35px;
+}
+.profile .profile-body {
+  background: #fafafa;
+  margin: 0 10px;
+  padding: 10px;
+}
+.profile-about-me {
+  margin-top: 0;
+}
+.profile-about-me:before {
+  border: none;
+}
+.profile-about-me:after {
+  border: none;
+}
+.profile-about-me .profile-body {
+  margin: 0;
+}
+.profile-about-me .media:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.profile-about-me .media .media-thumb {
+  background: #fff;
+  border: 1px solid #ccc;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 20px 0 0;
+  max-height: 231px;
+  max-width: 184px;
+  padding: 5px;
+}
+.profile-about-me .media .media-object {
+  border: 1px dotted #ccc;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding: 0 10px;
+  width: 100%;
+}
+.profile-about-me ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.profile-about-me ul li {
+  font-size: 1em;
+  margin: 0;
+  padding: 10px 0;
+}
+.profile-about-me ul span {
+  white-space: nowrap;
+}
+.profile-about-me .label {
+  color: #666;
+  display: inline-block;
+  text-transform: uppercase;
+  width: 15%;
+}
+.experience-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.experience-list .experience {
+  margin: 0;
+  padding: 10px 0;
+}
+.experience-list .experience:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.experience-list .experience-main {
+  float: left;
+  width: 30%;
+}
+.experience-list .experience-main .experience-title {
+  font-size: 1em;
+  margin: 0;
+  padding: 0 0 1px 0;
+}
+.experience-list .experience-main .experience-sub {
+  color: #666;
+  font-size: 0.9em;
+  padding: 0 0 8px 0;
+}
+.experience-list .experience-body {
+  float: left;
+  width: 70%;
+}
+.experience-list .experience-body .experience-title {
+  color: #c50900;
+  font-size: 1em;
+  margin: 0;
+  padding: 0 0 5px 0;
+}
+.experience-list .experience-body .experience-subtitle {
+  color: #888;
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+}
+.experience-list .experience-body .experience-content {
+  background: #fff;
+  border-bottom: 2px solid #eee;
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  /* Firefox 1-3.6 */
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding: 8px;
+  margin: 5px 0 0 0;
+  position: relative;
+}
+.experience-list .experience-body .experience-content:before {
+  border-bottom: 6px solid #fff;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  content: "";
+  left: 6px;
+  position: absolute;
+  top: -6px;
+}
+.experience-list .experience-body p {
+  padding: 0;
+}
+.experience-list .list {
+  margin: 10px 0 20px 0;
+}
+.experience-list .labels {
+  margin-top: 10px;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .profile-about-me .media .media-thumb {
+    float: none;
+    max-height: 170px;
+    max-width: 135px;
+  }
+  .profile-about-me .label {
+    width: 30%;
+  }
+  .profile-about-me ul li {
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+  .profile-about-me ul span {
+    display: block;
+  }
+}

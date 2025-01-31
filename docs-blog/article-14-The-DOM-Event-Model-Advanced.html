@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M3BFP5');</script>
+    <!-- End Google Tag Manager -->
+
+    <link href="../templates/static/css/files%3Fdefault.less&amp;other.less&amp;ezHTML.less&amp;%3Fv=20180416-2.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js?v=20180416-2"></script>
+    <script src="../templates/static/js/files%3FlightHttp-simple-min.js&amp;default.js&amp;facebookAPI.js&amp;form_check.js&amp;util.js&amp;listAutoLoadMore.js&amp;%3Fv=20180416-2"></script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en" />
+    <meta name="author" content="lingihuang" />
+    <title>The DOM Event Model Advanced</title>
+    <meta name="keywords" content="JavaScript, Web Development" />
+    <meta name="description" content="Mouse Events onMouseDown: A mouse button has been pressed. onMouseMove: The mouse has been moved. onMouseOut: The mouse pointer has left an element. onMouseOver: The mouse pointer has entere" />
+    <meta property="fb:app_id" content="160015347378316" />
+    <meta property="fb:admins" content="1140660203"/>
+    
+
+    <link rel="shortcut icon" href="../templates/static/images/favicon_vivian.ico" /> 
+    
+
+    <link rel="canonical" href="https://www.lingihuang.com/docs-blog/article-14-The-DOM-Event-Model-Advanced.html"/>
+    
+
+
+    <link rel="amphtml" href="https://www.lingihuang.com/docs-blog-amp/article-14-The-DOM-Event-Model-Advanced.html"/>
+    
+
+    <link rel="dns-prefetch" href="apis.google.com.html">
+        <link rel="dns-prefetch" href="ajax.googleapis.com.html">
+        <link rel="dns-prefetch" href="connect.facebook.net.html">
+        <link rel="dns-prefetch" href="www.google-analytics.com.html">
+        <link rel="dns-prefetch" href="www.lingihuang.com.html">
+        
+
+<!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "https://www.lingihuang.com",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "https://www.lingihuang.com/search?searchText={search_term_string}",
+     "query-input": "required name=search_term_string"
+   }
+}
+    </script>
+
+
+
+
+
+
+
+</head>
+<body>
+
+            
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3BFP5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+            
+<div class="settings">
+    
+        <script>var WRT="https://www.lingihuang.com/";</script>
+    
+</div>
+
+
+            
+<div class="header">
+    <div class="top-header">
+        <div class="main">
+        <a class="logo" href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html"><img src="../templates/static/images/logo_vivian.png" alt="Vivian Crap" title="Vivian Crap"></a>
+        <a class="navbar-btn" href="article-14-The-DOM-Event-Model-Advanced.html#"><span class="icon"></span></a>
+        </div>
+        <ul class="navbar">
+             
+            <li >
+                <a href="../AboutMe.html" data-ga='{"action":"menu_click","label":"About Me"}'>About Me</a>
+            </li>
+             
+            <li >
+                <a href="../Recipes.html" data-ga='{"action":"menu_click","label":"Recipes"}'>Recipes</a>
+            </li>
+             
+            <li class="active">
+                <a href="../docs-cate.html" data-ga='{"action":"menu_click","label":"Web"}'>Web</a>
+            </li>
+            
+        </ul>
+        <form action="http://www.lingihuang.com/search" class="navbar-form">
+            <input type="text" name="searchText" placeholder="Input your keyword" value="">
+            <i class="glyphicon glyphicon-search"></i>
+        </form>
+    </div>
+</div>
+
+
+        
+
+        
+<div class="body-content">
+    
+            
+    <div class="main">
+        
+                
+<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> 
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a href="https://www.lingihuang.com" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+            <em><span itemprop="name">Home</span></em>
+        </a>
+        <meta itemprop="position" content="1" />
+    </li>
+    
+        
+            <li  itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem">
+                <a href="../docs-cate/JavaScript.html" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+                    <em><span itemprop="name">JavaScript</span></em>
+                </a>
+                <meta itemprop="position" content="2" />
+            </li>
+        
+    
+        
+            <li class="active">
+                <a href="https://www.lingihuang.com/docs-blog/article-14">
+                    <em><span>The DOM Event Model ...</span></em>
+                </a>
+            </li>
+        
+    
+</ul>
+
+        
+                
+
+
+<script type="application/ld+json">
+    {"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lingihuang.com\/docs-blog\/article-14-The-DOM-Event-Model-Advanced.html"},"headline":"The DOM Event Model Advanced","image":"","datePublished":"2009-06-15T05:45:31+08:00","dateModified":"2015-06-11T11:21:58+08:00","author":{"@type":"Person","name":"Lingi Huang"},"publisher":{"@type":"Organization","name":"www.lingihuang.com","logo":{"@type":"ImageObject","url":"https:\/\/www.lingihuang.com\/templates\/static\/images\/favicon_vivian.ico"}},"description":"Mouse Events\r\r    onMouseDown: A mouse button has been pressed.\r    onMouseMove: The mouse has been "}
+</script>
+
+
+<div class="entry">
+   <div class="entry-header">
+        
+        <div class="date">
+            <div class="year">2009</div>
+            <div class="month">Jun</div>
+            <div class="day">15</div>
+        </div>
+
+        
+        <div class="title">
+            <h1><a href="article-14-The-DOM-Event-Model-Advanced.html"><span>The DOM Event Model Advanced</span></a></h1>
+            <div class="sub">
+                <div class="caption">Tags:</div>
+                <ul class="labels">
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=JavaScript.html">JavaScript</a>
+                    </li>
+                    
+                    <li class="label">
+                        <a class="label-item" target="_blank"
+                             href="../docs-cate%3Ftag=Web%20Development.html">Web Development</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="entry-body">
+        <div class="ezHTML-content"><h2>Mouse Events</h2><ul class="list">    <li>onMouseDown: A mouse button has been pressed.</li>    <li>onMouseMove: The mouse has been moved.</li>    <li>onMouseOut: The mouse pointer has left an element.</li>    <li>onMouseOver: The mouse pointer has entered an element.</li>    <li>onMouseUp: A mouse button has been released.</li>    <li>onClick: One mousedown and one mouseup detected on this element.</li>    <li>onDbClick: A mouse button has been double-clicked (clicked twice rapidly).</li></ul><h2>Mouse Event Properties</h2><table class="table"><tr><th>Property Name</th><th>Description</th></tr><tr><td>button</td><td>A number that specifies which mouse button changed state during a mousedown, mouseup, or click event. A value of 0 indicates the left button, 1 indicates the middle button, and 2 indicates the right button.</td></tr><tr><td>altKey, ctrlKey, metaKey, shiftKey</td><td>These four boolean fields indicate whether the Alt, Ctrl, Meta, or Shift keys were held down when a mouse event occurred.</td></tr><tr><td>clientX/clientY</td><td>Specify the X and Y coordinates of the mouse pointer, relative to the upper-left corner of the browser&#39;s viewport and do not take document scrolling into account.</td></tr><tr><td>screenX/screenY</td><td>Specify the X and Y coordinates of the mouse pointer, relative to the upper-left corner of the user&#39;s monitor. These values are useful if you plan to open a new browser window at or near the location of the mouse event.</td></tr><tr><td>relatedTarget</td><td>This property refers to a node that is related to the target node of the event. For mouseover events, it is the node that the mouse left when it moved over the target. For mouseout events, it is the node that the mouse entered when leaving the target.</td></tr></table><table class="table"><tr><th>W3C Standard</th><th>Internet Explorer</th><th>Description</th></tr><tr><td>button</td><td>button</td><td>Still an integer value but the button value is interpreted differently in IE. A value of 0 indicates none, 1 indicates the left button, 2 indicates the right button, 3 indicates the left and right buttons, 4 indicates middle button, 5 indicates the left and right buttons, 6 indicates the middle and right buttons, 7 indicates the left, middle, and right buttons.</td></tr><tr><td>relatedTarget</td><td>fromElement<br>toElement</td><td>fromElement specifes the document element that the mouse came from for mouseover events. toElement specifies the document element that the mouse has moved to for mouseout events.</td></tr></table><h3>clientX/clientY</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">function</span><span class="pln"> onMouseDownHandler</span><span class="pun">(</span><span class="pln">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">  </span><span class="kwd">var</span><span class="pln"> e </span><span class="pun">=</span><span class="pln"> event </span><span class="pun">||</span><span class="pln"> window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">;</span><span class="pln"> </span><span class="com">// IE stores events in window object.</span></li><li class="L2"><span class="pln">  </span><span class="kwd">var</span><span class="pln"> mouseObj </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">left</span><span class="pun">:</span><span class="pln"> e</span><span class="pun">.</span><span class="pln">clientX</span><span class="pun">,</span><span class="pln"> top</span><span class="pun">:</span><span class="pln"> e</span><span class="pun">.</span><span class="pln">clientY</span><span class="pun">};</span><span class="pln"> </span><span class="com">// Store the position of the mouse object.</span></li><li class="L3"><span class="pun">}</span></li><li class="L4"><span class="pln">element</span><span class="pun">.</span><span class="pln">onmousedown </span><span class="pun">=</span><span class="pln"> onMouseUpHandler</span><span class="pun">;</span></li></ol></pre></div><h3>currentTarget and relatedTarget/fromElement and toElement</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> GENERIC </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    findCurrentTarget</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">event</span><span class="pun">,</span><span class="pln"> node</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">      </span><span class="kwd">var</span><span class="pln"> currentTarget</span><span class="pun">;</span></li><li class="L3"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For IE</span></li><li class="L4"><span class="pln">        currentTarget </span><span class="pun">=</span><span class="pln"> node</span><span class="pun">;</span></li><li class="L5"><span class="pln">      </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">event </span><span class="pun">&amp;&amp;</span><span class="pln"> event</span><span class="pun">.</span><span class="pln">currentTarget</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For Firefox, Opera</span></li><li class="L6"><span class="pln">        currentTarget </span><span class="pun">=</span><span class="pln"> event</span><span class="pun">.</span><span class="pln">currentTarget</span><span class="pun">;</span></li><li class="L7"><span class="pln">      </span><span class="pun">}</span></li><li class="L8"><span class="pln">      </span><span class="kwd">return</span><span class="pln"> currentTarget</span><span class="pun">;</span></li><li class="L9"><span class="pln">    </span><span class="pun">},</span></li><li class="L0"><span class="pln">    findRelatedTarget</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">      </span><span class="kwd">var</span><span class="pln"> relatedTarget</span><span class="pun">;</span></li><li class="L2"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For IE</span></li><li class="L3"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">type </span><span class="pun">===</span><span class="pln"> </span><span class="str">"mouseover"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">          relatedTarget </span><span class="pun">=</span><span class="pln"> window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">fromElement</span><span class="pun">;</span></li><li class="L5"><span class="pln">        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">type </span><span class="pun">===</span><span class="pln"> </span><span class="str">"mouseout"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">          relatedTarget </span><span class="pun">=</span><span class="pln"> window</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">toElement</span><span class="pun">;</span></li><li class="L7"><span class="pln">        </span><span class="pun">}</span></li><li class="L8"><span class="pln">      </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">event </span><span class="pun">&amp;&amp;</span><span class="pln"> event</span><span class="pun">.</span><span class="pln">relatedTarget</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// For Firefox</span></li><li class="L9"><span class="pln">        relatedTarget </span><span class="pun">=</span><span class="pln"> event</span><span class="pun">.</span><span class="pln">relatedTarget</span><span class="pun">;</span></li><li class="L0"><span class="pln">      </span><span class="pun">}</span></li><li class="L1"><span class="pln">      </span><span class="kwd">return</span><span class="pln"> relatedTarget</span><span class="pun">;</span></li><li class="L2"><span class="pln">    </span><span class="pun">}</span></li><li class="L3"><span class="pun">};</span></li></ol></pre></div><p><a class="demo-link" href="http://www.lingihuang.com/filemanage/examples/dom_event_model_advanced/currentTarget_relatedTarget.html" target="_blank"><i class="glyphicon glyphicon-file"></i>View Demo</a></p><h3>Convert Mouse Coordinates</h3><div class="codeBlock"><span class="title">Example</span><pre class="prettyprint lang-js linenums" ><ol class="linenums"><li class="L0"><span class="kwd">var</span><span class="pln"> CSS </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="com">// Return the position of the element relative to the top-left corner of the document.</span></li><li class="L2"><span class="pln">    offset</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">element</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">element</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">        </span><span class="kwd">return</span><span class="pun">;</span></li><li class="L5"><span class="pln">      </span><span class="pun">}</span></li><li class="L6"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">typeof</span><span class="pln"> element </span><span class="pun">===</span><span class="pln"> </span><span class="str">"string"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">        element </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="pln">element</span><span class="pun">);</span></li><li class="L8"><span class="pln">      </span><span class="pun">}</span></li><li class="L9"><span class="pln">      </span><span class="com">//var elem = element;</span></li><li class="L0"><span class="pln">      </span><span class="kwd">var</span><span class="pln"> left </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> top </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span></li><li class="L1"><span class="pln">      </span><span class="com">/*while (elem.offsetParent) {</span></li><li class="L2"><span class="com">        left += elem.offsetLeft;</span></li><li class="L3"><span class="com">        top += elem.offsetTop;</span></li><li class="L4"><span class="com">        elem = elem.offsetParent;</span></li><li class="L5"><span class="com">      }*/</span></li><li class="L6"><span class="pln">      </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> elem </span><span class="pun">=</span><span class="pln"> element</span><span class="pun">;</span><span class="pln"> elem</span><span class="pun">;</span><span class="pln"> elem </span><span class="pun">=</span><span class="pln"> elem</span><span class="pun">.</span><span class="pln">offsetParent</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">        left </span><span class="pun">+=</span><span class="pln"> elem</span><span class="pun">.</span><span class="pln">offsetLeft</span><span class="pun">;</span></li><li class="L8"><span class="pln">        top </span><span class="pun">+=</span><span class="pln"> elem</span><span class="pun">.</span><span class="pln">offsetTop</span><span class="pun">;</span></li><li class="L9"><span class="pln">      </span><span class="pun">}</span></li><li class="L0"><span class="pln">      </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="pln">elem </span><span class="pun">=</span><span class="pln"> element</span><span class="pun">.</span><span class="pln">parentNode</span><span class="pun">;</span><span class="pln"> elem </span><span class="pun">&amp;&amp;</span><span class="pln"> elem </span><span class="pun">!=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">body</span><span class="pun">;</span><span class="pln"> elem </span><span class="pun">=</span><span class="pln"> elem</span><span class="pun">.</span><span class="pln">parentNode</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">elem</span><span class="pun">.</span><span class="pln">scrollLeft</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">          left </span><span class="pun">-=</span><span class="pln"> elem</span><span class="pun">.</span><span class="pln">scrollLeft</span><span class="pun">;</span></li><li class="L3"><span class="pln">        </span><span class="pun">}</span></li><li class="L4"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">elem</span><span class="pun">.</span><span class="pln">scrollTop</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">          top </span><span class="pun">-=</span><span class="pln"> elem</span><span class="pun">.</span><span class="pln">scrollTop</span><span class="pun">;</span></li><li class="L6"><span class="pln">        </span><span class="pun">}</span></li><li class="L7"><span class="pln">      </span><span class="pun">}</span></li><li class="L8"><span class="pln">      </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span><span class="pln">left</span><span class="pun">:</span><span class="pln">left</span><span class="pun">,</span><span class="pln"> top</span><span class="pun">:</span><span class="pln">top</span><span class="pun">};</span></li><li class="L9"><span class="pln">    </span><span class="pun">}</span></li><li class="L0"><span class="pun">};</span></li></ol></pre></div><h2>Drag and Drop</h2><p>drag() takes two arguments. The first is the element that is to be dragged. This may be the element on which the mousedown event occurred or a containing element (e.g., you might allow the user to drag on the titlebar of a window to move the entire window). In either cases, it muse refer to a document element that is absolutely positioned using the CSS position attribute. The second argument is the event object associated with the triggering mousedown event.</p><p>drag() records the position of the mousedown event and then registers event handlers for the mousemove and mouseup events that follow the mousedown event. The handler for the mousemove event is responsible for moving the document element, and the handler for the mouseup event is responsible for deregistering itself and the mousemove handler. It is important to note that the mousemove and mouseup handlers are registered as capturing event handlers because the user may move the mouse faster than the document element can follow it, and some of these events occur outside the original target element. Without capturing, the events may not be dispatched to the correct handlers. Also, note that the moveHandler() and upHandler() functions that are registered to handle these events are defined as functions nested within drag(). Because they are defined in this nested scope they can use the arugments and local variables of drag(), which considerably simplifies their implementation.</p><p><a class="demo-link" href="http://www.lingihuang.com/filemanage/examples/dom_event_model_advanced/droppable.html" target="_blank"><i class="glyphicon glyphicon-file"></i>View Demo</a></p><h2>Key Events</h2><ul class="list">    <li>onKeyDown: A keyboard key is pressed.</li>    <li>onKeyPress: A keyboard key is pressed or held down.</li>    <li>onKeyUp: A keyboard key is released.</li></ul><h3>charCode and keyCode</h3><p>charCode is the integer property specifies for keydown and keyup events and Unicode character code for keypress events. Use String.fromCharCode() to convert character codes to strings.</p><p><a class="demo-link" href="http://www.lingihuang.com/filemanage/examples/dom_event_model_advanced/selectList.html" target="_blank"><i class="glyphicon glyphicon-file"></i>View Demo</a></p><h2>Related Posts</h2><ul class="list">    <li><a href="http://www.brainjar.com/dhtml/events/default.asp" target="_blank">The DOM Event Model</a></li>    <li><a href="http://www.quirksmode.org/js/events_mouse.html#click" target="_blank">Mouse Events</a></li>    <li><a href="http://www.quirksmode.org/js/events_properties.html" target="_blank">Event Properties</a></li>    <li><a href="http://www.quirksmode.org/js/dragdrop.html" target="_blank">Drag and Drop</a></li>    <li><a href="https://developer.mozilla.org/en/DragDrop/Drag_and_Drop" target="_blank">Mozilla Drag and Drop Documentation</a></li>    <li><a href="http://www.webreference.com/programming/javascript/mk/column2/" target="_blank">How to Drag and Drop in Javascript</a></li>    <li><a href="http://ianjung1974.blogspot.com/2007/10/javascript.html" target="_blank">How to Drag and Drop in Javascript (Chinese)</a></li></ul></div>
+    </div>
+    <div class="entry-footer">
+        <p class="article-modify-author">This post was last modified by
+            <span>Lingi Huang</span>
+            <time datetime="2015-06-11T11:21:58+08:00" class="article-modify-time">2015/06/11</time>
+        </p>
+
+        
+    <ul class="share-btn-wrap">
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.lingihuang.com/docs-blog/article-14" class="shareBtn" title="share" rel="nofollow"></a></li>
+        <li>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https://www.lingihuang.com/docs-blog/article-14" scrolling="no" frameborder="0"
+                style="border:none; width:450px; height:80px"></iframe>
+        </li>
+    </ul>
+
+
+
+        
+    </div>
+    
+    
+        <br />
+        <ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1449650742587459"
+     data-ad-slot="2197220184"></ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1449650742587459",
+          enable_page_level_ads: true
+     });
+</script>
+    
+
+</div>
+
+        
+            
+    </div>
+    
+
+            
+    <div class="sidebar">
+        
+                
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">JavaScript 相關</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">Web Development 相關</h4>
+    <ul>
+    
+        <li><a href="article-41-@font-face.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_41&quot;}'>@font-face </a></li>
+    
+        <li><a href="article-37-CSS-Selectors.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_37&quot;}'>CSS Selectors </a></li>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-3-Liquid-Round-Corners.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_3&quot;}'>Liquid Round Corners </a></li>
+    
+        <li><a href="article-5-Stack-Order.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_5&quot;}'>Stack Order </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+        <li><a href="article-11-Work-with-Style-Properties.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_11&quot;}'>Work with Style Properties </a></li>
+    
+        <li><a href="article-13-Resize-iFrame-Height.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_13&quot;}'>Resize iFrame Height </a></li>
+    
+        <li><a href="article-15-Javascript-Error-Handling.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_15&quot;}'>Javascript Error Handling </a></li>
+    
+        <li><a href="article-16-Cookie.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_16&quot;}'>Cookie </a></li>
+    
+        <li><a href="article-17-The-DOM-Event-Model-Basic.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_17&quot;}'>The DOM Event Model Basic </a></li>
+    
+        <li><a href="article-18-Dynamically-Load-Style.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_18&quot;}'>Dynamically Load Style </a></li>
+    
+        <li><a href="article-19-Dynamically-Load-Script.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_19&quot;}'>Dynamically Load Script </a></li>
+    
+        <li><a href="article-22-Disable-Text-Selection.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_22&quot;}'>Disable Text Selection </a></li>
+    
+        <li><a href="article-23-Object-Oriented-Javascript.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_23&quot;}'>Object-Oriented Javascript </a></li>
+    
+        <li><a href="article-24-Opacity-Setting.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_24&quot;}'>Opacity Setting </a></li>
+    
+        <li><a href="article-25-CSS-PNG-Transparency.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_25&quot;}'>CSS PNG Transparency </a></li>
+    
+        <li><a href="article-26-CSS-Float-Theory.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_26&quot;}'>CSS Float Theory </a></li>
+    
+        <li><a href="article-27-CSS-Hacks.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_27&quot;}'>CSS Hacks </a></li>
+    
+    </ul>
+</div>
+
+<div class="list-group">                                                                                                                            
+    <h4 class="list-group-heading">類別 JavaScript</h4>
+    <ul>
+    
+        <li><a href="article-36-HTML5-postMessage.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_36&quot;}'>HTML5 postMessage </a></li>
+    
+        <li><a href="article-35-Treeview.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_35&quot;}'>Treeview </a></li>
+    
+        <li><a href="article-33-Y.TVList.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_33&quot;}'>Y.TVList </a></li>
+    
+        <li><a href="article-32-Image-Preloader.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_32&quot;}'>Image Preloader </a></li>
+    
+        <li><a href="article-31-onLoad-and-onDOMContentLoaded.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_31&quot;}'>onLoad and onDOMContentLoaded </a></li>
+    
+        <li><a href="article-30-Function.prototype.bind.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_30&quot;}'>Function.prototype.bind </a></li>
+    
+        <li><a href="./article-29-Object-Oriented-Javascript:-Pass-By-Value-or-Reference.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_29&quot;}'>Object-Oriented Javascript: Pass By Value or Reference </a></li>
+    
+        <li><a href="article-1-getAttribute-href-bug.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_1&quot;}'>getAttribute href bug </a></li>
+    
+        <li><a href="article-9-The-XMLHttpRequest-Object.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_9&quot;}'>The XMLHttpRequest Object </a></li>
+    
+        <li><a href="article-10-Window-onResize-Handler.html" data-ga='{&quot;action&quot;:&quot;list_click&quot;,&quot;label&quot;:&quot;id_10&quot;}'>Window onResize Handler </a></li>
+    
+    </ul>
+</div>
+
+
+        
+                
+
+
+        
+            
+    </div>
+    
+        
+</div>
+
+
+
+    
+
+            
+<div class="bottom-footer">
+    <ul class="nav">
+        
+        <li >
+            <a href="../AboutMe.html">About Me</a>
+        </li>
+        
+        <li >
+            <a href="../Recipes.html">Recipes</a>
+        </li>
+        
+        <li class="active">
+            <a href="../docs-cate.html">Web</a>
+        </li>
+        
+
+        <li>
+            <a href="http://www.puritys.me/">puritys.me</a>
+        </li>
+        <li>
+            <a href="../viviancrap/wp-content/uploads/flexible_rouned_corners/images/png8.png.html">VIVIAN CRAP</a>
+        </li>
+        
+    </ul>
+    <p>Copyright &amp;copy; 2014 LINGIHUANG.COM. All rights reserved.</p>
+</div>
+
+
+            
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+
+
+        
+</body>
+    <script src="../templates/static/js/files%3Fsidebar.js&amp;ezHTML_main.js&amp;%3Fv=20180416-2"></script>
+</html>
