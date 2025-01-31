@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2014-03-10">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Image Preloader With JavaScript</title>
+<style type="text/css">
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+
+.progress {
+	background: #fff;
+	border: 1px solid #ccc;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 30px;
+	margin: 0 10px 20px 0;
+	overflow: hidden;
+	padding: 2px;
+	position: relative;
+}
+.progress .progress-bar {
+	background: #0063e0;
+	height: 100%;
+	width: 0;
+}
+.progress .progress-percent {
+	color: #000;
+	font-size: 20px;
+	line-height: 28px;
+	margin: 0 0 0 -10px;
+	left: 50%;
+	position: absolute;
+	top: 0;
+}
+.thumbnails {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.thumbnail {
+	background: #fff;
+	border: 1px solid #ccc;
+	float: left;
+	margin: 0 5px 10px 0;
+	padding: 2px;
+}
+.thumbnail img {
+	display: block;
+}
+</style>
+<script type="text/javascript" src="js/image_preloader.js"></script>
+</head>
+<body>
+	<h1>Image Preloader With JavaScript</h1>
+
+	<div class="progress">
+		<div id="progress-bar" class="progress-bar"></div>
+		<div id="progress-percent" class="progress-percent"></div>
+	</div>
+
+	<ul id="thumbnails" class="thumbnails">
+	</ul>
+	
+<script type="text/javascript">
+/********************
+Related Posts
+1. Preloading images using javascript, the right way and without frameworks
+http://fragged.org/preloading-images-using-javascript-the-right-way-and-without-frameworks_744.html
+2. 3 Ways to Preload Images with CSS, JavaScript, or Ajax
+http://perishablepress.com/3-ways-preload-images-css-javascript-ajax/
+3. Pure CSS: Better Image Preloading without JavaScript
+http://perishablepress.com/pure-css-better-image-preloading-without-javascript/
+********************/
+
+// For IE < 8
+if (!Array.prototype.map) {
+	Array.prototype.map = function(fun /*, thisp*/) {
+		var len = this.length;
+		if (typeof fun != "function") {
+			throw new TypeError();
+		}
+		var res = new Array(len);
+		var thisp = arguments[1];
+		for (var i = 0; i < len; i++) {
+	  		if (i in this) {
+	  			res[i] = fun.call(thisp, this[i], i, this);
+	  		}
+		}
+		return res;
+	};
+}
+
+var imagesArray = new Array(20).join(",").split(","),
+	progressBarElement     = document.getElementById("progress-bar"),
+	progressPercentElement = document.getElementById("progress-percent"),
+	thumbnailsElement      = document.getElementById("thumbnails");
+imagesArray = imagesArray.map(function(el, i) {
+	return "images/golden_gate_bridge.jpg?" + +new Date() + i;
+});
+imagesArray.push("images/golden_gate_bri.jpg");
+
+var preloader = new IMGPRELOADER(imagesArray, {
+	onStart: function (images) {
+		console.log("**** onStart ****");
+
+		console.log(images);
+	},
+	onProgress: function (imgSrc, imgElement, progressed, total) {
+		console.log("**** onProgress ****");
+
+		var defaultWidth = 200,
+			ratio        = 1,
+			width        = imgElement.width,
+			height       = imgElement.height,
+			percent      = 0;
+
+		if (width > defaultWidth) {
+			ratio  = defaultWidth / width;
+			height = Math.round(height * ratio);
+			width  = defaultWidth;
+		}
+
+		var liElement = document.createElement("li");
+		liElement.className = "thumbnail";
+		liElement.innerHTML = '<img src="' + imgSrc + '" width="' + width + '" height="' + height + '">';
+		thumbnailsElement.appendChild(liElement);
+
+		percent = Math.floor(progressed / total * 100) + "%";
+		progressBarElement.style.width   = percent;
+		progressPercentElement.innerHTML = percent;
+	},
+	onError: function (imgSrc) {
+		console.log("**** onError ****");
+
+		console.log(imgSrc);
+	},
+	onComplete: function (loaded, errors) {
+		console.log("**** onComplete ****");
+
+		console.log(loaded);
+		console.log(errors);
+	}
+});
+</script>
+</body>
+</html>
