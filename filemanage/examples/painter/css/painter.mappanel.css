@@ -1,0 +1,120 @@
+/***********************************************************************************************
+    Map Panel Start
+***********************************************************************************************/
+.map-panel .top-left,
+.map-panel .top-right,
+.map-panel .top-center,
+.map-panel .body-left,
+.map-panel .body-right,
+.map-panel .body-center,
+.map-panel .bottom-left,
+.map-panel .bottom-right,
+.map-panel .bottom-center {
+    background: transparent url(../images/painter/map_panel.jpg) no-repeat;
+    overflow: hidden;
+}
+.map-panel .top-left,
+.map-panel .top-right,
+.map-panel .top-center {
+    height: 38px;
+}
+.map-panel .top-left {
+    width: 10px;
+    background-position: left top;
+    float: left;
+}
+.map-panel .top-center {
+    background-position: -10px top;
+    _float: left;
+}
+.map-panel .top-right {
+    width: 10px;
+    background-position: right top;
+    float: right;
+}
+.map-panel .body-left,
+.map-panel .body-right,
+.map-panel .body-center {
+    height: 531px;
+}
+.map-panel .body-left {
+    width: 10px;
+    background-position: left -38px;
+    float: left;
+}
+.map-panel .body-center {
+    background-position: -10px -38px;
+    _float: left;
+}
+.map-panel .body-right {
+    width: 10px;
+    background-position: right -38px;
+    float: right;
+}
+.map-panel .bottom-left,
+.map-panel .bottom-right,
+.map-panel .bottom-center {
+    height: 9px;
+    *height: 15px;
+}
+.map-panel .bottom-left {
+    width: 10px;
+    background-position: left bottom;
+    margin: 0;
+    float: left;
+}
+.map-panel .bottom-center {
+    background-position: -10px bottom;
+    _float: left;
+}
+.map-panel .bottom-right {
+    width: 10px;
+    background-position: right bottom;
+    float: right;
+}
+.map-panel .map-container {
+    width: 940px;
+    height: 531px;
+    overflow: hidden;
+}
+.map-panel .panel-heading {
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+    line-height: 1;
+    margin: 10px 15px 0 0;
+}
+.map-panel .input-text {
+    width: 900px;
+    height: 25px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    line-height: 1;
+    line-height: 1.5\9;
+    border: none;
+    margin: 6px auto 0 auto;
+    *margin: 3px auto 0 auto;
+    display: block;
+    overflow: hidden;
+}
+.map-panel .hidden-status {
+    display: none;
+}
+.map-panel .close-button {
+    width: 13px;
+    height: 12px;
+    margin: -4px 0 0 0;
+    margin: -2px 0 0 0\9;
+    *margin: 8px 0 0 0;
+    float: right;
+}
+.map-panel .input-close-pos {
+    margin-top: 6px;
+    margin-top: 8px\9;
+    *margin-top: 8px;
+}
+/***********************************************************************************************
+    Map Panel End
+***********************************************************************************************/

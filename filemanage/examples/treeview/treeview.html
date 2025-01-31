@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2012-11-06">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Treeview Samples</title>
+<link rel="stylesheet" href="../libs/bootstrap-3.1.1/dist/css/bootstrap.css">
+<link rel="stylesheet" href="css/miii-modals.css">
+<link rel="stylesheet" href="css/treeview.css">
+</head>
+<body>
+
+    <div id="treeview-modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal"><i class="icon-remove"></i></a>
+                    <h3 class="modal-title">Treeview</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="miii-treeview">
+                        <div class="empty hide">
+                            <p class="main">No data.</p>
+                        </div>
+                        <div class="outer-content">
+                            <div>
+                                <p class="desc"></p>
+                                <p class="msg hide"></p>
+                                <h4 class="pull-left"></h4>
+                                <button class="btn pull-right hide">Create Directory</button>
+                            </div>
+                            <div class="inner-content">
+                                <div id="treeview"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="../libs/jquery/jquery-1.11.1.js"></script>
+<script src="../libs/bootstrap-3.1.1/dist/js/bootstrap.min.js"></script>
+<!--<script src="../libs/jstree-480a265/dist/jstree.min.js"></script>-->
+<script src="../libs/jstree-v.pre1.0/jquery.jstree.js"></script>
+<!-- jquery.nicescroll.js is optional. It's included for customzied scroll bar. -->
+<script src="../libs/jquery.nicescroll.340/jquery.nicescroll.js"></script>
+<script src="js/treeview_lang.js"></script>
+<!--<script src="js/treeview.js"></script>-->
+<script type="text/javascript">
+$(function () {
+   $("#treeview-modal").modal("show");
+
+    $.jstree._themes = '../libs/jstree-v.pre1.0/themes/';
+    var treeviewConfig = {
+        'plugins': [
+            'themes', 'json_data', 'ui', 'types', 'crrm', 'checkbox'
+        ],
+        'themes': {
+            'theme' : 'miii',
+            'dots'  : true,
+            'icons' : true
+        },
+        'ui': {
+            'selected_parent_close': 'select_parent'
+        },
+        // This will prevent moving or creating any other type as a root node
+        'valid_children': ['group'],
+        'types' : {
+            // can have files and other folders inside of it
+            'valid_children': ['group'],
+            'types': {
+                'folder': {
+                    'icon': {
+                        'image': '/filemanage/samples/libs/jstree-v.pre1.0/themes/miii/ico_folder.png'
+                    }
+                },
+                'user-folder': {
+                    'icon': {
+                        'image': '/filemanage/samples/libs/jstree-v.pre1.0/themes/miii/ico_folder.png'
+                    }
+                }
+            }
+        },
+        'json_data': {
+            'data': [
+                {
+                    "data": {
+                        "title": "Archives",  // 顯示在 Treeview 上的目錄或檔案名稱
+                        "attr": {
+                            "href": "#" 
+                        }
+                    },
+                    "attr": {
+                        "data-name": "@km",  // 實際目錄或檔案名稱
+                        "data-gid": "14",
+                        "data-path": "\/@km",
+                        "data-size": 4096,
+                        "data-crumb": "f519fc5b76163d4c05bc1d1bc48f2c16",
+                        "class": "folder",  // "folder" or "file" 用來區別 item 為目錄或檔案。
+                        "rel": "user-folder"  // "user-folder" 自己工作區的資料夾 icon，"folder" 其他群組的資料夾 icon。
+                    },
+                    'children': [
+                        {
+                        "data": {
+                            "title": "Archives",  // 顯示在 Treeview 上的目錄或檔案名稱
+                            "attr": {
+                                "href": "#" 
+                            }
+                        },
+                        "attr": {
+                            "data-name": "@km",  // 實際目錄或檔案名稱
+                            "data-gid": "14",
+                            "data-path": "\/@km",
+                            "data-size": 4096,
+                            "data-crumb": "f519fc5b76163d4c05bc1d1bc48f2c16",
+                            "class": "folder",  // "folder" or "file" 用來區別 item 為目錄或檔案。
+                            "rel": "user-folder"  // "user-folder" 自己工作區的資料夾 icon，"folder" 其他群組的資料夾 icon。
+                        }
+                        }
+                    ],
+                    "state": "closed" 
+                },
+                {
+                    "data": {
+                        "title": "USA Trip",
+                        "attr": {
+                            "href": "#" 
+                        }
+                    },
+                    "attr": {
+                        "data-name": "USA Trip",
+                        "data-gid": "14",
+                        "data-path": "\/USA Trip",
+                        "data-size": 4096,
+                        "data-crumb": "f519fc5b76163d4c05bc1d1bc48f2c16",
+                        "class": "folder",
+                        "rel": "user-folder" 
+                    },
+                    "state": "closed" 
+                },
+                {
+                    "data": {
+                        "title": "Web Tutorials",
+                        "attr": {
+                            "href": "#" 
+                        }
+                    },
+                    "attr": {
+                        "data-name": "tutorials",
+                        "data-gid": 2,
+                        "data-path": "",
+                        "data-size": 0,
+                        "data-crumb": "d3678e423493725a80167833290eea40",
+                        "class": "folder",
+                        "rel": "folder" 
+                    },
+                    "state": "closed" 
+                },
+                {
+                    "data": {
+                        "title": "Dinner_At_Grand_Hotel_Palazzo_della_Fonte_In_Fiuggi_004.JPG",
+                        "attr": {
+                            "href": "#" 
+                        }
+                    },
+                    "attr": {
+                        "data-name": "Dinner_At_Grand_Hotel_Palazzo_della_Fonte_In_Fiuggi_004.JPG",
+                        "data-gid": "14",
+                        "data-path": "",
+                        "data-size": 498513,
+                        "data-crumb": "",
+                        "class": "file",
+                        "rel": "user-folder" 
+                    },
+                    "state": "" 
+                }
+            ],
+            'progressive_render': true,
+            'ajax': {
+                'url': 'api/getFileList.php',
+                'data': function (n) {
+                    console.log("ajax data");
+                    console.log(n);
+                    return { id : n.attr ? n.attr("id") : 0 };
+                },
+                'success': function (data) {
+                    console.log("ajax success");
+                    console.log(data);
+                }
+            }
+        }
+    };
+
+    var treeview = $("#treeview").jstree(treeviewConfig);
+});
+</script>
+
+</body>
+</html>

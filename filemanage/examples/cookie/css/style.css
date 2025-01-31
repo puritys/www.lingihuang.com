@@ -1,0 +1,151 @@
+﻿body {
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	display: inline-block;
+}
+*html .clearfix {
+	height: 1%;
+}
+form.signin-form {
+	width: 315px;
+	margin: 10px auto;
+}
+form.signin-form .top-row {
+	width: 315px;
+	height: 11px;
+	background: transparent url(../images/form-top.png) scroll no-repeat left top;
+	float: left;
+}
+*html form.signin-form .top-row {
+	background-image: none;
+	filter:  progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/form-top.png', sizingMethod='image');
+}
+form.signin-form .body-content {
+	width: 315px;
+	background: transparent url(../images/form-body.png) scroll repeat-y left top;
+	float: left;
+}
+*html form.signin-form .body-content {
+	background-image: none;
+	filter:  progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/form-body.png', sizingMethod='scale');
+}
+form.signin-form .bottom-row {
+	width: 315px;
+	height: 11px;
+	background: transparent url(../images/form-bottom.png) scroll no-repeat left top;
+	float: left;
+}
+*html form.signin-form .bottom-row {
+	background-image: none;
+	filter:  progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/form-bottom.png', sizingMethod='image');
+}
+form.signin-form p {
+	font: normal 14px Arial, Helvetica, sans-serif;
+	color: #4b5e6f;
+	line-height: 0;
+	margin: 0 0 2px 18px !important;
+	margin: 0 0 6px 10px;
+	display: block;
+	float: left;
+}
+form.signin-form .left-label {
+	width: 80px;
+	font: normal 14px Arial, Helvetica, sans-serif;
+	color: #364858;
+	letter-spacing: .5px;
+	line-height: 170%;
+	margin: 0;
+	float: left;
+}
+form.signin-form .right-input {
+	width: 193px;
+	float: left;
+}
+form.signin-form .input-text {
+	width: 193px;
+	height: 25px;
+	background: transparent url(../images/input-text.png) scroll no-repeat left top;
+	font: normal 14px Arial, Helvetica, sans-serif;
+	color: #4b5e6f;
+	border: none;
+	padding: 3px 6px 2px 6px;
+}
+*html form.signin-form .input-text {
+	background-image: none;
+	filter:  progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/input-text.png', sizingMethod='image');
+}
+form.signin-form .checkbox-row {
+	margin-left: 98px !important;
+	margin-left: 50px;
+}
+/* Style Checkbox Start */
+form.signin-form ul.checkbox-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: block;
+	float: left;
+}
+form.signin-form ul.checkbox-list li {
+	margin: 0;
+	padding: 0;
+	display: block;
+	float: left;
+}
+form.signin-form ul.checkbox-list .checkbox-label {
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #4b5e6f;
+	margin: 0 0 0 4px;
+	display: block;
+	float: left;
+}
+form.signin-form ul.checkbox-list .checkbox-icon {
+	display: block;
+	float: left;
+	cursor: pointer;
+}
+form.signin-form ul.checkbox-list .checkbox-on-status {
+	width: 14px;
+	height: 13px;
+	background: transparent url(../images/checkbox-on.png) scroll no-repeat left top;
+}
+*html form.signin-form ul.checkbox-list .checkbox-on-status {
+	background-image: none;
+	filter:  progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/checkbox-on.png', sizingMethod='image');
+}
+form.signin-form ul.checkbox-list .checkbox-off-status {
+	width: 14px;
+	height: 13px;
+	background: transparent url(../images/checkbox-off.png) scroll no-repeat left top;
+}
+*html form.signin-form ul.checkbox-list .checkbox-off-status {
+	background-image: none;
+	filter:  progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/checkbox-off.png', sizingMethod='image');
+}
+/* Style Checkbox End */
+form.signin-form .button-row {
+	margin: 10px 38% 0 38% !important;
+	margin: 10px 55px 0 55px;
+}
+form.signin-form .sumit-button {
+	width: 78px;
+	height: 30px;
+	background: transparent url(../images/button.png) scroll no-repeat left top;
+	font: normal 14px Arial, Helvetica, sans-serif;
+	color: #4b5e6f;
+	border: none;
+	cursor: pointer;
+}
+*html form.signin-form button {
+	background-image: none;
+	filter:  progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/button.png', sizingMethod='image');
+}

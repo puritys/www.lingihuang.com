@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2014-03-29">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Upload Cross Domain</title>
+<style type="text/css">
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.file-input-container {
+	height: 35px;
+	margin: 0 0 0 5px;
+	position: relative;
+	width: 400px;
+}
+.file-input-container input[type="file"] {
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.file-input-container .file-label {
+	background: #fff;
+	border: 1px solid #ccc;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.file-input-container .file-label:before {
+	background: #0063e0;
+	color: #fff;
+	content: attr(data-title);
+	font-size: 16px;
+	letter-spacing: 1px;
+	padding: 6px 10px;
+	position: absolute;
+	right: 1px;
+	top: 1px;
+}
+.file-input-container .file-name {
+	color: #333;
+	display: inline-block;
+	font-size: 16px;
+	max-width: 79%;
+	overflow: hidden;
+	padding: 7px 5px;
+	position: relative;
+	white-space: nowrap;
+}
+.file-input-container .file-name:after {
+	content: attr(data-title);
+	display: inline-block;
+}
+.hide {
+	display: none;
+}
+.file-preview {
+	background: #fff;
+	border: 2px dashed #ccc;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #ccc;
+	font-size: 16px;
+	height: 400px;
+	line-height: 400px;
+	margin: 10px 0 0 5px;
+	overflow: hidden;
+	padding: 5px;
+	text-align: center;
+	vertical-align: middle;
+	width: 400px;
+}
+.file-preivew img {
+	max-height: 380px;
+	max-width: 380px;
+	vertical-align: middle;
+}
+</style>
+
+<script type="text/javascript">
+/********************
+Related Posts
+1. Adventures in the land of ajax-style cross domain file uploads
+http://www.toranbillups.com/blog/archive/2012/11/11/Adventures-in-the-land-of-ajax-style-cross-domain-file-uploads/
+2. JSONP跨網域傳送檔案：以POST方法實作
+http://pulipuli.blogspot.tw/2011/05/jsonppost.html#postcata1396077704493_anchor10
+3. Using XMLHttpRequest
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
+4. Using CORS
+http://www.html5rocks.com/en/tutorials/cors/
+5. Cross-domain Ajax with Cross-Origin Resource Sharing
+http://www.nczonline.net/blog/2010/05/25/cross-domain-ajax-with-cross-origin-resource-sharing/
+6. New Tricks in XMLHttpRequest2
+http://www.html5rocks.com/en/tutorials/file/xhr2/
+********************/
+
+var handleFileSelect,
+	handleIframeLoad,
+	cleanUp,
+	iframeElement,
+	//url       = 'http://examples.lingihuang.com/uploader/upload_cross_domain.php',
+	url       = 'http://examples.githubme.com/uploader/upload_cross_domain.php',
+	timestamp = new Date().getTime(),
+	iframeId  = 'file-iframe-' + timestamp;
+
+/**
+* Select a file to upload.
+*
+* @event handleFileSelect
+* @param {Object} e Event object
+*/
+handleFileSelect = function (e) {
+	var name = '',
+		fileNameElement = document.getElementById('file-name'),
+		formElement     = document.getElementById('file-form'),
+		action          = '',
+		files 			= this.files;
+
+	// Show filename.
+	if (files) {
+		name = files[0].name;
+	} else {
+		name = this.value.split('\\');
+		name = name[name.length - 1];
+	}
+	fileNameElement.setAttribute('data-title', name);
+
+	// Show image preview.
+	if (typeof FileReader !== 'undefined' && files) {
+		if (files[0].type.match('image.*')) {
+			var reader = new FileReader();
+			reader.onload = function (e) {
+				var imgElement = document.createElement('img');
+				imgElement.src       = e.target.result;
+				imgElement.style.maxHeight     = '380px';
+				imgElement.style.maxWidth      = '380px';
+				imgElement.style.verticalAlign = 'middle';
+				document.getElementById('file-preview').appendChild(imgElement);
+			};
+			reader.readAsDataURL(files[0]);
+		}
+	}
+
+	// Create iFrame.
+	iframeElement = document.createElement('iframe');
+	iframeElement.id        = iframeId;
+	iframeElement.name      = iframeId;
+	iframeElement.className = 'hide';
+	iframeElement.src       = 'about:blank';
+	document.body.appendChild(iframeElement);
+
+	// Set form attributes.
+	// Set form target to iframe.
+	formElement.setAttribute('target', iframeId);
+	formElement.setAttribute('method', 'POST');
+	formElement.setAttribute('action', url + '?timestamp=' + timestamp);
+	formElement.setAttribute('enctype', 'multipart/form-data');
+	formElement.setAttribute('encoding', 'multipart/form-data');
+
+	// Form submit.
+	formElement.submit();
+
+	// Send another request to get the response.
+	iframeElement.onload = handleIframeLoad;
+};
+
+/**
+* Handle iframe.onload triggered.
+*
+* @event handleIframeLoad
+* @param {Object} e Event object
+*/
+handleIframeLoad = function (e) {
+	var src = url + '?timestamp=' + timestamp + '&callback=fileUploadCallback',
+		scriptElement;
+	scriptElement     = document.createElement('script');
+	scriptElement.src = src;
+	document.body.appendChild(scriptElement);
+};
+
+/**
+* Remove attributes of the form element and remove the iframe element.
+*
+* @method cleanUp
+*/
+cleanUp = function () {
+	// Remove form attributes.
+	var formElement = document.getElementById('file-form');
+	formElement.removeAttribute('target');
+	formElement.removeAttribute('method');
+	formElement.removeAttribute('action');
+	formElement.removeAttribute('enctype');
+	formElement.removeAttribute('encoding');
+
+	// Remove iFrame.
+	document.body.removeChild(iframeElement);
+};
+
+window.onload = function (e) {
+	// Select a file.
+	document.getElementById('file').onchange = handleFileSelect;
+};
+
+window.fileUploadCallback = function (response) {
+	console.log(response);
+	cleanUp();
+};
+</script>
+</head>
+
+<body>
+	<h1>Upload Cross Domain</h1>
+
+	<form id="file-form">
+	    <div class="file-input-container">
+	    	<input id="file" name="file" type="file" value="">
+	    	<label class="file-label" for="file" data-title="Select">
+	    		<span id="file-name" class="file-name" data-title="No File..."></span>
+	    	</label>
+	    </div>
+	    <div id="file-preview" class="file-preview"></div>
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+﻿html, body {
+    background-color: #0c1b24;
+    margin: 0;
+    padding: 0;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+}
+*html .clearfix {
+    height: 1%;
+}
+
+/*** Flexible Layout of Round Corners Start ***/
+.wrapper {
+    width: 500px;
+    margin: 10px auto;
+}
+.wrapper .top-left {
+    width: 40px;
+    height: 40px;
+    background: transparent url(../images/top-left-png24.png) left top scroll no-repeat;
+    float: left;
+}
+.wrapper .top-center {
+    height: 40px;
+    background: transparent url(../images/top-center-png24.png) left top scroll repeat-x;
+    _float: left;
+    overflow: hidden;
+}
+.wrapper .top-right {
+    width: 40px;
+    height: 40px;
+    background: transparent url(../images/top-right-png24.png) left top scroll no-repeat;
+    float: right;
+}
+.wrapper .body-left {
+    width: 100%;
+    background: transparent url(../images/body-left-png24.png) left top scroll repeat-y;
+}
+.wrapper .body-center {
+    background-color: #e9f2f5;
+    margin: 0 40px;
+}
+.wrapper .body-right {
+    width: 100%;
+    background: transparent url(../images/body-right-png24.png) 100% top scroll repeat-y;
+}
+.wrapper .bottom-left {
+    width: 40px;
+    height: 40px;
+    background: transparent url(../images/bottom-left-png24.png) left top scroll no-repeat;
+    float: left;
+}
+.wrapper .bottom-center {
+    height: 40px;
+    background: transparent url(../images/bottom-center-png24.png) left top scroll repeat-x;
+    _float: left;
+    overflow: hidden;
+}
+.wrapper .bottom-right {
+    width: 40px;
+    height: 40px;
+    background: transparent url(../images/bottom-right-png24.png) left top scroll no-repeat;
+    float: right;
+}
+
+*html .wrapper .hack-ie6 {
+    width: 100%;
+}
+*html .wrapper .top-left {
+    background-image: none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/top-left-png24.png', sizingMethod='image');
+}
+*html .wrapper .top-center {
+    background-image: none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/top-center-png24.png', sizingMethod='scale');
+}
+*html .wrapper .top-right {
+    background-image: none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/top-right-png24.png', sizingMethod='image');
+}
+*html .wrapper .body-left, *html .wrapper .body-right {
+    background-image: none;
+}
+*html .wrapper .body-center {
+    /*width: 100%;
+    margin: 0 -40px;*/
+    width: expression(document.getElementById('wrapperDiv').offsetWidth - document.getElementById('bodyLeftDiv').offsetWidth - document.getElementById('bodyRightDiv').offsetWidth + "px");
+    margin: 0 40px;
+}
+*html .wrapper .body-left-hack-ie6 {
+    width: 40px;
+    height: expression(document.getElementById('bodyCenterDiv').offsetHeight + "px");
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/body-left-png24.png', sizingMethod='scale');
+    margin: 0 -40px 0 0;
+    float: left;
+}
+*html .wrapper .body-right-hack-ie6 {
+    width: 40px;
+    height: expression(document.getElementById('bodyCenterDiv').offsetHeight + "px");
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/body-right-png24.png', sizingMethod='scale');
+    margin: 0 0 0 -40px;
+    float: right;
+}
+*html .wrapper .bottom-left {
+    background-image: none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bottom-left-png24.png', sizingMethod='image');
+}
+*html .wrapper .bottom-center {
+    background-image: none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bottom-center-png24.png', sizingMethod='scale');
+}
+*html .wrapper .bottom-right {
+    background-image: none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bottom-right-png24.png', sizingMethod='image');
+}
+/*** Flexible Layout of Round Corners End ***/
+
+
+/*** Contents Start ***/
+.wrapper .contents {
+    width: 100%;
+    text-align: center;
+    padding: 5px 15px 0 0;
+    overflow: hidden;
+}
+/*** Contents End ***/

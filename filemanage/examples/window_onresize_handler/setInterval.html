@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Window onResize Handler: setInterval()</title>
+    <link type="text/css" rel="stylesheet" href="css/layout.css" />
+    <script type="text/javascript" src="../libs/lib.js"></script>
+    <script type="text/javascript">
+        // Solution One: setInterval()
+        
+        var elements = {"wrapper": null, "topHeader": null, "bottomFooter": null, "leftSide": null, "rightSide": null, "content": null};
+        var properties = ["clientWidth", "clientHeight", "offsetWidth", "offsetHeight"];
+        var initHeight = 0;
+        var resizeInterval = null;
+        
+        var onloadHandler = function() {
+            for (var name in elements)
+                elements[name] = document.getElementById(name);
+            if (resizeInterval) clearInterval(resizeInterval);
+            resizeInterval = setInterval(function(){
+                onresizeHandler();
+            }, 100);
+        };
+        var onresizeHandler = function() {
+            var height = GEOMETRY.getViewportHeight() - elements.topHeader.offsetHeight - elements.bottomFooter.offsetHeight;
+            height -= parseInt(CSS.get(elements.topHeader, "margin-top"), 10) - parseInt(CSS.get(elements.topHeader, "margin-bottom"), 10) - parseInt(CSS.get(elements.bottomFooter, "margin-top"), 10) - parseInt(CSS.get(elements.bottomFooter, "margin-bottom"), 10);
+            if (height != initHeight) {
+                DEBUG.log(height);
+                CSS.set(elements.leftSide, {"height": height});
+                CSS.set(elements.rightSide, {"height": height});
+                CSS.set(elements.content, {"height": height});
+                initHeight = height;
+                for (var name in elements) {
+                    if (name != "wrapper") {
+                        var node = elements[name];
+                        ELEMENT.remove(node, ELEMENT.contains(node, "p"));
+                        var nodeP = document.createElement("p");
+                        for (var i=0; i<properties.length; i++)
+                            nodeP.innerHTML += properties[i] + ": " + node[properties[i]] + "px; ";
+                        node.appendChild(nodeP);
+                    }
+                }
+            }
+        };
+        GENERIC.addEvent(window, "load", onloadHandler);
+    </script>
+</head>
+<body>
+    <div id="wrapper" class="wrapper">
+        <div id="topHeader" class="top-header">Header</div>
+        <div id="leftSide" class="side-bar align-left">Side Bar</div>
+        <div id="rightSide" class="side-bar align-right">Side Bar</div>
+        <div id="content" class="content">Content</div>
+        <div id="bottomFooter" class="bottom-footer">Footer</div>
+    </div>
+</body>
+</html>

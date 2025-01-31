@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2014-03-08">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>onLoad vs onDOMContentLoaded</title>
+<link rel="stylesheet" href="css/external.css">
+<style type="text/css">
+#container {
+	background: #eee;
+	border: 1px solid #999;
+	box-sizing: border-box;
+	color: #333;
+	font-size: 16px;
+	line-height: 20px;
+	margin: 0 0 20px 0;
+	min-height: 100px;
+	padding: 10px 5px;
+	width: 300px;
+}
+</style>
+
+<script type="text/javascript" src="js/external.js"></script>
+<script type="text/javascript">
+/********************
+Related Posts
+1. JavaScript Tutorial onLoad and onDOMContentLoaded
+http://javascript.info/tutorial/onload-ondomcontentloaded
+2. async vs defer attributes
+http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html
+********************/
+
+console.log("**** script before ****");
+
+var isReady = false;
+var ready = function () {
+	console.log("**** ready ****");
+
+	var containerElement = document.getElementById("container"),
+		html = containerElement.innerHTML;
+	containerElement.innerHTML = html + "**** ready ****" + "<br>";
+
+	console.log(containerElement);
+};
+
+if (document.addEventListener) {  // Chrome, Firefox, Safari, Opera
+	document.addEventListener("DOMContentLoaded", ready, false);
+} else if (document.attachEvent) {  // IE
+	try {
+		var isFrame = window.frameElement !== null ? TRUE : FALSE;
+	} catch (e) {
+
+	}
+
+	// IE, the document is not inside a frame.
+	if (document.documentElement.doScroll && !isFrame) {
+		function tryScroll() {
+			if (isReady) {
+				return;
+			}
+			try {
+				document.documentElement.doScroll("left");
+				ready();
+			} catch (e) {
+				setTimeout(tryScroll, 10);
+			}
+		}
+		tryScroll();
+	}
+
+	// IE, the document is inside a frame.
+	document.attachEvent("onreadystatechange", function() {
+		if ( document.readyState === "complete" ) {
+			ready();
+		}
+	});
+}
+
+window.onload = function () {
+	console.log("**** window.onload ****");
+
+	var containerElement = document.getElementById("container"),
+		html = containerElement.innerHTML;
+	containerElement.innerHTML = html + "**** window.onload ****" + "<br>";
+	
+	console.log(containerElement);
+};
+</script>
+</head>
+
+<body>
+	<div id="container"></div>
+	<iframe id="my-frame" height="100%" width="100%" src="child.html" allowtransparency="true" frameborder="0" scrolling="No"></iframe>
+
+<script type="text/javascript" src="js/external.js"></script>
+<script type="text/javascript">
+console.log("**** script after ****");
+
+// Dynamically load script.
+var script = document.createElement("script");
+script.src = "js/dynamic.js";
+document.getElementsByTagName("head")[0].appendChild(script);
+
+// Load image.
+var image = new Image();
+image.src = "images/golden_gate_bridge.jpg";
+image.onload = function (e) {
+	console.log("**** image.onload ****");
+
+	var containerElement = document.getElementById("container"),
+		html = containerElement.innerHTML;
+	containerElement.innerHTML = html + "**** image.onload ****" + "<br>";
+
+	document.body.appendChild(this);
+};
+image.onerror = function () {
+	console.log("**** image.onerror ****");
+
+	var containerElement = document.getElementById("container"),
+		html = containerElement.innerHTML;
+	containerElement.innerHTML = html + "**** image.onerror ****" + "<br>";
+};
+
+// iFrame onload.
+document.getElementById("my-frame").onload = function () {
+	console.log("**** iframe.onload ****");
+
+	var containerElement = document.getElementById("container"),
+		html = containerElement.innerHTML;
+	containerElement.innerHTML = html + "**** iframe.onload ****" + "<br>";
+};
+</script>
+
+</body>
+</html>

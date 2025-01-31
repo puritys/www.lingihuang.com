@@ -1,0 +1,130 @@
+﻿html, body {
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.wrapper {
+	width: 1024px;
+	margin: 0 auto;
+}
+.query-format-section {
+	width: 100%;
+	margin: 10px 0 40px 0;
+	float: left;
+}
+.query-format-section .heading-row {
+	width: 100%;
+	float: left;
+}
+.query-format-section h1 {
+	font: bold 20px Arial, Helvetica, sans-serif;
+	color: #4f5c63;
+	letter-spacing: .3px;
+	margin: 5px 10px;
+	display: block;
+}
+.format-container, .query-container {
+	float: left;
+}
+
+/*** Query Container Start ***/
+.query-container {
+	width: 35%;
+	background-color: #d8e3e7;
+	border: 1px solid #b1b8bc;
+	margin: 10px;
+}
+.query-container .title-row, .query-container h2, .query-container p, .query-container .left-col, .query-container .right-col {
+	margin: 0;
+	padding: 0;
+	display: block;
+	float: left;
+}
+.query-container .title-row {
+	width: 100%;
+	height: 25px;
+	background-color: #b3bfc4;
+}
+.query-container h2 {
+	font: normal 14px Arial, Helvetica, sans-serif;
+	color: #fff;
+	line-height: 1.7;
+	margin: 0 5px;
+}
+.query-container p.row {
+	width: 100%;
+	font: normal 13px Arial, Helvetica, sans-serif;
+	color: #686d70;
+}
+.query-container .left-col {
+	width: 23%;
+	margin: 3px 5px;
+}
+.query-container .right-col {
+	width: 71% !important;
+	width: 69%;
+	margin: 3px 5px 3px 0;
+}
+.query-container p.loading {
+	width: 100%;
+	font: normal 13px Arial, Helvetica, sans-serif;
+	color: #596064;
+	text-align: center;
+	line-height: 2;
+}
+/*** Query Container End ***/
+
+
+/*** Format Container Start ***/
+.format-container {
+	width: 60%;
+}
+.format-container pre, .format-container code {
+	font: normal 13px Arial, Helvetica, sans-serif;
+	color: #333;
+	letter-spacing: .2px;
+	margin: -5px 0 0 0;
+	display: block;
+	float: left;
+}
+.format-container code {
+	width: 100%;
+	line-height: 120% !important;
+	line-height: 90%;
+}
+.format-container code .id, .format-container code .class, code .variable {
+	font-weight: normal;
+	color: #af2d00;
+}
+.format-container code .value, .format-container code .string {
+	color: #cc02bb;
+}
+.format-container code .keyword {
+	font-weight: bold;
+	color: #0033cc;
+}
+.format-container code .element {
+	font-weight: bold;
+	color: #000099;
+}
+.format-container code .attribute {
+	font-weight: bold;
+	color: #009999;
+}
+.format-container .text-indent-0 {
+	text-indent: 0px;
+}
+.format-container .text-indent-1 {
+	text-indent: 10px;
+}
+.format-container .text-indent-2 {
+	text-indent: 20px;
+}
+/*** Format Container End ***/

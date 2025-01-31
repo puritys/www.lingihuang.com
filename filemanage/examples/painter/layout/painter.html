@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8">
+    <title>UrMapPainter</title>
+    <meta name="keywords" content="地圖,電子地圖,台灣地圖,map台灣地圖網,網路地圖,小畫家,map,painter">
+    <link type="text/css" rel="stylesheet" href="../css/painter.import.css" />
+    <script type="text/javascript" src="../js/painter.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="topHeaderDiv" class="top-header">
+            <div class="logo-row">
+                <div class="urmap-logo">UrMap</div>
+                <div class="urpainter-logo">UrPainter</div>
+                <div class="clear-float"></div>
+            </div>
+            <ul id="mainMenuUL" class="main-menu">
+                <li><a id="fileButtonAnchor" class="file-button" href="javascript:void(0);">檔案</a></li>
+                <li class="splitter"></li>
+                <li><a id="editButtonAnchor" class="edit-button" href="javascript:void(0);">編輯</a></li>
+                <li class="splitter"></li>
+                <li><a id="layerButtonAnchor" class="layer-button" href="javascript:void(0);">圖層</a></li>
+                <li class="splitter"></li>
+                <li><a id="viewButtonAnchor" class="view-button" href="javascript:void(0);">檢視</a></li>
+                <li class="splitter"></li>
+                <div class="clear-float"></div>
+            </ul>
+            <div class="tool-bar">
+                <div class="splitter"></div>
+                <div id="toolIconDiv" class="icon move-icon"></div>
+                <div class="splitter"></div>
+                <div id="toolOptionsDiv" class="tool-options">
+                    <div id="fillinColorSelect" class="fillin-color-picker">
+                        <div class="color-container"></div>
+                        <div class="select-icon-off-status"></div>
+                        <div class="clear-float"></div>
+                    </div>
+                    <div id="borderColorSelect" class="border-color-picker">
+                        <div class="color-container"></div>
+                        <div class="select-icon-off-status"></div>
+                        <div class="clear-float"></div>
+                    </div>
+                    <div id="strokeSelect" class="stroke-picker">
+                        <div class="heading">筆劃</div>
+                        <div class="stroke-container">
+                            <div id="strokeValue" class="stroke-value">1</div>
+                            <div id="strokeSelectIcon" class="select-icon-off-status"></div>
+                            <div class="clear-float"></div>
+                        </div>
+                        <div class="unit">px</div>
+                        <div class="clear-float"></div>
+                    </div>
+                    <div id="transparencyPicker" class="transparency-picker">
+                        <div class="heading">不透明度</div>
+                        <div class="transparency-container">
+                            <div id="transparencyValue" class="transparency-value">100</div>
+                            <div id="transparencySelectIcon" class="select-icon-off-status"></div>
+                            <div class="clear-float"></div>
+                        </div>
+                        <div class="unit">%</div>
+                        <div class="clear-float"></div>
+                    </div>
+                    <div class="clear-float"></div>
+                </div>
+                <span id="noToolOptionSpan" class="no-options"></span>
+                <div class="clear-float"></div>
+            </div>
+        </div>
+        <div id="bodyContentDiv" class="body-content">
+            <div class="tool-panel">
+                <div class="top-row">
+                    <h2 class="panel-heading">工具</h2>
+                </div>
+                <div class="body-content">
+                    <ul id="toolIconsDiv" class="panel-icons">
+                        <li><img id="moveToolIcon" src="../images/painter/tool_panel_icons/move_icon_off_status.jpg" alt="移動工具" title="移動工具" /></li>
+                        <li><img id="transformToolIcon" src="../images/painter/tool_panel_icons/transform_icon_off_status.jpg" alt="變形工具" title="變形工具" /></li>
+                        <li><img id="pencilToolIcon" src="../images/painter/tool_panel_icons/pencil_icon_off_status.jpg" alt="鉛筆工具" title="鉛筆工具" /></li>
+                        <li><img id="bezierToolIcon" src="../images/painter/tool_panel_icons/bezier_icon_off_status.jpg" alt="筆型工具" title="筆型工具" /></li>
+                        <li><img id="selectToolIcon" src="../images/painter/tool_panel_icons/select_icon_off_status.jpg" alt="選取工具" title="選取工具" /></li>
+                        <li><img id="shapeToolIcon" src="../images/painter/tool_panel_icons/bound_icon_off_status.jpg" alt="矩形工具" title="矩形工具" /></li>
+                        <li><img id="polylineToolIcon" src="../images/painter/tool_panel_icons/polyline_icon_off_status.jpg" alt="線段工具" title="線段工具" /></li>
+                        <li><img id="markerToolIcon" src="../images/painter/tool_panel_icons/marker_icon_off_status.jpg" alt="地標工具" title="地標工具" /></li>
+                        <li><img id="textToolIcon" src="../images/painter/tool_panel_icons/text_icon_off_status.jpg" alt="文字工具" title="文字工具" /></li>
+                    </ul>
+                    <div class="splitter"></div>
+                    <div class="color-thumbnail-container">
+                        <div class="color-container">
+                            <div class="fill-in-color"></div>
+                            <div class="border-color-outer-container">
+                                <div class="border-color-inner-container"></div>
+                            </div>
+                        </div>
+                        <div id="colorSwitcherDiv" class="color-switcher"></div>
+                        <div class="clear-float"></div>
+                    </div>
+                    <div class="color-picker-container">
+                        <div id="fillInColorDiv" class="fill-in-color"></div>
+                        <div id="borderColorDiv" class="border-color-outer-container">
+                            <div class="border-color-inner-container"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-row"></div>
+            </div>
+            <div class="history-layer-panel">
+                <div id="historyPanelDiv" class="history-panel">
+                    <div class="top-left"></div>
+                    <div class="top-right"></div>
+                    <div class="top-center">
+                        <div class="hack-ie6">
+                            <div id="historyCloseBtnDiv" class="close-button"><img src="../images/painter/close_button.jpg" alt="關閉" title="關閉" /></div>
+                            <h2 class="panel-heading">步驟記錄</h2>
+                        </div>
+                    </div>
+                    <div class="body-left"></div>
+                    <div class="body-right"></div>
+                    <div class="body-center">
+                        <div class="hack-ie6">
+                            <div class="panel-splitter"></div>
+                            <div id="historyRecordContainerDiv" class="record-container">
+                                <div class="record-list on-status">
+                                    <div class="icon-col map-thumbnail-container"></div>
+                                    <div class="desc-col">開啟新地圖</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col move-icon"></div>
+                                    <div class="desc-col">移動</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col transform-icon"></div>
+                                    <div class="desc-col">任意變形</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col pencil-icon"></div>
+                                    <div class="desc-col">鉛筆</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col bezier-icon"></div>
+                                    <div class="desc-col">新增貝茲曲線</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col bound-icon"></div>
+                                    <div class="desc-col">新增矩形</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col circle-icon"></div>
+                                    <div class="desc-col">新增圓形</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col polygon-icon"></div>
+                                    <div class="desc-col">新增多邊形</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col building-icon"></div>
+                                    <div class="desc-col">新增建築物</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col polyline-icon"></div>
+                                    <div class="desc-col">新增線段</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col marker-icon"></div>
+                                    <div class="desc-col">新增地標</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col text-icon"></div>
+                                    <div class="desc-col">新增文字</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col property-icon"></div>
+                                    <div class="desc-col">圖層屬性</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col layer-icon"></div>
+                                    <div class="desc-col">新增圖層</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col group-icon"></div>
+                                    <div class="desc-col">新增群組</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                                <div class="record-splitter"></div>
+                                <div class="record-list off-status">
+                                    <div class="icon-col delete-icon"></div>
+                                    <div class="desc-col">刪除圖層</div>
+                                    <div class="clear-float"></div>
+                                </div>
+                            </div>
+                            <div class="panel-splitter"></div>
+                            <div class="utility-footer">
+                                <div class="resize-icon"></div>
+                                <div class="delete-icon"><img id="historyDeleteIcon" src="../images/painter/layer_panel_icons/delete_icon_off_status.jpg" alt="刪除" title="刪除" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-left"></div>
+                    <div class="bottom-right"></div>
+                    <div class="bottom-center"><div class="hack-ie6"></div></div>
+                    <div class="clear-float"></div>
+                </div>
+                <div id="layerPanelDiv" class="layer-panel">
+                    <div class="top-left"></div>
+                    <div class="top-right"></div>
+                    <div class="top-center">
+                        <div class="hack-ie6">
+                            <div id="layerCloseBtnDiv" class="close-button"><img src="../images/painter/close_button.jpg" alt="關閉" title="關閉" /></div>
+                            <h2 class="panel-heading">圖層</h2>
+                        </div>
+                    </div>
+                    <div class="body-left"></div>
+                    <div class="body-right"></div>
+                    <div class="body-center">
+                        <div class="hack-ie6">
+                            <div class="panel-splitter"></div>
+                            <form id="layerRecordContainerForm" class="record-container">
+                                <div class="record-list layer-record">
+                                    <div class="layer-row">
+                                        <div class="eye-col">
+                                            <div class="eye-outer-container">
+                                                <div class="eye-inner-container eye-on-status"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right-record-col off-status">
+                                            <div class="vertical-splitter"></div>
+                                            <div class="icon-col pencil-icon"></div>
+                                            <div class="desc-col">鉛筆1</div>
+                                            <input class="input-text hidden-status" type="text" value="鉛筆1" />
+                                            <div class="clear-float"></div>
+                                        </div>
+                                        <div class="clear-float"></div>
+                                        <div class="record-splitter"></div>
+                                    </div>
+                                </div>
+                                <div class="record-list layer-record">
+                                    <div class="layer-row">
+                                        <div class="eye-col">
+                                            <div class="eye-outer-container">
+                                                <div class="eye-inner-container eye-on-status"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right-record-col off-status">
+                                            <div class="vertical-splitter"></div>
+                                            <div class="icon-col bezier-icon"></div>
+                                            <div class="desc-col">貝茲曲線1</div>
+                                            <input class="input-text hidden-status" type="text" value="貝茲曲線1" />
+                                            <div class="clear-float"></div>
+                                        </div>
+                                        <div class="clear-float"></div>
+                                        <div class="record-splitter"></div>
+                                    </div>
+                                </div>
+                                <div class="record-list layer-record">
+                                    <div class="layer-row">
+                                        <div class="eye-col">
+                                            <div class="eye-outer-container">
+                                                <div class="eye-inner-container eye-on-status"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right-record-col off-status">
+                                            <div class="vertical-splitter"></div>
+                                            <div class="icon-col bound-icon"></div>
+                                            <div class="desc-col">矩形1</div>
+                                            <input class="input-text hidden-status" type="text" value="矩形1" />
+                                            <div class="clear-float"></div>
+                                        </div>
+                                        <div class="clear-float"></div>
+                                        <div class="record-splitter"></div>
+                                    </div>
+                                </div>
+                                <div class="record-list layer-record">
+                                    <div class="layer-row">
+                                        <div class="eye-col">
+                                            <div class="eye-outer-container">
+                                                <div class="eye-inner-container eye-on-status"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right-record-col off-status">
+                                            <div class="vertical-splitter"></div>
+                                            <div class="icon-col circle-icon"></div>
+                                            <div class="desc-col">圓形1</div>
+                                            <input class="input-text hidden-status" type="text" value="圓形1" />
+                                            <div class="clear-float"></div>
+                                        </div>
+                                        <div class="clear-float"></div>
+                                        <div class="record-splitter"></div>
+                                    </div>
+                                </div>
+                                <div class="record-list layer-record">
+                                    <div class="layer-row">
+                                        <div class="eye-col">
+                                            <div class="eye-outer-container">
+                                                <div class="eye-inner-container eye-on-status"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right-record-col off-status">
+                                            <div class="vertical-splitter"></div>
+                                            <div class="icon-col polygon-icon"></div>
+                                            <div class="desc-col">多邊形1</div>
+                                            <input class="input-text hidden-status" type="text" value="多邊形1" />
+                                            <div class="clear-float"></div>
+                                        </div>
+                                        <div class="clear-float"></div>
+                                        <div class="record-splitter"></div>
+                                    </div>
+                                </div>
+                                <div class="record-list layer-record">
+                                    <div class="layer-row">
+                                        <div class="eye-col">
+                                            <div class="eye-outer-container">
+                                                <div class="eye-inner-container eye-on-status"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right-record-col off-status">
+                                            <div class="vertical-splitter"></div>
+                                            <div class="icon-col building-icon"></div>
+                                            <div class="desc-col">建築物1</div>
+                                            <input class="input-text hidden-status" type="text" value="建築物1" />
+                                            <div class="clear-float"></div>
+                                        </div>
+                                        <div class="clear-float"></div>
+                                        <div class="record-splitter"></div>
+                                    </div>
+                                </div>
+                                <div class="record-list layer-record">
+                                    <div class="layer-row">
+                                        <div class="eye-col">
+                                            <div class="eye-outer-container">
+                                                <div class="eye-inner-container eye-on-status"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right-record-col off-status">
+                                            <div class="vertical-splitter"></div>
+                                            <div class="icon-col polyline-icon"></div>
+                                            <div class="desc-col">線段1</div>
+                                            <input class="input-text hidden-status" type="text" value="線段1" />
+                                            <div class="clear-float"></div>
+                                        </div>
+                                        <div class="clear-float"></div>
+                                        <div class="record-splitter"></div>
+                                    </div>
+                                </div>
+                                <div class="record-list layer-record">
+                                    <div class="layer-row">
+                                        <div class="eye-col">
+                                            <div class="eye-outer-container">
+                                                <div class="eye-inner-container eye-on-status"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right-record-col off-status">
+                                            <div class="vertical-splitter"></div>
+                                            <div class="icon-col marker-icon"></div>
+                                            <div class="desc-col">地標1</div>
+                                            <input class="input-text hidden-status" type="text" value="地標1" />
+                                            <div class="clear-float"></div>
+                                        </div>
+                                        <div class="clear-float"></div>
+                                        <div class="record-splitter"></div>
+                                    </div>
+                                </div>
+                                <div class="record-list layer-record">
+                                    <div class="layer-row">
+                                        <div class="eye-col">
+                                            <div class="eye-outer-container">
+                                                <div class="eye-inner-container eye-on-status"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right-record-col off-status">
+                                            <div class="vertical-splitter"></div>
+                                            <div class="icon-col text-icon"></div>
+                                            <div class="desc-col">文字1</div>
+                                            <input class="input-text hidden-status" type="text" value="文字1" />
+                                            <div class="clear-float"></div>
+                                        </div>
+                                        <div class="clear-float"></div>
+                                        <div class="record-splitter"></div>
+                                    </div>
+                                </div>
+                                <div class="record-list layer-record">
+                                    <div class="layer-row">
+                                        <div class="eye-col">
+                                            <div class="eye-outer-container">
+                                                <div class="eye-inner-container eye-on-status"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right-record-col off-status">
+                                            <div class="vertical-splitter"></div>
+                                            <div class="icon-col layer-icon"></div>
+                                            <div class="desc-col">圖層2</div>
+                                            <input class="input-text hidden-status" type="text" value="圖層2" />
+                                            <div class="clear-float"></div>
+                                        </div>
+                                        <div class="clear-float"></div>
+                                        <div class="record-splitter"></div>
+                                    </div>
+                                </div>
+                                <div class="record-list group-record">
+                                    <div class="group-row">
+                                        <div class="eye-col">
+                                            <div class="eye-outer-container">
+                                                <div class="eye-inner-container eye-on-status"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right-record-col off-status">
+                                            <div class="vertical-splitter"></div>
+                                            <div class="arrow-col expand-icon"></div>
+                                            <div class="icon-col group-icon"></div>
+                                            <div class="desc-col">群組1</div>
+                                            <input class="input-text hidden-status" type="text" value="群組1" />
+                                            <div class="clear-float"></div>
+                                        </div>
+                                        <div class="clear-float"></div>
+                                        <div class="record-splitter"></div>
+                                    </div>
+                                    <div class="layer-row">
+                                        <div class="eye-col">
+                                            <div class="eye-outer-container">
+                                                <div class="eye-inner-container eye-on-status"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right-record-col off-status">
+                                            <div class="vertical-splitter"></div>
+                                            <div class="icon-col layer-icon"></div>
+                                            <div class="desc-col">圖層</div>
+                                            <input class="input-text hidden-status" type="text" value="圖層1" />
+                                            <div class="clear-float"></div>
+                                        </div>
+                                        <div class="clear-float"></div>
+                                        <div class="record-splitter"></div>
+                                    </div>
+                                    <div class="layer-row">
+                                        <div class="eye-col">
+                                            <div class="eye-outer-container">
+                                                <div class="eye-inner-container eye-on-status"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right-record-col off-status">
+                                            <div class="vertical-splitter"></div>
+                                            <div class="icon-col polygon-icon"></div>
+                                            <div class="desc-col">多邊形2</div>
+                                            <input class="input-text hidden-status" type="text" value="多邊形2" />
+                                            <div class="clear-float"></div>
+                                        </div>
+                                        <div class="clear-float"></div>
+                                        <div class="record-splitter"></div>
+                                    </div>
+                                </div>
+                                <div class="record-list map-record">
+                                    <div class="eye-col">
+                                        <div class="eye-outer-container">
+                                            <div class="eye-inner-container eye-on-status"></div>
+                                        </div>
+                                    </div>
+                                    <div class="right-record-col off-status">
+                                        <div class="vertical-splitter"></div>
+                                        <div class="map-thumbnail-container"></div>
+                                        <div class="map-desc-col">地圖</div>
+                                        <div class="icon-col lock-icon"></div>
+                                        <div class="clear-float"></div>
+                                    </div>
+                                    <div class="clear-float"></div>
+                                </div>
+                            </form>
+                            <div class="panel-splitter"></div>
+                            <div id="layerUtilitiesDiv" class="utility-footer">
+                                <div class="resize-icon"></div>
+                                <div class="utility-container">
+                                    <div class="delete-icon"><img id="layerDeleteIcon" src="../images/painter/layer_panel_icons/delete_icon_off_status.jpg" alt="刪除" title="刪除" /></div>
+                                    <div class="layer-icon"><img id="newLayerIcon" src="../images/painter/layer_panel_icons/new_layer_icon_off_status.jpg" alt="新增圖層" title="新增圖層" /></div>
+                                    <div class="group-icon"><img id="newGroupIcon" src="../images/painter/layer_panel_icons/new_group_icon_off_status.jpg" alt="新增群組" title="新增群組" /></div>
+                                    <div class="move-up-icon"><img id="moveUpIcon" src="../images/painter/layer_panel_icons/move_up_icon_off_status.jpg" alt="向上移動" title="向上移動" /></div>
+                                    <div class="move-down-icon"><img id="moveDownIcon" src="../images/painter/layer_panel_icons/move_down_icon_off_status.jpg" alt="向下移動" title="向下移動" /></div>
+                                    <div class="clear-float"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-left"></div>
+                    <div class="bottom-right"></div>
+                    <div class="bottom-center"><div class="hack-ie6"></div></div>
+                    <div class="clear-float"></div>
+                </div>
+            </div>
+        </div>
+        <div id="fileSubmenuDiv" class="file-submenu">
+            <div class="submenu-background">
+                <div id="newMapFn" class="list">
+                    <div class="key-col">Ctrl+N</div>
+                    <div class="name-col">開新地圖</div>
+                    <div class="clear-float"></div>
+                </div>
+                <div id="openMapFn" class="list">
+                    <div class="key-col">Ctrl+O</div>
+                    <div class="name-col">開舊地圖</div>
+                    <div class="clear-float"></div>
+                </div>
+                <div class="splitter"></div>
+                <div id="saveMapFn" class="list">
+                    <div class="key-col">Shift+Ctrl+S</div>
+                    <div class="name-col">儲存地圖</div>
+                    <div class="clear-float"></div>
+                </div>
+                <div class="splitter"></div>
+                <div id="printMapFn" class="list">
+                    <div class="key-col">Ctrl+P</div>
+                    <div class="name-col">列印地圖</div>
+                    <div class="clear-float"></div>
+                </div>
+            </div>
+        </div>
+        <div id="editSubmenuDiv" class="edit-submenu">
+            <div class="submenu-background">
+                <div id="undoFn" class="list">
+                    <div class="key-col">Ctrl+Z</div>
+                    <div class="name-col">還原</div>
+                    <div class="clear-float"></div>
+                </div>
+                <div id="redoFn" class="list">
+                    <div class="key-col">Shit+Ctrl+Z</div>
+                    <div class="name-col">重做</div>
+                    <div class="clear-float"></div>
+                </div>
+                <div class="splitter"></div>
+                <div id="cutFn" class="list">
+                    <div class="key-col">Ctrl+X</div>
+                    <div class="name-col">剪下</div>
+                    <div class="clear-float"></div>
+                </div>
+                <div id="copyFn" class="list">
+                    <div class="key-col">Ctrl+C</div>
+                    <div class="name-col">拷貝</div>
+                    <div class="clear-float"></div>
+                </div>
+                <div id="pasteFn" class="list">
+                    <div class="key-col">Ctrl+V</div>
+                    <div class="name-col">貼上</div>
+                    <div class="clear-float"></div>
+                </div>
+            </div>
+        </div>
+        <div id="layerSubmenuDiv" class="layer-submenu">
+            <div class="submenu-background">
+                <div id="newLayerFn" class="list">
+                    <div class="key-col">Shift+Ctrl+N</div>
+                    <div class="name-col">新增圖層</div>
+                    <div class="clear-float"></div>
+                </div>
+                <div id="duplicateLayerFn" class="list">
+                    <div class="name-col">複製圖層</div>
+                </div>
+                <div id="deleteLayerFn" class="list">
+                    <div class="name-col">刪除圖層</div>
+                </div>
+                <div class="splitter"></div>
+                <div id="newGroupFn" class="list">
+                    <div class="name-col">新增群組</div>
+                </div>
+                <div id="duplicateGroupFn" class="list">
+                    <div class="name-col">複製群組</div>
+                </div>
+                <div id="deleteGroupFn" class="list">
+                    <div class="name-col">刪除群組</div>
+                </div>
+            </div>
+        </div>
+        <div id="viewSubmenuDiv" class="view-submenu">
+            <div class="submenu-background">
+                <div id="historyPanelFn" class="list">
+                    <div class="name-col">步驟記錄</div>
+                </div>
+                <div id="layerPanelFn" class="list">
+                    <div class="key-col">F7</div>
+                    <div class="name-col">圖層</div>
+                    <div class="clear-float"></div>
+                </div>
+            </div>
+        </div>
+        <ul id="strokeDropDownDiv" class="stroke-dropdown-menu">
+            <li><a href="javascript:void(0);">1</a></li>
+            <li><a href="javascript:void(0);">2</a></li>
+            <li><a href="javascript:void(0);">3</a></li>
+            <li><a href="javascript:void(0);">4</a></li>
+            <li><a href="javascript:void(0);">5</a></li>
+            <li><a href="javascript:void(0);">6</a></li>
+            <li><a href="javascript:void(0);">7</a></li>
+            <li><a href="javascript:void(0);">8</a></li>
+            <li><a href="javascript:void(0);">9</a></li>
+            <li><a href="javascript:void(0);">10</a></li>
+        </ul>
+        <div id="transparencySliderDiv" class="transparency-slider">
+            <div class="slider-background">
+                <div class="slide-bar"></div>
+                <div class="slide-handle" unselectable="on"></div>
+            </div>
+        </div>
+        <div id="bezierMenuDiv" class="bezier-submenu">
+            <ul class="submenu-background">
+                <li name="bezier">
+                    <div class="icon-col bezier-icon"></div>
+                    <div class="tool-name-col">筆型工具</div>
+                    <div class="clear-float"></div>
+                </li>
+                <li name="convert">
+                    <div class="icon-col convert-icon"></div>
+                    <div class="tool-name-col">轉換錨點工具</div>
+                    <div class="clear-float"></div>
+                </li>
+            </ul>
+        </div>
+        <div id="shapeMenuDiv" class="shape-submenu">
+            <ul class="submenu-background">
+                <li name="bound">
+                    <div class="icon-col bound-icon"></div>
+                    <div class="tool-name-col">矩形工具</div>
+                    <div class="clear-float"></div>
+                </li>
+                <li name="circle">
+                    <div class="icon-col circle-icon"></div>
+                    <div class="tool-name-col">圓形工具</div>
+                    <div class="clear-float"></div>
+                </li>
+                <li name="polygon">
+                    <div class="icon-col polygon-icon"></div>
+                    <div class="tool-name-col">多邊形工具</div>
+                    <div class="clear-float"></div>
+                </li>
+                <li name="building">
+                    <div class="icon-col building-icon"></div>
+                    <div class="tool-name-col">建築物工具</div>
+                    <div class="clear-float"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://api.urmap.com/js/getapi.php?v=alpha"></script>
+<script type="text/javascript" src="http://api.urmap.com/js/getudaw.php?v=alpha"></script>
+<script type="text/javascript" src="http://api.urmap.com/uext/getuext.php?com=enableWheelZoom"></script>
+<script type="text/javascript" src="../js/painter.include.js"></script>
+<script type="text/javascript">
+    function init() {
+            UM.init();
+    }
+    $(document).ready(init);
+</script>
+</body>
+</html>

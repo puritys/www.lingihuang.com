@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2015-05-13">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Hash</title>
+<style type="text/css">
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.output p {
+    font: 14px normal Arial;
+    margin: 5px 0;
+}
+</style>
+</head>
+
+<body>
+    <select id="choice">
+        <option value="LA">Los Angeles</option>
+        <option value="NY">New York City</option>
+        <option value="SD">San Diego</option>
+        <option value="SF">San Francisco</option>
+    </select>
+    <div id="output" class="output"></div>
+
+<script type="text/javascript" src="../libs/jquery/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+/********************
+Related Posts
+1. History API - Dive Into HTML5
+http://diveintohtml5.info/history.html
+2. Manipulating the browser history
+https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history
+3. 凡走過請留下痕跡：AJAX網頁的狀態與瀏覽記錄
+http://rettamkrad.blogspot.tw/2013/04/ajaxandhistoryapi.html
+********************/
+$(function () {
+    var defaultCode = 'LA',
+        cityCode    = '',
+        currHash    = '',
+        queryData,
+        update;
+
+    queryData = function (data) {
+        $.ajax({
+            url  : 'query.php',
+            type : 'GET',
+            data : data
+        }).done(function (data, textStatus, jqXHR) {
+            if (data.status === 'ok') {
+                var html = [
+                    '<p>City: ' + decodeURIComponent(data.data.name) + '</p>',
+                    '<p>State: ' + decodeURIComponent(data.data.state) + '</p>'
+                ];
+                $('#output').html(html.join(''));
+            }
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+
+        });
+    };
+
+    update = function () {
+        // Set option selected.
+        $('#choice option').each(function (idx, element) {
+            if ($(element).val() === cityCode) {
+                $(element).prop('selected', true);
+            }
+        });
+
+        queryData({
+            cityCode: cityCode
+        });
+    };
+
+	$('#choice').on('change', function (e) {
+        var value = $(this).val();
+        window.location.hash = value;
+        queryData({
+            cityCode: value
+        });
+    });
+
+    window.onhashchange = function (e) {
+        cityCode = window.location.hash.replace('#', '');
+        update();
+    };
+
+    currHash = window.location.hash;
+
+    // Fix for IE7, IE9
+    // var iframeSelector = $('<iframe id="iframe-for-ie" src="javascript:void(0);" style="display: none;"></iframe>').appendTo($('body'));
+    // var iframe = iframeSelector.get(0).contentWindow.document;
+    // iframe.open();
+    // iframe.close();
+    // iframe.location.hash = currHash;
+
+    // Fix for IE7, IE9
+    // setInterval(function () {
+    //     var iframeHash = iframe.location.hash;
+    //     if (iframeHash !== currHash) {
+    //         window.location.hash = iframeHash;
+    //         currHash = iframeHash;
+    //     }
+    //     cityCode = currHash.replace('#', '');
+    //     update();
+    // }, 100);
+
+    cityCode = window.location.hash ? window.location.hash : defaultCode;
+    window.location.hash = cityCode;
+
+    update();
+});
+</script>
+
+</body>
+</html>

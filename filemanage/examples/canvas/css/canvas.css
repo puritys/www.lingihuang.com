@@ -1,0 +1,24 @@
+﻿html, body {
+	margin: 0;
+	padding: 0;
+}
+img {
+	border: none;
+}
+.wrapper {
+	width: 800px;
+	margin: 200px auto 0 auto;
+	position: relative;
+}
+.area-canvas {
+	border: 1px solid #666;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+button {
+	font-size: 12px;
+	color: #555;
+	padding: 2px 5px;
+}

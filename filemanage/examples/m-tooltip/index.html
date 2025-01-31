@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Vivian Huang">
+	<title>MTooltip Example</title>
+	<link rel="stylesheet" type="text/css" href="http://s1-t.hfcdn.com/fp/hf/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<style>
+		.wrapper {
+			margin: 100px 0 0 0;
+		}
+		h1 {
+			font-size: 30px;
+			margin: 0 0 25px 0;
+		}
+		.container-content {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<h1>MTooltip Example</h1>
+		<button id="my-button">Click Me To Show MTooltip</button>
+		<button class="my-button" data-title="MTooltip Title 2" data-content="MTooltip Content 2" data-container=".wrapper" data-width="200" data-placement="upper-right">MTooltip Data Attributes</button>
+		<button class="my-button" data-title="MTooltip Title 3" data-content="MTooltip Content 3" data-placement="lower-left">MTooltip Data Attributes</button>
+
+		<div id="mtooltip-my-button" class="container-content">
+			<div class="content">
+				<ul>
+					<li>Item One</li>
+					<li>Item Two</li>
+					<li>Item Three</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="http://s1-t.hfcdn.com/fp/hf/libs/jquery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="http://s1-t.hfcdn.com/fp/hf/js/_common/_m-tooltip.js"></script>
+
+	<script>
+		$(function () {
+			$('#my-button').mtooltip({
+				title    : 'MTooltip Title',
+				content  : $('#mtooltip-my-button').find('.content'), // or $('#mtooltip-my-button').html()
+				container: '.wrapper', // default appendTo body
+				width    : 200,
+				placement: 'upper-left' // upper-left, upper-right, lower-left, lower-right
+			});
+
+			$('.my-button').mtooltip();
+		});
+	</script>
+</body>
+</html>

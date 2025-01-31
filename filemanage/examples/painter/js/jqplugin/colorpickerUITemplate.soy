@@ -1,0 +1,56 @@
+{namespace UITemplates}
+/**
+* 這是用google Closure Template的soy檔案，必須執行SoyToJsSrcCompiler.jar 才可以
+* 詳細請參考：http://code.google.com/intl/zh-TW/closure/templates/index.html
+* excute : java -jar SoyToJsSrcCompiler.jar  --outputPathFormat colorpickerUITemplate.js colorpickerUITemplate.soy
+* excute at bingo : java -jar /home/blackbing/Works/closure_templates/SoyToJsSrcCompiler.jar  --outputPathFormat colorpickerUITemplate.js colorpickerUITemplate.soy
+* excute at windows : java -jar D:\Utilities\ClosureTemplates\SoyToJsSrcCompiler.jar  --outputPathFormat colorpickerUITemplate.js colorpickerUITemplate.soy
+*/
+{template .colorpickerUITemplate}
+<div class="colorpicker">
+    <div class="colorpicker_close"><img src="../images/painter/color_picker/colorpicker_close_button.jpg" title="關閉" alt="關閉" /></div>
+    <div class="colorpicker_color">
+        <div>
+            <div></div>
+        </div>
+    </div>
+    <div class="colorpicker_hue">
+        <div></div>
+    </div>
+    <div class="colorpicker_new_color"></div>
+    <div class="colorpicker_current_color"></div>
+    <div class="colorpicker_hex">
+        <input type="text" maxlength="6" size="6" />
+    </div>
+    <div class="colorpicker_rgb_r colorpicker_field">
+        <input type="text" maxlength="3" size="3" />
+        <span></span>
+    </div>
+    <div class="colorpicker_rgb_g colorpicker_field">
+        <input type="text" maxlength="3" size="3" />
+        <span></span>
+    </div>
+    <div class="colorpicker_rgb_b colorpicker_field">
+        <input type="text" maxlength="3" size="3" />
+        <span></span>
+    </div>
+    <div class="colorpicker_hsb_h colorpicker_field">
+        <input type="text" maxlength="3" size="3" />
+        <span></span>
+    </div>
+    <div class="colorpicker_hsb_s colorpicker_field">
+        <input type="text" maxlength="3" size="3" />
+        <span></span>
+    </div>
+    <div class="colorpicker_hsb_b colorpicker_field">
+        <input type="text" maxlength="3" size="3" />
+        <span></span>
+    </div>
+    <div class="colorpicker_submit">
+        <div class="button-inner-container">確定</div>
+    </div>
+    <div class="colorpicker_cancel">
+        <div class="button-inner-container">取消</div>
+    </div>
+</div>
+{/template}

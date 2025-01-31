@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>currentTarget and relatedTarget/fromElement and toElement</title>
+    <style type="text/css">
+        p {
+            font: normal 13px Arial, Helvetica, sans-serif;
+            letter-spacing: .5px;
+            text-align: center;
+            margin: 20px 0;
+            color: #032f4b;
+        }
+        .outer-wrapper {
+            width: 150px;
+            height: 150px;
+            background-color: #eef5f9;
+            border: 1px solid #bfc7cb;
+            margin: 0 auto;
+        }
+        .inner-wrapper {
+            width: 100px;
+            height: 100px;
+            background-color: #7b8a93;
+            border: 1px solid #515b62;
+            margin: 5px 25px;
+            cursor: pointer;
+        }
+        .outer-wrapper, .inner-wrapper {
+            font: normal 13px Arial, Helvetica, sans-serif;
+            letter-spacing: .5px;
+            text-align: center;
+        }
+        .outer-wrapper {
+            color: #032f4b;
+        }
+        .inner-wrapper {
+            color: #eef7fc;
+        }
+    </style>
+    <script type="text/javascript" language="javascript" src="../libs/lib.js"></script>
+    <script type="text/javascript">
+        function onMouseOverHandler(event) {
+            //var event = event || window.event;
+            // currentTarget refers to the element at which the event is currently being processed.
+            //var currentTarget = (window.event) ? this : event.currentTarget;
+            var currentTarget = GENERIC.findCurrentTarget(event, this);
+            // relatedTarget refers to the element that is related to the target node of the event.
+            //var relatedTarget = (window.event) ? e.fromElement : e.relatedTarget;
+            var relatedTarget = GENERIC.findRelatedTarget(event);
+            document.getElementById("outputEle").innerHTML = "=== onMouseOverHandler ===<br />currentTarget: " + currentTarget.id + "<br />relatedTarget: " + relatedTarget.id;
+        }
+        function onMouseOutHandler(event) {
+            //var event = event || window.event;
+            // currentTarget refers to the element at which the event is currently being processed.
+            //var currentTarget = (window.event) ? this : event.currentTarget;
+            var currentTarget = GENERIC.findCurrentTarget(event, this);
+            // relatedTarget refers to the element that is related to the target node of the event.
+            //var relatedTarget = (window.event) ? event.toElement : event.relatedTarget;
+            var relatedTarget = GENERIC.findRelatedTarget(event);
+            document.getElementById("outputEle").innerHTML = "=== onMouseOutHandler ===<br />currentTarget: " + currentTarget.id + "<br />relatedTarget: " + relatedTarget.id;
+        }
+        window.onload = function() {
+            var innerWrapperDiv = document.getElementById("innerWrapper");
+            innerWrapperDiv.onmouseover = onMouseOverHandler;
+            innerWrapperDiv.onmouseout = onMouseOutHandler;
+        }
+    </script>
+</head>
+<body>
+    <p id="outputEle">&nbsp;</p>
+      <div id="outerWrapper" class="outer-wrapper">
+          <br />Outer Wrapper
+          <div id="innerWrapper" class="inner-wrapper"><br /><br />Inner Wrapper</div>
+      </div>
+</body>
+</html>
+
+

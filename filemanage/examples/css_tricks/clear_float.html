@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2014-03-05">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>CSS Clear Float</title>
+<style type="text/css">
+html, body {
+	font: normal 12px "Noto Sans CJK TC Medium", "微軟正黑體", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "sans-serif";
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	display: inline-block;
+}
+*html .clearfix {
+	height: 1%;
+}
+.wrapper {
+	width: 500px;
+	margin: 15px auto;
+}
+.thumbnails-wrapper, .thumbnails-wrapper li, .thumbnails-wrapper a, .thumbnails-wrapper span {
+	margin: 0;
+	padding: 0;
+	display: block;
+	float: left;
+}
+.thumbnails-wrapper {
+	width: 500px;
+	list-style: none;
+	background-color: #eef5f9;
+	border: 1px solid #bfc7cb;
+	float: none;
+	margin: 10px 0 40px 0;
+}
+.thumbnails-wrapper a {
+	width: 76px;
+	font: bold 13px Arial, Helvetica, sans-serif;
+	color: #596064;
+	text-align: center;
+	text-decoration: none;
+	background-color: #c5d2d6;
+	border: 1px solid #8b979e;
+	margin: 7px !important;
+	margin: 7px 3px;
+	padding: 4px;
+}
+.thumbnails-wrapper a:hover {
+	background-color: #bacbd1;
+	border: 1px solid #767f85;
+}
+.thumbnails-wrapper span {
+	width: 76px;
+	height: 76px;
+	background-color: #6f7d82;
+	margin: 0 0 4px 0;
+	cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<ul class="thumbnails-wrapper clearfix">
+			<li><a href="#"><span></span>Thumbnail One</a></li>
+			<li><a href="#"><span></span>Thumbnail Two</a></li>
+			<li><a href="#"><span></span>Thumbnail Three</a></li>
+			<li><a href="#"><span></span>Thumbnail Four</a></li>
+			<li><a href="#"><span></span>Thumbnail Five</a></li>
+			<li><a href="#"><span></span>Thumbnail Six</a></li>
+			<li><a href="#"><span></span>Thumbnail Seven</a></li>
+			<li><a href="#"><span></span>Thumbnail Eight</a></li>
+			<li><a href="#"><span></span>Thumbnail Nine</a></li>
+			<li><a href="#"><span></span>Thumbnail Ten</a></li>
+		</ul>
+
+		<ul class="thumbnails-wrapper">
+			<li><a href="#"><span></span>Thumbnail One</a></li>
+			<li><a href="#"><span></span>Thumbnail Two</a></li>
+			<li><a href="#"><span></span>Thumbnail Three</a></li>
+			<li><a href="#"><span></span>Thumbnail Four</a></li>
+			<li><a href="#"><span></span>Thumbnail Five</a></li>
+			<li><a href="#"><span></span>Thumbnail Six</a></li>
+			<li><a href="#"><span></span>Thumbnail Seven</a></li>
+			<li><a href="#"><span></span>Thumbnail Eight</a></li>
+			<li><a href="#"><span></span>Thumbnail Nine</a></li>
+			<li><a href="#"><span></span>Thumbnail Ten</a></li>
+		</ul>
+  	</div>
+</body>
+</html>
+
+

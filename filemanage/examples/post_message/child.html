@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2014-03-24">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>HTML5 postMessage</title>
+<style type="text/css">
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    background: #eee;
+    height: 1500px;
+}
+p {
+    color: #333;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+</style>
+</head>
+
+<body>
+    <div id="container" class="container"></div>
+
+<script>
+var getDocSize,
+    handleMessage,
+    output;
+
+getDocSize = function () {
+    var body = document.body;
+    height = Math.max(body.clientHeight, body.offsetHeight, body.scrollHeight);
+    width  = Math.max(body.clientWidth, body.offsetWidth, body.scrollWidth);
+    return {height: height, width: width};
+};
+
+handleMessage = function (e) {
+    if (e.origin !== "http://www.lingihuang.com") {
+        return;
+    }
+
+    var size = getDocSize();
+    if (e.data === "ready") {
+        // Child postMessage.
+        //window.top.postMessage(size.width + "," + size.height, e.origin);
+        e.source.postMessage(size.width + "," + size.height, e.origin);
+
+        output(size);
+    }
+};
+
+output = function (data) {
+    var html = '<p>Child width = ' + data.width + ' height = ' + data.height + '</p>';
+    document.getElementById("container").innerHTML = html;
+}
+
+/*
+if (window.self !== window.top) {
+    var lastHeight = 0,
+        lastWidth  = 0;
+
+    (function() {
+        var size = getDocSize();
+        if ((size.height !== lastHeight) || (size.width !== lastWidth)) {
+            lastHeight = size.height;
+            lastWidth  = size.width;
+            window.top.postMessage(size.width + "," + size.height, e.origin);
+        }
+        setTimeout(arguments.callee, 100);
+    }());
+}
+*/
+
+if (window.addEventListener) {
+    window.addEventListener("message", handleMessage, false);
+} else {
+    window.attachEvent("onmessage", handleMessage);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿html, body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.wrapper {
+	width: 100%;
+}
+.top-header, .bottom-footer, .side-bar, .content {
+	background-color: #d8e3e7;
+	font: bold 17px Arial, Helvetica, sans-serif;
+	color: #596064;
+	letter-spacing: .6px;
+	text-align: center;
+}
+.top-header, .bottom-footer {
+	width: 100%;
+	height: 80px;
+	line-height: 200%;
+}
+.top-header {
+	margin: 0 0 2px 0;
+}
+.bottom-footer {
+	margin: 2px 0 0 0;
+}
+.side-bar {
+	width: 20%;
+	line-height: 200%;
+}
+.content {
+	line-height: 200%;
+	margin: 0 20.2% !important;
+	margin: 0 20%;
+}
+.align-left {
+	float: left;
+}
+.align-right {
+	float: right;
+}
+p {
+	font: normal 13px Arial, Helvetica, sans-serif;
+	color: #596064;
+	letter-spacing: .3px;
+	text-align: center;
+	line-height: 130%;
+	margin: 5px 10px;
+	display: block;
+}

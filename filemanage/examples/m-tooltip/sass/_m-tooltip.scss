@@ -1,0 +1,102 @@
+﻿.m-tooltip {
+	background: #fff;
+	border: 1px solid $border-color;
+	@include box-sizing(border-box);
+	display: none;
+	font-family: $ms-font-family;
+	left: 0;
+	padding: 15px 10px;
+	position: absolute;
+	top: 10px;
+	width: 300px;
+	z-index: 100;
+	&.is-show {
+		display: block;
+	}
+	&.m-tooltip-upper-left {
+		.m-tooltip-ft {
+			left: 10px;
+	  		top: -11px;
+  		}
+	}
+	&.m-tooltip-upper-right {
+		.m-tooltip-ft {
+			right: 30px;
+  			top: -11px;
+  		}
+	}
+	&.m-tooltip-lower-left {
+		.m-tooltip-ft {
+			bottom: 0;
+			left: 10px;
+		}
+	}
+	&.m-tooltip-lower-right {
+		.m-tooltip-ft {
+			bottom: 0;
+  			right: 30px;
+  		}
+	}
+	&.m-tooltip-upper-left,
+	&.m-tooltip-upper-right {
+		.m-tooltip-arrow {
+			border-bottom-color: $border-color;
+			border-top: none;
+			&:after {
+				border-bottom-color: #fff;
+				border-top: none;
+				left: -10px;
+				top: 1px;
+			}
+		}
+	}
+	&.m-tooltip-lower-left,
+	&.m-tooltip-lower-right {
+		.m-tooltip-arrow {
+			border-bottom: none;
+			border-top-color: $border-color;
+			&:after {
+				border-bottom: none;
+				border-top-color: #fff;
+				bottom: 1px;
+				left: -10px;
+			}
+		}
+	}
+	.m-tooltip-hd {
+		border-bottom: 1px solid $border-color;
+		padding: 0 0 10px 0;
+		position: relative;
+		&:after {
+			background: $default-color;
+			bottom: -1px;
+			content: "";
+			display: block;
+			height: 3px;
+			left: 0;
+			position: absolute;
+			width: 78px;
+		}
+	}
+	.m-tooltip-bd {
+		padding: 10px 0 0 0;
+	}
+	.m-tooltip-ft {
+		position: absolute;
+	}
+	.m-tooltip-heading {
+		color: $text-color-major;
+		font-size: 18px;
+	}
+	.m-tooltip-arrow {
+		border: 11px solid transparent;
+		display: block;
+		position: absolute;
+		&:after {
+			border: 10px solid transparent;
+			content: "";
+			display: block;
+			position: absolute;
+		}
+	}
+}

@@ -1,0 +1,85 @@
+﻿html, body {
+    background-color: #eee;
+    margin: 0;
+    padding: 0;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+}
+*html .clearfix {
+    height: 1%;
+}
+
+/*** Flexible Layout of Round Corners Start ***/
+.wrapper {
+    width: 500px;
+    margin: 10px auto;
+}
+.wrapper .top-left, .wrapper .top-center, .wrapper .top-right,
+.wrapper .bottom-left, .wrapper .bottom-center, .wrapper .bottom-right {
+	background: transparent url(../images/png8.png) left top scroll no-repeat;
+	overflow: hidden;
+}
+.wrapper .top-left {
+    width: 15px;
+    height: 46px;
+    background-position: left top;
+    float: left;
+}
+.wrapper .top-center {
+    height: 46px;
+    background-position: -15px top;
+    _float: left;
+}
+.wrapper .top-right {
+    width: 15px;
+    height: 46px;
+    background-position: right top;
+    float: right;
+}
+.wrapper .body-center {
+    /*width: expression(document.getElementById('wrapperDiv').offsetWidth - document.getElementById('bodyCenterDiv').style.borderLeftWidth -  document.getElementById('bodyCenterDiv').style.borderRightWidth + "px");
+    */
+    width: 496px;
+    background-color: #fff;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+}
+.wrapper .bottom-left {
+    width: 15px;
+    height: 31px;
+    background-position: left -46px;
+    float: left;
+}
+.wrapper .bottom-center {
+    height: 31px;
+    background-position: -15px -46px;
+    _float: left;
+}
+.wrapper .bottom-right {
+    width: 15px;
+    height: 31px;
+    background-position: right -46px;
+    float: right;
+}
+*html .wrapper .hack-ie6 {
+    width: 100%;
+    overflow: hidden;
+}
+/*** Flexible Layout of Round Corners End ***/
+
+
+/*** Contents Start ***/
+.wrapper .contents {
+	text-align: center;
+    padding: 5px 15px 0 15px;
+    overflow: hidden;
+}
+/*** Contents End ***/

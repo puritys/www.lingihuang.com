@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2015-02-04">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>JavaScript Sandbox</title>
+</head>
+
+<body>
+    
+<script type="text/javascript">
+/********************
+Related Posts
+1. Managing JavaScript Objects
+https://msdn.microsoft.com/en-us/magazine/gg314983.aspx
+2. The Module Pattern
+http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript
+3. Core-Sandbox-Module-JS
+https://github.com/mamoo/Core-Sandbox-Module-JS
+4. JavaScript学习笔记(二十五) 沙箱模式
+http://blog.csdn.net/qq838419230/article/details/8981857
+5. javascript-platform-yui
+https://github.com/josephj/javascript-platform-yui
+********************/
+Sandbox.modules = {};
+function Sandbox() {
+    // turning arguments into an array
+    var args     = Array.prototype.slice.call(arguments),
+        // the last argument is the callback
+        callback = args.pop(),
+        // modules can be passed as an array or as individual parameters
+        modules  = (args[0] && typeof args[0] === 'string') ? args : args[0],
+        cache    = {},
+        i;
+
+    // make sure the function is called
+    // as a constructor
+    if (!(this instanceof Sandbox)) {
+        return new Sandbox(modules, callback);
+    }
+
+    this.publish = function (message, args) {
+        try {
+            for (var i = 0; i < cache[message].length; i++) {
+                if (typeof args === 'undefined') {
+                    args = [];
+                }
+                if (!(args instanceof Array)) {
+                    args = [args];
+                }
+                cache[message][i].apply(this, args);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    this.subscribe = function (message, callback) {
+        if (!cache[message]) {
+            cache[message] = [];
+        }
+        cache[message].push(callback);
+        return [message, callback];
+    };
+
+    // now add modules to the core `this` object
+    // no modules or "*" both mean "use all modules"
+    if (!modules || modules === '*') {
+        modules = [];
+        for (i in Sandbox.modules) {
+            if (Sandbox.modules.hasOwnProperty(i)) {
+                modules.push(i);
+            }
+        }
+    }
+
+    // initialize the required modules
+    for (i = 0; i < modules.length; i += 1) {
+        Sandbox.modules[modules[i]](this);
+    }
+
+    // call the callback
+    if (typeof callback === 'function') {
+        callback(this);
+    }
+}
+
+// any prototype properties as needed
+Sandbox.prototype = {
+    name    : 'My Application',
+    version : '1.0',
+    getName : function () {
+        return this.name;
+    }
+};
+
+Sandbox.modules.lightbox = function (sandbox) {
+    console.log('lightbox');
+    setTimeout(function () {
+        sandbox.publish('article.update', {title: 'WTF', desc: 'Wow~~~'});
+    }, 500);
+
+    return {
+        init: function () {
+            console.log('lightbox init');
+        },
+        destroy: function () {
+
+        }
+    };
+};
+
+Sandbox.modules.article = function (sandbox) {
+    console.log('article');
+    
+    sandbox.subscribe('article.update', function (data) {
+        console.log('article.update');
+        console.log(data);
+    });
+
+    return {
+        init: function () {
+            console.log('article init');
+        },
+        subscribe: function () {
+
+        },
+        destroy: function () {
+            
+        }
+    };
+};
+
+Sandbox(['lightbox', 'article'], function (sandbox) {
+    console.log('callback');
+});
+</script>
+
+</body>
+</html>

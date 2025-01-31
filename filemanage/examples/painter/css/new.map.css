@@ -1,0 +1,119 @@
+/***********************************************************************************************
+    New Map Start
+***********************************************************************************************/
+html, body {
+	width: 100%;
+	height: 100%; /* fix the ie6 bug of automatically stretching the height of the overlay */
+	font-family: arial, 新細明體, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+img {
+    border: none;
+}
+.new-map-heading {
+    width: 63px;
+    height: 40px;
+    background: transparent url(../images/new_map/heading.jpg) no-repeat left top;
+    text-indent: -9999px;
+    margin: 0 auto;
+}
+.new-map-form {
+    margin: 10px 0;
+    *margin: 10px 15px 10px 10px;
+}
+.new-map-form .clear-float {
+    clear: both;
+}
+.new-map-form .label-row {
+    *height: 20px;
+    _height: 18px;
+    margin: 0 0 2px 0;
+    margin: 0\9;
+    *margin: 0 0 2px 0;
+    _overflow: hidden;
+}
+.new-map-form .input-row {
+    margin: 0 0 20px 0;
+}
+.new-map-form .filename-input {
+    width: 100%;
+}
+.new-map-form .input-text {
+    font-size: 12px;
+    color: #000;
+    border: 1px solid #7f9db9;
+    padding: 4px 0;
+}
+.new-map-form .input-text-default {
+    color: #666;
+}
+.new-map-form .input-text-error {
+    border: 1px solid #de0000;
+}
+.new-map-form .size-input-section {
+    width: 160px;
+    float: left;
+}
+.new-map-form .label-col {
+    font-size: 13px;
+    font-weight: bold;
+    color: #000;
+    line-height: 1.6;
+    line-height: 2\9;
+    margin: 0 2px 0 0;
+    float: left;
+}
+.new-map-form .msg-col {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.8;
+    line-height: 2\9;
+    float: left;
+}
+.new-map-form .error-msg {
+    color: #de0000;
+}
+.new-map-form .width-input,
+.new-map-form .height-input {
+    width: 85px;
+    display: block;
+    float: left;
+}
+.new-map-form .unit-col {
+    font-size: 13px;
+    font-weight: bold;
+    color: #000;
+    line-height: 1.5;
+    margin: 0 0 0 2px;
+    float: left;
+}
+.new-map-form .button-row {
+    width: 200px;
+    margin: 30px auto 0 auto;
+}
+.new-map-form .button-outer-container {
+    width: 82px;
+    border: 1px solid #024d92;
+    margin: 0 5px;
+    float: left;
+    cursor: pointer;
+}
+.new-map-form .button-inner-container {
+    width: 80px;
+    height: 24px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.6;
+    line-height: 2\9;
+    _line-height: 1.8;
+    background: transparent url(../images/new_map/button_background.jpg) repeat-x left top;
+    border: 1px solid #a1b8dc;
+    float: left;
+}
+/***********************************************************************************************
+    New Map End
+***********************************************************************************************/

@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Canvas</title>
+	<link type="text/css" rel="stylesheet" href="css/canvas.css" />
+	<script type="text/javascript" src="../libs/lib.js"></script>
+	<!--[if IE]><script type="text/javascript" src="excanvas_r3/excanvas3.js"></script><![endif]-->
+	<script type="text/javascript">
+		var _realCanvas, _realContext, _fakeCanvas, _fakeContext;
+		var _isMouseDown = false, _offset, _startPoint, _scroll;
+		var _overlays = {}, _points = [], _overlay;
+		var _pen = {
+			strokeWidth: 2,
+			strokeColor: "#333",
+			strokeAlpha: 0.8
+		};
+		var _draw = function(overlay){
+			var defaults = overlay.defaults;
+			_realContext.lineWidth = defaults.strokeWidth;
+			_realContext.strokeStyle = defaults.strokeColor;
+			_realContext.globalAlpha = defaults.strokeAlpha;
+			_realContext.lineCap = "round";
+			_realContext.lineJoin = "round";
+			if (defaults.points.length > 1) {
+				_realContext.beginPath();
+				for (var i=0; i<defaults.points.length; i++) {
+					var point = defaults.points[i];
+					if (i == 0) {
+						_realContext.moveTo(point.x, point.y);
+					} else {
+						_realContext.lineTo(point.x, point.y);
+					}
+				}
+				_realContext.stroke();
+			}
+		};
+		var _redraw = function(){
+			for (var i in _overlays) {
+				var overlay = _overlays[i];
+				_draw(overlay);
+			}
+		};
+		var _add = function(overlay) {
+			_realContext.clearRect(0, 0, _realCanvas.width, _realCanvas.height);
+			_redraw();
+		};
+		var _remove = function(overlay) {
+			delete _overlays[overlay.id];
+		};
+		var _polyline = function(options) {
+			var _defaults = {
+				points: (options && options.points) ? options.points : [],
+				strokeWidth: (options && options.strokeWidth) ? options.strokeWidth : 0,
+				strokeColor: (options && options.strokeColor) ? options.strokeColor : "#000",
+				strokeAlpha: (options && options.strokeAlpha) ? options.strokeAlpha : 0
+			};
+			var _initialize = function() {
+				
+			};
+			var _addVertex = function(point) {
+				if (!point)
+					return;
+				_defaults.points.push(point);
+			};
+			(function(){
+				_initialize();
+			})();
+			this.isPolyline = true;
+			this.id = new Date().getTime();
+			this.defaults = _defaults;
+			this.addVertex = _addVertex;
+		};
+		var _distance = function(point1, point2){
+			var deltaX = point1.x - point2.x;
+			var deltaY = point1.y - point2.y;
+			return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+		};
+		var _onMouseDown = function(event){
+			var event = event || window.event;
+			GENERIC.cancelDefault(event);
+			GENERIC.stopPropagation(event);
+			/*var target = GENERIC.findTarget(event);
+			if (target != _realCanvas && target != _fakeCanvas)
+				return;*/
+			_isMouseDown = true;
+			_scroll = {x:GEOMETRY.getHorizontalScroll(), y:GEOMETRY.getVerticalScroll()};
+			_startPoint = {x:event.clientX + _scroll.x, y:event.clientY + _scroll.y};
+			_fakeCanvas.style.display = "block";
+			GENERIC.addEvent(document, "mousemove", _onMouseMove);
+			//document.onmousemove = _onMouseMove;
+		};
+		var _onMouseMove = function(event){
+			var event = event || window.event;
+			GENERIC.cancelDefault(event);
+			GENERIC.stopPropagation(event);
+			if (!_isMouseDown && _overlay) {
+				var x = event.clientX + _scroll.x;
+				var y = event.clientY + _scroll.y;
+				_fakeContext.clearRect(0, 0, _fakeCanvas.width, _fakeCanvas.height);
+				_fakeContext.beginPath();
+				_fakeContext.moveTo(_startPoint.x - _offset.left, _startPoint.y - _offset.top);
+				_fakeContext.lineTo(x - _offset.left, y - _offset.top);
+				_fakeContext.stroke();
+			}
+		};
+		var _onClick = function(event){
+			var event = event || window.event;
+			GENERIC.cancelDefault(event);
+			GENERIC.stopPropagation(event);
+			_isMouseDown = false;
+			var x = event.clientX + _scroll.x;
+			var y = event.clientY + _scroll.y;
+			if (!_points.length) {
+				_overlay = new _polyline({
+								points: [],
+								strokeWidth: _pen.strokeWidth,
+								strokeColor: _pen.strokeColor,
+								strokeAlpha: _pen.strokeAlpha
+							});
+				_overlays[_overlay.id] = _overlay;
+			}
+			var isDiff = true;
+			var point = {x:x - _offset.left, y:y - _offset.top};
+			if (_points.length > 1) {
+				var dist = _distance(_points[_points.length-1], point);
+				if (!dist)
+					isDiff = false;
+			}
+			if (isDiff) {
+				_points.push(point);
+				_overlay.addVertex(point);
+			}
+			if (_overlay)
+				_add(_overlay);
+		};
+		var _onDoubleClick = function(event){
+			_isMouseDown = false;
+			if (_points.length > 1) {
+				_fakeContext.clearRect(0, 0, _fakeCanvas.width, _fakeCanvas.height);
+				_remove(_overlay);
+				_overlay = new _polyline({
+								points: _points,
+								strokeWidth: _pen.strokeWidth,
+								strokeColor: _pen.strokeColor,
+								strokeAlpha: _pen.strokeAlpha
+							});
+				_overlays[_overlay.id] = _overlay;
+				if (_overlay)
+					_add(_overlay);
+				_fakeCanvas.style.display = "none";
+				_points = [];
+				_overlay = null;
+				GENERIC.removeEvent(document, "mousemove", _onMouseMove);
+				//document.onmousemove = null;
+			}
+		};
+		function init(){
+			_realCanvas = document.getElementById("realCanvas");
+			if (_realCanvas.getContext)
+				_realContext = _realCanvas.getContext("2d");
+			_fakeCanvas = document.getElementById("fakeCanvas");
+			if (_fakeCanvas.getContext)
+				_fakeContext = _fakeCanvas.getContext("2d");
+			_offset = CSS.offset(_fakeCanvas);
+			GENERIC.addEvent(document, "mousedown", _onMouseDown);
+			GENERIC.addEvent(document, "click", _onClick);
+			GENERIC.addEvent(document, "dblclick", _onDoubleClick);
+			/*document.onmousedown = _onMouseDown;
+			document.onclick = _onClick;
+			document.ondbclick = _onDoubleClick;*/
+		}
+		window.onload = init;
+	</script>
+</head>
+
+<body>
+	<canvas id="realCanvas" width="500" height="400" style="position:absolute;left:0px;top:0px;z-index:1;"></canvas>
+	<canvas id="fakeCanvas" width="500" height="400" style="position:absolute;left:0px;top:0px;z-index:2;"></canvas>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<title>XML Query</title>
+	<user>
+		<name label="Name">Vivian</name>
+		<cell label="Cell Phone">415.260.4610</cell>
+		<address label="Address">825 Post Street APT 411, San Francisco CA 94109</address>
+	</user>
+</data>

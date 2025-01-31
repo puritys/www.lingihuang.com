@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2012-11-06">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>TVList Data Attributes Demo</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.7.2/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.7.2/build/cssfonts/fonts-min.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js"></script>
+<script type="text/javascript" src="../tvlist.js"></script>
+<style type="text/css">
+html, body {
+    background: #000;
+    font-family: "Hei W5", "DFHeiStd-W5", "DFYuanStd-W7", "微軟正黑體";
+}
+.clearfix {
+    zoom: 1;
+}
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.list {
+    height: 360px;
+    overflow: hidden;
+    width: 1280px;
+}
+.list .item {
+    background: #cceeff;
+    border: 4px solid #33ccff;
+    color: #333;
+    float: left;
+    font-size: 197%;
+    height: 82px;
+    letter-spacing: 5px;
+    line-height: 3.5;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 248px;
+}
+.list .active-status {
+    background: #0088ff;
+    border-color: #0000e3;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+    <div id="list" class="list">
+        <div class="row clearfix">
+            <a class="item" data-vid="1" data-vname="Video 1">Video 1</a>
+            <a class="item" data-vid="2" data-vname="Video 2">Video 2</a>
+            <a class="item" data-vid="3" data-vname="Video 3">Video 3</a>
+            <a class="item" data-vid="4" data-vname="Video 4">Video 4</a>
+            <a class="item" data-vid="5" data-vname="Video 5">Video 5</a>
+        </div>
+        <div class="row clearfix">
+            <a class="item" data-vid="6" data-vname="Video 6">Video 6</a>
+            <a class="item" data-vid="7" data-vname="Video 7">Video 7</a>
+            <a class="item" data-vid="8" data-vname="Video 8">Video 8</a>
+            <a class="item" data-vid="9" data-vname="Video 9">Video 9</a>
+            <a class="item" data-vid="10" data-vname="Video 10">Video 10</a>
+        </div>
+        <div class="row clearfix">
+            <a class="item" data-vid="11" data-vname="Video 11">Video 11</a>
+            <a class="item" data-vid="12" data-vname="Video 12">Video 12</a>
+            <a class="item" data-vid="13" data-vname="Video 13">Video 13</a>
+            <a class="item" data-vid="14" data-vname="Video 14">Video 14</a>
+            <a class="item" data-vid="15" data-vname="Video 15">Video 15</a>
+        </div>
+        <div class="row clearfix">
+            <a class="item" data-vid="16" data-vname="Video 16">Video 16</a>
+            <a class="item" data-vid="17" data-vname="Video 17">Video 17</a>
+            <a class="item" data-vid="18" data-vname="Video 18">Video 18</a>
+            <a class="item" data-vid="19" data-vname="Video 19">Video 19</a>
+            <a class="item" data-vid="20" data-vname="Video 20">Video 20</a>
+        </div>
+        <div class="row clearfix">
+            <a class="item" data-vid="21" data-vname="Video 21">Video 21</a>
+            <a class="item" data-vid="22" data-vname="Video 22">Video 22</a>
+            <a class="item" data-vid="23" data-vname="Video 23">Video 23</a>
+            <a class="item" data-vid="24" data-vname="Video 24">Video 24</a>
+            <a class="item" data-vid="25" data-vname="Video 25">Video 25</a>
+        </div>
+        <div class="row clearfix">
+            <a class="item" data-vid="26" data-vname="Video 26">Video 26</a>
+        </div>
+    </div>
+    
+<script>
+YUI().use("tvlist", function (Y) {
+    var tvlist = new Y.TVList({
+        node    : "#list",
+        rows    : 4,
+        columns : 5,
+        activeIndex : 0,
+        activeClass : "active-status"
+    });
+    tvlist.on("move", function (e) {
+        Y.log("activeIndex = " + e.activeIndex);
+    });
+    tvlist.on("enter", function (e) {
+        Y.log(e.data);
+        Y.log("offset = " + e.offset);
+    });
+});
+</script>
+</body>
+</html>

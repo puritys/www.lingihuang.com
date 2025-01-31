@@ -1,0 +1,37 @@
+{namespace UITemplates}
+/**
+* 這是用google Closure Template的soy檔案，必須執行SoyToJsSrcCompiler.jar 才可以
+* 詳細請參考：http://code.google.com/intl/zh-TW/closure/templates/index.html
+* excute : java -jar SoyToJsSrcCompiler.jar  --outputPathFormat alertUITemplate.js alertUITemplate.soy
+* excute at bingo : java -jar /home/blackbing/Works/closure_templates/SoyToJsSrcCompiler.jar  --outputPathFormat alertUITemplate.js alertUITemplate.soy
+* excute at windows : java -jar D:\Utilities\ClosureTemplates\SoyToJsSrcCompiler.jar  --outputPathFormat alertUITemplate.js alertUITemplate.soy
+*/
+/**
+* @param ids are all ids of the alert template
+*/
+{template .alertUITemplate}
+<div class="alert-top-left"></div>
+<div class="alert-top-right"></div>
+<div class="alert-top-center">
+    <div class="alert-hack-ie6">
+        <div id="{$ids['heading']}" class="alert-heading-col"></div>
+        <div id="{$ids['closeButton']}" class="alert-close-button"><img src="../images/alert/close_button.jpg" alt="關閉" title="關閉" /></div>
+    </div>
+</div>
+<div class="alert-body-left"></div>
+<div class="alert-body-right"></div>
+<div class="alert-body-center">
+    <div class="alert-hack-ie6">
+        <div class="alert-content-container">
+            <p id="{$ids['message']}" class="alert-msg"></p>
+            <div class="alert-button-outer-container">
+                <button id="{$ids['okButton']}" class="alert-button-inner-container">確定</button>
+            </div>
+        </div>    
+    </div>
+</div>
+<div class="alert-bottom-left"></div>
+<div class="alert-bottom-right"></div>
+<div class="alert-bottom-center"><div class="alert-hack-ie6"></div></div>
+<div class="alert-clear-float"></div>
+{/template}

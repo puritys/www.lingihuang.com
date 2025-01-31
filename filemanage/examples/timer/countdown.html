@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2015-05-13">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Random Countdown Timer</title>
+<style type="text/css">
+html, body {
+    font: 14px normal Arial;
+    margin: 0;
+    padding: 0;
+}
+
+h4, p {
+    color: #333;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0 0 10px 0; 
+}
+
+.day, .hour, .minute, .second {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 2px;
+    text-align: center;
+    width: 40px;
+}
+</style>
+</head>
+
+<body>
+    <h4>Random Countdown Timer</h4>
+    <p>Remaining time from <span id="date"></span></p>
+    <div id="timer">
+        <div class="day"></div>Days
+        <div class="hour"></div>Hours
+        <div class="minute"></div>Minutes
+        <div class="second"></div>Seconds
+    </div>
+
+    <h4>Random 10 ~ 99</h4>
+    <p id="counter"></p>
+
+<script type="text/javascript" src="../libs/jquery/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+/********************
+Related Posts
+1. [JQUERY] 倒數計時(還有X天X時X分X秒)
+http://blog.patw.me/archives/198/jquery-countdown-as-well-as-x-x-x-minutes-x-seconds/
+********************/
+$(function () {
+    // Count down timer.
+    if ($('#timer').length) {
+        var timerSel  = $('#timer'),
+            date      = '2015/06/03 11:00',
+            startTime,
+            endTime   = new Date(date),
+            spanTime,
+            timer     = null,
+            html      = '';
+
+        $('#date').text(endTime.toString());
+
+        if (timer) {
+            clearInterval(timer);
+        }
+
+        timer = setInterval(function () {
+            startTime = new Date();
+            spanTime  = (endTime - startTime) / 1000;
+            if (spanTime <= 0) {
+                clearInterval(timer);
+                return;
+            }
+            var d = Math.floor(spanTime / (24 * 3600)),
+                h = Math.floor((spanTime % (24 * 3600)) / 3600),
+                m = Math.floor((spanTime % 3600) / (60)),
+                s = Math.floor(spanTime % 60);
+            d = d >= 10 ? d : '0' + d;
+            h = h >= 10 ? h : '0' + h;
+            m = m >= 10 ? m : '0' + m;
+            s = s >= 10 ? s : '0' + s;
+            var htmlArr = [
+                '<div class="day">' + d + '</div>Days',
+                '<div class="hour">' + h + '</div>Hours',
+                '<div class="minute">' + m + '</div>Minutes',
+                '<div class="second">' + s + '</div>Seconds'
+            ];
+            if (htmlArr.join('') !== html) {
+                html = htmlArr.join('');
+                timerSel.html(html);
+            }
+        }, 100);
+    }
+  
+    $('#counter').text(Math.floor(Math.random() * 90 + 10));
+});
+</script>
+
+</body>
+</html>

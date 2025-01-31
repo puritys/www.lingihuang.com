@@ -1,0 +1,331 @@
+/***********************************************************************************************
+    Tool Bar Start
+***********************************************************************************************/
+.tool-bar {
+    width: 100%;
+    height: 38px;
+    background: transparent url(../images/painter/tool_bar_background.jpg) repeat-x left top;
+    text-align: center;
+}
+.tool-bar .splitter,
+.tool-bar .fillin-color-picker .select-icon-off-status,
+.tool-bar .border-color-picker .select-icon-off-status,
+.tool-bar .stroke-picker .select-icon-off-status,
+.tool-bar .transparency-picker .select-icon-off-status {
+    background: transparent url(../images/painter/tool_bar_off_status.jpg) no-repeat;
+    overflow: hidden;
+}
+.tool-bar .fillin-color-picker .select-icon-over-status,
+.tool-bar .border-color-picker .select-icon-over-status,
+.tool-bar .stroke-picker .select-icon-over-status,
+.tool-bar .transparency-picker .select-icon-over-status {
+    background: transparent url(../images/painter/tool_bar_over_status.jpg) no-repeat;
+    overflow: hidden;
+}
+.tool-bar .splitter {
+    width: 5px;
+    height: 31px;
+    background-position: -7px -2px;
+    margin: 2px 0 0 8px;
+    float: left;
+}
+.tool-bar .icon {
+    margin: 3px 0 0 0;
+    float: left;
+}
+.tool-bar .move-icon,
+.tool-bar .transform-icon,
+.tool-bar .pencil-icon,
+.tool-bar .bezier-icon,
+.tool-bar .convert-icon,
+.tool-bar .select-icon,
+.tool-bar .bound-icon,
+.tool-bar .circle-icon,
+.tool-bar .polygon-icon,
+.tool-bar .building-icon,
+.tool-bar .polyline-icon,
+.tool-bar .marker-icon,
+.tool-bar .text-icon {
+    width: 28px;
+    height: 28px;
+}
+.tool-bar .move-icon {
+    background-position: left top;
+}
+.tool-bar .transform-icon {
+    background-position: -33px -2px;
+}
+.tool-bar .pencil-icon {
+    background-position: -66px -2px;
+}
+.tool-bar .bezier-icon {
+    background-position: -99px -2px;
+}
+.tool-bar .convert-icon {
+    background-position: -132px -2px;
+}
+.tool-bar .select-icon {
+    background-position: -165px -2px;
+}
+.tool-bar .bound-icon {
+    background-position: -198px -2px;
+}
+.tool-bar .circle-icon {
+    background-position: -232px -2px;
+}
+.tool-bar .polygon-icon {
+    background-position: -265px -2px;
+}
+.tool-bar .building-icon {
+    background-position: -298px -2px;
+}
+.tool-bar .polyline-icon {
+    background-position: -331px -2px;
+}
+.tool-bar .marker-icon {
+    background-position: -364px -2px;
+}
+.tool-bar .text-icon {
+    background-position: -397px -2px;
+}
+.tool-bar .tool-options {
+    display: none;
+    float: left;
+}
+.tool-bar .fillin-color-picker {
+    width: 33px;
+    _width: 34px;
+    height: 22px;
+    background-color: #fff;
+    border: 1px solid #7f9db9;
+    margin: 6px 5px;
+    float: left;
+    display: none;
+}
+.tool-bar .fillin-color-picker .color-container {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    margin: 1px;
+    float: left;
+}
+.tool-bar .fillin-color-picker .select-icon-off-status,
+.tool-bar .fillin-color-picker .select-icon-over-status {
+    width: 10px;
+    height: 20px;
+    background-position: -81px -8px;
+    margin: 1px 1px 1px 0;
+    _margin: 1px 0;
+    float: left;
+}
+.tool-bar .border-color-picker {
+    width: 33px;
+    _width: 34px;
+    background-color: #fff;
+    border: 1px solid #7f9db9;
+    margin: 6px 5px;
+    float: left;
+    display: none;
+}
+.tool-bar .border-color-picker .color-container {
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border: 6px solid #000;
+    margin: 1px;
+    float: left;
+    _overflow: hidden; /* fix for ie6, the default width and height of ie6 is about 20px */
+}
+.tool-bar .border-color-picker .select-icon-off-status,
+.tool-bar .border-color-picker .select-icon-over-status {
+    width: 10px;
+    height: 20px;
+    background-position: -81px -8px;
+    margin: 1px 1px 1px 0;
+    _margin: 1px 0;
+    float: left;
+}
+.tool-bar .stroke-picker {
+    margin: 6px 6px;
+    float: left;
+    display: none;
+}
+.tool-bar .stroke-picker .heading {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    line-height: 2;
+    line-height: 2.1\9;
+    float: left;
+}
+.tool-bar .stroke-picker .unit {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    line-height: 2;
+    line-height: 1.7\9;
+    float: left;
+}
+.tool-bar .stroke-picker .stroke-container {
+    width: 47px;
+    _width: 50px;
+    background-color: #fff;
+    border: 1px solid #7f9db9;
+    margin: 0 3px;
+    float: left;
+}
+.tool-bar .stroke-picker .stroke-value {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    color: #000;
+    line-height: 1.9;
+    line-height: 1.7\9;
+    margin: 0 3px;
+    float: left;
+    overflow: hidden;
+}
+.tool-bar .stroke-picker .select-icon-off-status,
+.tool-bar .stroke-picker .select-icon-over-status {
+    width: 20px;
+    height: 20px;
+    background-position: -209px -8px;
+    margin: 1px 1px 1px 0;
+    _margin: 1px 0;
+    float: left;
+}
+.tool-bar .transparency-picker {
+    margin: 6px 6px;
+    float: left;
+    display: none;
+}
+.tool-bar .transparency-picker .heading {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    line-height: 2;
+    line-height: 2.1\9;
+    float: left;
+}
+.tool-bar .transparency-picker .unit {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    line-height: 2;
+    line-height: 1.7\9;
+    float: left;
+}
+.tool-bar .transparency-picker .transparency-container {
+    width: 47px;
+    _width: 50px;
+    background-color: #fff;
+    border: 1px solid #7f9db9;
+    margin: 0 3px;
+    float: left;
+}
+.tool-bar .transparency-picker .transparency-value {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    color: #000;
+    line-height: 1.9;
+    line-height: 1.7\9;
+    margin: 0 3px;
+    float: left;
+    overflow: hidden;
+}
+.tool-bar .transparency-picker .select-icon-off-status,
+.tool-bar .transparency-picker .select-icon-over-status {
+    width: 20px;
+    height: 20px;
+    background-position: -352px -8px;
+    margin: 1px 1px 1px 0;
+    _margin: 1px 0;
+    float: left;
+}
+.tool-bar .no-options {
+    font-size: 12px;
+    color: #000;
+    line-height: 2.9;
+    line-height: 3.1\9;
+    display: none;
+}
+.stroke-dropdown-menu {
+    width: 45px;
+    _width: 49px;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #000;
+    margin: 0;
+    padding: 1px;
+    position: absolute;
+    left: 179px;
+    _left: 197px;
+    top: 157px;
+    z-index: 101;
+    display: none;
+}
+.stroke-dropdown-menu li {
+    margin: 0;
+    padding: 0;
+    _border: 1px solid #fff;
+}
+.stroke-dropdown-menu li a,
+.stroke-dropdown-menu li a:link,
+.stroke-dropdown-menu li a:active,
+.stroke-dropdown-menu li a:visited {
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+    background-color: #fff;
+    margin: 1px 0;
+    _margin: 0;
+    padding: 0;
+    display: block;
+}
+.stroke-dropdown-menu li a:hover {
+    color: #fff;
+    background-color: #015bfe;
+}
+.transparency-slider {
+    position: absolute;
+    left: 245px;
+    _left: 274px;
+    top: 157px;
+    z-index: 101;
+    display: none;
+}
+.transparency-slider .slider-background {
+    width: 118px;
+    height: 32px;
+    background: transparent url(../images/painter/transparency_slider_background.png) no-repeat left top;
+}
+*html .transparency-slider .slider-background {
+    background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/painter/transparency_slider_background.png', sizingMethod='image');
+}
+.transparency-slider .slide-bar {
+    width: 101px;
+    height: 2px;
+    background-position: -310px -58px;
+    position: relative;
+    left: 8px;
+    top: 10px;
+    _top: 11px;
+}
+.transparency-slider .slide-handle {
+    width: 14px;
+    height: 10px;
+    background-position: -402px -60px;
+    position: absolute;
+    _position: relative; /* to fix ie6 filter background-image bug: all elements inside background-image coundn't be clickable*/
+    left: 100px;
+    top: 12px;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -o-user-select: none;
+}
+/***********************************************************************************************
+    Tool Bar End
+***********************************************************************************************/

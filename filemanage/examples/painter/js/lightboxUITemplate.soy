@@ -1,0 +1,62 @@
+{namespace UITemplates}
+/**
+* 這是用google Closure Template的soy檔案，必須執行SoyToJsSrcCompiler.jar 才可以
+* 詳細請參考：http://code.google.com/intl/zh-TW/closure/templates/index.html
+* excute : java -jar SoyToJsSrcCompiler.jar  --outputPathFormat lightboxUITemplate.js lightboxUITemplate.soy
+* excute at bingo : java -jar /home/blackbing/Works/closure_templates/SoyToJsSrcCompiler.jar  --outputPathFormat lightboxUITemplate.js lightboxUITemplate.soy
+* excute at windows : java -jar D:\Utilities\ClosureTemplates\SoyToJsSrcCompiler.jar  --outputPathFormat lightboxUITemplate.js lightboxUITemplate.soy
+*/
+/**
+* @param ids are all ids of the lightbox
+*/
+{template .classicUITemplate}
+<div id="{$ids['overlay']}" class="lightbox-overlay"></div>
+<div id="{$ids['container']}" class="lightbox-container">
+    <div class="lightbox-classic-top-left"></div>
+    <div class="lightbox-classic-top-right"></div>
+    <div class="lightbox-classic-top-center">
+        <div class="lightbox-hack-ie6">
+            <div id="{$ids['closeButton']}" class="lightbox-classic-close-button"><img src="../css/lightbox/classic/images/close_button.jpg" alt="關閉" title="關閉" /></div>
+        </div>
+    </div>
+    <div class="lightbox-classic-body-left"></div>
+    <div class="lightbox-classic-body-right"></div>
+    <div class="lightbox-classic-body-center">
+        <div class="lightbox-hack-ie6">
+            <div id="{$ids['content']}" class="lightbox-content-container"></div>
+        </div>
+    </div>
+    <div class="lightbox-classic-bottom-left"></div>
+    <div class="lightbox-classic-bottom-right"></div>
+    <div class="lightbox-classic-bottom-center"><div class="lightbox-hack-ie6"></div></div>
+    <div class="lightbox-clear-float"></div>
+</div>
+{/template}
+
+/**
+* @param ids are all ids of the lightbox
+*/
+{template .blackUITemplate}
+<div id="{$ids['overlay']}" class="lightbox-overlay"></div>
+<div id="{$ids['container']}" class="lightbox-container">
+    <div class="lightbox-black-top-left"></div>
+    <div class="lightbox-black-top-right"></div>
+    <div class="lightbox-black-top-center">
+        <div class="lightbox-hack-ie6">
+            <div id="{$ids['heading']}" class="lightbox-heading"></div>
+            <div id="{$ids['closeButton']}" class="lightbox-black-close-button"><img src="../css/lightbox/black/images/close_button.jpg" alt="關閉" title="關閉" /></div>
+        </div>
+    </div>
+    <div class="lightbox-black-body-left"></div>
+    <div class="lightbox-black-body-right"></div>
+    <div class="lightbox-black-body-center">
+        <div class="lightbox-hack-ie6">
+            <div id="{$ids['content']}" class="lightbox-content-container"></div>    
+        </div>
+    </div>
+    <div class="lightbox-black-bottom-left"></div>
+    <div class="lightbox-black-bottom-right"></div>
+    <div class="lightbox-black-bottom-center"><div class="lightbox-hack-ie6"></div></div>
+    <div class="lightbox-clear-float"></div>
+</div>
+{/template}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2015-05-29">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Array Shuffle</title>
+<style type="text/css">
+html, body {
+    font: 16px normal Arial;
+    margin: 0;
+    padding: 0;
+}
+</style>
+</head>
+
+<body>
+    
+<script type="text/javascript">
+/********************
+Related Posts
+1. How can i shuffle an array in JavaScript? [duplicate]
+http://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array-in-javascript
+********************/
+
+function shuffle(array) {
+    var counter = array.length,
+		temp,
+		index;
+
+    // While there are elements in the array.
+    while (counter > 0) {
+        // Pick a random index.
+        index = Math.floor(Math.random() * counter);
+
+        // Decrease counter by 1.
+        counter--;
+
+        // And swap the last element with it.
+		temp           = array[counter];
+		array[counter] = array[index];
+		array[index]   = temp;
+    }
+
+    return array;
+}
+
+var arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+shuffle(arr);
+console.log(arr);
+
+</script>
+
+</body>
+</html>

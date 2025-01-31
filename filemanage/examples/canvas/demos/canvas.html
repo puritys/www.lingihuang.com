@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Canvas</title>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .canvas-container {
+            width: 800px;
+            height: 500px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script type="text/javascript" src="../libs/lib.js"></script>
+    <!--[if IE]><script type="text/javascript" src="../excanvas_r3/excanvas3.js"></script><![endif]-->
+    <script type="text/javascript" src="js/canvas.js"></script>
+    <script type="text/javascript">
+        var canvas,
+            context;
+        function init () {
+            canvas = document.getElementById("canvas");
+            context = canvas.getContext("2d");
+            
+        }
+        window.onload = init;
+    </script>
+</head>
+
+<body>
+    <canvas id="canvas" class="canvas-container"></canvas>
+</body>
+</html>

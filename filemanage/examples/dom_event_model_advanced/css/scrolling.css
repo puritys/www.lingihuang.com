@@ -1,0 +1,81 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+}
+.scroller-wrapper {
+    margin: 10px 0 0 10px;
+    position: relative;
+}
+.scroller-container {
+    width: 400px;
+    height: 200px;
+    background-color: #eee;
+    overflow: hidden;
+    position: absolute;
+}
+.scroller-container .container {
+    margin: 10px;
+    position: absolute;
+}
+.y-scrollbar-container {
+    position: absolute;
+    left: 405px;
+}
+.y-scrollbar-container .y-up, .y-scrollbar-container .y-down {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    position: absolute;
+    cursor: pointer;
+}
+.y-scrollbar-container .y-down {
+    top: 190px;
+}
+.y-scrollbar-container .y-track {
+    width: 10px;
+    height: 160px;
+    background-color: #eee;
+    position: absolute;
+    top: 20px;
+}
+.y-scrollbar-container .y-handler {
+    width: 10px;
+    height: 30px;
+    background-color: #ccc;
+    position: absolute;
+    cursor: pointer;
+}
+.x-scrollbar-container {
+    position: absolute;
+    top: 205px;
+}
+.x-scrollbar-container .x-left, .x-scrollbar-container .x-right {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    position: absolute;
+    cursor: pointer;
+}
+.x-scrollbar-container .x-right {
+    left: 390px;
+}
+.x-scrollbar-container .x-track {
+    width: 360px;
+    height: 10px;
+    background-color: #eee;
+    position: absolute;
+    left: 20px;
+}
+.x-scrollbar-container .x-handler {
+    width: 30px;
+    height: 10px;
+    background-color: #ccc;
+    position: absolute;
+    cursor: pointer;
+}
+p {
+    font-size: 13px;
+    color: #333;
+    line-height: 130%;
+}
+

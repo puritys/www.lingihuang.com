@@ -1,0 +1,79 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+}
+.context-menu-corner-all {
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+}
+.context-menu-shadow {
+    background-color: #dbdfe1;
+    display: none;
+    position: absolute;
+    z-index: 999999;
+}
+.context-menu {
+    width: 110px;
+    list-style: none;
+    background-color: #f8fafb;
+    border: 1px solid #a8b1b6;
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+    left: -3px;
+    top: -3px;
+}
+.context-menu li {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.context-menu a {
+   	font: normal 13px Arial, Helvetica, sans-serif;
+    color: #536874;
+    background: transparent url() 6px center scroll no-repeat;
+    letter-spacing: .6px;
+    line-height: 160%;
+    *line-height: 130%;
+    text-decoration: none;
+    outline-style: none;
+    margin: 0;
+    padding: 1px 5px 1px 28px;
+    display: block;
+}
+.context-menu a:hover {
+    color: #2d434f;
+    background-color: #d8e8f0;
+}
+
+.context-menu li.icon-add a {
+    background-image: url(../images/icons/icon-add.png);
+}
+.context-menu li.icon-edit a {
+    background-image: url(../images/icons/icon-edit.png);
+}
+.context-menu li.icon-delete a {
+    background-image: url(../images/icons/icon-delete.png);
+}
+.context-menu li.icon-copy a {
+    background-image: url(../images/icons/icon-copy.png);
+}
+.context-menu li.icon-cut a {
+    background-image: url(../images/icons/icon-cut.png);
+}
+.context-menu li.icon-paste a {
+    background-image: url(../images/icons/icon-paste.png);
+}
+.context-menu li.icon-move a {
+    background-image: url(../images/icons/icon-move.png);
+}
+.context-menu li.icon-save a {
+    background-image: url(../images/icons/icon-save.png);
+}
+.context-menu li.icon-preferences a {
+    background-image: url(../images/icons/icon-preferences.png);
+}
+.context-menu li.icon-exit a {
+    background-image: url(../images/icons/icon-exit.png);
+}

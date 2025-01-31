@@ -1,0 +1,119 @@
+/***********************************************************************************************
+    Lightbox Start
+***********************************************************************************************/
+html, body {
+	width: 100%;
+	height: 100%; /* fix the ie6 bug of automatically stretching the height of the overlay */
+	margin: 0;
+	padding: 0;
+}
+.lightbox-clear-float {
+    clear: both;
+}
+.lightbox-hack-ie6 {
+    _width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.lightbox-wrapper {
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 200;
+}
+.lightbox-wrapper .lightbox-overlay {
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.7;
+	-moz-opacity: 0.7;
+	-khtml-opacity: 0.7;
+	filter: alpha(opacity=70);
+}
+*html .lightbox-wrapper .lightbox-overlay {
+    position: absolute;
+	left: 0;
+	top: 0;
+    z-index: 1;
+}
+.lightbox-wrapper .lightbox-container {
+	/*
+    width: 530px;
+    *width: 500px;
+    margin: 0 0 0 -250px;
+    */
+    margin: 0;
+	position: absolute;
+	left: 50%;
+	top: 20px;
+	z-index: 2;
+    
+}
+.lightbox-wrapper .lightbox-container .lightbox-classic-top-left {
+    width: 16px;
+    height: 16px;
+    background: transparent url(images/top_left.jpg) no-repeat left top;
+    float: left;
+}
+.lightbox-wrapper .lightbox-container .lightbox-classic-top-right {
+    width: 16px;
+    height: 16px;
+    background: transparent url(images/top_right.jpg) no-repeat left top;
+    float: right;
+}
+.lightbox-wrapper  .lightbox-container.lightbox-classic-top-center {
+    height: 16px;
+    background: transparent url(images/top_center.jpg) repeat-x left top;
+    _float: left;
+}
+.lightbox-wrapper .lightbox-container .lightbox-classic-body-left {
+    width: 16px;
+    height: 460px;
+    background: transparent url(images/body_left.jpg) repeat-y left top;
+    float: left;
+}
+.lightbox-wrapper .lightbox-container .lightbox-classic-body-right {
+    width: 16px;
+    height: 460px;
+    background: transparent url(images/body_right.jpg) repeat-y left top;
+    float: right;
+}
+.lightbox-wrapper .lightbox-container .lightbox-classic-body-center {
+    height: 460px;
+    background-color: #c5c8cc;
+    _float: left;
+}
+.lightbox-wrapper .lightbox-container .lightbox-classic-bottom-left {
+    width: 16px;
+    height: 16px;
+    background: transparent url(images/bottom_left.jpg) no-repeat left top;
+    float: left;
+}
+.lightbox-wrapper .lightbox-container .lightbox-classic-bottom-right {
+    width: 16px;
+    height: 16px;
+    background: transparent url(images/bottom_right.jpg) no-repeat left top;
+    float: right;
+}
+.lightbox-wrapper .lightbox-container .lightbox-classic-bottom-center {
+    height: 16px;
+    background: transparent url(images/bottom_center.jpg) repeat-x left top;
+    _float: left;
+}
+.lightbox-wrapper .lightbox-container .lightbox-classic-close-button {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 12px;
+	top: 12px;
+}
+.lightbox-wrapper .lightbox-content-container {
+    padding: 10px 20px 10px 22px;
+    *padding: 10px 0 10px 5px;
+}
+/***********************************************************************************************
+    Lightbox End
+***********************************************************************************************/

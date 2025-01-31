@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Drag and Drop</title>
+	<link type="text/css" rel="stylesheet" href="css/dragDrop.css" />
+	<script type="text/javascript" language="javascript" src="../libs/lib.js"></script>
+	<script type="text/javascript" language="javascript" src="js/droppable.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			DROPPABLE({dragElement:document.getElementById("dragElement"), dropElement:document.getElementById("dropElement"), elementToDrag:document.getElementById("elementToDrag")});
+		}
+	</script>
+</head>
+<body>
+  	<div id="dropElement" class="drop-box"></div>
+  	<div id="elementToDrag" class="drag-box"><span id="dragElement" unselectable="on">Drag Me</span></div>
+</body>
+</html>
+
+

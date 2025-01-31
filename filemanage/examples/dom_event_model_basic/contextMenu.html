@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Context Menu</title>
+	<link type="text/css" rel="stylesheet" href="css/contextMenu.css" />
+	<style type="text/css">
+		.image-container {
+			border: none;
+			margin: 10px auto;
+			display: block;
+		}
+	</style>
+	<script type="text/javascript" language="javascript" src="../libs/lib.js"></script>
+	<script type="text/javascript" language="javascript" src="js/contextMenu.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			CONTEXTMENU(document.getElementById("contextMenu"));
+		}
+	</script>
+</head>
+<body>
+	<!--<img id="boundaryElement" class="image-container" src="images/golden-gate-bridge.jpg" width="350" height="467" title="Golden Gate Bridge" alt="Golden Gate Bridge" />-->
+	<div id="contextMenu" class="context-menu-shadow context-menu-corner-all">
+		<ul class="context-menu context-menu-corner-all">
+			<li class="icon-add"><a href="#">Add</a></li>
+			<li class="icon-edit"><a href="#">Edit</a></li>
+			<li class="icon-delete"><a href="#">Delete</a></li>
+			<li class="icon-copy"><a href="#">Copy</a></li>
+			<li class="icon-cut"><a href="#">Cut</a></li>
+			<li class="icon-paste"><a href="#">Paste</a></li>
+			<li class="icon-move"><a href="#">Move</a></li>
+			<li class="icon-save"><a href="#">Save</a></li>
+			<li class="icon-preferences"><a href="#">Preferences</a></li>
+			<li class="icon-exit"><a href="#" data="exit">Exit</a></li>
+		</ul>
+  	</div>
+</body>
+</html>
+
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2015-06-11">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Event Bubble vs Capture</title>
+<style type="text/css">
+html, body {
+    font: 16px normal "Noto Sans CJK TC Medium", "微軟正黑體", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "sans-serif";
+    margin: 0 20px;
+    padding: 0;
+}
+h2 {
+	font-size: 20px;
+	margin: 20px 0 10px 0;
+	padding: 0;
+}
+.outer-container {
+	background: #fdfdfd;
+	border: 1px solid #ccc;
+	color: #333;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	width: 100px;
+}
+.inner-container {
+	background: #bbb;
+	color: #333;
+	display: inline-block;
+	height: 50%;
+	vertical-align: middle;
+	width: 50%;
+}
+</style>
+</head>
+
+<body>
+	<h2>Event Bubble</h2>
+    <div id="bubble-outer-container" class="outer-container">
+		<div id="bubble-inner-container" class="inner-container"></div>
+	</div>
+	<h2>Event Capture</h2>
+    <div id="capture-outer-container" class="outer-container">
+		<div id="capture-inner-container" class="inner-container"></div>
+	</div>
+
+<script type="text/javascript">
+/********************
+Related Posts
+1. Event order
+http://www.quirksmode.org/js/events_order.html
+********************/
+var bubbleOuterContainerEle  = document.getElementById('bubble-outer-container'),
+	bubbleInnerContainerEle  = document.getElementById('bubble-inner-container'),
+	captureOuterContainerEle = document.getElementById('capture-outer-container'),
+	captureInnerContainerEle = document.getElementById('capture-inner-container'),
+	handleClickOuterContainer,
+	handleClickInnerContainer;
+
+handleClickOuterContainer = function (e) {
+	console.log('#outer-container');
+};
+
+handleClickInnerContainer = function (e) {
+	console.log('#inner-container');
+};
+
+if (bubbleOuterContainerEle.addEventListener) { // For Modern Browsers
+	// Event Bubble
+	bubbleOuterContainerEle.addEventListener('click', handleClickOuterContainer, false);
+	bubbleInnerContainerEle.addEventListener('click', handleClickInnerContainer, false);
+
+	// Event Capture
+	captureOuterContainerEle.addEventListener('click', handleClickOuterContainer, true);
+	captureInnerContainerEle.addEventListener('click', handleClickInnerContainer, true);
+} else if (bubbleOuterContainerEle.attachEvent) { // For IE
+	// Event Bubble
+	bubbleOuterContainerEle.attachEvent('onclick', handleClickOuterContainer);
+	bubbleInnerContainerEle.attachEvent('onclick', handleClickInnerContainer);
+
+	// Event Bubble
+	captureOuterContainerEle.attachEvent('onclick', handleClickOuterContainer);
+	captureInnerContainerEle.attachEvent('onclick', handleClickInnerContainer);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+/***********************************************************************************************
+    Main Menu Start
+***********************************************************************************************/
+.wrapper .main-menu {
+    width: 100%;
+    height: 27px;
+    list-style: none;
+    background: transparent url(../images/painter/main_menu_background.jpg) repeat-x left top;
+    margin: 0;
+    padding: 0;
+}
+.wrapper .main-menu li {
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.wrapper .main-menu .file-button,
+.wrapper .main-menu .edit-button,
+.wrapper .main-menu .layer-button,
+.wrapper .main-menu .view-button {
+    width: 60px;
+    height: 27px;
+    background: transparent url(../images/painter/main_menu_off_status.jpg) no-repeat;
+    text-decoration: none;
+    text-indent: -9999px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+}
+.wrapper .main-menu .over-status {
+    background: transparent url(../images/painter/main_menu_over_status.jpg) no-repeat;
+}
+.wrapper .main-menu .file-button {
+    background-position: left top;
+}
+.wrapper .main-menu .edit-button {
+    background-position: -68px top;
+}
+.wrapper .main-menu .layer-button {
+    background-position: -134px top;
+}
+.wrapper .main-menu .view-button {
+    background-position: -200px top;
+}
+.wrapper .main-menu .splitter {
+    width: 4px;
+    height: 27px;
+    background: transparent url(../images/painter/main_menu_off_status.jpg) no-repeat -62px top;
+    margin: 0;
+    padding: 0;
+    float: left;
+    overflow: hidden;
+}
+.file-submenu .over-status,
+.edit-submenu .over-status,
+.layer-submenu .over-status,
+.view-submenu .over-status {
+    background: transparent url(../images/painter/main_submenu_over_status.jpg) repeat-x left top;
+    _position: relative; /* to fix ie6 filter background-image bug: all elements inside background-image coundn't be clickable*/
+}
+.file-submenu {
+    position: absolute;
+    left: 0;
+    top: 128px;
+    z-index: 101;
+    display: none;
+}
+.file-submenu .submenu-background {
+    width: 269px;
+    height: 156px;
+    background: transparent url(../images/painter/file_submenu_background.png) no-repeat left top;
+}
+*html .file-submenu .submenu-background {
+    background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/painter/file_submenu_background.png', sizingMethod='image');
+    margin: 0;
+}
+.edit-submenu {
+    position: absolute;
+    left: 60px;
+    top: 128px;
+    z-index: 102;
+    display: none;
+}
+.edit-submenu .submenu-background {
+    width: 269px;
+    height: 177px;
+    background: transparent url(../images/painter/edit_submenu_background.png) no-repeat left top;
+}
+*html .edit-submenu .submenu-background {
+    background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/painter/edit_submenu_background.png', sizingMethod='image');
+}
+.layer-submenu {
+    position: absolute;
+    left: 124px;
+    top: 128px;
+    z-index: 103;
+    display: none;
+}
+.layer-submenu .submenu-background {
+    width: 269px;
+    height: 207px;
+    background: transparent url(../images/painter/layer_submenu_background.png) no-repeat left top;
+}
+*html .layer-submenu .submenu-background {
+    background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/painter/layer_submenu_background.png', sizingMethod='image');
+}
+.view-submenu {
+    position: absolute;
+    left: 188px;
+    top: 128px;
+    z-index: 104;
+    display: none;
+}
+.view-submenu .submenu-background {
+    width: 269px;
+    height: 82px;
+    background: transparent url(../images/painter/view_submenu_background.png) no-repeat left top;
+}
+*html .view-submenu .submenu-background {
+    background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/painter/view_submenu_background.png', sizingMethod='image');
+}
+.file-submenu .list,
+.edit-submenu .list,
+.layer-submenu .list,
+.view-submenu .list {
+    width: 242px;
+    height: 26px;
+    line-height: 1.9;
+    line-height: 2.1\9;
+    margin: 5px 0 0 10px;
+    overflow: hidden;
+    cursor: pointer;
+    _position: relative; /* to fix ie6 filter background-image bug: all elements inside background-image coundn't be clickable*/
+}
+.file-submenu .splitter,
+.edit-submenu .splitter,
+.layer-submenu .splitter,
+.view-submenu .splitter {
+    width: 250px;
+    height: 4px;
+    background-position: left -162px;
+    margin: 2px 5px;
+}
+.file-submenu .name-col,
+.file-submenu .key-col,
+.edit-submenu .name-col,
+.edit-submenu .key-col,
+.layer-submenu .name-col,
+.layer-submenu .key-col,
+.view-submenu .name-col,
+.view-submenu .key-col {
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    _position: relative; /* to fix ie6 filter background-image bug: all elements inside background-image coundn't be clickable*/
+}
+.file-submenu .name-col,
+.edit-submenu .name-col,
+.layer-submenu .name-col,
+.view-submenu .name-col {
+    margin: 0 0 0 10px;
+    float: left;
+}
+.file-submenu .key-col,
+.edit-submenu .key-col,
+.layer-submenu .key-col,
+.view-submenu .key-col {
+    margin: 0 10px 0 0;
+    float: right;
+}
+/***********************************************************************************************
+    Main Menu End
+***********************************************************************************************/

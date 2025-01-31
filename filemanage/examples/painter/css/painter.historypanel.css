@@ -1,0 +1,309 @@
+/***********************************************************************************************
+    History Panel Start
+***********************************************************************************************/
+.history-panel {
+    margin: 0 0 2px 0;
+}
+.history-panel .top-left,
+.history-panel .top-right,
+.history-panel .top-center,
+.history-panel .body-left,
+.history-panel .body-right,
+.history-panel .body-center,
+.history-panel .bottom-left,
+.history-panel .bottom-right,
+.history-panel .bottom-center {
+    background: transparent url(../images/painter/history_layer_panel.jpg) no-repeat;
+    overflow: hidden;
+}
+.history-panel .top-left,
+.history-panel .top-right,
+.history-panel .top-center {
+    height: 46px;
+}
+.history-panel .top-left {
+    width: 10px;
+    background-position: left top;
+    float: left;
+}
+.history-panel .top-center {
+    background-position: -10px top;
+    _float: left;
+}
+.history-panel .top-right {
+    width: 12px;
+    background-position: right top;
+    float: right;
+}
+.history-panel .body-left,
+.history-panel .body-right,
+.history-panel .body-center {
+    height: 200px;
+}
+.history-panel .body-left {
+    width: 10px;
+    background-position: left -46px;
+    float: left;
+}
+.history-panel .body-center {
+    background-position: -10px -46px;
+    _float: left;
+}
+.history-panel .body-right {
+    width: 12px;
+    background-position: right -46px;
+    float: right;
+}
+.history-panel .bottom-left,
+.history-panel .bottom-right,
+.history-panel .bottom-center {
+    height: 15px;
+    *height: 15px;
+}
+.history-panel .bottom-left {
+    width: 10px;
+    background-position: left bottom;
+    margin: 0;
+    float: left;
+}
+.history-panel .bottom-center {
+    background-position: -10px bottom;
+    _float: left;
+}
+.history-panel .bottom-right {
+    width: 12px;
+    background-position: right bottom;
+    float: right;
+}
+.history-panel .panel-heading {
+    width: 63px;
+    height: 44px;
+    background: transparent url(../images/painter/history_panel_heading.jpg) no-repeat left top;
+    text-indent: -9999px;
+    margin: 0 auto;
+}
+.history-panel .close-button {
+    width: 13px;
+    height: 12px;
+    margin: 5px 0 0 0;
+    margin: 8px 0 0 0\9;
+    float: right;
+}
+.history-panel .panel-splitter {
+    width: 209px;
+    height: 5px;
+    background-position: left -87px;
+}
+.history-panel .record-container {
+    width: 192px;
+    height: 170px;
+    margin: 0 0 0 8px;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.history-panel .record-list {
+    height: 29px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+.history-panel .on-status {
+    background-color: #c6c9cd;
+}
+.history-panel .on-status {
+    background: transparent url(../images/painter/history_layer_record_on_status.jpg) repeat-x left top;
+}
+.history-panel .record-splitter {
+    width: 192px;
+    height: 4px;
+    background-position: left -92px;
+    margin: 0;
+    padding: 0;
+}
+.history-panel .icon-col {
+    width: 33px;
+    margin: 0 5px 0 0;
+    float: left;
+}
+.history-panel .desc-col {
+    width: 128px;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    line-height: 2.4;
+    line-height: 2.6\9;
+    float: left;
+    overflow: hidden;
+}
+.history-panel .map-thumbnail-container {
+    width: 33px;
+    height: 19px;
+    background: transparent url(../images/painter/map_thumbnail.jpg) no-repeat left top;
+    border: 1px solid #000;
+    margin: 3px;
+}
+.history-panel .off-status .move-icon,
+.history-panel .off-status .transform-icon,
+.history-panel .off-status .pencil-icon,
+.history-panel .off-status .bezier-icon,
+.history-panel .off-status .convert-icon,
+.history-panel .off-status .select-icon,
+.history-panel .off-status .bound-icon,
+.history-panel .off-status .circle-icon,
+.history-panel .off-status .polygon-icon,
+.history-panel .off-status .building-icon,
+.history-panel .off-status .polyline-icon,
+.history-panel .off-status .marker-icon,
+.history-panel .off-status .text-icon,
+.history-panel .off-status .property-icon,
+.history-panel .off-status .layer-icon,
+.history-panel .off-status .group-icon,
+.history-panel .off-status .delete-icon,
+.history-panel .on-status .move-icon,
+.history-panel .on-status .transform-icon,
+.history-panel .on-status .pencil-icon,
+.history-panel .on-status .bezier-icon,
+.history-panel .on-status .convert-icon,
+.history-panel .on-status .select-icon,
+.history-panel .on-status .bound-icon,
+.history-panel .on-status .circle-icon,
+.history-panel .on-status .polygon-icon,
+.history-panel .on-status .building-icon,
+.history-panel .on-status .polyline-icon,
+.history-panel .on-status .marker-icon,
+.history-panel .on-status .text-icon,
+.history-panel .on-status .property-icon,
+.history-panel .on-status .layer-icon,
+.history-panel .on-status .group-icon,
+.history-panel .on-status .delete-icon {
+    width: 33px;
+    height: 25px;
+    margin: 1px 4px;
+}
+.history-panel .off-status .move-icon {
+    background-position: left -4px;
+}
+.history-panel .off-status .transform-icon {
+    background-position: -33px -4px;
+}
+.history-panel .off-status .pencil-icon {
+    background-position: -66px -4px;
+}
+.history-panel .off-status .bezier-icon {
+    background-position: -99px -4px;
+}
+.history-panel .off-status .convert-icon {
+    background-position: -132px -4px;
+}
+.history-panel .off-status .select-icon {
+    background-position: -165px -4px;
+}
+.history-panel .off-status .bound-icon {
+    background-position: -198px -4px;
+}
+.history-panel .off-status .circle-icon {
+    background-position: -231px -4px;
+}
+.history-panel .off-status .polygon-icon {
+    background-position: -264px -4px;
+}
+.history-panel .off-status .building-icon {
+    background-position: -297px -4px;
+}
+.history-panel .off-status .polyline-icon {
+    background-position: -330px -4px;
+}
+.history-panel .off-status .marker-icon {
+    background-position: -363px -4px;
+}
+.history-panel .off-status .text-icon {
+    background-position: -396px -4px;
+}
+.history-panel .off-status .property-icon {
+    background-position: -231px -57px;
+}
+.history-panel .off-status .layer-icon {
+    background-position: left -57px;
+}
+.history-panel .off-status .group-icon {
+    background-position: -33px -57px;
+}
+.history-panel .off-status .delete-icon {
+    background-position: -66px -57px;
+}
+.history-panel .on-status .move-icon {
+    background-position: left -98px;
+}
+.history-panel .on-status .transform-icon {
+    background-position: -33px -98px;
+}
+.history-panel .on-status .pencil-icon {
+    background-position: -66px -98px;
+}
+.history-panel .on-status .bezier-icon {
+    background-position: -99px -98px;
+}
+.history-panel .on-status .convert-icon {
+    background-position: -132px -98px;
+}
+.history-panel .on-status .select-icon {
+    background-position: -165px -98px;
+}
+.history-panel .on-status .bound-icon {
+    background-position: -198px -98px;
+}
+.history-panel .on-status .circle-icon {
+    background-position: -231px -98px;
+}
+.history-panel .on-status .polygon-icon {
+    background-position: -264px -98px;
+}
+.history-panel .on-status .building-icon {
+    background-position: -297px -98px;
+}
+.history-panel .on-status .polyline-icon {
+    background-position: -330px -98px;
+}
+.history-panel .on-status .marker-icon {
+    background-position: -363px -98px;
+}
+.history-panel .on-status .text-icon {
+    background-position: -396px -98px;
+}
+.history-panel .on-status .property-icon {
+    background-position: -99px -131px;
+}
+.history-panel .on-status .layer-icon {
+    background-position: left -131px;
+}
+.history-panel .on-status .group-icon {
+    background-position: -33px -131px;
+}
+.history-panel .on-status .delete-icon {
+    background-position: -66px -131px;
+}
+.history-panel .utility-footer {
+    float: right;
+    position: relative;
+}
+.history-panel .utility-footer .resize-icon {
+    width: 20px;
+    height: 20px;
+    background-position: -209px -61px;
+    cursor: n-resize;
+    position: absolute;
+    right: 0;
+    top: 1px;
+}
+.history-panel .utility-footer .delete-icon {
+    float: right;
+    cursor: pointer;
+    position: absolute;
+    right: 25px;
+    top: 0;
+}
+/***********************************************************************************************
+    History Panel End
+***********************************************************************************************/

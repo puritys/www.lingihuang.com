@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Bug IE6/IE7 : getAttribute herf</title>
+	<style type= "text/css">
+		.container {
+			margin: 5px 0;
+		}
+		a:link, a:active, a:visited {
+			font-size: 14px;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		.output {
+			fonst-size: 14px;
+			color: #666;
+		}
+		.output .highlighted {
+			fon-size: 16px:
+			color: #000;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function() {
+			var ieAnchor = document.getElementById("ieBug");
+			document.getElementById("ieBugOutput").innerHTML = ieAnchor.getAttribute("href");
+			var othersAnchor = document.getElementById("otherBrowsers");
+			document.getElementById("otherBrowsersOutput").innerHTML = othersAnchor.getAttribute("href", 2);
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h2>IE6/IE7 getAttribute("href") is absolute path</h2>
+		<a id="ieBug" href="Result.php?q=LIVE%40%E5%9C%B0%E4%B8%8B%E7%A4%BE%E6%9C%83&uuid=&TCType=47&lat=25.024458&lng=121.528665">LIVE@地下社會</a>
+		<div class="output">
+			<span class="highlighted">Output ==> </span>
+			<span id="ieBugOutput"></span>
+		</div>
+	</div>
+	<div class="container">
+		<h2>Other Browsers</h2>
+		<a id="otherBrowsers" href="Result.php?q=LIVE%40%E5%9C%B0%E4%B8%8B%E7%A4%BE%E6%9C%83&uuid=&TCType=47&lat=25.024458&lng=121.528665">LIVE@地下社會</a>
+		<div class="output">
+			<span class="highlighted">Output ==> </span>
+			<span id = "otherBrowsersOutput"></span>
+		</div>
+	</div>
+</body>
+</html>
+
+

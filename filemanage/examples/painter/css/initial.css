@@ -1,0 +1,93 @@
+/***********************************************************************************************
+    Index Start
+***********************************************************************************************/
+html, body {
+	width: 100%;
+	height: 100%; /* fix the ie6 bug of automatically stretching the height of the overlay */
+	font-family: arial, 新細明體, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+img {
+    border: none;
+}
+.initial-container {
+    display: none;
+}
+.initial-container .clear-float {
+    clear: both;
+}
+.initial-container .top-header,
+.initial-container .main-menu li .new-map-icon,
+.initial-container .main-menu li .open-map-icon,
+.initial-container .main-menu li .gallery-icon,
+.initial-container .main-menu .on-status .new-map-icon,
+.initial-container .main-menu .on-status .open-map-icon,
+.initial-container .main-menu .on-status .gallery-icon {
+    background: transparent url(../images/index.jpg) no-repeat;
+    overflow: hidden;
+}
+.initial-container .top-header {
+    width: 455px;
+    height: 168px;
+    background-position: left top;
+    text-indent: -9999px;
+}
+.initial-container .main-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.initial-container .main-menu li {
+    width: 443px;
+    background-color: #a3abb5;
+    border: 1px solid #66686d;
+    margin: 5px 7px 12px 5px;
+    padding: 0;
+    cursor: pointer;
+}
+.initial-container .main-menu .over-status {
+    background-color: #a6c5eb;
+    border: 1px solid #324e88;
+}
+.initial-container .main-menu .icon-col {
+    margin: 0 5px 0 10px;
+    float: left;
+}
+.initial-container .main-menu .title-col {
+    font-size: 25px;
+    font-weight: bold;
+    color: #000;
+    line-height: 3;
+    float: left;
+}
+.initial-container .main-menu li .new-map-icon,
+.initial-container .main-menu li .open-map-icon,
+.initial-container .main-menu li .gallery-icon,
+.initial-container .main-menu .over-status .new-map-icon,
+.initial-container .main-menu .over-status .open-map-icon,
+.initial-container .main-menu .over-status .gallery-icon {
+    width: 80px;
+    height: 78px;
+}
+.initial-container .main-menu li .new-map-icon {
+    background-position: left -168px;
+}
+.initial-container .main-menu .over-status .new-map-icon {
+    background-position: -80px -168px;
+}
+.initial-container .main-menu li .open-map-icon {
+    background-position: -160px -168px;
+}
+.initial-container .main-menu .over-status .open-map-icon {
+    background-position: -240px -168px;
+}
+.initial-container .main-menu li .gallery-icon {
+    background-position: -320px -168px;
+}
+.initial-container .main-menu .over-status .gallery-icon {
+    background-position: -400px -168px;
+}
+/***********************************************************************************************
+    Index End
+***********************************************************************************************/

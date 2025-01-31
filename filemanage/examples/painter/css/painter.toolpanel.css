@@ -1,0 +1,255 @@
+/***********************************************************************************************
+    Tool Panel Start
+***********************************************************************************************/
+.tool-panel .top-row,
+.tool-panel .body-content,
+.tool-panel .bottom-row {
+    width: 65px;
+    background: transparent url(../images/painter/tool_panel.jpg) no-repeat;
+    overflow: hidden;
+}
+.tool-panel .top-row {
+    height: 40px;
+    background-position: left top;
+}
+.tool-panel .body-content {
+    height: 405px;
+    height: 395px\9;
+    *height: 400px;
+    _height: 410px;
+    background-position: left -40px;
+}
+.tool-panel .bottom-row {
+    height: 13px;
+    background-position: left bottom;
+}
+.tool-panel .panel-heading {
+    width: 37px;
+    height: 40px;
+    text-indent: -9999px;
+    background: transparent url(../images/painter/tool_panel_heading.jpg) no-repeat left top;
+    margin: 0 auto;
+}
+.tool-panel .panel-icons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.tool-panel .panel-icons li {
+    margin: 0 15px;
+    padding: 0;
+    cursor: pointer;
+}
+.tool-panel .splitter {
+    width: 42px;
+    height: 6px;
+    background-position: -15px -33px;
+    margin: 0 auto;
+}
+.tool-panel .color-thumbnail-container {
+    margin: 5px 0 0 18px;
+}
+.tool-panel .color-container {
+    margin: 0 6px 0 0;
+    float: left;
+}
+.tool-panel .color-container .fill-in-color {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border: 1px solid #000;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    _overflow: hidden; /* fix for ie6, the default width and height of ie6 is about 20px */
+}
+.tool-panel .color-container .border-color-outer-container {
+    width: 10px;
+    background-color: #000;
+    border: 1px solid #000;
+    position: relative;
+    left: 6px;
+    top: -6px;
+    z-index: 0;
+    cursor: pointer;
+}
+.tool-panel .color-container .border-color-inner-container {
+    width: 4px;
+    height: 4px;
+    background-color: #c6c9cd;
+    border: 1px solid #000;
+    margin: 2px;
+    _overflow: hidden; /* fix for ie6, the default width and height of ie6 is about 20px */
+}
+.tool-panel .color-switcher {
+    width: 15px;
+    height: 15px;
+    background-position: left -33px;
+    float: left;
+    cursor: pointer;
+}
+.tool-panel .color-picker-container {
+    margin: 0 0 0 17px;
+}
+.tool-panel .color-picker-container .fill-in-color {
+    width: 19px;
+    height: 19px;
+    background-color: #fff;
+    border: 1px solid #000;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+.tool-panel .color-picker-container .border-color-outer-container {
+    width: 20px;
+    background-color: #666;
+    border: 1px solid #000;
+    position: relative;
+    left: 8px;
+    top: -12px;
+    z-index: 0;
+    cursor: pointer;
+}
+.tool-panel .color-picker-container .border-color-inner-container {
+    width: 10px;
+    height: 10px;
+    background-color: #c6c9cd;
+    border: 1px solid #000;
+    margin: 4px;
+    _overflow: hidden; /* fix for ie6, the default width and height of ie6 is about 20px */
+}
+.bezier-submenu {
+    position: absolute;
+    left: 50px;
+    top: 320px;
+    top: 315px\9;
+    *top: 320px;
+    _top: 325px;
+    z-index: 101;
+    display: none;
+}
+.bezier-submenu .submenu-background {
+    width: 133px;
+    height: 67px;
+    list-style: none;
+    background: transparent url(../images/painter/bezier_submenu_background.png) no-repeat left top;
+    margin: 0;
+    padding: 0;
+}
+*html .bezier-submenu .submenu-background {
+    background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/painter/bezier_submenu_background.png', sizingMethod='image');
+}
+.bezier-submenu li {
+    width: 120px;
+    height: 27px;
+    *height: 25px;
+    margin: 0 0 0 5px;
+    padding: 0;
+    overflow: hidden;
+    cursor: pointer;
+    _position: relative; /* to fix ie6 filter background-image bug: all elements inside background-image coundn't be clickable*/
+}
+.bezier-submenu .icon-col {
+    margin: 0 4px;
+    float: left;
+    _display: inline;
+    _position: relative; /* to fix ie6 filter background-image bug: all elements inside background-image coundn't be clickable*/
+}
+.bezier-submenu .tool-name-col {
+    width: 80px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    line-height: 2.8;
+    float: left;
+    _position: relative; /* to fix ie6 filter background-image bug: all elements inside background-image coundn't be clickable*/
+}
+.bezier-submenu .bezier-icon,
+.bezier-submenu .convert-icon {
+    width: 30px;
+    height: 25px;
+    _position: relative; /* to fix ie6 filter background-image bug: all elements inside background-image coundn't be clickable*/
+}
+.bezier-submenu .bezier-icon {
+    background-position: -99px -4px;
+    *background-position: -99px -6px;
+    margin: 5px 0 0 0;
+}
+.bezier-submenu .convert-icon {
+    background-position: -132px -4px;
+    margin: 5px 0 0 0;
+}
+.shape-submenu {
+    position: absolute;
+    left: 50px;
+    top: 400px;
+    top: 395px\9;
+    *top: 400px;
+    z-index: 102;
+    display: none;
+}
+.shape-submenu .submenu-background {
+    width: 133px;
+    height: 120px;
+    list-style: none;
+    background: transparent url(../images/painter/shape_submenu_background.png) no-repeat left top;
+    margin: 0;
+    padding: 0; 
+}
+*html .shape-submenu .submenu-background {
+    background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/painter/shape_submenu_background.png', sizingMethod='image');
+}
+.shape-submenu li {
+    width: 110px;
+    height: 27px;
+    *height: 25px;
+    margin: 0 0 0 8px;;
+    padding: 0;
+    overflow: hidden;
+    cursor: pointer;
+    _position: relative; /* to fix ie6 filter background-image bug: all elements inside background-image coundn't be clickable*/
+}
+.shape-submenu .icon-col {
+    margin: 0 4px;
+    float: left;
+    _display: inline;
+    _position:relative; /* to fix ie6 filter background-image bug: all elements inside background-image coundn't be clickable*/
+}
+.shape-submenu .tool-name-col {
+    width: 70px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    line-height: 2.2;
+    float: left;
+    _position:relative; /* to fix ie6 filter background-image bug: all elements inside background-image coundn't be clickable*/
+}
+.shape-submenu .bound-icon,
+.shape-submenu .circle-icon,
+.shape-submenu .polygon-icon,
+.shape-submenu .building-icon {
+    width: 33px;
+    height: 25px;
+    _position: relative; /* to fix ie6 filter background-image bug: all elements inside background-image coundn't be clickable*/
+}
+.shape-submenu .bound-icon {
+    background-position: -198px -4px;
+    margin: 3px 4px 0 0;
+}
+.shape-submenu .circle-icon {
+    background-position: -231px -4px;
+    margin: 0 4px 1px 0;
+}
+.shape-submenu .polygon-icon {
+    background-position: -264px -4px;
+    margin: 1px 4px 1px 0;
+}
+.shape-submenu .building-icon {
+    background-position: -297px -4px;
+    margin: 0 4px 0 0;
+}
+/***********************************************************************************************
+    Tool Panel End
+***********************************************************************************************/

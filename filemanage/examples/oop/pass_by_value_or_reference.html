@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2014-03-05">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Object-Oriented Javascript: Pass By Value Or Reference</title>
+<script type="text/javascript">
+/********************
+Related Posts
+1. Is JavaScript call-by-value or call-by-reference?
+http://www.jon-carlos.com/2013/is-javascript-call-by-value-or-call-by-reference/
+2. JAVASCRIPT: PASSING BY VALUE OR BY REFERENCE
+http://snook.ca/archives/javascript/javascript_pass
+3. JavaScript中參數的傳值與傳址心得
+http://pulipuli.blogspot.tw/2010/09/javascript.html
+********************/
+
+/*******************
+String
+*******************/
+var str = "A";
+
+function passStringByValue(str) {
+	console.log("**** passStringByValue ****");
+	console.log(str);  // Output A
+	str = "X";
+	console.log(str);  // Output X
+}
+
+passStringByValue(str);
+console.log(str);  // Output A
+
+/*******************
+Array
+*******************/
+var arr = ["A", "B", "C"];
+
+function passArrayByValue(arr) {
+	console.log("**** passArrayByValue ****");
+	console.log(arr);  // Output ["A", "B", "C"]
+	// Create a new array.
+	arr = ["X", "Y", "Z"];
+	console.log(arr);  // Output ["X", "Y", "Z"]
+}
+
+function passArrayByReference(arr) {
+	console.log("**** passArrayByReference ****");
+	console.log(arr);  // Output ["A", "B", "C"]
+	arr.push("D");
+	arr[0] = "W";
+	console.log(arr);  // Output ["W", "B", "C", "D"]
+}
+
+// Pass by value.
+passArrayByValue(arr);
+console.log(arr);  // Output ["A", "B", "C"]
+
+// Pass by reference.
+passArrayByReference(arr);
+console.log(arr);  // Output ["W", "B", "C", "D"]
+
+/*******************
+Object
+*******************/
+var obj = {
+	attr: "A"
+};
+
+function passObjectByValue(obj) {
+	console.log("**** passObjectByValue ****");
+	console.log(obj);  // Output {attr: "A"}
+	// Create a new object.
+	obj = {
+		attr: "X"
+	};
+	console.log(obj);  // Output {attr: "X"}
+}
+
+function passObjectByReference(obj) {
+	console.log("**** passObjectByReference ****");
+	console.log(obj);  // Output {attr: "A"}
+	obj.attr = "X";
+	console.log(obj);  // Output {attr: "X"}
+}
+
+// Pass by value.
+passObjectByValue(obj);
+console.log(obj);  // Output {attr: "A"}
+
+// Pass by reference.
+passObjectByReference(obj);
+console.log(obj);  // Output {attr: "X"}
+
+/*******************
+Function
+*******************/
+function myFunction() {
+	this.value = "A";
+}
+
+myFunction.prototype.update = function () {
+	console.log("**** myFunction.prototype.update ****");
+	console.log(this);
+	this.value = "W";
+};
+
+function passFunctionByValue(fn) {
+	console.log("**** passFunctionByValue ****");
+	// It will lose keyword "this" in function update. "this" will refer to Window object.
+	fn();
+}
+
+function updateFunctionByReference(fn, obj) {
+	// "this" will refer to myFunction in function update.
+	fn.call(obj);
+}
+
+function passFunctionByReference(fn) {
+	console.log("**** passFunctionByReference ****");
+	console.log(fn.value);  // Output W
+	fn.value = "X";
+	console.log(fn.value);  // Output X
+}
+
+var myFn = new myFunction();
+// Pass by value.
+passFunctionByValue(myFn.update);
+console.log(myFn.value);  // Output A
+
+updateFunctionByReference(myFn.update, myFn);
+console.log(myFn.value);  // Output W
+
+// Pass by reference.
+passFunctionByReference(myFn);
+console.log(myFn.value);  // Output X
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

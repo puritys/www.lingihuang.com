@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Cookies</title>
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" language="javascript" src="../libs/lib.js"></script>
+	<script type="text/javascript" language="javascript" src="../libs/form.js"></script>
+	<script type="text/javascript">
+		var checkbox, signinForm;
+		
+		function getCookies() {
+			var inputs = signinForm.getElementsByTagName("input");console.log('get');
+			for (var i=0; i<inputs.length; i++){console.log(inputs[i].value);
+				inputs[i].value = COOKIE.get(inputs[i].name);
+				}
+		}
+		
+		function submitForm() {
+			var checkboxValue = checkbox.get();
+			var inputs = signinForm.getElementsByTagName("input");
+			for (var i=0; i<inputs.length; i++) {
+				if (checkboxValue == "setCookies") {
+					COOKIE.set(inputs[i].name, inputs[i].value);
+				} else {
+					COOKIE.del(inputs[i].name, inputs[i].value);
+				}
+			}
+		}
+		
+		window.onload = function() {
+			signinForm = document.getElementById("signinForm");
+			getCookies();
+			checkbox = new CHECKBOX(document.getElementById("checkboxList"));
+			document.getElementById("submitButton").onclick = submitForm;
+		}
+	</script>
+</head>
+<body>
+  	<form id="signinForm" class="signin-form">
+  		<div class="top-row"></div>
+  		<div class="body-content clearfix">
+			<p>
+				<span class="left-label">Username</span>
+				<input class="right-input input-text" name="username" type="text" value="" />
+			</p>
+			<p>
+				<span class="left-label">Password</span>
+				<input class="right-input input-text" name="password" type="password" value="" />
+			</p>
+			<p class="checkbox-row">
+				<ul id="checkboxList" class="checkbox-list">
+					<li class="clearfix">
+						<span class="checkbox-icon checkbox-on-status" checked="true" value="setCookies"></span>
+						<span class="checkbox-label">Remember me on this computer</span>
+					</li>
+				</ul>
+			</p>
+			<p class="button-row">
+				<button id="submitButton">Submit</button>
+			</p>
+  		</div>
+  		<div class="bottom-row"></div>
+  	</form>
+</body>
+</html>
+
+

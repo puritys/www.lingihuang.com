@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2015-06-04">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Horizontal and Vertical Centering</title>
+<style type="text/css">
+html, body {
+    font: 16px normal "Noto Sans CJK TC Medium", "微軟正黑體", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "sans-serif";
+    margin: 0;
+    padding: 0;
+}
+.outer-box-1 {
+    background: #eee;
+    height: 200px;
+    margin: 10px;
+    position: relative;
+    width: 200px;
+}
+.inner-box-1 {
+    background: #666;
+    bottom: 0;
+    height: 50%;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+}
+.outer-box-2 {
+    background: #eee;
+    height: 200px;
+    line-height: 200px;
+    margin: 10px;
+    position: relative;
+    text-align: center;
+    width: 200px;
+}
+.inner-box-2 {
+    background: #666;
+    display: inline-block;
+    height: 100px;
+    vertical-align: middle;
+    width: 100px;
+}
+</style>
+</head>
+
+<body>
+    <!--
+    Related Posts
+    1. Absolute Horizontal And Vertical Centering In CSS
+    http://www.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/
+    2. CSS Techniques – Absolute Horizontal And Vertical Centering In CSS
+    http://www.css-jquery-design.com/2013/12/css-techniques-absolute-horizontal-and-vertical-centering-in-css/
+    -->
+    <h2>Horizontal and Vertical Centering</h2>
+    <h3>position: absolute;</h3>
+    <div class="outer-box-1">
+        <div class="inner-box-1"></div>
+    </div>
+
+    <h3>display: inline-block;</h3>
+    <div class="outer-box-2">
+        <div class="inner-box-2"></div>
+    </div>
+</body>
+</html>

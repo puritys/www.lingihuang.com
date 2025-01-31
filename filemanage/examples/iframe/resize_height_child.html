@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2014-03-24">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Resize iFrame Height</title>
+<style type="text/css">
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    background: #eee;
+    height: 1500px;
+}
+p {
+    color: #333;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+<script type="text/javascript">
+var myProperty = "myProperty";
+
+function output(data) {
+    var html = '<p>Child width = ' + data.width + ' height = ' + data.height + '</p>';
+    document.getElementById("container").innerHTML = html;
+}
+
+// Get parent element.
+console.log(parent.document.getElementById("my-iframe"));
+// Run parent function.
+console.log(parent.getSize);
+</script>
+</head>
+
+<body>
+    <div id="container" class="container"></div>
+</body>
+</html>

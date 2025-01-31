@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Global Error Handling</title>
+    <style type="text/css">
+        p {
+        	width: 650px;
+            background-color: #eef5f9;
+			border: 1px solid #bfc7cb;
+            font: normal 13px Arial, Helvetica, sans-serif;
+            color: #444;
+            line-height: 130%;
+            margin: 20px auto;
+            padding: 5px;
+            display: block;
+        }
+    </style>
+    <script type="text/javascript">
+        var onErrorHandler = function(message, fileName, lineNumber) {
+            var element = document.createElement("p");
+            element.innerHTML = "Error: " + message + "<br />File Name: " + decodeURIComponent(fileName) + "<br />Line: " + lineNumber;
+            document.body.appendChild(element);
+            // Returning true tells the browser that you have taken care of the problem.
+            // If you return false instead, the browser will proceed to treat the error as unhandled, showing the error message and the status bar icon.
+            return true;
+        };
+        function onLoadHandler() {
+            var response = confirm("Press one of the buttons.");
+            var element = document.createElement("p");
+            var html = "";
+            if (response)
+                html = "You pressed OK.";
+            else
+                html = "You pressed Cancel.";
+            element.innerHTML(html);
+            document.body.appendChild(element);
+        }
+        window.onload = onLoadHandler;
+        window.onerror = onErrorHandler;
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿html, body {
+	font-family: arial, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	display: inline-block;
+}
+*html .clearfix {
+	height: 1%;
+}
+.wrapper {
+	width: 100%;
+}
+.section {
+	width: 30%;
+	background-color: #ddf1f9;
+	border: 1px solid #8ac8ea;
+	margin: 5px 2px;
+	float: left;
+}
+h3 {
+	font-size: 15px;
+	color: #fff;
+	background-color: #067ab8;
+	margin: 4px;
+	padding: 4px;
+}
+.input-text {
+	width: 70%;
+	font-size: 13px;
+	border: 1px solid #669bd3;
+	margin: 2px 4px;
+	padding: 2px;
+}
+.submit-button {
+	font-size: 12px;
+	color: #085a85;
+	background-color: #63b2d6;
+	border: 1px solid #0b6a9d;
+	margin: 2px 0;
+	padding: 2px 5px;
+}
+.error-msg {
+	font-size: 12px;
+	color: #c11111;
+	margin: 2px 4px;
+	visibility: visible;
+}
+.sample {
+	font-size: 12px;
+	color: #085a85;
+	margin: 2px 4px;
+}

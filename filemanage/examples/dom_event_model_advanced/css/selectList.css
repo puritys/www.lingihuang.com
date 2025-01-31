@@ -1,0 +1,113 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+}
+dl.select-list {
+    width: 172px;
+    margin: 20px auto;
+    position: relative;
+}
+dl.select-list .dt-arrow {
+    width: 22px;
+    height: 21px;
+    background: transparent url(../images/dt-arrow.png) left top scroll no-repeat;
+    margin: 2px 2px 0 0;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+*html dl.select-list .dt-arrow {
+    background-image: none;
+    filter:  progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/dt-arrow.png', sizingMethod='image');
+}
+dl.select-list dt {
+    width: 172px;
+    height: 25px;
+    background: transparent url(../images/dt-box.png) left top scroll no-repeat;
+    position: relative;
+}
+*html dl.select-list dt {
+    background-image: none;
+    filter:  progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/dt-box.png', sizingMethod='image');
+}
+dl.select-list dt a {
+    font: normal 14px Arial, Helvetica, sans-serif;
+    color: #536874;
+    text-decoration: none;
+    letter-spacing: .6px;
+    line-height: 170%;
+    outline-style: none;
+    margin: 0 28px 0 5px;
+    *margin: 0 32px 0 5px;
+    padding: 0 5px;
+    display: block;
+    cursor: default;
+}
+dl.select-list dd {
+    width: 100%;
+    margin: -1px 0 0 0;
+    *margin: -16px 0 0 0;
+    display: none;
+}
+dl.select-list dd ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+dl.select-list dd li, dl.select-list dd li.dd-top, dl.select-list dd li.dd-bottom, dl.select-list dd li.dd-body {
+    margin: 0;
+    padding: 0;
+}
+dl.select-list dd li.dd-top {
+    width: 172px;
+    height: 3px;
+    background: transparent url(../images/dd-top.png) left top scroll no-repeat;
+    *margin: 0 0 -1px 0;
+}
+*html dl.select-list dd li.dd-top {
+    background-image: none;
+    filter:  progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/dd-top.png', sizingMethod='image');
+}
+dl.select-list dd li.dd-bottom {
+    width: 172px;
+    height: 3px;
+    background: transparent url(../images/dd-bottom.png) left top scroll no-repeat;
+    *margin: -15px 0 0 0;
+    _margin: -16px 0 0 0;
+}
+*html dl.select-list dd li.dd-bottom {
+    background-image: none;
+    filter:  progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/dd-bottom.png', sizingMethod='image');
+}
+dl.select-list dd li.dd-body {
+    width: 172px;
+    background: transparent url(../images/dd-body.png) left top scroll repeat-y;
+}
+*html dl.select-list dd li.dd-body {
+    background-image: none;
+    filter:  progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/dd-body.png', sizingMethod='scale');
+}
+dl.select-list dd li.dd-body a {
+    height: 22px;
+    font: normal 14px Arial, Helvetica, sans-serif;
+    color: #536874;
+    text-decoration: none;
+    letter-spacing: .6px;
+    line-height: 160%;
+    *line-height: 150%;
+    margin: 0 5px;
+    padding: 0 5px;
+    display: block;
+}
+dl.select-list dd li.dd-body a:hover {
+    background: transparent url(../images/dd-active-status.png) left top scroll no-repeat;
+}
+*html dl.select-list dd li.dd-body a:hover {
+    background-image: none;
+    filter:  progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/dd-active-status.png', sizingMethod='image');
+}

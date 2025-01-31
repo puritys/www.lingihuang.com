@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2015-02-04">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>JavaScript Sandbox</title>
+</head>
+
+<body>
+    
+<script type="text/javascript">
+/********************
+Related Posts
+1. Managing JavaScript Objects
+https://msdn.microsoft.com/en-us/magazine/gg314983.aspx
+2. The Module Pattern
+http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript
+3. Core-Sandbox-Module-JS
+https://github.com/mamoo/Core-Sandbox-Module-JS
+4. JavaScript学习笔记(二十五) 沙箱模式
+http://blog.csdn.net/qq838419230/article/details/8981857
+5. javascript-platform-yui
+https://github.com/josephj/javascript-platform-yui
+********************/
+function Sandbox(id, core) {
+    this.id          = id;
+    this.publish     = core.publish;
+    this.subscribe   = core.subscribe;
+    this.unsubscribe = core.unsubscribe;
+}
+
+var Core = (function Core() {
+    var modules           = [],
+        registeredModules = {},
+        listeners         = {},
+        i;
+
+    // make sure the function is called
+    // as a constructor
+    if (!(this instanceof Core)) {
+        //return new Core(modules, callback);
+        return new Core();
+    }
+
+    this.register = function(moduleId, callback) {
+        var sandbox = new Sandbox(moduleId, this),
+            module  = callback(sandbox);
+        registeredModules[moduleId] = module;
+        if (typeof module.subscribe === 'function') {
+            module.subscribe();
+        }
+    };
+
+    this.use = function () {
+        // turning arguments into an array
+        var args        = Array.prototype.slice.call(arguments),
+            // the last argument is the callback
+            callback    = args.pop();
+        
+        // modules can be passed as an array or as individual parameters
+        modules = (args[0] && typeof args[0] === 'string') ? args : args[0];
+
+        // now add modules to the core `this` object
+        // no modules or "*" both mean "use all modules"
+        if (!modules || modules === '*') {
+            modules = [];
+            for (i in registeredModules) {
+                if (registeredModules.hasOwnProperty(i)) {
+                    modules.push(i);
+                }
+            }
+        }
+
+        // call the callback
+        if (typeof callback === 'function') {
+            callback(this);
+        }
+    };
+
+    this.publish = function (message, args) {
+        try {
+            for (var i = 0; i < listeners[message].length; i++) {
+                if (typeof args === 'undefined') {
+                    args = [];
+                }
+                if (!(args instanceof Array)) {
+                    args = [args];
+                }
+                listeners[message][i].apply(this, args);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    this.subscribe = function (message, callback) {
+        if (!listeners[message]) {
+            listeners[message] = [];
+        }
+        listeners[message].push(callback);
+        return [message, callback];
+    };
+
+    this.unsubscribe = function(message, callback) {
+        for (i = 0; i < listeners[message].length; i++) {
+            if (listeners[message][i] === callback) {
+                listeners[message].splice(i, 1);
+            }
+        }
+    };
+
+    this.start = function () {
+        // initialize the required modules
+        for (i = 0; i < modules.length; i++) {
+            var module = registeredModules[modules[i]];
+            if (typeof module !== 'undefined' && typeof module.init === 'function') {
+                module.init();
+            }
+        }
+    };
+})();
+
+// any prototype properties as needed
+Core.prototype = {
+    name    : 'My Application',
+    version : '1.0',
+    getName : function () {
+        return this.name;
+    }
+};
+
+Core.register('lightbox', function(sandbox) {
+    return {
+        init: function () {
+            console.log('lightbox init');
+            sandbox.publish('article.update', {title: 'WTF', desc: 'Wow~~~'});
+        },
+        destroy: function () {
+
+        }
+    };
+});
+
+Core.register('article', function(sandbox) {
+    var update = function (data) {
+        console.log('article.update');
+        console.log(data);
+    };
+    return {
+        init: function () {
+            console.log('article init');
+        },
+        subscribe: function () {
+            console.log('article subscribe');
+            sandbox.subscribe('article.update', update);
+        },
+        destroy: function () {
+            
+        }
+    };
+});
+
+Core.use(['lightbox', 'article'], function (core) {
+    core.start();
+});
+</script>
+
+</body>
+</html>

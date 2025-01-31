@@ -1,0 +1,30 @@
+{namespace UITemplates}
+/**
+* 這是用google Closure Template的soy檔案，必須執行SoyToJsSrcCompiler.jar 才可以
+* 詳細請參考：http://code.google.com/intl/zh-TW/closure/templates/index.html
+* excute : java -jar SoyToJsSrcCompiler.jar  --outputPathFormat initialPanelUITemplate.js initialPanelUITemplate.soy
+* excute at bingo : java -jar /home/blackbing/Works/closure_templates/SoyToJsSrcCompiler.jar  --outputPathFormat initialPanelUITemplate.js initialPanelUITemplate.soy
+* excute at windows : java -jar D:\Utilities\ClosureTemplates\SoyToJsSrcCompiler.jar  --outputPathFormat initialPanelUITemplate.js initialPanelUITemplate.soy
+*/
+/**
+*/
+{template .initialPanelUITemplate}
+<div class="top-header">UrMapPainter</div>
+<ul class="main-menu">
+    <li>
+        <div class="icon-col new-map-icon"></div>
+        <div class="title-col">建立新地圖</div>
+        <div class="clear-float"></div>
+    </li>
+    <li>
+        <div class="icon-col open-map-icon"></div>
+        <div class="title-col">開啟地圖路徑</div>
+        <div class="clear-float"></div>
+    </li>
+    <li>
+        <div class="icon-col gallery-icon"></div>
+        <div class="title-col">開啟圖庫</div>
+        <div class="clear-float"></div>
+    </li>
+</ul>
+{/template}

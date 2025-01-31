@@ -1,0 +1,416 @@
+/***********************************************************************************************
+    Layer Panel Start
+***********************************************************************************************/
+.layer-panel {
+    margin: 0 0 2px 0;
+}
+.layer-panel .top-left,
+.layer-panel .top-right,
+.layer-panel .top-center,
+.layer-panel .body-left,
+.layer-panel .body-right,
+.layer-panel .body-center,
+.layer-panel .bottom-left,
+.layer-panel .bottom-right,
+.layer-panel .bottom-center {
+    background: transparent url(../images/painter/history_layer_panel.jpg) no-repeat;
+    overflow: hidden;
+}
+.layer-panel .top-left,
+.layer-panel .top-right,
+.layer-panel .top-center {
+    height: 46px;
+}
+.layer-panel .top-left {
+    width: 10px;
+    background-position: left top;
+    float: left;
+}
+.layer-panel .top-center {
+    background-position: -10px top;
+    _float: left;
+}
+.layer-panel .top-right {
+    width: 12px;
+    background-position: right top;
+    float: right;
+}
+.layer-panel .body-left,
+.layer-panel .body-right,
+.layer-panel .body-center {
+    height: 200px;
+}
+.layer-panel .body-left {
+    width: 10px;
+    background-position: left -46px;
+    float: left;
+}
+.layer-panel .body-center {
+    background-position: -10px -46px;
+    _float: left;
+}
+.layer-panel .body-right {
+    width: 12px;
+    background-position: right -46px;
+    float: right;
+}
+.layer-panel .bottom-left,
+.layer-panel .bottom-right,
+.layer-panel .bottom-center {
+    height: 15px;
+    *height: 15px;
+}
+.layer-panel .bottom-left {
+    width: 10px;
+    background-position: left bottom;
+    margin: 0;
+    float: left;
+}
+.layer-panel .bottom-center {
+    background-position: -10px bottom;
+    _float: left;
+}
+.layer-panel .bottom-right {
+    width: 12px;
+    background-position: right bottom;
+    float: right;
+}
+.layer-panel .panel-heading {
+    width: 63px;
+    height: 44px;
+    background: transparent url(../images/painter/layer_panel_heading.jpg) no-repeat left top;
+    text-indent: -9999px;
+    margin: 0 auto;
+}
+.layer-panel .close-button {
+    width: 13px;
+    height: 12px;
+    margin: 5px 0 0 0;
+    margin: 8px 0 0 0\9;
+    float: right;
+}
+.layer-panel .panel-splitter {
+    width: 209px;
+    height: 5px;
+    background-position: left -87px;
+}
+.layer-panel .record-container {
+    width: 192px;
+    height: 170px;
+    margin: 0 0 0 8px;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.layer-panel .record-list {
+    margin: 0;
+    padding: 0;
+}
+.layer-panel .right-record-col {
+    width: 146px;
+    float: left;
+    cursor: pointer;
+}
+.layer-panel .off-status {
+    background-color: #c6c9cd;
+}
+.layer-panel .on-status {
+    background: transparent url(../images/painter/history_layer_record_on_status.jpg) repeat-x left top;
+}
+.layer-panel .hidden-status {
+    display: none;
+}
+.layer-panel .record-splitter {
+    width: 150px;
+    height: 4px;
+    background-position: left -92px;
+    margin: 0 0 0 28px;
+    padding: 0;
+}
+.layer-panel .layer-row {
+    
+}
+.layer-panel .eye-col {
+    margin: 2px 5px 0 0;
+    float: left;
+}
+.layer-panel .eye-outer-container {
+    width: 21px;
+    height: 21px;
+    background-color: #edf0f1;
+    border: 1px solid #646b6d;
+    cursor: pointer;
+}
+.layer-panel .eye-inner-container {
+    width: 19px;
+    height: 19px;
+    background-color: #c0c7ca;
+    margin: 1px;
+}
+.layer-panel .eye-on-status {
+    background-position: -264px -54px;
+}
+.layer-panel .vertical-splitter {
+    width: 2px;
+    height: 29px;
+    background: transparent url(../images/painter/layer_panel_vertical_splitter.jpg) repeat-y left top;
+    margin: -2px 5px 0 0;
+    float: left;
+}
+.layer-panel .layer-record {
+    
+}
+.layer-panel .group-record {
+    
+}
+.layer-panel .map-record {
+    
+}
+.layer-panel .layer-record .layer-row {
+    
+}
+.layer-panel .group-record .layer-row {
+    
+}
+.layer-panel .group-record .group-row {
+    
+}
+.layer-panel .layer-record .layer-row .icon-col,
+.layer-panel .group-record .group-row .icon-col,
+.layer-panel .group-record .layer-row .icon-col,
+.layer-panel .map-record .icon-col {
+    margin: 0 5px 0 0;
+    float: left;
+}
+.layer-panel .layer-record .layer-row .desc-col,
+.layer-panel .group-record .group-row .desc-col,
+.layer-panel .group-record .layer-row .desc-col,
+.layer-panel .map-record .map-desc-col,
+.layer-panel .layer-record .layer-row .input-text,
+.layer-panel .group-record .group-row .input-text,
+.layer-panel .group-record .layer-row .input-text {
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    line-height: 2.4;
+    line-height: 2.6\9;
+    float: left;
+    overflow: hidden;
+}
+.layer-panel .layer-record .layer-row .desc-col,
+.layer-panel .group-record .group-row .desc-col,
+.layer-panel .group-record .layer-row .desc-col {
+    background-color: transparent;
+    border: none;
+}
+.layer-panel .layer-record .layer-row .input-text,
+.layer-panel .group-record .group-row .input-text,
+.layer-panel .group-record .layer-row .input-text {
+    background-color: #fff;
+    border: 1px solid #7f9db9;
+}
+.layer-panel .layer-record .layer-row .icon-col {
+    width: 33px;
+}
+.layer-panel .group-record .group-row .icon-col {
+    width: 30px;
+}
+.layer-panel .group-record .layer-row .icon-col {
+    margin: 0 0 0 15px;
+    _margin: 0 0 0 11px;
+}
+.layer-panel .map-record .icon-col {
+    width: 18px;
+    margin-top: 3px;
+}
+.layer-panel .layer-record .layer-row .desc-col,
+.layer-panel .layer-record .layer-row .input-text {
+    width: 97px;
+}
+.layer-panel .group-record .group-row .desc-col,
+.layer-panel .group-record .group-row .input-text {
+    width: 87px;
+}
+.layer-panel .group-record .layer-row .desc-col,
+.layer-panel .group-record .layer-row .input-text {
+    width: 87px;
+}
+.layer-panel .group-record .group-row .arrow-col {
+    margin: 8px 0 0 0;
+    float: left;
+    cursor: pointer;
+}
+.layer-panel .map-record .map-desc-col {
+    width: 74px;
+    _width: 70px;
+}
+.layer-panel .map-record .map-thumbnail-container {
+    width: 33px;
+    height: 19px;
+    background: transparent url(../images/painter/map_thumbnail.jpg) no-repeat left top;
+    border: 1px solid #000;
+    margin: 3px 5px 0 0;
+    float: left;
+}
+.layer-panel .off-status .pencil-icon,
+.layer-panel .off-status .bezier-icon,
+.layer-panel .off-status .bound-icon,
+.layer-panel .off-status .circle-icon,
+.layer-panel .off-status .polygon-icon,
+.layer-panel .off-status .building-icon,
+.layer-panel .off-status .polyline-icon,
+.layer-panel .off-status .marker-icon,
+.layer-panel .off-status .text-icon,
+.layer-panel .off-status .layer-icon,
+.layer-panel .off-status .group-icon,
+.layer-panel .on-status .pencil-icon,
+.layer-panel .on-status .bezier-icon,
+.layer-panel .on-status .bound-icon,
+.layer-panel .on-status .circle-icon,
+.layer-panel .on-status .polygon-icon,
+.layer-panel .on-status .building-icon,
+.layer-panel .on-status .polyline-icon,
+.layer-panel .on-status .marker-icon,
+.layer-panel .on-status .text-icon,
+.layer-panel .on-status .layer-icon,
+.layer-panel .on-status .group-icon {
+    width: 33px;
+    height: 25px;
+    margin: 1px 4px;
+}
+.layer-panel .off-status .pencil-icon {
+    background-position: -66px -4px;
+}
+.layer-panel .off-status .bezier-icon {
+    background-position: -99px -4px;
+}
+.layer-panel .off-status .bound-icon {
+    background-position: -198px -4px;
+}
+.layer-panel .off-status .circle-icon {
+    background-position: -231px -4px;
+}
+.layer-panel .off-status .polygon-icon {
+    background-position: -264px -4px;
+}
+.layer-panel .off-status .building-icon {
+    background-position: -297px -4px;
+}
+.layer-panel .off-status .polyline-icon {
+    background-position: -330px -4px;
+}
+.layer-panel .off-status .marker-icon {
+    background-position: -363px -4px;
+}
+.layer-panel .off-status .text-icon {
+    background-position: -396px -4px;
+}
+.layer-panel .off-status .layer-icon {
+    background-position: left -57px;
+}
+.layer-panel .off-status .group-icon {
+    background-position: -38px -57px;
+}
+.layer-panel .off-status .expand-icon {
+    width: 12px;
+    height: 11px;
+    background-position: -284px -54px;
+    margin: 8px 0 0 0;
+}
+.layer-panel .off-status .collapse-icon {
+    width: 12px;
+    height: 11px;
+    background-position: -296px -54px;
+}
+.layer-panel .off-status .lock-icon {
+    height: 18px;
+    background-position: -175px -60px;
+}
+.layer-panel .on-status .pencil-icon {
+    background-position: -66px -98px;
+}
+.layer-panel .on-status .bezier-icon {
+    background-position: -99px -98px;
+}
+.layer-panel .on-status .bound-icon {
+    background-position: -198px -98px;
+}
+.layer-panel .on-status .circle-icon {
+    background-position: -231px -98px;
+}
+.layer-panel .on-status .polygon-icon {
+    background-position: -264px -98px;
+}
+.layer-panel .on-status .building-icon {
+    background-position: -297px -98px;
+}
+.layer-panel .on-status .polyline-icon {
+    background-position: -330px -98px;
+}
+.layer-panel .on-status .marker-icon {
+    background-position: -363px -98px;
+}
+.layer-panel .on-status .text-icon {
+    background-position: -396px -98px;
+}.layer-panel .on-status .layer-icon {
+    background-position: left -131px;
+}
+.layer-panel .on-status .group-icon {
+    background-position: -38px -131px;
+}
+.layer-panel .on-status .expand-icon {
+    width: 12px;
+    height: 11px;
+    background-position: -144px -140px;
+    margin: 8px 0 0 0;
+}
+.layer-panel .on-status .collapse-icon {
+    width: 12px;
+    height: 11px;
+    background-position: -176px -140px;
+}
+.layer-panel .on-status .lock-icon {
+    height: 25px;
+    background-position: -206px -136px;
+}
+.layer-panel .utility-footer {
+    float: right;
+    position: relative;
+}
+.layer-panel .utility-footer .resize-icon {
+    width: 20px;
+    height: 20px;
+    background-position: -209px -61px;
+    cursor: n-resize;
+    position: absolute;
+    right: 0;
+    top: 1px;
+}
+.layer-panel .utility-footer .utility-container {
+    width: 250px;
+    position: absolute;
+    right: 25px;
+    top: 0;
+}
+.layer-panel .utility-footer .delete-icon,
+.layer-panel .utility-footer .layer-icon,
+.layer-panel .utility-footer .group-icon,
+.layer-panel .utility-footer .move-up-icon,
+.layer-panel .utility-footer .move-down-icon {
+    float: right;
+    cursor: pointer;
+}
+.layer-panel .utility-footer .layer-icon,
+.layer-panel .utility-footer .group-icon {
+    margin: 0 5px 0 0;
+}
+.layer-panel .utility-footer .move-up-icon {
+    margin: 0 50px 0 0;
+}
+.layer-panel .utility-footer .move-down-icon {
+    margin: 2px 5px 0 0;
+}
+/***********************************************************************************************
+    Layer Panel End
+***********************************************************************************************/

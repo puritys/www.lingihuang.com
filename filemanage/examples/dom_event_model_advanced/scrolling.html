@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Scrolling</title>
+    <link type="text/css" rel="stylesheet" href="css/scrolling.css" />
+    <script type="text/javascript" language="javascript" src="../libs/lib.js"></script>
+    <script type="text/javascript" language="javascript" src="js/scrolling.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            SCROLLING({
+                scroller: {element:document.getElementById("scrollerContainer"), classnameToScroll:"container", viewableWidth:380, viewableHeight:180},
+                scrollbar: {y:document.getElementById("yScrollbarContainer"), x:document.getElementById("xScrollbarContainer")}
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="scroller-wrapper">
+        <div id="scrollerContainer" class="scroller-container">
+            <div class="container">
+                <p>afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl</p>
+                <p>afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl</p>
+                <p>afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl</p>
+                <p>afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl</p>
+                <p>afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl afjsdlkjf rejkwaljre asfjklj wjerkl</p>
+            </div>
+        </div>
+        <div id="yScrollbarContainer" class="y-scrollbar-container">
+            <div class="y-up"></div>
+            <div class="y-down"></div>
+            <div class="y-track">
+                <div class="y-handler"></div>
+            </div>
+        </div>
+        <div id="xScrollbarContainer" class="x-scrollbar-container">
+            <div class="x-left"></div>
+            <div class="x-right"></div>
+            <div class="x-track">
+                <div class="x-handler"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

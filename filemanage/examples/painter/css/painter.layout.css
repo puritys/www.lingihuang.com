@@ -1,0 +1,201 @@
+/***********************************************************************************************
+    Layout Start
+***********************************************************************************************/
+html, body {
+	width: 100%;
+	height: 100%; /* fix the ie6 bug of automatically stretching the height of the overlay */
+	font-family: arial, 新細明體, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+img {
+    border: none;
+}
+.wrapper,
+.top-header,
+.body-content {
+    width: 100%;
+}
+.clear-float {
+    clear: both;
+}
+/***********************************************************************************************
+    Layout End
+***********************************************************************************************/
+
+
+
+
+/***********************************************************************************************
+    Logo Start
+***********************************************************************************************/
+.logo-row {
+    width: 100%;
+    height: 100px;
+    background: transparent url(../images/painter/logo_row_background.jpg) repeat-x left top;
+}
+.urmap-logo, .urpainter-logo {
+    height: 100px;
+    background: transparent url(../images/painter/logo_row.jpg);
+    text-indent: -9999px;
+    overflow: hidden;
+}
+.urmap-logo {
+    width: 248px;
+    background-repeat: no-repeat;
+    background-position: -5px top;
+    float: left;
+}
+.urpainter-logo {
+    width: 275px;
+    background-repeat: no-repeat;
+    background-position: -260px top;
+    float: left;
+}
+/***********************************************************************************************
+    Logo End
+***********************************************************************************************/
+
+
+
+
+/***********************************************************************************************
+    Body Content Start
+***********************************************************************************************/
+.body-content {
+    width: 100%;
+    height: 100%;
+    background-color: #656565;
+    overflow: hidden;
+}
+.tool-panel {
+    width: 67px;
+    margin: 0 0 0 2px;
+    float: left;
+}
+.history-layer-panel {
+    width: 230px;
+    margin: 0 2px 0 0;
+    float: right;
+}
+.map-panel {
+    margin: 0 234px 0 70px;
+    _margin: 0 236px 0 72px;
+}
+.hack-ie6 {
+    _width: 100%;
+    height: 100%;
+    _overflow: hidden;
+}
+/***********************************************************************************************
+    Body Content End
+***********************************************************************************************/
+
+
+
+
+/***********************************************************************************************
+    Icons Start
+***********************************************************************************************/
+.file-submenu .splitter,
+.edit-submenu .splitter,
+.layer-submenu .splitter,
+.view-submenu .splitter,
+.tool-bar .move-icon,
+.tool-bar .transform-icon,
+.tool-bar .pencil-icon,
+.tool-bar .bezier-icon,
+.tool-bar .convert-icon,
+.tool-bar .select-icon,
+.tool-bar .bound-icon,
+.tool-bar .circle-icon,
+.tool-bar .polygon-icon,
+.tool-bar .building-icon,
+.tool-bar .polyline-icon,
+.tool-bar .marker-icon,
+.tool-bar .text-icon,
+.tool-panel .color-switcher,
+.tool-panel .splitter,
+.history-panel .off-status .move-icon,
+.history-panel .off-status .transform-icon,
+.history-panel .off-status .pencil-icon,
+.history-panel .off-status .bezier-icon,
+.history-panel .off-status .convert-icon,
+.history-panel .off-status .select-icon,
+.history-panel .off-status .bound-icon,
+.history-panel .off-status .circle-icon,
+.history-panel .off-status .polygon-icon,
+.history-panel .off-status .building-icon,
+.history-panel .off-status .polyline-icon,
+.history-panel .off-status .marker-icon,
+.history-panel .off-status .text-icon,
+.history-panel .off-status .property-icon,
+.history-panel .off-status .layer-icon,
+.history-panel .off-status .group-icon,
+.history-panel .off-status .delete-icon,
+.history-panel .on-status .move-icon,
+.history-panel .on-status .transform-icon,
+.history-panel .on-status .pencil-icon,
+.history-panel .on-status .bezier-icon,
+.history-panel .on-status .convert-icon,
+.history-panel .on-status .select-icon,
+.history-panel .on-status .bound-icon,
+.history-panel .on-status .circle-icon,
+.history-panel .on-status .polygon-icon,
+.history-panel .on-status .building-icon,
+.history-panel .on-status .polyline-icon,
+.history-panel .on-status .marker-icon,
+.history-panel .on-status .text-icon,
+.history-panel .on-status .property-icon,
+.history-panel .on-status .layer-icon,
+.history-panel .on-status .group-icon,
+.history-panel .on-status .delete-icon,
+.history-panel .panel-splitter,
+.history-panel .record-splitter,
+.history-panel .resize-icon,
+.layer-panel .off-status .pencil-icon,
+.layer-panel .off-status .bezier-icon,
+.layer-panel .off-status .bound-icon,
+.layer-panel .off-status .circle-icon,
+.layer-panel .off-status .polygon-icon,
+.layer-panel .off-status .building-icon,
+.layer-panel .off-status .polyline-icon,
+.layer-panel .off-status .marker-icon,
+.layer-panel .off-status .text-icon,
+.layer-panel .off-status .layer-icon,
+.layer-panel .off-status .group-icon,
+.layer-panel .off-status .expand-icon,
+.layer-panel .off-status .collapse-icon,
+.layer-panel .off-status .lock-icon,
+.layer-panel .on-status .pencil-icon,
+.layer-panel .on-status .bezier-icon,
+.layer-panel .on-status .bound-icon,
+.layer-panel .on-status .circle-icon,
+.layer-panel .on-status .polygon-icon,
+.layer-panel .on-status .building-icon,
+.layer-panel .on-status .polyline-icon,
+.layer-panel .on-status .marker-icon,
+.layer-panel .on-status .text-icon,
+.layer-panel .on-status .layer-icon,
+.layer-panel .on-status .group-icon,
+.layer-panel .on-status .expand-icon,
+.layer-panel .on-status .collapse-icon,
+.layer-panel .eye-on-status,
+.layer-panel .on-status .lock-icon,
+.layer-panel .panel-splitter,
+.layer-panel .record-splitter,
+.layer-panel .resize-icon,
+.transparency-slider .slide-bar,
+.transparency-slider .slide-handle,
+.bezier-submenu .bezier-icon,
+.bezier-submenu .convert-icon,
+.shape-submenu .bound-icon,
+.shape-submenu .circle-icon,
+.shape-submenu .polygon-icon,
+.shape-submenu .building-icon {
+    background: transparent url(../images/painter/icons.jpg) no-repeat;
+    overflow: hidden;
+}
+/***********************************************************************************************
+    Icons End
+***********************************************************************************************/

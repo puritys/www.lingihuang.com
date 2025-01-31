@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2014-03-07">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>onLoad vs onDOMContentLoaded</title>
+<link rel="stylesheet" href="css/external.css">
+<style type="text/css">
+html, body {
+	margin: 0;
+	padding: 0;
+}
+#container {
+	background: #eee;
+	border: 1px solid #999;
+	box-sizing: border-box;
+	color: #333;
+	font-size: 16px;
+	line-height: 20px;
+	min-height: 100px;
+	padding: 10px 5px;
+	width: 300px;
+}
+</style>
+
+<script type="text/javascript">
+window.onload = function () {
+	console.log("**** child window.onload ****");
+
+	var containerElement = document.getElementById("container"),
+		html = containerElement.innerHTML;
+	containerElement.innerHTML = html + "**** child window.onload ****" + "<br>";
+	
+	console.log(containerElement);
+};
+</script>
+</head>
+
+<body>
+	<div id="container">Child Container<br></div>
+
+</body>
+</html>

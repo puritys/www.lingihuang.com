@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Canvas</title>
+	<link type="text/css" rel="stylesheet" href="css/canvas.css" />
+	<script type="text/javascript" src="../libs/lib.js"></script>
+	<!--[if IE]><script type="text/javascript" src="excanvas_r3/excanvas3.js"></script><![endif]-->
+	<script type="text/javascript" src="js/canvas.js"></script>
+	<script type="text/javascript">
+		var drawingTool ;
+		function init() {
+			drawingTool = new DRAW({width:800, height:500, parent:document.getElementById("wrapperDiv")});
+		}
+		window.onload = init;
+	</script>
+</head>
+
+<body>
+	<button onclick="drawingTool.bound();">bound</button>
+	<button onclick="drawingTool.roundRectangle(5);">roundRectangle</button>
+	<button onclick="drawingTool.circle();">circle</button>
+	<button onclick="drawingTool.polyline();">polyline</button>
+	<button onclick="drawingTool.polygon();">polygon</button>
+	<button onclick="drawingTool.pen();">pen</button>
+	<button onclick="drawingTool.penPolygon();">penPolygon</button>
+	<button onclick="drawingTool.clear();">clear</button>
+	<div id="wrapperDiv" class="wrapper">
+		<!--<canvas id="realCanvas" class="area-canvas" width="800" height="500" style="z-index:1;"></canvas>
+		<canvas id="fakeCanvas" class="area-canvas" width="800" height="500" style="z-index:2;"></canvas>-->
+	</div>
+</body>
+</html>

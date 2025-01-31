@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2015-06-11">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Object-Oriented Javascript: Memory Leak</title>
+<script type="text/javascript">
+/********************
+Related Posts
+1. Memory leaks
+http://javascript.info/tutorial/memory-leaks
+2. JavaScript 記憶體洩漏（Memory Leak）問題
+http://blogger.gtwang.org/2014/01/javascript-memory-leak-patterns.html
+3. 重新介紹 JavaScript
+https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/%E9%87%8D%E6%96%B0%E4%BB%8B%E7%B4%B9_JavaScript
+********************/
+
+/********************
+Memory Leak
+********************/
+function leakMemory() {
+	var ele = document.getElementById('id');
+	var obj = {'ele': ele};
+	ele.obj = obj;
+}
+
+/********************
+Closure Causes Memory Leak
+********************/
+function handleAddEvent() {
+	var ele = document.getElementById('id');
+    ele.onclick = function() {
+        this.style.backgroundColor = 'red';
+    }
+}
+
+/********************
+Memory Leak Solution
+********************/
+// Solution One
+function handleAddEvent() {
+	var ele = document.getElementById('id');
+    ele.onclick = function() {
+        this.style.backgroundColor = 'red';
+    }
+    ele = null;
+}
+
+// Solution Two
+function handleAddEvent() {
+    var handleClick = function() {
+        this.style.backgroundColor = 'red';
+    };
+    (function() {
+        var ele = document.getElementById('id');
+        ele.onclick = handleClick;
+    })();
+}
+
+// Solution Three
+function handleAddEvent() {
+	var ele = document.getElementById('id');
+    ele.onclick = handleClick;
+}
+
+function handleClick() {
+	this.style.backgroundColor = 'red';
+}
+</script>
+</head>
+
+<body>
+	
+</body>
+</html>

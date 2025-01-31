@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Structured Error Handling</title>
+    <style type="text/css">
+        p {
+        	width: 650px;
+            background-color: #eef5f9;
+			border: 1px solid #bfc7cb;
+            font: normal 13px Arial, Helvetica, sans-serif;
+            color: #444;
+            line-height: 130%;
+            margin: 20px auto;
+            padding: 5px;
+            display: block;
+        }
+    </style>
+    <script type="text/javascript"> 
+        function catchError() {
+            var element = document.createElement("p");
+            var html = "";
+            try {
+                var username = window.prompt("Please Enter Your Name: ", "");
+                html = "Your name (" + username + ") has " + username.length + " letters.";
+            } catch(error) {
+                if (error.name == "TypeError")
+                    html = error.name + ": " + error.message + "<br />File Name: " + decodeURIComponent(error.fileName) + "<br />Line: " + error.lineNumber;
+                else
+                    throw error;
+            } finally {
+                // The finally block is optional and, if present, is always executed last, regardless if there was an error caught or not.
+                element.innerHTML = html;
+                document.body.appendChild(element);
+            }
+        } 
+        window.onload = catchError;
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Canvas</title>
+	<link type="text/css" rel="stylesheet" href="css/canvas.css" />
+	<script type="text/javascript" src="../libs/lib.js"></script>
+	<script type="text/javascript" src="js/imageArea.js"></script>
+	<script type="text/javascript">
+		var theContext;
+		var Shape = {
+			circle: function() {
+				
+			},
+			bound: function(x, y, width, height) {
+				theContext.fillRect(x, y, width, height);
+			},
+			polygon: function() {
+				
+			}
+		};
+		
+		function init() {
+			//var offset = CSS.offset(document.getElementById("areaImage"));
+			//var theCanvas = document.getElementById("areaCanvas");
+			//theCanvas.style.left = offset.left + "px";
+			//theCanvas.style.top = offset.top + "px";
+			/*if (theCanvas.getContext)
+				theContext = theCanvas.getContext("2d");
+			var bound = new BOUND({canvasElement:theCanvas, canvasContext:theContext});*/
+			var drawingTool = new DRAWINGTOOL();
+			drawingTool.bound();
+		}
+		window.onload = init;
+	</script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<button>bound</button>
+		<!--<img id="areaImage" src="images/map.jpg" alt="Map" usemap="#areaMap" />-->
+		<canvas id="areaCanvas" class="area-canvas" width="500" height="370"></canvas>
+		<!--<map id="areaMap" name="areaMap">
+			<area shape="circle"
+				  coords="10,10,30"
+				  href="javascript:void(0);"
+				  title="Circle" alt="Circle"
+				  onclick="alert('Circle');"/>
+			<area shape="rect"
+				  coords="60,60,100,100"
+				  href="javascript:void(0);"
+				  title="Rectangle" alt="Rectangle"
+				  onclick="alert('Rectangle');"/>
+			<area shape="poly"
+				  coords="113,39,187,21,180,72,141,77,117,86"
+				  href="javascript:void(0);"
+				  title="Polygon" alt="Polygon"
+				  onclick="alert('Polygon');"/>
+		</map>-->
+	</div>
+</body>
+</html>

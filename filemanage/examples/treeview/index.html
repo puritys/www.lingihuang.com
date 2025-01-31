@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2012-11-06">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Treeview Samples</title>
+<link rel="stylesheet" href="../libs/bootstrap-3.1.1/dist/css/bootstrap.css">
+<link rel="stylesheet" href="/static/css/common/miii-modals.css">
+<link rel="stylesheet" href="css/treeview.css">
+</head>
+<body>
+
+<button id="multiple-file-button" class="btn btn-primary">Multiple Files Treeview</button>
+<button id="single-file-button" class="btn btn-primary">Single File Treeview</button>
+<button id="single-dir-button" class="btn btn-primary">Single Dir Treeview</button>
+
+<script src="../libs/jquery/jquery-1.11.1.js"></script>
+<script src="../libs/bootstrap-3.1.1/dist/js/bootstrap.min.js"></script>
+<script src="../libs/jstree-v.pre1.0/jquery.jstree.js"></script>
+<!-- jquery.nicescroll.js is optional. It's included for customzied scroll bar. -->
+<script src="../libs/jquery.nicescroll.340/jquery.nicescroll.js"></script>
+<script src="js/treeview_lang.js"></script>
+<script src="js/treeview.js"></script>
+<script type="text/javascript">
+$(function () {
+    var multiFileTreeview,
+        singleFileTreeview,
+        singleDirTreeview;
+
+    // Multiple Files Checkable.
+    $("#multiple-file-button").on("click", function () {
+        if (!multiFileTreeview) {
+            multiFileTreeview = new Treeview({
+                gid         : 14,
+                isFileMulti : true,
+                isShow      : true,
+                title       : "從檔案櫃選擇",
+                desc        : "可勾選單一或多個檔案，然後再發佈於訊息牆中",
+                buttonLabel : "確定",
+                langs       : TREEVIEW.lang,
+                callback    : function (result) {
+                    console.log(result);
+                }
+            });
+        } else {
+            multiFileTreeview.show();
+        }
+    });
+
+    // Single File Selected.
+    $("#single-file-button").on("click", function () {
+        if (!singleFileTreeview) {
+            singleFileTreeview = new Treeview({
+                isShow      : true,
+                title       : "從檔案櫃選擇",
+                desc        : "勾選一個檔案，然後開始編輯",
+                buttonLabel : "確定",
+                langs       : TREEVIEW.lang,
+                callback    : function (result) {
+                    console.log(result);
+                }
+            });
+        } else {
+            singleFileTreeview.show();
+        }
+    });
+
+    // Single Directory Selected.
+    $("#single-dir-button").on("click", function () {
+        if (!singleDirTreeview) {
+            singleDirTreeview = new Treeview({
+                isDirOnly   : true,
+                isCreateDir : false,
+                isShow      : true,
+                title       : "從檔案櫃選擇",
+                subtitle    : "所有檔案櫃",
+                desc        : "把資料搬移到：",
+                buttonLabel : "搬移",
+                langs       : TREEVIEW.lang,
+                callback    : function (result) {
+                    console.log(result);
+                    singleDirTreeview.showErrors("Error Message", function () {
+                        console.log("After showing the error message.");
+                    });
+                }
+            });
+        } else {
+            singleDirTreeview.show();
+        }
+    });
+});
+</script>
+
+</body>
+</html>

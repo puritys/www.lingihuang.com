@@ -1,0 +1,175 @@
+/*
+ * Modals
+ *
+ * Spec:    http://produce.corp.miiicasa.com/spec/miiiCloud_V2/
+ * Mockup:  http://produce.corp.miiicasa.com/mockup/miiicloud_v2/page_2_6_create_folder.png
+ * PSD:
+ *
+ * @author  Vivian Huang
+ * @created 2013/06/20
+ */
+/*
+ * miiiCloud Variables
+ *
+ * Spec:
+ * Mockup:
+ * PSD:
+ *
+ * @author  Vivian Huang
+ * @created 2013/06/07
+ */
+/*
+ * Grays
+ */
+/*
+ * Accent colors
+ */
+/*
+ * Links
+ */
+/*
+ * Selection
+ */
+/*
+ * Forms
+ */
+.miii-modal-no-title, .miii-preview-modal .modal-header, .miii-preview-modal-collapse .modal-header, .miii-modal-edit .modal-header {
+  background: none;
+  border: none;
+  height: 0px;
+  margin: 0;
+  overflow: visible;
+  padding: 0px;
+  position: relative;
+  z-index: 1;
+}
+.miii-modal-no-title h3, .miii-preview-modal .modal-header h3, .miii-preview-modal-collapse .modal-header h3, .miii-modal-edit .modal-header h3 {
+  height: 0;
+  line-height: 30px;
+  margin: 0;
+}
+.miii-modal-no-title a.close, .miii-preview-modal .modal-header a.close, .miii-preview-modal-collapse .modal-header a.close, .miii-modal-edit .modal-header a.close {
+  margin-top: 9px;
+  position: absolute;
+  right: 10px;
+}
+.miii-modal-no-title a.fullscreen, .miii-preview-modal .modal-header a.fullscreen, .miii-preview-modal-collapse .modal-header a.fullscreen, .miii-modal-edit .modal-header a.fullscreen, .miii-modal-no-title a.fullscreen-online, .miii-preview-modal .modal-header a.fullscreen-online, .miii-preview-modal-collapse .modal-header a.fullscreen-online, .miii-modal-edit .modal-header a.fullscreen-online {
+  bottom: -30px;
+  color: black;
+  cursor: pointer;
+  margin-top: 2px;
+  opacity: 0.2;
+  position: absolute;
+  right: 28px;
+}
+
+.miii-preview-modal, .miii-preview-modal-collapse {
+  height: 90%;
+  min-height: 500px;
+  margin-left: -470px;
+  width: 940px;
+  -webkit-border-radius: 0px 0px;
+  -moz-border-radius: 0px / 0px;
+  border-radius: 0px / 0px;
+}
+.miii-preview-modal.fade.in, .fade.in.miii-preview-modal-collapse {
+  top: 5%;
+}
+.miii-preview-modal .preview-modal-body, .miii-preview-modal-collapse .preview-modal-body {
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  padding: 0px;
+  word-wrap: break-word;
+}
+.miii-preview-modal .preview-modal-body .miii-modal-left, .miii-preview-modal-collapse .preview-modal-body .miii-modal-left {
+  margin-right: 235px;
+  height: 100%;
+}
+.miii-preview-modal .preview-modal-body .miii-modal-left .miii-doc-viewer, .miii-preview-modal-collapse .preview-modal-body .miii-modal-left .miii-doc-viewer {
+  height: 100%;
+}
+.miii-preview-modal .preview-modal-body .miii-modal-right, .miii-preview-modal-collapse .preview-modal-body .miii-modal-right {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 25px 10px 0px 15px;
+  width: 235px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.miii-preview-modal .preview-modal-body .miii-modal-right .miii-file-info, .miii-preview-modal-collapse .preview-modal-body .miii-modal-right .miii-file-info {
+  color: #3c3c3c;
+  font-size: 13px;
+  height: 40%;
+  width: 200px;
+}
+.miii-preview-modal .preview-modal-body .miii-modal-right .miii-file-info a, .miii-preview-modal-collapse .preview-modal-body .miii-modal-right .miii-file-info a {
+  margin-right: 10px;
+}
+.miii-preview-modal .preview-modal-body .miii-modal-right .miii-file-info div, .miii-preview-modal-collapse .preview-modal-body .miii-modal-right .miii-file-info div {
+  margin: 15px 0;
+}
+.miii-preview-modal .preview-modal-body .miii-modal-right .miii-file-info h3, .miii-preview-modal-collapse .preview-modal-body .miii-modal-right .miii-file-info h3 {
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 10px;
+  padding-bottom: 10px;
+}
+.miii-preview-modal .preview-modal-body .miii-modal-right .miii-file-info label, .miii-preview-modal-collapse .preview-modal-body .miii-modal-right .miii-file-info label {
+  font-size: 13px;
+  padding-top: 0px;
+}
+.miii-preview-modal .preview-modal-body .miii-modal-right .miii-file-info span, .miii-preview-modal-collapse .preview-modal-body .miii-modal-right .miii-file-info span {
+  width: 160px;
+}
+.miii-preview-modal .preview-modal-body .miii-modal-right .miii-media-list, .miii-preview-modal-collapse .preview-modal-body .miii-modal-right .miii-media-list {
+  margin: 5px;
+  height: 58%;
+}
+.miii-preview-modal .preview-modal-body .miii-modal-right .miii-media-list ul, .miii-preview-modal-collapse .preview-modal-body .miii-modal-right .miii-media-list ul {
+  overflow-y: auto;
+  height: 90%;
+}
+.miii-preview-modal .preview-modal-body .miii-modal-right .miii-media-list ul li, .miii-preview-modal-collapse .preview-modal-body .miii-modal-right .miii-media-list ul li {
+  margin-bottom: 5px;
+}
+
+.miii-preview-modal-expand {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.miii-preview-modal-expand.fade {
+  transition: none;
+}
+.miii-preview-modal-expand.fade.in {
+  top: 0;
+}
+
+.miii-preview-modal-collapse.fade {
+  transition: none;
+}
+
+.miii-modal-notify {
+  height: 300px;
+  margin-left: -225px;
+  width: 450px;
+  z-index: 9999;
+}
+.miii-modal-notify .modal-body {
+  min-height: 150px;
+}
+
+.miii-modal-edit form {
+  margin: 0;
+}
+.miii-modal-edit .modal-body {
+  margin: 20px 0 0 0;
+  min-height: 71px;
+}

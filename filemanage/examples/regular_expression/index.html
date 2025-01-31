@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Regular Expression</title>
+	<link type="text/css" rel="stylesheet" href="css/index.css" />
+	<script type="text/javascript" src="js/regular_expression.js"></script>
+	<script type="text/javascript">
+		function validateDateFormat() {
+			var button = document.getElementById("dateButton");
+			button.onclick = function(){
+				var isValidated = REGEXP.validateDateFormat(document.getElementById("dateValue").value);
+				if (isValidated)
+					document.getElementById("dateError").innerHTML = "&nbsp;";
+				else
+					document.getElementById("dateError").innerHTML = "Please enter correct date.";
+			}
+		}
+		function validateDecimalNumber() {
+			var button = document.getElementById("decimalButton");
+			button.onclick = function(){
+				var isValidated = REGEXP.validateDateFormat(document.getElementById("decimalValue").value);console.log(isValidated);
+				if (isValidated)
+					document.getElementById("decimalError").innerHTML = "&nbsp;";
+				else
+					document.getElementById("decimalError").innerHTML = "Please enter correct digial number.";
+			}
+		}
+		function validateDocFilename() {
+			var button = document.getElementById("docButton");
+			button.onclick = function(){
+				var isValidated = REGEXP.validateDateFormat(document.getElementById("docValue").value);
+				if (isValidated)
+					document.getElementById("docError").innerHTML = "&nbsp;";
+				else
+					document.getElementById("docError").innerHTML = "Please enter correct document filename.";
+			}
+		}
+		function validateEmail() {
+			var button = document.getElementById("emailButton");
+			button.onclick = function(){
+				var isValidated = REGEXP.validateEmail(document.getElementById("emailValue").value);
+				if (isValidated)
+					document.getElementById("emailError").innerHTML = "&nbsp;";
+				else
+					document.getElementById("emailError").innerHTML = "Please enter correct email.";
+			}
+		}
+		function validateID() {
+			var button = document.getElementById("idButton");
+			button.onclick = function(){
+				var isValidated = REGEXP.validateID(document.getElementById("idValue").value);
+				if (isValidated)
+					document.getElementById("idError").innerHTML = "&nbsp;";
+				else
+					document.getElementById("idError").innerHTML = "Please enter correct id.";
+			}
+		}
+		function validateCreditCard() {
+			var button = document.getElementById("creditButton");
+			button.onclick = function(){
+				var isValidated = REGEXP.validateCreditCard(document.getElementById("creditValue").value);
+				if (isValidated)
+					document.getElementById("creditError").innerHTML = "&nbsp;";
+				else
+					document.getElementById("creditError").innerHTML = "Please enter correct creadit card number.";
+			}
+		}
+		window.onload = function() {
+			validateDateFormat();
+			validateDecimalNumber();
+			validateDocFilename();
+			validateEmail();
+			validateID();
+			validateCreditCard();
+			
+		}
+	</script>
+</head>
+<body>
+	<div class="wrapper clearfix">
+		<div class="section">
+			<h3>Validate Date Format</h3>
+			<div id="dateError" class="error-msg">&nbsp;</div>
+			<input id="dateValue" class="input-text" type="text" value="" />
+			<input id="dateButton" class="submit-button" type="button" value="Submit" />
+			<div class="sample">EX: 12/31/2010</div>
+		</div>
+		<div class="section">
+			<h3>Validate Decimal Number</h3>
+			<div id="decimalError" class="error-msg">&nbsp;</div>
+			<input id="decimalValue" class="input-text" type="text" value="" />
+			<input id="decimalButton" class="submit-button" type="button" value="Submit" />
+			<div class="sample">EX: 123.321</div>
+		</div>
+		<div class="section">
+			<h3>Validate Document Filename</h3>
+			<div id="docError" class="error-msg">&nbsp;</div>
+			<input id="docValue" class="input-text" type="text" value="" />
+			<input id="docButton" class="submit-button" type="button" value="Submit" />
+			<div class="sample">EX: name.pdf, name.doc, name.csv, name.txt</div>
+		</div>
+		<div class="section">
+			<h3>Validate Email</h3>
+			<div id="emailError" class="error-msg">&nbsp;</div>
+			<input id="emailValue" class="input-text" type="text" value="" />
+			<input id="emailButton" class="submit-button" type="button" value="Submit" />
+			<div class="sample">EX: test@hotmail.com</div>
+		</div>
+		<div class="section">
+			<h3>Validate ID</h3>
+			<div id="idError" class="error-msg">&nbsp;</div>
+			<input id="idValue" class="input-text" type="text" value="" />
+			<input id="idButton" class="submit-button" type="button" value="Submit" />
+			<div class="sample">EX: A123456789</div>
+		</div>
+		<div class="section">
+			<h3>Validate Credit Card</h3>
+			<div id="creditError" class="error-msg">&nbsp;</div>
+			<input id="creditValue" class="input-text" type="text" value="" />
+			<input id="creditButton" class="submit-button" type="button" value="Submit" />
+			<div class="sample">EX: 1234-1234-1234-1234</div>
+		</div>
+	</div>
+</body>
+</html>
+
+

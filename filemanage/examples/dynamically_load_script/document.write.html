@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Dynamically Load Script :: document.write</title>
+    <link type="text/css" rel="stylesheet" href="css/css3.css" />
+    <script type="text/javascript">
+        document.write('<' + 'script type="text/javascript" src="../libs/lib.js"' + '><' + '/script>');
+    </script>
+    <script type="text/javascript">
+    	var isHelled = false;
+        function init() {
+            var buttonDiv = document.getElementById("buttonDiv");
+            GENERIC.addEvent(buttonDiv, "click", function(){
+                var labelSpan = this.getElementsByTagName("span")[0];
+                if (isHelled) {
+                	isHelled = false;
+                	labelSpan.innerHTML = "Go To Heaven";
+                } else {
+                	isHelled = true;
+                	labelSpan.innerHTML = "Go To Hell";
+                }
+            });
+        }
+        window.onload = init;
+    </script>
+</head>
+
+<body>
+    <div id="buttonDiv" class="button border shadow gradient"><div class="glory"></div><span class="label">Click Me</span></div>
+</body>
+</html>

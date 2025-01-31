@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2014-08-22">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Pjax</title>
+<style type="text/css">
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.output p {
+    font: 14px normal Arial;
+    margin: 5px 0;
+}
+</style>
+</head>
+
+<body>
+    <select id="choice">
+        <option value="LA">Los Angeles</option>
+        <option value="NY">New York City</option>
+        <option value="SD">San Diego</option>
+        <option value="SF">San Francisco</option>
+    </select>
+    <div id="output" class="output"></div>
+
+<script type="text/javascript" src="../libs/jquery/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+/********************
+Related Posts
+1. History API - Dive Into HTML5
+http://diveintohtml5.info/history.html
+2. Manipulating the browser history
+https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history
+3. 凡走過請留下痕跡：AJAX網頁的狀態與瀏覽記錄
+http://rettamkrad.blogspot.tw/2013/04/ajaxandhistoryapi.html
+********************/
+$(function () {
+    var defaultCode = 'LA',
+        getParams,
+        queryData;
+
+    getParams = function () {
+        var url     = window.location.href,
+            pairs   = [],
+            params  = {};
+
+        if (url.indexOf('?') !== -1) {
+            pairs = url.split('?')[1].split('&');
+            $.each(pairs, function (idx, value) {
+                var arr = value.split('=');
+                params[arr[0]] = decodeURIComponent(arr[1]);
+            });
+        }
+
+        return params;
+    };
+
+    queryData = function (data) {
+        $.ajax({
+            url  : 'query.php',
+            type : 'GET',
+            data : data
+        }).done(function (data, textStatus, jqXHR) {
+            if (data.status === 'ok') {
+                var html = [
+                    '<p>City: ' + decodeURIComponent(data.data.name) + '</p>',
+                    '<p>State: ' + decodeURIComponent(data.data.state) + '</p>'
+                ];
+                $('#output').html(html.join(''));
+            }
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+
+        });
+    };
+
+	$('#choice').on('change', function (e) {
+        var value = $(this).val(),
+            url   = [];
+
+        url = [
+            window.location.origin,
+            window.location.pathname,
+            '?cityCode=' + encodeURIComponent(value)
+        ];
+        
+        if (history.pushState) {
+            history.pushState({}, null, url.join(''));
+            queryData({
+                cityCode: encodeURIComponent(value)
+            });
+        } else {
+            // IE8 and IE9
+            window.location.href = url.join('');
+        }
+    }); 
+
+    (function () {
+        if (history.pushState) {
+            window.onpopstate = function (e) {
+                var params  = getParams();
+                queryData({
+                   cityCode: encodeURIComponent(params.cityCode) 
+                });
+            };
+        }
+
+        var params = getParams(),
+            cityCode = $.isEmptyObject(params) ? defaultCode : params.cityCode;
+
+        // Set option selected.
+        $('#choice option').each(function (idx, element) {
+            if ($(element).val() === cityCode) {
+                $(element).prop('selected', true);
+            }
+        });
+
+        // On the initial.
+        if (history.replaceState) {
+            var url = [
+                window.location.origin,
+                window.location.pathname,
+                '?cityCode=' + encodeURIComponent(cityCode)
+            ];
+            history.replaceState({}, null, url.join(''));
+        }
+
+        // Query data.
+        queryData({
+            cityCode: encodeURIComponent(cityCode)
+        });
+    })();
+});
+</script>
+
+</body>
+</html>

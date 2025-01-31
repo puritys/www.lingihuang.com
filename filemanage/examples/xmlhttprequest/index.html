@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>AJAX: XML, Text, and JSON Formats, and HTML DOM Elements</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css" />
+    <script type="text/javascript" language="javascript" src="../libs/lib.js"></script>
+    <script type="text/javascript" language="javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+    	/*** Query From Local ***/
+		function queryFromLocal() {
+			var txtQuery = HTTPUTILITY.ajax({
+				url: "data/myText.txt",
+				type: "GET",
+				dataType: "text",
+				start: textQueryCustomized.start,
+				complete: textQueryCustomized.complete
+			});
+			var xmlQuery = HTTPUTILITY.ajax({
+				url: "data/myXml.xml",
+				type: "GET",
+				dataType: "xml",
+				start: xmlQueryCustomized.start,
+				complete: xmlQueryCustomized.complete
+			});
+			var jsonQuery = HTTPUTILITY.ajax({
+				url: "data/myJson.txt",
+				type: "GET",
+				dataType: "json",
+				start: jsonQueryCustomized.start,
+				complete: jsonQueryCustomized.complete
+			});
+			var htmlQuery = HTTPUTILITY.ajax({
+				url: "data/myHtml.txt",
+				type: "GET",
+				dataType: "html",
+				start: htmlQueryCustomized.start,
+				complete: htmlQueryCustomized.complete
+			});
+		}
+		
+		/*** Query From Server ***/
+		function queryFromServer() {
+			var url = "php/index.php";
+			var textQuery = HTTPUTILITY.ajax({
+				url: url,
+				type: "POST",
+				data: {type: "text"},
+				dataType: "text",
+				cache: false,
+				async: true,
+				start: textQueryCustomized.start,
+				complete: textQueryCustomized.complete
+			});
+			var xmlQuery = HTTPUTILITY.ajax({
+				url: url,
+				type: "POST",
+				data: {type: "xml"},
+				dataType: "xml",
+				cache: false,
+				async: true,
+				start: xmlQueryCustomized.start,
+				complete: xmlQueryCustomized.complete
+			});
+			var jsonQuery = HTTPUTILITY.ajax({
+				url: url,
+				type: "POST",
+				data: {type: "json"},
+				dataType: "json",
+				cache: false,
+				async: true,
+				start: jsonQueryCustomized.start,
+				complete: jsonQueryCustomized.complete
+			});
+			var htmlQuery = HTTPUTILITY.ajax({
+				url: url,
+				type: "POST",
+				data: {type: "html"},
+				dataType: "html",
+				cache: false,
+				async: true,
+				start: htmlQueryCustomized.start,
+				complete: htmlQueryCustomized.complete
+			});
+		}
+		
+		GENERIC.addEvent(window, "load", queryFromServer);
+    </script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="query-format-section">
+			<div class="heading-row"><h1>Plain Text Format</h1></div>
+    		<div id="textQuery" class="query-container clearfix"></div>
+    		<div class="format-container">
+            	<pre>
+                	<code class="text-indent-0">Title: Plain Text Query</code>
+                    <code class="text-indent-0">Name: Vivian</code>
+                    <code class="text-indent-0">Cell Phone: 415.260.4610</code>
+                    <code class="text-indent-0">Address: 825 Post Street APT 411, San Francisco CA 94109</code>
+                </pre>
+            </div>
+    	</div>
+    	<div class="query-format-section">
+    		<div class="heading-row"><h1>XML Format</h1></div>
+    		<div id="xmlQuery" class="query-container clearfix"></div>
+    		<div class="format-container">
+    			<pre>
+    				<code class="text-indent-0"><span class="element">&lt;data&gt;</span></code>
+    					<code class="text-indent-1"><span class="element">&lt;title&gt;</span>XML Query<span class="element">&lt;/title&gt;</span></code>
+    					<code class="text-indent-1"><span class="element">&lt;user&gt;</span></code>
+    						<code class="text-indent-2"><span class="element">&lt;name</span> <span class="attribute">label</span>=<span class="value">"Name"</span><span class="element">&gt;</span>Vivian<span class="element">&lt;/name&gt;</span></code>
+    						<code class="text-indent-2"><span class="element">&lt;cell</span> <span class="attribute">label</span>=<span class="value">"Cell Phone"</span><span class="element">&gt;</span>415.260.4610<span class="element">&lt;/cell&gt;</span></code>
+    						<code class="text-indent-2"><span class="element">&lt;address</span> <span class="attribute">label</span>=<span class="value">"Address"</span><span class="element">&gt;</span>825 Post Street APT 411, San Francisco CA 94109<span class="element">&lt;/address&gt;</span></code>
+    					<code class="text-indent-1"><span class="element">&lt;/user&gt;</span></code>
+    				<code class="text-indent-0"><span class="element">&lt;/data&gt;</span></code>
+    			</pre>
+    		</div>
+    	</div>
+    	<div class="query-format-section">
+    		<div class="heading-row"><h1>JSON Format</h1></div>
+    		<div id="jsonQuery" class="query-container clearfix"></div>
+    		<div class="format-container">
+            	<pre>
+                	<code class="text-indent-0"><span class="keyword">{</span></code>
+                    	<code class="text-indent-1"><span class="attribute">title:</span> "JSON Query",</code>
+                        <code class="text-indent-1"><span class="attribute">user:</span> <span class="keyword">[</span></code>
+                        	<code class="text-indent-2"><span class="keyword">{</span><span class="attribute">label:</span> "Name", <span class="attribute">value:</span> "Vivian"<span class="keyword">}</span>,</code>
+                            <code class="text-indent-2"><span class="keyword">{</span><span class="attribute">label:</span> "Cell Phone", <span class="attribute">value:</span> "415.260.4610"<span class="keyword">}</span>,</code>
+                            <code class="text-indent-2"><span class="keyword">{</span><span class="attribute">label:</span> "Address", <span class="attribute">value:</span> "825 Post Street APT 411, San Francisco CA 94109"<span class="keyword">}</span></code>
+                        <code class="text-indent-1"><span class="keyword">]</span></code>
+                    <code class="text-indent-0"><span class="keyword">}</span></code>
+                </pre>
+            </div>
+    	</div>
+    	<div class="query-format-section">
+    		<div class="heading-row"><h1>HTML Format</h1></div>
+    		<div id="htmlQuery" class="query-container clearfix"></div>
+    		<div class="format-container">
+            	<pre>
+                	<code class="text-indent-0"><span class="element">&lt;div&gt;</span> <span class="class">class</span>=<span class="string">"title-row"</span><span class="element">&lt;h2&gt;</span>HTML Query<span class="element">&lt;/h2&gt;</span><span class="element">&lt;/div&gt;</span></code>
+                    <code class="text-indent-0"><span class="element">&lt;p</span> <span class="class">class</span>=<span class="string">"row"</span><span class="element">&gt;</span></code>
+                    	<code class="text-indent-1"><span class="element">&lt;span <span class="class">class</span>=<span class="string">"left-col"</span><span class="element">&gt;</span></span>Name:<span class="element">&lt;/span&gt;</span></code>
+                        <code class="text-indent-1"><span class="element">&lt;span <span class="class">class</span>=<span class="string">"right-col"</span><span class="element">&gt;</span></span>Vivian<span class="element">&lt;/span&gt;</span></code>
+                    <code class="text-indent-0"><span class="element">&lt;/p&gt;</span></code>
+                    <code class="text-indent-0"><span class="element">&lt;p</span> <span class="class">class</span>=<span class="string">"row"</span><span class="element">&gt;</span></code>
+                    	<code class="text-indent-1"><span class="element">&lt;span <span class="class">class</span>=<span class="string">"left-col"</span><span class="element">&gt;</span></span>Cell Phone:<span class="element">&lt;/span&gt;</span></code>
+                        <code class="text-indent-1"><span class="element">&lt;span <span class="class">class</span>=<span class="string">"right-col"</span><span class="element">&gt;</span></span>415.260.4610<span class="element">&lt;/span&gt;</span></code>
+                    <code class="text-indent-0"><span class="element">&lt;/p&gt;</span></code>
+                    <code class="text-indent-0"><span class="element">&lt;p</span> <span class="class">class</span>=<span class="string">"row"</span><span class="element">&gt;</span></code>
+                    	<code class="text-indent-1"><span class="element">&lt;span <span class="class">class</span>=<span class="string">"left-col"</span><span class="element">&gt;</span></span>Address:<span class="element">&lt;/span&gt;</span></code>
+                        <code class="text-indent-1"><span class="element">&lt;span <span class="class">class</span>=<span class="string">"right-col"</span><span class="element">&gt;</span></span>825 Post Street APT 411, San Francisco CA 94109<span class="element">&lt;/span&gt;</span></code>
+                    <code class="text-indent-0"><span class="element">&lt;/p&gt;</span></code>
+                </pre>
+            </div>
+    	</div>
+    </div>
+</body>
+</html>

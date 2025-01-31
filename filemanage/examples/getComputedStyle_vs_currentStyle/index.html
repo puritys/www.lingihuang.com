@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2014-03-05">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Work with Style Properties</title>
+<style type="text/css">
+html, body {
+	font: normal 16px "Noto Sans CJK TC Medium", "微軟正黑體", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "sans-serif";
+	margin: 0;
+	padding: 0;
+}
+h3 {
+	margin: 10px;
+	padding: 0;
+}
+.output {
+	line-height: 22px;
+	margin: 10px 10px 30px 10px;
+}
+.wrapper {
+	background-color: #fdfdfd;
+	border: 1px solid #ddd;
+	color: gray;
+	font-size: 1em;
+	height: 250px;
+	line-height: 22px;
+	margin: 10px auto;
+	padding: 10px;
+	width: 100%;
+}
+</style>
+<script type="text/javascript" language="javascript" src="../libs/lib.js"></script>
+<script type="text/javascript">
+function getCurrentStylePixel(element, property) {
+	var value = element.currentStyle[property] || 0,
+		leftCopy,
+		runtimeLeftCopy;
+
+	// we use 'left' property as a place holder so backup values
+	leftCopy        = element.style.left;
+	runtimeLeftCopy = element.runtimeStyle.left;
+
+	// assign to runtimeStyle and get pixel value
+	element.runtimeStyle.left = element.currentStyle.left;
+	element.style.left = (property === "fontSize") ? "1em" : value;
+	value = element.style.pixelLeft + "px";
+
+	// restore values for left
+	element.style.left        = leftCopy;
+	element.runtimeStyle.left = runtimeLeftCopy;
+
+	return value;
+}
+
+window.onload = function() {
+	var outputDiv   = document.getElementById('output'),
+		wrapperDiv  = document.getElementById('wrapper'),
+		beforeHtmls = [],
+		afterHtmls  = [];
+
+	beforeHtmls.push('background-color: ' + CSS.get(wrapperDiv, 'background-color') + ';<br>');
+	beforeHtmls.push('border-top-width: ' + CSS.get(wrapperDiv, 'border-top-width') + ';<br>');
+	beforeHtmls.push('color: ' + CSS.get(wrapperDiv, 'color') + ';<br>');
+	beforeHtmls.push('font-size: ' + CSS.get(wrapperDiv, 'font-size') + ';<br>');
+	beforeHtmls.push('margin-right: ' + CSS.get(wrapperDiv, 'margin-right') + ';<br>');
+	beforeHtmls.push('width: ' + CSS.get(wrapperDiv, 'width') + ';');
+	outputDiv.innerHTML = beforeHtmls.join('');
+
+	CSS.set(wrapperDiv, {
+		'background-color' : '#eee',
+		'border'           : '2px solid #ccc',
+		'color'            : 'black',
+		'fontSize'         : '1.25em',
+		'margin'           : '10px 0 20px 10px',
+		'width'            : 400
+	});
+
+	afterHtmls.push('background-color: ' + CSS.get(wrapperDiv, 'background-color') + ';<br>');
+	afterHtmls.push('border-top-width: ' + CSS.get(wrapperDiv, 'border-top-width') + ';<br>');
+	afterHtmls.push('color: ' + CSS.get(wrapperDiv, 'color') + ';<br>');
+	afterHtmls.push('font-size: ' + CSS.get(wrapperDiv, 'font-size') + ';<br>');
+	afterHtmls.push('margin-right: ' + CSS.get(wrapperDiv, 'margin-right') + ';<br>');
+	afterHtmls.push('width: ' + CSS.get(wrapperDiv, 'width') + ';');
+	wrapperDiv.innerHTML = afterHtmls.join('');
+};
+</script>
+</head>
+
+<body>
+	<h3>Before Setting Style</h3>
+	<div id="output" class="output"></div>
+	<h3>After Setting Style</h3>
+  	<div id="wrapper" class="wrapper"></div>
+</body>
+</html>
+
+

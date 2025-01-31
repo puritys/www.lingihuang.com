@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2012-11-06">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>TVList Single Column Demo</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.7.2/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.7.2/build/cssfonts/fonts-min.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js"></script>
+<script type="text/javascript" src="../tvlist.js"></script>
+<style type="text/css">
+html, body {
+    background: #000;
+    font-family: "Hei W5", "DFHeiStd-W5", "DFYuanStd-W7", "微軟正黑體";
+}
+.clearfix {
+    zoom: 1;
+}
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.list {
+    background: #ff8c00;
+    height: 332px;
+    overflow: hidden;
+    padding: 4px 6px;
+    width: 200px;
+}
+.list .item {
+    background: #faf09b;
+    color: #333;
+    display: block;
+    font-size: 197%;
+    line-height: 2;
+    margin: 3px 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+.list .active-status {
+    background: #ffd700;
+}
+</style>
+</head>
+<body>
+    <div id="list" class="list"></div>
+
+<script>
+YUI().use("tvlist", function (Y) {
+    var tvlist;
+
+    tvlist = new Y.TVList({
+        node     : "#list",
+        rows     : 6,
+        columns  : 1,
+        activeIndex: 1,
+        activeClass: "active-status",
+        items: [
+            {html: '<a class="item">Channel 1</a>', data: {chid: 1, chname: "Channel 1"}},
+            {html: '<a class="item">Channel 2</a>', data: {chid: 2, chname: "Channel 2"}},
+            {html: '<a class="item">Channel 3</a>', data: {chid: 3, chname: "Channel 3"}},
+            {html: '<a class="item">Channel 4</a>', data: {chid: 4, chname: "Channel 4"}},
+            {html: '<a class="item">Channel 5</a>', data: {chid: 5, chname: "Channel 5"}},
+            {html: '<a class="item">Channel 6</a>', data: {chid: 6, chname: "Channel 6"}}
+        ]
+    });
+    tvlist.on("move", function (e) {
+        Y.log("activeIndex = " + e.activeIndex);
+    });
+    tvlist.on("enter", function (e) {
+        Y.log(e.data);
+        Y.log("offset = " + e.offset);
+    });
+
+});
+</script>
+</body>
+</html>

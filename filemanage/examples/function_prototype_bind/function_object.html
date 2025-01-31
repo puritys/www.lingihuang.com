@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-language" content="en-US">
+	<meta name="author" content="Vivian Huang">
+	<meta name="created" content="2014-03-05">
+	<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+	<meta name="description" content="">
+	<title>Function.prototype.bind</title>
+	<style type="text/css">
+	#container {
+		background: #eee;
+		border: 1px solid #999;
+		height: 100px;
+		width: 300px;
+	}
+	</style>
+</head>
+<body>
+	<div id="container"></div>
+
+<!--
+Related Posts
+http://coding.smashingmagazine.com/2014/01/23/understanding-javascript-function-prototype-bind/
+http://nickdesaulniers.github.io/blog/2013/09/26/function-dot-prototype-dot-bind-edge-cases/
+http://javascript.info/tutorial/binding
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+-->
+
+<script type="text/javascript">
+	/*
+	Function.prototype.bind = function (oThis) {
+		if (typeof this !== "function") {
+			// closest thing possible to the ECMAScript 5 internal IsCallable function
+			throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+		}
+
+		var aArgs = Array.prototype.slice.call(arguments, 1), 
+			fToBind = this, 
+			fNOP = function () {},
+			fBound = function () {
+				return fToBind.apply(this instanceof fNOP && oThis
+	                        		? this
+	                        		: oThis,
+	                        	aArgs.concat(Array.prototype.slice.call(arguments)));
+			};
+
+			fNOP.prototype = this.prototype;
+			fBound.prototype = new fNOP();
+
+		return fBound;
+	};
+	*/
+
+	
+	Function.prototype.bind = Function.prototype.bind || function bind(func, fixThis) {
+		console.log("**** bind ****");
+
+		return function () {
+			return func.apply(fixThis, arguments);
+		}
+	};
+	
+
+	var UI = {
+		element: document.getElementById("container"),
+		bindEvent: function () {
+			console.log("**** UI.bindEvent() ****");
+			console.log(this);
+
+			/*
+			this.element.onclick = function (e) {
+				console.log("**** this.element.onclick ****");
+				console.log(this);  // this refers to element container.
+			};
+			*/
+
+			this.element.onclick = function (e) {
+				console.log("**** this.element.onclick ****");
+				console.log(this);  // this refers to UI object.
+			}.bind(this);
+		},
+		syncData: function(callback) {
+			console.log("**** UI.syncData() ****");
+			console.log(this);  // this refers to UI object.
+
+			if (callback) {
+				callback();
+			}
+		},
+		remove: function (callback) {
+			console.log("**** UI.remove() ****");
+			console.log(this);  // this refers to UI object.
+
+			this.element.innerHTML = "";
+			if (callback) {
+				callback();
+			}
+		},
+		render: function () {
+			console.log("**** UI.render() ****");
+
+			// this refers to Window object.
+			//this.syncData(this.bindEvent);
+
+			this.syncData(this.bindEvent.bind(this));
+		},
+		reRender: function () {
+			console.log("**** UI.reRender() ****");
+
+			/*
+			this.remove(function () {
+				console.log(this);  // this refers to Window object.
+				this.syncData();  // Uncaught TypeError: Object [object global] has no method 'syncData' 
+				this.bindEvent();    // Uncaught TypeError: Object [object global] has no method 'bindEvent'
+			});
+			*/
+
+			/*
+			// Method One: store this to variable self.
+			var self = this;
+			this.remove(function () {
+				self.syncData();
+				self.bindEvent();
+			});
+			*/
+
+			// Method Two
+			this.remove(function () {
+				this.syncData();
+				this.bindEvent();
+			}.bind(this));
+		}
+	};
+
+	UI.render();
+	UI.reRender();
+</script>
+
+</body>
+</html>

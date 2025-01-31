@@ -1,0 +1,36 @@
+.miii-treeview {
+	min-height: 150px
+}
+.miii-treeview .empty {
+	margin: 20px 0;
+}
+.miii-treeview .inner-content {
+	height: 310px;
+	overflow: auto;
+	width: 560px;
+}
+.miii-treeview h4 {
+	font-size: 15px;
+}
+.miii-treeview p {
+	font-size: 13px;
+	line-height: 10px;
+}
+.miii-treeview .main {
+	color: red;
+}
+.miii-treeview .msg {
+	color: red;
+}
+.miii-treeview .icon-error {
+	background: transparent url(/static/img/common/ico_error.png) no-repeat 0 0;
+	height: 13px;
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	zoom: 1;
+	*display: inline;
+	margin: 0 2px 0 0;
+	width: 13px;
+}

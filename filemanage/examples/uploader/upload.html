@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-US">
+<meta name="author" content="Vivian Huang">
+<meta name="created" content="2014-10-29">
+<meta name="keywords" content="CSS, HTML, JavaScript, Web Design, Web Development">
+<meta name="description" content="">
+<title>Upload Files</title>
+<style type="text/css">
+html, body {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+	margin: 10px 0 20px 5px;
+}
+.btn {
+	background: #0063e0;
+	border: none;
+	color: #fff;
+	font-family: Arial;
+	font-size: 16px;
+	letter-spacing: 1px;
+	margin: 0 5px 0 0;
+	outline: none;
+	padding: 6px 10px;
+	text-decoration: none;
+}
+.actions {
+	margin: 0 0 10px 5px;
+	overflow: hidden;
+}
+.actions input[type="file"] {
+	height: 30px;
+	left: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	position: absolute;
+	top: 0;
+	width: 115px;
+}
+.actions .btn-select {
+	float: left;
+	margin: 0 5px 0 0;
+	position: relative;
+}
+.actions .btn-select .btn {
+	display: block;
+}
+.file-list {
+	list-style: none;
+	margin: 0 0 0 5px;
+	padding: 0;
+	width: 500px;
+}
+.file-list li {
+	border-bottom: 1px solid #ccc;
+	margin: 0;
+	padding: 5px;
+}
+.file-list li .main {
+	overflow: hidden;
+}
+.file-list li .thumb {
+	float: left;
+}
+.file-list li .icon-file {
+	background: #fff;
+	border: 1px solid #ccc;
+	color: #ccc;
+	display: block;
+	font-style: normal;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	width: 50px;
+}
+.file-list li img {
+	max-height: 200px;
+	max-width: 200px;
+}
+.file-list li .sub {
+	float: right;
+	text-align: right;
+}
+.file-list li .info {
+	color: #333;
+	font-size: 16px;
+	margin: 0 0 4px 0;
+	max-width: 250px;
+}
+.file-list li .btn {
+	font-size: 12px;
+}
+.progress {
+	background: #fafafa;
+	border: 1px solid #ccc;
+	height: 10px;
+	margin: 5px 0 0 0;
+	padding: 1px;
+}
+.progress .progress-bar {
+	background: #0063e0;
+	height: 100%;
+	width: 0;
+}
+</style>
+</head>
+
+<body>
+	<h1>Upload Files</h1>
+
+	<form id="file-form" action="upload.php" method="POST" enctype="multipart/form-data">
+	    <div class="actions">
+	    	<span class="btn-select">
+	    		<input id="files" name="files[]" type="file" value="" multiple>
+	    		<label class="btn" for="files">Select Files</label>
+	    	</span>
+	    	<button id="action-upload" class="btn">Upload All Files</button>
+	    </div>
+	</form>
+	<ul id="file-list" class="file-list"></ul>
+
+<script src="../libs/jquery/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+/********************
+Related Posts
+1. Reading files in JavaScript using the File APIs
+http://www.html5rocks.com/en/tutorials/file/dndfiles/
+2. Using XMLHttpRequest
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
+3. jQuery AJAX Form Submit Example
+http://hayageek.com/jquery-ajax-form-submit/
+4. Utilizing The HTML5 File API To Choose, Upload, Preview And See Progress For Multiple Files
+http://robertnyman.com/2010/12/16/utilizing-the-html5-file-api-to-choose-upload-preview-and-see-progress-for-multiple-files/
+5. HTML5-powered Ajax file uploads
+https://www.new-bamboo.co.uk/blog/2010/07/30/html5-powered-ajax-file-uploads/
+6. Howto: Build an HTML5 file uploader with Ajax
+http://blog.alexanderschnitzler.de/howto-build-an-html5-file-uploader-with-ajax.html
+********************/
+
+$(function () {
+	var fileListSel = $('#file-list'),
+		handleFileSelect,
+		handleFileUploadAll,
+		handleUploadClick,
+		handleRemoveClick,
+		getDoc;
+
+	/**
+	* Select files to upload.
+	*
+	* @event handleFileSelect
+	* @param {Object} e Event object
+	*/
+	handleFileSelect = function (e) {
+		fileListSel.html('');
+
+		var files = this.files;
+		if (!files) {
+			var name 	= this.value.split("\\"),
+				htmls 	= [];
+			name  = name[name.length - 1];
+			htmls = [
+				'<li>',
+					'<div class="main">',
+						'<div class="thumb">',
+							'<i class="icon-file">File</i>',
+						'</div>',
+						'<div class="sub">',
+							'<div class="info">' + name + '</div>',
+						'</div>',
+					'</div>',
+				'</li>'
+			];
+			fileListSel.append(htmls.join(''));
+			return;
+		}
+
+		$.each(files, function (idx, file) {
+			var htmls,
+				liSel;
+			htmls = [
+				'<li>',
+					'<div class="main">',
+						'<div class="thumb">',
+							'<i class="icon-file">File</i>',
+						'</div>',
+						'<div class="sub">',
+							'<div class="info">' + file.name + '</div>',
+							'<button class="btn btn-upload">Upload</button>',
+							'<button class="btn btn-remove">Remove</button>',
+						'</div>',
+					'</div>',
+					'<div class="progress">',
+						'<div class="progress-bar"></div>',
+					'</div>',
+				'</li>'
+			];
+			liSel = $(htmls.join('')).data('file', file);
+
+			if (file.type.match('image.*') && typeof FileReader !== 'undefined') {
+				var reader = new FileReader();
+				reader.onload = function (e) {
+					var imgSel = $('<img src="' + e.target.result + '" alt="' + file.name + '" />');
+					liSel.find('.thumb .icon-file').replaceWith(imgSel);
+					fileListSel.append(liSel);
+				};
+				reader.onerror = function (e) {
+					fileListSel.append(liSel);
+				};
+				reader.readAsDataURL(file);
+			} else {
+				fileListSel.append(liSel);
+			}
+		});
+	};
+
+	/**
+	* AJAX submits form and upload all files.
+	*
+	* @event handleFileUploadAll
+	* @param {Object} e Event object
+	*/
+	handleFileUploadAll = function (e) {
+		var formSel = $('#file-form'),
+    		formData;
+    	if (typeof FormData !== 'undefined') {
+			formData = new FormData();
+			fileListSel.find('li').each(function (idx, element) {
+				formData.append('files[' + idx + ']', $(element).data('file'));
+			});
+
+			$.ajax({
+				url         : formSel.attr('action'),
+				type        : 'POST',
+				//data      : new FormData(formSel[0]),
+				data        : formData,
+				mimeType    : 'multipart/form-data',
+				contentType : false,
+				cache       : false,
+				processData : false
+	    	}).done(function (data) {
+	    		var response = JSON.parse(data);
+	    		if (response.status === 'ok') {
+	    			$('#file-list').find('li .btn-upload, li .btn-remove').remove();
+	    		}
+	    	}).fail(function (jqXHR, textStatus) {
+
+	    	});
+    	} else {
+    		// For old browsers.
+    		var iframeId = 'file-iframe-' + (new Date().getTime()),
+    			iframeSel;
+    		iframeSel = $('<iframe src="javascript:false;" name="' + iframeId + '" />');
+    		iframeSel.hide().appendTo($('body'));
+    		// Set form target to iframe.
+    		formSel.attr('target', iframeId);
+    		iframeSel.on('load', function (e) {
+    			// Data is returned from server.
+    			var doc = getDoc(iframeSel[0]),
+    				docRoot = doc.body ? doc.body : doc.documentElement;
+
+    			console.log(docRoot.innerHTML);
+    		});
+    		formSel.submit();
+    	}
+    	
+		e.preventDefault();
+	};
+
+	/**
+	* AJAX submits to upload single file.
+	*
+	* @event handleUploadClick
+	* @param {Object} e Event object
+	*/
+	handleUploadClick = function (e) {
+    	var liSel 	= $(e.target).closest('li'),
+			progressBarSel = liSel.find('.progress-bar'),
+			formSel        = $('#file-form'),
+			file           = liSel.data('file'),
+			httpRequest    = new XMLHttpRequest(); // For Firefox, Google Chrome and Safari.
+
+		httpRequest.upload.addEventListener('progress', function (e) {
+			if (e.lengthComputable) {
+				progressBarSel.css('width', (e.loaded / e.total) * 100 + '%');
+			}
+		}, false);
+		
+		httpRequest.addEventListener('load', function (e) {
+			liSel.find('.btn-upload').remove();
+			liSel.find('.btn-remove').remove();
+		}, false);
+		
+		httpRequest.open('post', formSel.attr('action'), true);
+		// Set appropriate headers.
+		httpRequest.setRequestHeader('Cache-Control', 'no-cache');
+    	httpRequest.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+		//httpRequest.setRequestHeader('Content-Type', 'multipart/form-data');
+		httpRequest.setRequestHeader('Content-Type', 'application/octet-stream');
+		httpRequest.setRequestHeader('X-File-Name', file.name);
+		httpRequest.setRequestHeader('X-File-Size', file.size);
+		httpRequest.setRequestHeader('X-File-Type', file.type);
+
+		if ('getAsBinary' in file) {
+			// Firefox 3.5
+			httpRequest.sendAsBinary(file.getAsBinary());
+		} else {
+			// W3C-blessed interface.
+			httpRequest.send(file);
+		}
+    	
+		e.preventDefault();
+	};
+
+	/**
+	* Handle to remove the file list.
+	*
+	* @event handleRemoveClick
+	* @param {Object} e Event object
+	*/
+	handleRemoveClick = function (e) {
+		$(this).closest('li').remove();
+		e.preventDefault();
+	};
+
+	/**
+	* Get document element inside iframe.
+	*
+	* @method getDoc
+	* @param {Element} frame iFrame element
+	*/
+	getDoc = function(frame) {
+		var doc = null;
+
+		// IE8 cascading access check.
+		try {
+			if (frame.contentWindow) {
+				doc = frame.contentWindow.document;
+			}
+		} catch(err) {
+		}
+
+		if (doc) { // Successful getting content.
+			return doc;
+		}
+
+		try { // Simply checking may throw in ie8 under ssl or mismatched protocol.
+			doc = frame.contentDocument ? frame.contentDocument : frame.document;
+		} catch(err) {
+			// Last attempt.
+			doc = frame.document;
+		}
+		return doc;
+	};
+
+	$('#files').on('change', handleFileSelect);
+	$('#action-upload').on('click', handleFileUploadAll);
+	fileListSel.on('click', 'li .btn-upload', handleUploadClick);
+	fileListSel.on('click', 'li .btn-remove', handleRemoveClick);
+});
+
+</script>
+
+</body>
+</html>
